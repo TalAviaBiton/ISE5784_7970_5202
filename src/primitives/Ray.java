@@ -1,0 +1,37 @@
+package primitives;
+/**
+ * This class will serve most geometries classes by representing a ray
+ */
+public class Ray {
+    /** parameter to represent the head of the ray */
+    Point head;
+
+    /** parameter to represent the direction of the ray */
+    Vector direction;
+
+    /**
+     * Constructor to initialize the ray
+     * @param head the head of the ray
+     * @param direction the direction of the ray
+     */
+    public Ray(Point head, Vector direction) {
+        this.head = head;
+        this.direction = direction.normalize();
+        this.direction.normalize();
+    }
+     @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        return (obj instanceof Ray other)
+                && this.head.equals(other.head)
+                && this.direction.equals(other.direction);
+ }
+
+    @Override
+    public String toString() {
+        return "primitives.Ray{" +
+                "head=" + head +
+                ", direction=" + direction +
+                '}';
+    }
+}
