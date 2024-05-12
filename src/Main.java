@@ -3,7 +3,9 @@ import static java.lang.System.out;
 import static primitives.Util.isZero;
 
 import primitives.*;
-
+/**
+ * roze liel aranbayev 329335202
+ * tal biton 329397970*/
 /**
  * Test program for the 1st stage
  * @author Dan Zilberstein
