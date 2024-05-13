@@ -19,7 +19,7 @@ public class  Plane implements Geometry{
      * @param y second point value
      * @param z third point value
      */
-    public Plane(Point x, Point y, Point z)
+    public Plane(final Point x, final Point y, final Point z)
     {
         q = x;
         normal=null;
@@ -44,6 +44,15 @@ public class  Plane implements Geometry{
         return normal.normalize();
 
     }
+
+    /**
+     * a method to return q
+     * @return     q
+     */
+    public Point getQ() {
+        return q;
+    }
+
     @Override
     public Vector getNormal(Point point) {
         return normal.normalize();
