@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4b50f3a7-ff92-41f1-86dd-01d3b21a2dd1" name="Changes" comment="everything is working" />
+    <list default="true" id="4b50f3a7-ff92-41f1-86dd-01d3b21a2dd1" name="Changes" comment="finish stage 1" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -90,6 +90,7 @@
       <workItem from="1715336676512" duration="12768000" />
       <workItem from="1715512340437" duration="843000" />
       <workItem from="1715542113251" duration="665000" />
+      <workItem from="1715597113756" duration="867000" />
     </task>
     <task id="LOCAL‎-00001" summary="all the tests worked and i finished the nots">
       <option name="closed" value="true" />
@@ -115,7 +116,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1715542165158</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL‎-00004" summary="finish stage 1">
+      <option name="closed" value="true" />
+      <created>1715597287509</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL‎-00004" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1715597287509</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -126,6 +135,7 @@
     <MESSAGE value="all the tests worked and i finished the nots" />
     <MESSAGE value="all the tests worked and i finished the nots 2" />
     <MESSAGE value="everything is working" />
-    <option name="LAST_COMMIT_MESSAGE" value="everything is working" />
+    <MESSAGE value="finish stage 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="finish stage 1" />
   </component>
 </project>
