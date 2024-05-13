@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4b50f3a7-ff92-41f1-86dd-01d3b21a2dd1" name="Changes" comment="all the tests worked and i finished the nots 2">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-    </list>
+    <list default="true" id="4b50f3a7-ff92-41f1-86dd-01d3b21a2dd1" name="Changes" comment="everything is working" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -92,6 +89,7 @@
       <workItem from="1715329528517" duration="359000" />
       <workItem from="1715336676512" duration="12768000" />
       <workItem from="1715512340437" duration="843000" />
+      <workItem from="1715542113251" duration="665000" />
     </task>
     <task id="LOCAL‎-00001" summary="all the tests worked and i finished the nots">
       <option name="closed" value="true" />
@@ -109,7 +107,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1715353986036</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL‎-00003" summary="everything is working">
+      <option name="closed" value="true" />
+      <created>1715542165158</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL‎-00003" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1715542165158</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -119,6 +125,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="all the tests worked and i finished the nots" />
     <MESSAGE value="all the tests worked and i finished the nots 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="all the tests worked and i finished the nots 2" />
+    <MESSAGE value="everything is working" />
+    <option name="LAST_COMMIT_MESSAGE" value="everything is working" />
   </component>
 </project>
