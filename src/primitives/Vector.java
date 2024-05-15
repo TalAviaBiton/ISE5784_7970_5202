@@ -25,7 +25,7 @@ public class Vector extends Point {
     }
 
     /**
-     * find the length Squared of the vector
+     * find the length Squared of ש vector
      * @return     result the calculation of the length Squared
      */
     public double lengthSquared() {
