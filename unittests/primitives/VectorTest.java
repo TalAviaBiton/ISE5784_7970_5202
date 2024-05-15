@@ -1,7 +1,10 @@
 package primitives;
 
 import org.junit.jupiter.api.Test;
+
+import static java.lang.System.out;
 import static org.junit.jupiter.api.Assertions.*;
+import static primitives.Util.isZero;
 
 class VectorTest {
 
@@ -24,7 +27,6 @@ class VectorTest {
         Vector v2 = new Vector(-2, -4, -6);
         assertEquals(0, v1.dotProduct(v3),"ERROR: dotProduct() for orthogonal vectors is not zero");
         assertEquals(0, v1.dotProduct(v2)+28,"ERROR: dotProduct() wrong value");
-
     }
 
     @Test
@@ -41,6 +43,10 @@ class VectorTest {
         //assertEquals(0,
                 //vr.length() - (v1.length() * v3.length()),
                // "ERROR: crossProduct() wrong result length");
+        assertEquals(
+                0,
+                vr.dotProduct(v1)*vr.dotProduct(v3),
+                "ERROR: dotProduct() result is not orthogonal to its operands");
     }
 
     @Test
