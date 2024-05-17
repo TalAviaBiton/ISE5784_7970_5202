@@ -9,6 +9,15 @@ import static primitives.Util.isZero;
 class VectorTest {
 
     @Test
+    public void testConstructor(){
+        assertThrows(
+                IllegalArgumentException.class,
+                () -> new Vector(0,0,0),
+                "ERROR: zero vector does not throw an exception");
+
+    }
+
+    @Test
     void testLengthSquared() {
         Vector v1=new Vector(1,2,3);
         assertEquals(14,v1.lengthSquared(),"ERROR: lengthSquared() wrong value");
@@ -51,10 +60,21 @@ class VectorTest {
 
     @Test
     void testNormalize() {
+        Vector v = new Vector(1, 2, 3);
+        Vector u = v.normalize();
+        assertEquals(1,u.length(),"ERROR: the normalized vector is not a unit vector");
+        assertThrows(
+                IllegalArgumentException.class,
+                ()->v.crossProduct(u),
+                "ERROR: the normalized vector is not parallel to the original one");
+        assertEquals(3,v.dotProduct(u),"ERROR: the normalized vector is opposite to the original one");
     }
 
     @Test
     void testScale() {
+        Vector v1=new Vector(1,2,2);
+        Vector v2 = new Vector(3,6,6);
+        assertEquals(v2,v1.scale(3),"ERROR: scale() wrong value");
     }
 
     @Test
@@ -68,7 +88,4 @@ class VectorTest {
                 "ERROR: Vector + -itself does not throw an exception");
     }
 
-    @Test
-    void testEquals() {
-    }
 }
