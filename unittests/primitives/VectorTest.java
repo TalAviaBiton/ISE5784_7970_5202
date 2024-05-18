@@ -1,9 +1,21 @@
 package primitives;
 
 import org.junit.jupiter.api.Test;
+
+import static java.lang.System.out;
 import static org.junit.jupiter.api.Assertions.*;
+import static primitives.Util.isZero;
 
 class VectorTest {
+
+    @Test
+    public void testConstructor(){
+        assertThrows(
+                IllegalArgumentException.class,
+                () -> new Vector(0,0,0),
+                "ERROR: zero vector does not throw an exception");
+
+    }
 
     @Test
     void testLengthSquared() {
@@ -24,7 +36,6 @@ class VectorTest {
         Vector v2 = new Vector(-2, -4, -6);
         assertEquals(0, v1.dotProduct(v3),"ERROR: dotProduct() for orthogonal vectors is not zero");
         assertEquals(0, v1.dotProduct(v2)+28,"ERROR: dotProduct() wrong value");
-
     }
 
     @Test
@@ -41,14 +52,29 @@ class VectorTest {
         //assertEquals(0,
                 //vr.length() - (v1.length() * v3.length()),
                // "ERROR: crossProduct() wrong result length");
+        assertEquals(
+                0,
+                vr.dotProduct(v1)*vr.dotProduct(v3),
+                "ERROR: dotProduct() result is not orthogonal to its operands");
     }
 
     @Test
     void testNormalize() {
+        Vector v = new Vector(1, 2, 3);
+        Vector u = v.normalize();
+        assertEquals(1,u.length(),"ERROR: the normalized vector is not a unit vector");
+        assertThrows(
+                IllegalArgumentException.class,
+                ()->v.crossProduct(u),
+                "ERROR: the normalized vector is not parallel to the original one");
+        assertEquals(3,v.dotProduct(u),"ERROR: the normalized vector is opposite to the original one");
     }
 
     @Test
     void testScale() {
+        Vector v1=new Vector(1,2,2);
+        Vector v2 = new Vector(3,6,6);
+        assertEquals(v2,v1.scale(3),"ERROR: scale() wrong value");
     }
 
     @Test
@@ -62,7 +88,4 @@ class VectorTest {
                 "ERROR: Vector + -itself does not throw an exception");
     }
 
-    @Test
-    void testEquals() {
-    }
 }
