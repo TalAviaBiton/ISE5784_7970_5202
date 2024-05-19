@@ -29,6 +29,7 @@ public class Point {
         this.xyz = xyz;
     }
 
+    public Double3 getXYZ(){return xyz;}
     /**
      * Subtract two points triads
      * @param  p1 right hand side operand for subtraction
@@ -72,7 +73,7 @@ public class Point {
     public boolean equals(Object obj) {
          if (this == obj) return true;
      return (obj instanceof Point other)
-             && this.xyz.equals(other.xyz) ;
+             && super.equals(other);
 
     }
     @Override
@@ -81,4 +82,7 @@ public class Point {
                 "xyz=" + xyz +
                 '}';
     }
+    public boolean isOnSameLine(Point other){
+      return (xyz.d1/ other.xyz.d1==xyz.d2/other.xyz.d2&&xyz.d1/ other.xyz.d1==xyz.d3/other.xyz.d3&&xyz.d2/other.xyz.d2==xyz.d3/other.xyz.d3);
+   }
 }

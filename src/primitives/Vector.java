@@ -11,8 +11,8 @@ public class Vector extends Point {
      */
     public Vector(double x, double y, double z) {
         super(x, y, z);
-        Vector temp = new Vector(Double3.ZERO);
-        if(this.equals(temp))
+        //Vector temp = new Vector(Double3.ZERO);
+        if(this.equals(Double3.ZERO))
             throw new IllegalArgumentException("Vector can't be zero");
     }
 
@@ -22,6 +22,8 @@ public class Vector extends Point {
      */
     public Vector(Double3 double3) {
         super(double3);
+        if(this.equals(Double3.ZERO))
+            throw new IllegalArgumentException("Vector can't be zero");
     }
 
     /**
@@ -91,8 +93,8 @@ public class Vector extends Point {
      @Override
     public boolean equals(Object obj) {
         if ((this == obj)) return true;
-        return ((obj instanceof Vector other2)
-                && this.xyz.equals(other2.xyz));
+        return ((obj instanceof Vector other)
+                && super.equals(other));
     }
 
     @Override
