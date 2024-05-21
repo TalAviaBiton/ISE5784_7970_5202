@@ -45,5 +45,10 @@ class PlaneTest {
 
     @Test
     void testGetNormal2() {
+        Plane plane = new Plane(new Point(1,1,1), new Point(2,2,2), new Point(3,3,3));
+        assertEquals(
+                0,
+                (plane.getNormal()).dotProduct(new Vector(1,1,1)),
+                "ERROR: testGetNormal() normal is not vertical to plane");
     }
 }

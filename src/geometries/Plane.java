@@ -15,14 +15,17 @@ public class  Plane implements Geometry{
 
     /**
      * Constructor to initialize the plane
-     * @param x the first point
-     * @param y second point value
-     * @param z third point value
+     * @param p1 the first point
+     * @param p2 second point value
+     * @param p3 third point value
      */
-    public Plane(final Point x, final Point y, final Point z)
+    public Plane(final Point p1, final Point p2, final Point p3)
     {
-        q = x;
-        normal=null;
+        q = p1;
+        if(p1.equals(p2) || p1.isOnSameLine(p2) || p1.isOnSameLine(p3) || p2.isOnSameLine(p3))
+            throw new IllegalArgumentException("Error: the points of the plane are on the same line");
+        normal=(p1.subtract(p2).crossProduct(p3.subtract(p2))).normalize();
+
     }
 
     /**
@@ -42,7 +45,6 @@ public class  Plane implements Geometry{
     public Vector getNormal()
     {
         return normal;
-
     }
 
     /**
