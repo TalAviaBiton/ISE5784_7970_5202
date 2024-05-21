@@ -12,7 +12,7 @@ public class Vector extends Point {
     public Vector(double x, double y, double z) {
         super(x, y, z);
         //Vector temp = new Vector(Double3.ZERO);
-        if(this.equals(Double3.ZERO))
+        if(xyz.equals(Double3.ZERO))
             throw new IllegalArgumentException("Vector can't be zero");
     }
 
@@ -22,7 +22,7 @@ public class Vector extends Point {
      */
     public Vector(Double3 double3) {
         super(double3);
-        if(this.equals(Double3.ZERO))
+        if(xyz.equals(Double3.ZERO))
             throw new IllegalArgumentException("Vector can't be zero");
     }
 
@@ -31,7 +31,7 @@ public class Vector extends Point {
      * @return     result the calculation of the length Squared
      */
     public double lengthSquared() {
-        return (int) (xyz.d1*xyz.d1+xyz.d2*xyz.d2+xyz.d3*xyz.d3);
+        return xyz.d1*xyz.d1+xyz.d2*xyz.d2+xyz.d3*xyz.d3;
 
     }
 
