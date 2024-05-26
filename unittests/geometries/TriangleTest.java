@@ -15,12 +15,12 @@ class TriangleTest {
     {
         // ============ Equivalence Partitions Tests ==============
         // TC01: There is a simple single test here - using a quad
-        Point[] pts =
+        Point[] points =
                 {       new Point(0, 0, 1),
                         new Point(1, 0, 0),
                         new Point(0, 1, 0)
                 };
-        Triangle tri = new Triangle(pts);
+        Triangle tri = new Triangle(points[0], points[1], points[2]);
         // ensure there are no exceptions
         assertDoesNotThrow(() -> tri.getNormal(new Point(0, 0, 1)), "");
         // generate the test result
