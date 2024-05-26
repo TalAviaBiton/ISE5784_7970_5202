@@ -19,9 +19,14 @@ public class Sphere extends RadialGeometry {
         this.center = center;
     }
 
+    /**
+     * calculates the sphere;s normal in point p
+     * @param p the point that the normal is going throw
+     * @return the sphere;s normal in point p
+     */
     @Override
-    public Vector getNormal(Point point) {
-        return point.subtract(center).normalize();
+    public Vector getNormal(Point p) {
+        return p.subtract(center).normalize();
     }
 
 }

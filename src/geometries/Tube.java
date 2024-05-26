@@ -19,13 +19,19 @@ public class Tube extends RadialGeometry {
         this.axis = axis;
     }
 
+    /**
+     *
+     * @param p the point that the normal is going throw
+     * @return
+     *
+     */
     @Override
-    public Vector getNormal(Point point) {
-        if(point.subtract(axis.getHead()).dotProduct(axis.getDirection())==0)
+    public Vector getNormal(Point p) {
+        if(p.subtract(axis.getHead()).dotProduct(axis.getDirection())==0)
             throw new IllegalArgumentException("ERROR: the two points are vertical to the direction vector of the tube");
-        double t=axis.getDirection().dotProduct(point.subtract(axis.getHead()));
+        double t=axis.getDirection().dotProduct(p.subtract(axis.getHead()));
         Point o=axis.getHead().add(axis.getDirection().scale(t));
-        return point.subtract(o).normalize();
+        return p.subtract(o).normalize();
 //        return point.subtract(
 //                axis.getHead().add(
 //                axis.getDirection().scale(

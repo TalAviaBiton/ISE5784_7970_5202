@@ -22,14 +22,18 @@ public  class Cylinder extends Tube
         this.height = height;
     }
 
-
+    /**
+     *calculates the normal to the cylinder in point p
+     * @param p the point that the normal is going throw
+     * @return the normal to the cylinder in point p
+     */
     @Override
-    public Vector getNormal(Point point) {
-        if(axis.getHead()==point||axis.getHead().add(axis.getDirection().scale(height))==point)
+    public Vector getNormal(Point p) {
+        if(axis.getHead()==p||axis.getHead().add(axis.getDirection().scale(height))==p)
             throw new IllegalArgumentException("Error: the point is on one of the bases of the cylinder");
-        double t=axis.getDirection().dotProduct(point.subtract(axis.getHead()));
+        double t=axis.getDirection().dotProduct(p.subtract(axis.getHead()));
         Point o=axis.getHead().add(axis.getDirection().scale(t));
-        return point.subtract(o).normalize();
+        return p.subtract(o).normalize();
 //        return point.subtract(
 //                        axis.getHead().add(
 //                                axis.getDirection().scale(
