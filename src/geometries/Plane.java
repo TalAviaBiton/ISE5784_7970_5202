@@ -5,7 +5,6 @@ package geometries;
 
 import primitives.Point;
 import primitives.Vector;
-
 public class  Plane implements Geometry{
     /** parameter to represent a point in the plane */
     private Point q;
@@ -22,9 +21,14 @@ public class  Plane implements Geometry{
     public Plane(final Point p1, final Point p2, final Point p3)
     {
         q = p1;
-        if(p1.equals(p2) || (p1.isOnSameLine(p2) && p1.isOnSameLine(p3) && p2.isOnSameLine(p3)))
+        //if(p1.equals(p2) || (p1.dotProduct(p2)==1 && p1.isOnSameLine(p3) && p2.isOnSameLine(p3)))
+           // throw new IllegalArgumentException("Error: the points of the plane are on the same line");
+        Vector v1 = p1.subtract(p2);
+        Vector v2 = p3.subtract(p2);
+
+        if(p1.equals(p2)|| Math.abs(v1.dotProduct(v2))==1)
             throw new IllegalArgumentException("Error: the points of the plane are on the same line");
-        normal=(p1.subtract(p2).crossProduct(p3.subtract(p2))).normalize();
+        normal=(v1.crossProduct(v2)).normalize();
 
     }
 
@@ -34,7 +38,7 @@ public class  Plane implements Geometry{
      * @param normal the normal for the plane
      */
     public Plane(Vector normal, Point q) {
-        this.normal = getNormal(normal);
+        this.normal = normal;
         this.q = q;
     }
 

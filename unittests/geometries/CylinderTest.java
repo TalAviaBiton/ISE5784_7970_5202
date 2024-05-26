@@ -27,7 +27,7 @@ class CylinderTest {
 
         assertEquals(
                 1,
-                cylinder.getNormal(new Point(2,1,0)).length(),
+                cylinder.getNormal(new Point(3,1,0)).length(),
                 "ERROR: the normal of the tube is not normalize");
     }
 }

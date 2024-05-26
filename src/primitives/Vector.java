@@ -18,16 +18,16 @@ public class Vector extends Point {
 
     /**
      * Constructor to initialize vector based object with a point
-     * @param double3 the point for the initialization
+     * @param xyz the point for the initialization
      */
-    public Vector(Double3 double3) {
-        super(double3);
-        if(xyz.equals(Double3.ZERO))
+    public Vector(Double3 xyz) {
+        super(xyz);
+        if(this.xyz.equals(Double3.ZERO))
             throw new IllegalArgumentException("Vector can't be zero");
     }
 
     /**
-     * find the length Squared of ש vector
+     * calculate the length Squared of ש vector
      * @return     result the calculation of the length Squared
      */
     public double lengthSquared() {
@@ -36,7 +36,7 @@ public class Vector extends Point {
     }
 
     /**
-     * find the length of the vector
+     * calculate the length of the vector
      * @return     result the calculation of the length
      */
     public double length() {
@@ -46,20 +46,20 @@ public class Vector extends Point {
 
     /**
      * calculate the dot product of the two vectors
-     *@param v3 the second vector
+     *@param v the second vector
      * @return     result the calculation of the dot product-int
      */
-    public int dotProduct(Vector v3) {
-        return (int) (xyz.d1*v3.xyz.d1+xyz.d2*v3.xyz.d2+xyz.d3*v3.xyz.d3);
+    public double dotProduct(Vector v) {
+        return  xyz.d1*v.xyz.d1+xyz.d2*v.xyz.d2+xyz.d3*v.xyz.d3;
     }
 
     /**
      * calculate the cross product of the two vectors
-     *@param v2 the second vector
+     *@param v the second vector
      * @return     A new vector perpendicular to the two existing vectors
      */
-    public Vector crossProduct(Vector v2) {
-        return new Vector(xyz.d2*v2.xyz.d3-xyz.d3*v2.xyz.d2,xyz.d3*v2.xyz.d1-xyz.d1*v2.xyz.d3,xyz.d1*v2.xyz.d2-xyz.d2*v2.xyz.d1);
+    public Vector crossProduct(Vector v) {
+        return new Vector(xyz.d2*v.xyz.d3-xyz.d3*v.xyz.d2,xyz.d3*v.xyz.d1-xyz.d1*v.xyz.d3,xyz.d1*v.xyz.d2-xyz.d2*v.xyz.d1);
     }
 
     /**
@@ -67,27 +67,27 @@ public class Vector extends Point {
      * @return     the vector after normalization
      */
     public Vector normalize() {
-        return new Vector(this.scale((1/this.length())).xyz);
+        return this.scale((1/this.length()));
     }
 
     /**
-     * calculate the vector multiply the number
-     *@param d the scalar
-     * @return     the vector multiply d
+     * calculate the vector multiply the scalar
+     *@param scalar
+     * @return     the vector multiply scalar
      */
-    public Vector scale(double d) {
-        return new Vector(xyz.scale(d));
+    public Vector scale(double scalar) {
+        return new Vector(xyz.scale(scalar));
     }
 
     /**
      * adds two vectors
-     *@param v2 the second vector
+     *@param v the second vector
      * @return     the vectors sum
      */
-    public Vector add(Vector v2) {
-        if(this.equals(v2.scale(-1)))
+    public Vector add(Vector v) {
+        if(this.equals(v.scale(-1)))
             throw new IllegalArgumentException("You cant do vector+-itself");
-        return new Vector(xyz.add(v2.xyz));
+        return new Vector(xyz.add(v.xyz));
     }
 
      @Override
