@@ -1,0 +1,149 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"4b50f3a7-ff92-41f1-86dd-01d3b21a2dd1\" name=\"Changes\" comment=\"in the middle of vector test 2\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/unittests/primitives/PointTest.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/unittests/primitives/PointTest.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/unittests/primitives/VectorTest.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/unittests/primitives/VectorTest.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Interface\" />\r\n        <option value=\"Class\" />\r\n        <option value=\"package.json\" />\r\n        <option value=\"JUnit5 Test Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;,\r\n    &quot;assignee&quot;: &quot;TalAviaBiton&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">{\r\n  &quot;selectedUrlAndAccountId&quot;: {\r\n    &quot;url&quot;: &quot;https://github.com/TalAviaBiton/ISE5784_7970_5202.git&quot;,\r\n    &quot;accountId&quot;: &quot;2dd0655d-862d-4814-a68b-3000807fb093&quot;\r\n  }\r\n}</component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 7\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2g2UFfjI7YDyiCRXLEjkbylddAm\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"ASKED_ADD_EXTERNAL_FILES\": \"true\",\r\n    \"Application.Main.executor\": \"Run\",\r\n    \"Downloaded.Files.Path.Enabled\": \"true\",\r\n    \"JUnit.PointTest.executor\": \"Run\",\r\n    \"JUnit.PointTest.testAdd.executor\": \"Run\",\r\n    \"JUnit.PointTest.testDistance.executor\": \"Run\",\r\n    \"JUnit.PointTest.testDistanceSquared.executor\": \"Run\",\r\n    \"JUnit.PointTest.testSubtract.executor\": \"Run\",\r\n    \"JUnit.PolygonTest.executor\": \"Run\",\r\n    \"JUnit.VectorTest.executor\": \"Run\",\r\n    \"JUnit.VectorTest.testAdd.executor\": \"Run\",\r\n    \"JUnit.VectorTest.testConstructor.executor\": \"Debug\",\r\n    \"JUnit.VectorTest.testCrossProduct.executor\": \"Run\",\r\n    \"JUnit.VectorTest.testDotProduct.executor\": \"Run\",\r\n    \"JUnit.VectorTest.testLength.executor\": \"Run\",\r\n    \"JUnit.VectorTest.testLengthSquared.executor\": \"Run\",\r\n    \"JUnit.VectorTest.testNormalize.executor\": \"Run\",\r\n    \"JUnit.VectorTest.testScale.executor\": \"Run\",\r\n    \"Repository.Attach.Annotations\": \"false\",\r\n    \"Repository.Attach.JavaDocs\": \"false\",\r\n    \"Repository.Attach.Sources\": \"false\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"SHARE_PROJECT_CONFIGURATION_FILES\": \"true\",\r\n    \"com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary\": \"JUnit5\",\r\n    \"com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5\": \"\",\r\n    \"git-widget-placeholder\": \"master\",\r\n    \"kotlin-language-version-configured\": \"true\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.detected.package.tslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"nodejs_package_manager_path\": \"npm\",\r\n    \"onboarding.tips.debug.path\": \"C:/Users/TAL/Desktop/minip/ISE5784_7970_5202/src/Main.java\",\r\n    \"project.structure.last.edited\": \"Modules\",\r\n    \"project.structure.proportion\": \"0.0\",\r\n    \"project.structure.side.proportion\": \"0.0\",\r\n    \"settings.editor.selected.configurable\": \"fileTemplates\",\r\n    \"vue.rearranger.settings.migration\": \"true\"\r\n  }\r\n}]]></component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CreateClassDialog.RecentsKey\">\r\n      <recent name=\"geometries\" />\r\n      <recent name=\"primitives\" />\r\n    </key>\r\n    <key name=\"CreateTestDialog.Recents.Supers\">\r\n      <recent name=\"\" />\r\n    </key>\r\n    <key name=\"CreateTestDialog.RecentsKey\">\r\n      <recent name=\"geometries\" />\r\n      <recent name=\"primitives\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"JUnit.PointTest\">\r\n    <configuration name=\"PointTest\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"ISE5784_7970_5202\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"primitives.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <option name=\"PACKAGE_NAME\" value=\"primitives\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"primitives.PointTest\" />\r\n      <option name=\"TEST_OBJECT\" value=\"class\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"PointTest.testAdd\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"ISE5784_7970_5202\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"primitives.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <option name=\"PACKAGE_NAME\" value=\"primitives\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"primitives.PointTest\" />\r\n      <option name=\"METHOD_NAME\" value=\"testAdd\" />\r\n      <option name=\"TEST_OBJECT\" value=\"method\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"PointTest.testDistance\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"ISE5784_7970_5202\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"primitives.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <option name=\"PACKAGE_NAME\" value=\"primitives\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"primitives.PointTest\" />\r\n      <option name=\"METHOD_NAME\" value=\"testDistance\" />\r\n      <option name=\"TEST_OBJECT\" value=\"method\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"PointTest.testDistanceSquared\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"ISE5784_7970_5202\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"primitives.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <option name=\"PACKAGE_NAME\" value=\"primitives\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"primitives.PointTest\" />\r\n      <option name=\"METHOD_NAME\" value=\"testDistanceSquared\" />\r\n      <option name=\"TEST_OBJECT\" value=\"method\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"PointTest.testSubtract\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"ISE5784_7970_5202\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"primitives.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <option name=\"PACKAGE_NAME\" value=\"primitives\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"primitives.PointTest\" />\r\n      <option name=\"METHOD_NAME\" value=\"testSubtract\" />\r\n      <option name=\"TEST_OBJECT\" value=\"method\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"JUnit.PointTest\" />\r\n        <item itemvalue=\"JUnit.PointTest.testDistanceSquared\" />\r\n        <item itemvalue=\"JUnit.PointTest.testDistance\" />\r\n        <item itemvalue=\"JUnit.PointTest.testAdd\" />\r\n        <item itemvalue=\"JUnit.PointTest.testSubtract\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.15989.150\" />\r\n        <option value=\"bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-IU-241.15989.150\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"4b50f3a7-ff92-41f1-86dd-01d3b21a2dd1\" name=\"Changes\" comment=\"\" />\r\n      <created>1714895068428</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1714895068428</updated>\r\n      <workItem from=\"1714895069670\" duration=\"2987000\" />\r\n      <workItem from=\"1715007623862\" duration=\"7680000\" />\r\n      <workItem from=\"1715095537242\" duration=\"3111000\" />\r\n      <workItem from=\"1715329528517\" duration=\"359000\" />\r\n      <workItem from=\"1715336676512\" duration=\"12768000\" />\r\n      <workItem from=\"1715512340437\" duration=\"843000\" />\r\n      <workItem from=\"1715542113251\" duration=\"665000\" />\r\n      <workItem from=\"1715597113756\" duration=\"10311000\" />\r\n      <workItem from=\"1715786556600\" duration=\"1740000\" />\r\n      <workItem from=\"1715954763694\" duration=\"2970000\" />\r\n    </task>\r\n    <task id=\"LOCAL\u200E-00001\" summary=\"all the tests worked and i finished the nots\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1715353901406</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL\u200E-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\u200E\" />\r\n      <updated>1715353901406</updated>\r\n    </task>\r\n    <task id=\"LOCAL\u200E-00002\" summary=\"all the tests worked and i finished the nots 2\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1715353986036</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL\u200E-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\u200E\" />\r\n      <updated>1715353986036</updated>\r\n    </task>\r\n    <task id=\"LOCAL\u200E-00003\" summary=\"everything is working\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1715542165158</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL\u200E-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\u200E\" />\r\n      <updated>1715542165158</updated>\r\n    </task>\r\n    <task id=\"LOCAL\u200E-00004\" summary=\"finish stage 1\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1715597287509</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL\u200E-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\u200E\" />\r\n      <updated>1715597287509</updated>\r\n    </task>\r\n    <task id=\"LOCAL\u200E-00005\" summary=\"tag1\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1715598279211</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL\u200E-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\u200E\" />\r\n      <updated>1715598279211</updated>\r\n    </task>\r\n    <task id=\"LOCAL\u200E-00006\" summary=\"all the tests are generated\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1715603836967</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL\u200E-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\u200E\" />\r\n      <updated>1715603836967</updated>\r\n    </task>\r\n    <task id=\"LOCAL\u200E-00007\" summary=\"in the middle of vector test\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1715615613170</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL\u200E-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\u200E\" />\r\n      <updated>1715615613170</updated>\r\n    </task>\r\n    <task id=\"LOCAL\u200E-00008\" summary=\"in the middle of vector test\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1715786954576</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL\u200E-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\u200E\" />\r\n      <updated>1715786954576</updated>\r\n    </task>\r\n    <task id=\"LOCAL\u200E-00009\" summary=\"in the middle of vector test 2\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1715788284074</created>\r\n      <option name=\"number\" value=\"00009\" />\r\n      <option name=\"presentableId\" value=\"LOCAL\u200E-00009\" />\r\n      <option name=\"project\" value=\"LOCAL\u200E\" />\r\n      <updated>1715788284074</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"10\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <option name=\"ADD_EXTERNAL_FILES_SILENTLY\" value=\"true\" />\r\n    <MESSAGE value=\"all the tests worked and i finished the nots\" />\r\n    <MESSAGE value=\"all the tests worked and i finished the nots 2\" />\r\n    <MESSAGE value=\"everything is working\" />\r\n    <MESSAGE value=\"finish stage 1\" />\r\n    <MESSAGE value=\"tag1\" />\r\n    <MESSAGE value=\"all the tests are generated\" />\r\n    <MESSAGE value=\"in the middle of vector test\" />\r\n    <MESSAGE value=\"in the middle of vector test 2\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"in the middle of vector test 2\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 426385e8275324987b42ed2c347b67c60919f7a1)
++++ b/.idea/workspace.xml	(date 1716106617800)
+@@ -4,10 +4,8 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="4b50f3a7-ff92-41f1-86dd-01d3b21a2dd1" name="Changes" comment="in the middle of vector test 2">
++    <list default="true" id="4b50f3a7-ff92-41f1-86dd-01d3b21a2dd1" name="Changes" comment="finished the tests of point and vector">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/unittests/primitives/PointTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/primitives/PointTest.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/unittests/primitives/VectorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/primitives/VectorTest.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -50,48 +48,48 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "ASKED_ADD_EXTERNAL_FILES": "true",
+-    "Application.Main.executor": "Run",
+-    "Downloaded.Files.Path.Enabled": "true",
+-    "JUnit.PointTest.executor": "Run",
+-    "JUnit.PointTest.testAdd.executor": "Run",
+-    "JUnit.PointTest.testDistance.executor": "Run",
+-    "JUnit.PointTest.testDistanceSquared.executor": "Run",
+-    "JUnit.PointTest.testSubtract.executor": "Run",
+-    "JUnit.PolygonTest.executor": "Run",
+-    "JUnit.VectorTest.executor": "Run",
+-    "JUnit.VectorTest.testAdd.executor": "Run",
+-    "JUnit.VectorTest.testConstructor.executor": "Debug",
+-    "JUnit.VectorTest.testCrossProduct.executor": "Run",
+-    "JUnit.VectorTest.testDotProduct.executor": "Run",
+-    "JUnit.VectorTest.testLength.executor": "Run",
+-    "JUnit.VectorTest.testLengthSquared.executor": "Run",
+-    "JUnit.VectorTest.testNormalize.executor": "Run",
+-    "JUnit.VectorTest.testScale.executor": "Run",
+-    "Repository.Attach.Annotations": "false",
+-    "Repository.Attach.JavaDocs": "false",
+-    "Repository.Attach.Sources": "false",
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+-    "git-widget-placeholder": "master",
+-    "kotlin-language-version-configured": "true",
+-    "node.js.detected.package.eslint": "true",
+-    "node.js.detected.package.tslint": "true",
+-    "node.js.selected.package.eslint": "(autodetect)",
+-    "node.js.selected.package.tslint": "(autodetect)",
+-    "nodejs_package_manager_path": "npm",
+-    "onboarding.tips.debug.path": "C:/Users/TAL/Desktop/minip/ISE5784_7970_5202/src/Main.java",
+-    "project.structure.last.edited": "Modules",
+-    "project.structure.proportion": "0.0",
+-    "project.structure.side.proportion": "0.0",
+-    "settings.editor.selected.configurable": "fileTemplates",
+-    "vue.rearranger.settings.migration": "true"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
++    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
++    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;true&quot;,
++    &quot;JUnit.PointTest.executor&quot;: &quot;Run&quot;,
++    &quot;JUnit.PointTest.testAdd.executor&quot;: &quot;Run&quot;,
++    &quot;JUnit.PointTest.testDistance.executor&quot;: &quot;Run&quot;,
++    &quot;JUnit.PointTest.testDistanceSquared.executor&quot;: &quot;Run&quot;,
++    &quot;JUnit.PointTest.testSubtract.executor&quot;: &quot;Run&quot;,
++    &quot;JUnit.PolygonTest.executor&quot;: &quot;Run&quot;,
++    &quot;JUnit.VectorTest.executor&quot;: &quot;Run&quot;,
++    &quot;JUnit.VectorTest.testAdd.executor&quot;: &quot;Run&quot;,
++    &quot;JUnit.VectorTest.testConstructor.executor&quot;: &quot;Debug&quot;,
++    &quot;JUnit.VectorTest.testCrossProduct.executor&quot;: &quot;Run&quot;,
++    &quot;JUnit.VectorTest.testDotProduct.executor&quot;: &quot;Run&quot;,
++    &quot;JUnit.VectorTest.testLength.executor&quot;: &quot;Run&quot;,
++    &quot;JUnit.VectorTest.testLengthSquared.executor&quot;: &quot;Run&quot;,
++    &quot;JUnit.VectorTest.testNormalize.executor&quot;: &quot;Run&quot;,
++    &quot;JUnit.VectorTest.testScale.executor&quot;: &quot;Run&quot;,
++    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
++    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
++    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
++    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
++    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
++    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
++    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
++    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
++    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
++    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
++    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
++    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
++    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/TAL/Desktop/minip/ISE5784_7970_5202/src/Main.java&quot;,
++    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
++    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
++    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
++    &quot;settings.editor.selected.configurable&quot;: &quot;fileTemplates&quot;,
++    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+   }
+-}]]></component>
++}</component>
+   <component name="RecentsManager">
+     <key name="CreateClassDialog.RecentsKey">
+       <recent name="geometries" />
+@@ -220,7 +218,8 @@
+       <workItem from="1715542113251" duration="665000" />
+       <workItem from="1715597113756" duration="10311000" />
+       <workItem from="1715786556600" duration="1740000" />
+-      <workItem from="1715954763694" duration="2970000" />
++      <workItem from="1715954763694" duration="3788000" />
++      <workItem from="1716102615425" duration="3667000" />
+     </task>
+     <task id="LOCAL‎-00001" summary="all the tests worked and i finished the nots">
+       <option name="closed" value="true" />
+@@ -294,7 +293,15 @@
+       <option name="project" value="LOCAL‎" />
+       <updated>1715788284074</updated>
+     </task>
+-    <option name="localTasksCounter" value="10" />
++    <task id="LOCAL‎-00010" summary="finished the tests of point and vector">
++      <option name="closed" value="true" />
++      <created>1715957790583</created>
++      <option name="number" value="00010" />
++      <option name="presentableId" value="LOCAL‎-00010" />
++      <option name="project" value="LOCAL‎" />
++      <updated>1715957790583</updated>
++    </task>
++    <option name="localTasksCounter" value="11" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -321,6 +328,7 @@
+     <MESSAGE value="all the tests are generated" />
+     <MESSAGE value="in the middle of vector test" />
+     <MESSAGE value="in the middle of vector test 2" />
+-    <option name="LAST_COMMIT_MESSAGE" value="in the middle of vector test 2" />
++    <MESSAGE value="finished the tests of point and vector" />
++    <option name="LAST_COMMIT_MESSAGE" value="finished the tests of point and vector" />
+   </component>
+ </project>
+\ No newline at end of file

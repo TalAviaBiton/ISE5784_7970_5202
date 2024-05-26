@@ -83,6 +83,10 @@ public class Point {
                 '}';
     }
     public boolean isOnSameLine(Point other){
-      return (xyz.d1/ other.xyz.d1==xyz.d2/other.xyz.d2&&xyz.d1/ other.xyz.d1==xyz.d3/other.xyz.d3&&xyz.d2/other.xyz.d2==xyz.d3/other.xyz.d3);
+        double t=xyz.d1/ other.xyz.d1;
+        return xyz.d2 *t==other.xyz.d2 && xyz.d3 *t==other.xyz.d3;
+      //return (xyz.d1/ other.xyz.d1==xyz.d2/other.xyz.d2
+              //&& xyz.d1/ other.xyz.d1==xyz.d3/other.xyz.d3
+              //&& xyz.d2/other.xyz.d2==xyz.d3/other.xyz.d3);
    }
 }

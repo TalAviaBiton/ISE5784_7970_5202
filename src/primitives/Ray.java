@@ -4,10 +4,18 @@ package primitives;
  */
 public class Ray {
     /** parameter to represent the head of the ray */
-    Point head;
+    protected Point head;
 
     /** parameter to represent the direction of the ray */
-    Vector direction;
+    protected Vector direction;
+
+    public Vector getDirection() {
+        return direction;
+    }
+
+    public Point getHead() {
+        return head;
+    }
 
     /**
      * Constructor to initialize the ray

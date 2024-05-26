@@ -25,6 +25,13 @@ public  class Cylinder extends Tube
 
     @Override
     public Vector getNormal(Point point) {
-        return null;
+        if(axis.getHead()==point||axis.getHead().add(axis.getDirection().scale(height))==point)
+            throw new IllegalArgumentException("Error: the point is on one of the bases of the cylinder");
+        return point.subtract(
+                        axis.getHead().add(
+                                axis.getDirection().scale(
+                                        axis.getDirection().dotProduct(
+                                                point.subtract(axis.getHead()))))).
+                normalize();
     }
 }
