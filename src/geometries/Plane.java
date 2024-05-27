@@ -59,6 +59,11 @@ public class  Plane implements Geometry{
         return q;
     }
 
+    /**
+     *
+     * @param point the point that the normal is going throw
+     * @return the normal to the plane
+     */
     @Override
     public Vector getNormal(Point point) {
         return normal;
