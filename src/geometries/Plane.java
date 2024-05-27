@@ -25,8 +25,8 @@ public class  Plane implements Geometry{
            // throw new IllegalArgumentException("Error: the points of the plane are on the same line");
         Vector v1 = p1.subtract(p2);
         Vector v2 = p3.subtract(p2);
-
-        if(p1.equals(p2)|| Math.abs(v1.dotProduct(v2))==1)
+        Vector v3 = p2.subtract(p1);
+        if(p1.equals(p2)|| (Math.abs(v1.dotProduct(v2))==1 && Math.abs(v1.dotProduct(v3))==1 && Math.abs(v3.dotProduct(v2))==1))
             throw new IllegalArgumentException("Error: the points of the plane are on the same line");
         normal=(v1.crossProduct(v2)).normalize();
 

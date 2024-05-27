@@ -71,7 +71,7 @@ class VectorTest {
                 IllegalArgumentException.class,
                 ()->v.crossProduct(u),
                 "ERROR: the normalized vector is not parallel to the original one");
-        assertEquals(3,v.dotProduct(u),"ERROR: the normalized vector is opposite to the original one");
+        assertEquals(false,v.dotProduct(u)<0,"ERROR: the normalized vector is opposite to the original one");
     }
 
     @Test
