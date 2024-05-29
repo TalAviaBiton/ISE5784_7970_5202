@@ -5,36 +5,40 @@ package geometries;
 
 import primitives.Point;
 import primitives.Vector;
-public class  Plane implements Geometry{
-    /** parameter to represent a point in the plane */
+
+public class Plane implements Geometry {
+    /**
+     * parameter to represent a point in the plane
+     */
     private Point q;
 
-    /** parameter to represent the normal for the plane */
+    /**
+     * parameter to represent the normal for the plane
+     */
     private Vector normal;
 
     /**
      * Constructor to initialize the plane
+     *
      * @param p1 the first point
      * @param p2 second point value
      * @param p3 third point value
      */
-    public Plane(final Point p1, final Point p2, final Point p3)
-    {
+    public Plane(final Point p1, final Point p2, final Point p3) {
         q = p1;
-        //if(p1.equals(p2) || (p1.dotProduct(p2)==1 && p1.isOnSameLine(p3) && p2.isOnSameLine(p3)))
-           // throw new IllegalArgumentException("Error: the points of the plane are on the same line");
         Vector v1 = p1.subtract(p2);
         Vector v2 = p3.subtract(p2);
         Vector v3 = p2.subtract(p1);
-        if(p1.equals(p2)|| (Math.abs(v1.dotProduct(v2))==1 && Math.abs(v1.dotProduct(v3))==1 && Math.abs(v3.dotProduct(v2))==1))
+        if (p1.equals(p2) || (Math.abs(v1.dotProduct(v2)) == 1 && Math.abs(v1.dotProduct(v3)) == 1 && Math.abs(v3.dotProduct(v2)) == 1))
             throw new IllegalArgumentException("Error: the points of the plane are on the same line");
-        normal=(v1.crossProduct(v2)).normalize();
+        normal = (v1.crossProduct(v2)).normalize();
 
     }
 
     /**
      * Constructor to initialize the plane
-     * @param q the  point
+     *
+     * @param q      the  point
      * @param normal the normal for the plane
      */
     public Plane(Vector normal, Point q) {
@@ -44,25 +48,25 @@ public class  Plane implements Geometry{
 
     /**
      * a method to normalize the normal
-     * @return     the normal normalized
+     *
+     * @return the normal of the plane
      */
-    public Vector getNormal()
-    {
+    public Vector getNormal() {
         return normal;
     }
 
     /**
      * a method to return q
-     * @return     q
+     *
+     * @return q
      */
     public Point getQ() {
         return q;
     }
 
     /**
-     *
      * @param point the point that the normal is going throw
-     * @return the normal to the plane
+     * @return the normal of the plane
      */
     @Override
     public Vector getNormal(Point point) {

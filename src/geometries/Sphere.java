@@ -2,25 +2,30 @@ package geometries;
 
 import primitives.Point;
 import primitives.Vector;
+
 /**
  * This class represents a sphere
  */
 public class Sphere extends RadialGeometry {
-    /** a point for the center of the sphere */
+    /**
+     * a point for the center of the sphere
+     */
     private final Point center;
 
     /**
      * Constructor to initialize the sphere
+     *
      * @param center the center of the sphere
      * @param radius the radius of the sphere
      */
-    public Sphere(Point center,double radius) {
+    public Sphere(Point center, double radius) {
         super(radius);
         this.center = center;
     }
 
     /**
      * calculates the sphere;s normal in point p
+     *
      * @param p the point that the normal is going throw
      * @return the sphere;s normal in point p
      */
