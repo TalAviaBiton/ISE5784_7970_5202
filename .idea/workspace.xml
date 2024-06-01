@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4b50f3a7-ff92-41f1-86dd-01d3b21a2dd1" name="Changes" comment="in the middle of vector test">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="4b50f3a7-ff92-41f1-86dd-01d3b21a2dd1" name="Changes" comment="in the middle of vector test" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,12 +35,12 @@
     &quot;assignee&quot;: &quot;TalAviaBiton&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/TalAviaBiton/ISE5784_7970_5202.git&quot;,
-    &quot;accountId&quot;: &quot;2dd0655d-862d-4814-a68b-3000807fb093&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/TalAviaBiton/ISE5784_7970_5202.git",
+    "accountId": "d2ff1c24-181a-4fb7-8215-0f1623e8da51"
   }
-}</component>
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -215,6 +213,7 @@
       <workItem from="1716055495248" duration="3369000" />
       <workItem from="1716096574507" duration="6977000" />
       <workItem from="1716707560091" duration="5360000" />
+      <workItem from="1716833787373" duration="45000" />
     </task>
     <task id="LOCAL‎-00001" summary="all the tests worked and i finished the nots">
       <option name="closed" value="true" />
@@ -328,7 +327,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1716741281467</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL‎-00015" summary="in the middle of vector test">
+      <option name="closed" value="true" />
+      <created>1716833816868</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL‎-00015" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1716833816868</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
