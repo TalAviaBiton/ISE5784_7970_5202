@@ -5,11 +5,19 @@ import primitives.Point;
 import primitives.Vector;
 
 import java.awt.*;
-
+/**
+ * testing triangle
+ */
 import static org.junit.jupiter.api.Assertions.*;
 
 class TriangleTest {
+    /**
+     * Delta value for accuracy when comparing the numbers of type 'double' in
+     * assertEquals
+     */
     private final double DELTA = 0.000001;
+
+    /** Test method for {@link geometries.Triangle#getNormal(Point)} */
     @Test
     void testGetNormal()
     {
@@ -27,10 +35,6 @@ class TriangleTest {
         Vector result = tri.getNormal(new Point(0, 0, 1));
         // ensure |result| = 1
         assertEquals(1, result.length(), DELTA, "Polygon's normal is not a unit vector");
-        // ensure the result is orthogonal to all the edges
-//        for (int i = 0; i < 3; ++i)
-//            assertEquals(0d, result.dotProduct(pts[i].subtract(pts[i == 0 ? 3 : i - 1])), DELTA,
-//                    "Polygon's normal is not orthogonal to one of the edges");
 
     }
 
