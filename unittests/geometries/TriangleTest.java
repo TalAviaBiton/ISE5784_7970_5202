@@ -28,13 +28,22 @@ class TriangleTest {
                         new Point(1, 0, 0),
                         new Point(0, 1, 0)
                 };
-        Triangle tri = new Triangle(points[0], points[1], points[2]);
+        Triangle triangle = new Triangle(points[0], points[1], points[2]);
         // ensure there are no exceptions
-        assertDoesNotThrow(() -> tri.getNormal(new Point(0, 0, 1)), "");
+        assertDoesNotThrow(
+                () -> triangle.getNormal(new Point(0, 0, 1)),
+                "");
         // generate the test result
-        Vector result = tri.getNormal(new Point(0, 0, 1));
+        Vector result = triangle.getNormal(new Point(0, 0, 1));
         // ensure |result| = 1
-        assertEquals(1, result.length(), DELTA, "Polygon's normal is not a unit vector");
+        assertEquals(1,
+                result.length(),
+                DELTA,
+                "Polygon's normal is not a unit vector");
+
+    }
+     @Test
+    void testFindIntersections() {
 
     }
 

@@ -49,4 +49,9 @@ class CylinderTest {
 
 
     }
+
+    @Test
+    void testFindIntersections() {
+
+    }
 }

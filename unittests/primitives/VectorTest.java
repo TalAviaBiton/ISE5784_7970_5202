@@ -86,7 +86,7 @@ class VectorTest {
         // TC06: checking if the calculation of dot product is orthogonal to its operands
         assertEquals(
                 0,
-                vr.dotProduct(v1) * vr.dotProduct(v3),
+                vr.dotProduct(v1) + vr.dotProduct(v3),
                 "ERROR: dotProduct() result is not orthogonal to its operands");
     }
 
@@ -98,7 +98,10 @@ class VectorTest {
         Vector v = new Vector(1, 2, 3);
         Vector u = v.normalize();
         // TC07: checking if the calculation of normalized vector is a unit vector
-        assertEquals(1, u.length(), "ERROR: the normalized vector is not a unit vector");
+        assertEquals(
+                1,
+                u.length(),
+                "ERROR: the normalized vector is not a unit vector");
 
         // TC08: checking if the calculation of normalized vector is parallel to the original one
         assertThrows(
@@ -107,7 +110,9 @@ class VectorTest {
                 "ERROR: the normalized vector is not parallel to the original one");
 
         // TC09: checking if the calculation of normalized vector is not opposite to the original one
-        assertFalse(v.dotProduct(u) < 0, "ERROR: the normalized vector is opposite to the original one");
+        assertFalse(
+                v.dotProduct(u) < 0,
+                "ERROR: the normalized vector is opposite to the original one");
     }
 
     /**
@@ -118,7 +123,10 @@ class VectorTest {
         Vector v1 = new Vector(1, 2, 2);
         Vector v2 = new Vector(3, 6, 6);
         // TC10: checking if the calculation of scale is right
-        assertEquals(v2, v1.scale(3), "ERROR: scale() wrong value");
+        assertEquals(
+                v2,
+                v1.scale(3),
+                "ERROR: scale() wrong value");
     }
 
     /**
@@ -129,7 +137,10 @@ class VectorTest {
         Vector v1 = new Vector(1, 2, 3);
         Vector v2 = new Vector(1, 0, 0);
         // TC11: checking if the calculation of add is right
-        assertEquals(new Vector(2, 2, 3), v1.add(v2), "ERROR: add() wrong value");
+        assertEquals(
+                new Vector(2, 2, 3),
+                v1.add(v2),
+                "ERROR: add() wrong value");
         // TC12: checking that vector +-itself throws an exception
         assertThrows(
                 IllegalArgumentException.class,

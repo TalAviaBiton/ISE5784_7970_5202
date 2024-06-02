@@ -26,7 +26,10 @@ class PointTest {
     @Test
     void testSubtract() {
         // TC01: checking if the calculation of subtract is right
-        assertEquals(p2.subtract(p1), v1, "ERROR: (point2 - point1) does not work correctly");
+        assertEquals(
+                v1,
+                p2.subtract(p1),
+                "ERROR: (point2 - point1) does not work correctly");
 
         // TC02: checking that point -itself throws an exception
         assertThrows(
@@ -41,11 +44,14 @@ class PointTest {
     @Test
     void testAdd() {
         // TC03: checking if the calculation of add works right
-        assertEquals(p1.add(v1), p2, "ERROR: (point + vector) = other point does not work correctly");
+        assertEquals(
+                p2,
+                p1.add(v1),
+                "ERROR: (point + vector) = other point does not work correctly");
         // TC04: checking if the calculation of point +vector= (0,0,0) works right
         assertEquals(
-                p1.add(v1Opposite),
                 Point.ZERO,
+                p1.add(v1Opposite),
                 "ERROR: (point + vector) = center of coordinates does not work correctly");
     }
 
@@ -55,18 +61,21 @@ class PointTest {
     @Test
     void testDistanceSquared() {
         // TC05: checking if the calculation of distanceSquared between point to itself is 0
-        assertEquals(0, p1.distanceSquared(p1), "ERROR: point squared distance to itself is not zero");
+        assertEquals(
+                0,
+                p1.distanceSquared(p1),
+                "ERROR: point squared distance to itself is not zero");
 
         // TC06: checking if the calculation of distanceSquared is right
         assertEquals(
-                0,
-                p1.distanceSquared(p3) - 9,
+                9,
+                p1.distanceSquared(p3),
                 "ERROR: squared distance between points is wrong");
 
         // TC07: checking if the calculation of distanceSquared (between the same points as TC06) is right
         assertEquals(
-                0,
-                p3.distanceSquared(p1) - 9,
+                9,
+                p3.distanceSquared(p1) ,
                 "ERROR: squared distance between points is wrong");
 
     }
@@ -78,13 +87,21 @@ class PointTest {
     void testDistance() {
 
         // TC08: checking if the calculation of distance between point to itself is 0
-        assertEquals(0, p1.distance(p1), "ERROR: point distance to itself is not zero");
+        assertEquals(0,
+                p1.distance(p1),
+                "ERROR: point distance to itself is not zero");
 
         // TC09: checking if the calculation of distance is right
-        assertEquals(0, p1.distance(p3) - 3, "ERROR: distance between points is wrong");
+        assertEquals(
+                3,
+                p1.distance(p3) ,
+                "ERROR: distance between points is wrong");
 
         // TC10: checking if the calculation of distance (between the same points as TC06) is right
-        assertEquals(0, p3.distance(p1) - 3, "ERROR: distance between points is wrong");
+        assertEquals(
+                3,
+                p3.distance(p1) ,
+                "ERROR: distance between points is wrong");
 
     }
 

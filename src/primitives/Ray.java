@@ -49,4 +49,8 @@ public class Ray {
                 ", direction=" + direction +
                 '}';
     }
+
+    public Point getPoint(double t) {
+        return null;
+    }
 }
