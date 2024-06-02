@@ -5,27 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4b50f3a7-ff92-41f1-86dd-01d3b21a2dd1" name="Changes" comment="in the middle of vector test">
-      <change afterPath="$PROJECT_DIR$/src/geometries/Geomtries.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/geometries/Intersectable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unittests/geometries/GeomtriesTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unittests/primitives/RayTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/geometries/Geometry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Geometry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/geometries/Plane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Plane.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/geometries/Polygon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Polygon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/geometries/RadialGeometry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/RadialGeometry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/geometries/Sphere.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Sphere.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/geometries/Triangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Triangle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/geometries/Tube.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Tube.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/primitives/Ray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/primitives/Ray.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unittests/geometries/CylinderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/geometries/CylinderTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unittests/geometries/PlaneTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/geometries/PlaneTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unittests/geometries/PolygonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/geometries/PolygonTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unittests/geometries/SphereTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/geometries/SphereTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unittests/geometries/TriangleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/geometries/TriangleTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unittests/geometries/TubeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/geometries/TubeTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unittests/primitives/PointTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/primitives/PointTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unittests/primitives/VectorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/primitives/VectorTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -251,7 +231,8 @@
       <workItem from="1717274362692" duration="253000" />
       <workItem from="1717275099247" duration="24000" />
       <workItem from="1717312716157" duration="2000" />
-      <workItem from="1717312738070" duration="4469000" />
+      <workItem from="1717312738070" duration="6135000" />
+      <workItem from="1717355379108" duration="1000" />
     </task>
     <task id="LOCAL‎-00001" summary="all the tests worked and i finished the nots">
       <option name="closed" value="true" />
@@ -389,7 +370,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1716931035478</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL‎-00018" summary="in the middle of vector test">
+      <option name="closed" value="true" />
+      <created>1717319195333</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL‎-00018" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1717319195333</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -423,9 +412,9 @@
     <MESSAGE value="finshed all test but Triangle and finished all the get normal" />
     <MESSAGE value="almost every thing workes" />
     <MESSAGE value="et normal of cylinder" />
-    <MESSAGE value="in the middle of vector test" />
     <MESSAGE value="every thing is working" />
     <MESSAGE value="finished doing notes" />
-    <option name="LAST_COMMIT_MESSAGE" value="finished doing notes" />
+    <MESSAGE value="in the middle of vector test" />
+    <option name="LAST_COMMIT_MESSAGE" value="in the middle of vector test" />
   </component>
 </project>
