@@ -53,7 +53,7 @@ class PlaneTest {
         // TC03: ensure that sends an exception if normal is not vertical to plane
         assertEquals(
                 0,
-                (plane.getNormal()).dotProduct(new Vector(1, 1, 1)),
+                plane.getNormal().dotProduct(new Vector(1, 1, 1)),
                 "ERROR: testGetNormal() normal is not vertical to plane");
 
         // TC04: ensure that the normal is normalized
@@ -75,6 +75,10 @@ class PlaneTest {
 
         // TC06: ensure that the normal is normalized
         assertEquals(1, plane.getNormal().length(), "ERROR: the normal of the plane is not normalize");
+
+    }
+     @Test
+    void testFindIntersections() {
 
     }
 }

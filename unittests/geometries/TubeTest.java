@@ -42,4 +42,8 @@ class TubeTest {
                 "ERROR: the two points are vertical to the direction vector of the tube");
 
     }
+     @Test
+    void testFindIntersections() {
+
+    }
 }
