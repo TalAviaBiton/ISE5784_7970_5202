@@ -31,7 +31,6 @@ public class Ray {
     public Ray(Point head, Vector direction) {
         this.head = head;
         this.direction = direction.normalize();
-        this.direction.normalize();
     }
 
     @Override
@@ -50,7 +49,11 @@ public class Ray {
                 '}';
     }
 
+    /**
+     * Calculates a point on the line of the ray, at a distance t
+     * @param t      the head of the ray
+     */
     public Point getPoint(double t) {
-        return null;
+        return head.add(direction.scale(t));
     }
 }
