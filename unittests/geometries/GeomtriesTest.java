@@ -53,8 +53,27 @@ class GeomtriesTest {
         geomtries3.add(sphere3.1);
         geomtries3.add(triangle3);
 
-        Ray ray3=new Ray(new Point(5.26,-6.39,0),new Vector(-2.14,10.69,0));
+        Ray ray3=new Ray(new Point(3.49,-6.47,0),new Vector(-2.29,12.82,0));
+        List<Point> expected3=new list(
+            new Point (2.36,-0.15,0)
+            new Point(1.68,,3.68,0));//Im not sure 
+        assertEquals(expected3,geometries3.findIntersection(ray3),"Error: doesnt return the right intersection points")
         //TC04: all shapes has intersection
+        List<Intersectable> geomtries4=new LinkedList<Intersectable>();
+         Plane plane4 = new Plane(
+                new Point(-4,0,0),
+                new Point(0,0,5.72), new Point(2.27, -1.42, 0));
+        geomtries4.add(sphere3);
+        geomtries3.add(plane4);
+        geomtries4.add(triangle3);
+        List<Point> expected=new list(
+            new Point (-1.53,-2.77,0)
+            new Point (-1.15,-1.51,0)
+            new Point (-0.36,1.15,0)
+            new Point (0.25,3.19,0)
+            new Point(-0.9,-0.65,0));//Im not sure 
+        Ray ray4=new Ray(new Point(-2.24,-5.13,0),new Vector(3.44,11.49,0));
+        assertEquals(expected,geometries4.findIntersection(ray4),"Error: doesnt return the right intersection points")
         //TC05: empty collection
         assertNull(geomtries.findIntersection(ray),"ERROR: doesnt return null when the geometries collection is empty");
 
