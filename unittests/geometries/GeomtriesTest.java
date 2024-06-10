@@ -37,11 +37,26 @@ class GeomtriesTest {
         geomtries.add(plane);
         geomtries.add(sphere);
         geomtries.add(triangle);
-        geomtries.fi
+        assertNull( geomtries.findIntersection(ray),"ERROR: doesnt return null when there are no intersections");
         //TC03: only one shape has intersection
+        List<Intersectable> geomtries3=new LinkedList<Intersectable>();
+        Point[] points3 =
+                {       new Point(-1.46, -3.04, 0),
+                        new Point(-2.32, 0, 0),
+                        new Point(0, -3, 0)
+                };
+        Triangle triangle3 = new Triangle(points[0], points[1], points[2]);
+
+        Sphere sphere3 = new Sphere(new Point(1.57,1.68,0), 2);
+        Sphere sphere3.1 = new Sphere(new Point(-3.4,3.13,0), 1.5);
+        geomtries3.add(sphere3);
+        geomtries3.add(sphere3.1);
+        geomtries3.add(triangle3);
+
+        Ray ray3=new Ray(new Point(5.26,-6.39,0),new Vector(-2.14,10.69,0));
         //TC04: all shapes has intersection
         //TC05: empty collection
-        assertNull(geomtries,"the geometries collection is empty");
+        assertNull(geomtries.findIntersection(ray),"ERROR: doesnt return null when the geometries collection is empty");
 
     }
 
