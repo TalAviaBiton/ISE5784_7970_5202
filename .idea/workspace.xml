@@ -203,8 +203,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.15989.150" />
-        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-IU-241.15989.150" />
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.17890.1" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.17890.1" />
       </set>
     </attachedChunks>
   </component>
@@ -233,7 +233,10 @@
       <workItem from="1717274767390" duration="245000" />
       <workItem from="1717312351714" duration="364000" />
       <workItem from="1717675831836" duration="10165000" />
-      <workItem from="1717760011253" duration="414000" />
+      <workItem from="1717760011253" duration="448000" />
+      <workItem from="1718041854470" duration="859000" />
+      <workItem from="1718091319204" duration="286000" />
+      <workItem from="1718091777995" duration="100000" />
     </task>
     <task id="LOCAL‎-00001" summary="all the tests worked and i finished the nots">
       <option name="closed" value="true" />
@@ -395,7 +398,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1717688050223</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL‎-00021" summary="finished sphera test almost">
+      <option name="closed" value="true" />
+      <created>1717760433708</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL‎-00021" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1717760433708</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
