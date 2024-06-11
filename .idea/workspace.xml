@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4b50f3a7-ff92-41f1-86dd-01d3b21a2dd1" name="Changes" comment="test find-intersection triangle and plane finished unchecked">
+    <list default="true" id="4b50f3a7-ff92-41f1-86dd-01d3b21a2dd1" name="Changes" comment="finished geometries test">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/geometries/Geomtries.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Geometries.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unittests/geometries/GeomtriesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/geometries/GeomtriesTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -398,7 +396,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1717920330451</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL‎-00022" summary="finished geometries test">
+      <option name="closed" value="true" />
+      <created>1718094627648</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL‎-00022" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1718094627648</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -432,7 +438,8 @@
     <MESSAGE value="finished 2" />
     <MESSAGE value="finished sphera test almost" />
     <MESSAGE value="test find-intersection triangle and plane finished unchecked" />
-    <option name="LAST_COMMIT_MESSAGE" value="test find-intersection triangle and plane finished unchecked" />
+    <MESSAGE value="finished geometries test" />
+    <option name="LAST_COMMIT_MESSAGE" value="finished geometries test" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
