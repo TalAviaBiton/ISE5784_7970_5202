@@ -6,6 +6,8 @@ package geometries;
 import primitives.Point;
 import primitives.Ray;
 import primitives.Vector;
+
+import java.util.LinkedList;
 import java.util.List;
 
 
@@ -78,6 +80,10 @@ public class Plane implements Geometry {
      @Override
    public List<Point> findIntersections(Ray ray) {
 
-        return null;
+        //if(normal.dotProduct(q.subtract(ray.getHead().add(ray.getDirection().scale(ray.getPoint())))))
+         return new LinkedList<>(List.of(
+                 new Point(
+                         this.normal.crossProduct(q.subtract(ray.getHead())).scale(
+                                 1/(normal.dotProduct(ray.getDirection()))).getXYZ())));
    }
 }

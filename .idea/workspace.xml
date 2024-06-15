@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4b50f3a7-ff92-41f1-86dd-01d3b21a2dd1" name="Changes" comment="test geometries">
+    <list default="true" id="4b50f3a7-ff92-41f1-86dd-01d3b21a2dd1" name="Changes" comment="finished geometries test">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Plane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Plane.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Sphere.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Sphere.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Triangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Triangle.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -201,6 +204,14 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.15989.150" />
+        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-IU-241.15989.150" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -227,6 +238,8 @@
       <workItem from="1717312351714" duration="364000" />
       <workItem from="1717675831836" duration="10165000" />
       <workItem from="1717760011253" duration="414000" />
+      <workItem from="1718097662813" duration="285000" />
+      <workItem from="1718375875289" duration="3419000" />
     </task>
     <task id="LOCAL‎-00001" summary="all the tests worked and i finished the nots">
       <option name="closed" value="true" />
@@ -396,15 +409,39 @@
       <option name="project" value="LOCAL‎" />
       <updated>1717920330451</updated>
     </task>
-    <task id="LOCAL‎-00022" summary="test geometries">
+    <task id="LOCAL‎-00022" summary="finished geometries test">
       <option name="closed" value="true" />
-      <created>1718038866938</created>
+      <created>1718094627648</created>
       <option name="number" value="00022" />
       <option name="presentableId" value="LOCAL‎-00022" />
       <option name="project" value="LOCAL‎" />
-      <updated>1718038866938</updated>
+      <updated>1718094627648</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL‎-00023" summary="finished geometries test">
+      <option name="closed" value="true" />
+      <created>1718094682273</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL‎-00023" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1718094682273</updated>
+    </task>
+    <task id="LOCAL‎-00024" summary="finished geometries test">
+      <option name="closed" value="true" />
+      <created>1718097907539</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL‎-00024" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1718097907539</updated>
+    </task>
+    <task id="LOCAL‎-00025" summary="finished geometries test">
+      <option name="closed" value="true" />
+      <created>1718097927598</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL‎-00025" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1718097927598</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -438,8 +475,8 @@
     <MESSAGE value="finished 2" />
     <MESSAGE value="finished sphera test almost" />
     <MESSAGE value="test find-intersection triangle and plane finished unchecked" />
-    <MESSAGE value="test geometries" />
-    <option name="LAST_COMMIT_MESSAGE" value="test geometries" />
+    <MESSAGE value="finished geometries test" />
+    <option name="LAST_COMMIT_MESSAGE" value="finished geometries test" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

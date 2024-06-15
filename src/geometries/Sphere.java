@@ -3,6 +3,8 @@ package geometries;
 import primitives.Point;
 import primitives.Ray;
 import primitives.Vector;
+
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -35,8 +37,38 @@ public class Sphere extends RadialGeometry {
     public Vector getNormal(Point p) {
         return p.subtract(center).normalize();
     }
- @Override
-   public List<Point> findIntersections(Ray ray) {
-      return null;
-   }
+
+    @Override
+    public List<Point> findIntersections(Ray ray) {
+        Vector u=this.center.subtract(ray.getHead());
+        double tm=u.dotProduct(ray.getDirection());
+        double d=Math.sqrt((u.dotProduct(ray.getDirection())-tm*tm));
+        if (d>this.radius)
+            return null;
+        double th=Math.sqrt(radius*radius-d*d);
+        if(tm-th >0)
+        {
+            if(tm+th>0)
+            {
+                return new LinkedList<>(List.of(
+                        new Point(
+                                ray.getHead().add(ray.getDirection().scale((tm+th))).getXYZ()),
+                        new Point(
+                                ray.getHead().add(ray.getDirection().scale((tm-th))).getXYZ())));
+            }
+            else
+            {
+                return new LinkedList<>(List.of(
+                        new Point(
+                                ray.getHead().add(ray.getDirection().scale((tm-th))).getXYZ())));
+            }
+        }
+        else
+        {
+            return new LinkedList<>(List.of(
+                    new Point(
+                            ray.getHead().add(ray.getDirection().scale((tm+th))).getXYZ())));
+        }
+
+    }
 }
