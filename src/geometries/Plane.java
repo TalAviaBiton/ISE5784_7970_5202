@@ -80,10 +80,9 @@ public class Plane implements Geometry {
      @Override
    public List<Point> findIntersections(Ray ray) {
 
-        //if(normal.dotProduct(q.subtract(ray.getHead().add(ray.getDirection().scale(ray.getPoint())))))
+         double t= this.normal.dotProduct(q.subtract(ray.getHead()))/(normal.dotProduct(ray.getDirection()));
          return new LinkedList<>(List.of(
-                 new Point(
-                         this.normal.crossProduct(q.subtract(ray.getHead())).scale(
-                                 1/(normal.dotProduct(ray.getDirection()))).getXYZ())));
+                         ray.getHead().add(ray.getDirection().scale(t))));
+
    }
 }

@@ -51,23 +51,19 @@ public class Sphere extends RadialGeometry {
             if(tm+th>0)
             {
                 return new LinkedList<>(List.of(
-                        new Point(
-                                ray.getHead().add(ray.getDirection().scale((tm+th))).getXYZ()),
-                        new Point(
-                                ray.getHead().add(ray.getDirection().scale((tm-th))).getXYZ())));
+                                ray.getHead().add(ray.getDirection().scale((tm+th))),
+                                ray.getHead().add(ray.getDirection().scale((tm-th)))));
             }
             else
             {
                 return new LinkedList<>(List.of(
-                        new Point(
-                                ray.getHead().add(ray.getDirection().scale((tm-th))).getXYZ())));
+                                ray.getHead().add(ray.getDirection().scale((tm-th)))));
             }
         }
         else
         {
             return new LinkedList<>(List.of(
-                    new Point(
-                            ray.getHead().add(ray.getDirection().scale((tm+th))).getXYZ())));
+                            ray.getHead().add(ray.getDirection().scale((tm+th)))));
         }
 
     }
