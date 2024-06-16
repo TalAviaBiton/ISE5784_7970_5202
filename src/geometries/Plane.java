@@ -83,12 +83,15 @@ public class Plane implements Geometry {
      */
      @Override
    public List<Point> findIntersections(Ray ray) {
-
-         double t= this.normal.dotProduct(q.subtract(ray.getHead()))/(normal.dotProduct(ray.getDirection()));
+        if(ray.getHead().equals(q))
+            return null;
+         double t= normal.dotProduct(q.subtract(ray.getHead()))/(normal.dotProduct(ray.getDirection()));
+         if(t<0 ||ray.getDirection().dotProduct(this.normal)==0)
+             return null;
          if(isZero(t))
-             throw new IllegalArgumentException("ERROR: common ground for plane is 0");
+             return null;
          return new LinkedList<>(List.of(
-                         ray.getHead().add(ray.getDirection().scale(t))));
+                         ray.getPoint(t)));
 
    }
 }

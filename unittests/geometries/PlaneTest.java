@@ -17,7 +17,9 @@ class PlaneTest {
 
     /** Test method for {@link geometries.Plane#Plane(Point, Point, Point)}  */
 
-    /**Test method for {@link geometries.Plane#Plane(Vector, Point)}    */
+    /**
+     * Test method for {@link geometries.Plane#Plane(Vector, Point)}
+     */
     public PlaneTest() {
         Point p1 = new Point(1, 1, 1);
         Point p2 = new Point(1, 1, 1);
@@ -82,77 +84,77 @@ class PlaneTest {
     /**
      * Test method for {@link geometries.Plane#findIntersections(Ray)}
      */
-     @Test
+    @Test
     void testFindIntersections() {
-         Plane plane = new Plane(new Vector(3, 3, 3), new Point(1, 1, 1));
-         // ============ Equivalence Partitions Tests ==============
-         //TC01: Ray crosses the plane (1 point)
-         var exp01= List.of(new Point (1.6, 0.4, 1));
-         assertEquals(
-                 exp01,
-                 plane.findIntersections(
-                         new Ray(
-                                 new Point(1, 0, 1),
-                                 new Vector(3,2, 0).normalize())),
-                 "ERROR: Ray crosses the plane returns a wrong point");
-         //TC02: Ray doesn't cross the plane (0 points)
-         assertNull(
-                 plane.findIntersections(
-                         new Ray(
-                                 new Point(1, 2, 3),
-                                 new Vector(6, 0, 7).normalize())),
-                                "ERROR: Ray doesn't cross the plane returns a point");
-         // =============== Boundary Values Tests ==================
-         //TC11: Ray is parallel to the plane and the direction vector is on the plane (0 points)
-         assertNull(
-                 plane.findIntersections(
-                         new Ray(
-                                 new Point(0, 0, -9),
-                                 new Vector(-6, 5, 1).normalize())),
-                 "ERROR: Ray is parallel to the plane and the direction vector is on the plane returns a point");
-         //TC12: Ray is parallel to the plane and the direction vector isn't on the plane (0 points)
-         assertNull(
-                 plane.findIntersections(
-                         new Ray(
-                                 new Point(1, -1, 2),
-                                 new Vector(1, -4, 3).normalize())),
-                 "ERROR: Ray is parallel to the plane and the direction vector isn't on the plane returns a point");
-         //TC13: Ray is vertical to the plane and starts before the plane (1 point)
-         var exp13= List.of(new Point (55, 54, 54));
-         assertEquals(
-                 exp13,
-                 plane.findIntersections(
-                         new Ray(
-                                 new Point (1,0,0),
-                                 new Vector(6, 6, 6).normalize())),
-                 "ERROR: Ray is vertical to the plane and starts before the plane returns a wrong point");
-         //TC14: Ray is vertical to the plane and starts on the plane (0 points)
-         assertNull(
-                 plane.findIntersections(
-                         new Ray(
-                                 new Point(2, 1, 0),
-                                 new Vector(6, 6, 6).normalize())),
-                 "ERROR: Ray is vertical to the plane and starts on the plane returns a point");
-         //TC15: Ray is vertical to the plane and starts after the plane (0 points)
-         assertNull(
-                 plane.findIntersections(
-                         new Ray(
-                                 new Point(4, 8, 7),
-                                 new Vector(6, 6, 6).normalize())),
-                 "ERROR: Ray is vertical to the plane and starts after the plane returns a point");
-         //TC16: Ray starts on the plane's head point and isn't vertical or parallel to the plane (0 points)
-         assertNull(
-                 plane.findIntersections(
-                         new Ray(
-                                 new Point(1, 1, 1),
-                                 new Vector(6, 7, 0).normalize())),
-                 "ERROR: Ray starts on the plane's head point and isn't vertical or parallel to the plane returns a point");
-         //TC17: Ray starts on the plane and isn't vertical or parallel to the plane (0 points)
-         assertNull(
-                 plane.findIntersections(
-                         new Ray(
-                                 new Point(2, 2, -1),
-                                 new Vector(6, 7, 0).normalize())),
-                 "ERROR: Ray starts on the plane  and isn't vertical or parallel to the plane returns a point");
-     }
+        Plane plane = new Plane(new Vector(3, 3, 3), new Point(1, 1, 1));
+        // ============ Equivalence Partitions Tests ==============
+        //TC01: Ray crosses the plane (1 point)
+        var exp01 = List.of(new Point(1.6, 0.4, 1));
+        assertEquals(
+                exp01,
+                plane.findIntersections(
+                        new Ray(
+                                new Point(1, 0, 1),
+                                new Vector(3, 2, 0))),
+                "ERROR: Ray crosses the plane returns a wrong point");
+        //TC02: Ray doesn't cross the plane (0 points)
+        assertNull(
+                plane.findIntersections(
+                        new Ray(
+                                new Point(1, 2, 3),
+                                new Vector(6, 0, 7))),
+                "ERROR: Ray doesn't cross the plane returns a point");
+        // =============== Boundary Values Tests ==================
+        //TC11: Ray is parallel to the plane and the direction vector is on the plane (0 points)
+        assertNull(
+                plane.findIntersections(
+                        new Ray(
+                                new Point(0, 0, -9),
+                                new Vector(-6, 5, 1))),
+                "ERROR: Ray is parallel to the plane and the direction vector is on the plane returns a point");
+        //TC12: Ray is parallel to the plane and the direction vector isn't on the plane (0 points)
+        assertNull(
+                plane.findIntersections(
+                        new Ray(
+                                new Point(1, -1, 2),
+                                new Vector(1, -4, 3))),
+                "ERROR: Ray is parallel to the plane and the direction vector isn't on the plane returns a point");
+        //TC13: Ray is vertical to the plane and starts before the plane (1 point)
+        var exp13 = List.of(new Point(0, 1, 2));
+        assertEquals(
+                exp13,
+                plane.findIntersections(
+                        new Ray(
+                                new Point(-1, 0, 1),
+                                new Vector(1, 1, 1))),
+                "ERROR: Ray is vertical to the plane and starts before the plane returns a wrong point");
+        //TC14: Ray is vertical to the plane and starts on the plane (0 points)
+        assertNull(
+                plane.findIntersections(
+                        new Ray(
+                                new Point(2, 1, 0),
+                                new Vector(6, 6, 6))),
+                "ERROR: Ray is vertical to the plane and starts on the plane returns a point");
+        //TC15: Ray is vertical to the plane and starts after the plane (0 points)
+        assertNull(
+                plane.findIntersections(
+                        new Ray(
+                                new Point(4, 8, 7),
+                                new Vector(6, 6, 6))),
+                "ERROR: Ray is vertical to the plane and starts after the plane returns a point");
+        //TC16: Ray starts on the plane's head point and isn't vertical or parallel to the plane (0 points)
+        assertNull(
+                plane.findIntersections(
+                        new Ray(
+                                new Point(1, 1, 1),
+                                new Vector(6, 7, 0))),
+                "ERROR: Ray starts on the plane's head point and isn't vertical or parallel to the plane returns a point");
+        //TC17: Ray starts on the plane and isn't vertical or parallel to the plane (0 points)
+        assertNull(
+                plane.findIntersections(
+                        new Ray(
+                                new Point(2, 2, -1),
+                                new Vector(6, 7, 0))),
+                "ERROR: Ray starts on the plane  and isn't vertical or parallel to the plane returns a point");
+    }
 }
