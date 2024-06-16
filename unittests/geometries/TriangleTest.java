@@ -44,6 +44,9 @@ class TriangleTest {
                 "Polygon's normal is not a unit vector");
 
     }
+    /**
+     * Test method for {@link geometries.Triangle#findIntersections(Ray)}
+     */
      @Test
     void testFindIntersections() {
          Point[] points =

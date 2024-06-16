@@ -6,6 +6,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class RayTest {
 
+    /**
+     * Test method for {@link primitives.Ray#getPoint(double)}
+     */
     @Test
     void getPoint() {
 

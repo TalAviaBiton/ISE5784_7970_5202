@@ -78,6 +78,10 @@ class PlaneTest {
         assertEquals(1, plane.getNormal().length(), "ERROR: the normal of the plane is not normalize");
 
     }
+
+    /**
+     * Test method for {@link geometries.Plane#findIntersections(Ray)}
+     */
      @Test
     void testFindIntersections() {
          Plane plane = new Plane(new Vector(3, 3, 3), new Point(1, 1, 1));

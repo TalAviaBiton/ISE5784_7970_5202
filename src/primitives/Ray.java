@@ -51,7 +51,7 @@ public class Ray {
 
     /**
      * Calculates a point on the line of the ray, at a distance t
-     * @param t      the head of the ray
+     * @param t the distance between the calculated point and the ray's head
      */
     public Point getPoint(double t) {
         if(isZero(t))
