@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4b50f3a7-ff92-41f1-86dd-01d3b21a2dd1" name="Changes" comment="finished geometries test">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/geometries/Plane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Plane.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/geometries/Sphere.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Sphere.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/geometries/Triangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Triangle.java" afterDir="false" />
-    </list>
+    <list default="true" id="4b50f3a7-ff92-41f1-86dd-01d3b21a2dd1" name="Changes" comment="did some of th intersections" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -239,7 +234,7 @@
       <workItem from="1717675831836" duration="10165000" />
       <workItem from="1717760011253" duration="414000" />
       <workItem from="1718097662813" duration="285000" />
-      <workItem from="1718375875289" duration="3419000" />
+      <workItem from="1718375875289" duration="3456000" />
     </task>
     <task id="LOCAL‎-00001" summary="all the tests worked and i finished the nots">
       <option name="closed" value="true" />
@@ -441,7 +436,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1718097927598</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL‎-00026" summary="did some of th intersections">
+      <option name="closed" value="true" />
+      <created>1718379349255</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL‎-00026" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1718379349255</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -476,7 +479,8 @@
     <MESSAGE value="finished sphera test almost" />
     <MESSAGE value="test find-intersection triangle and plane finished unchecked" />
     <MESSAGE value="finished geometries test" />
-    <option name="LAST_COMMIT_MESSAGE" value="finished geometries test" />
+    <MESSAGE value="did some of th intersections" />
+    <option name="LAST_COMMIT_MESSAGE" value="did some of th intersections" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
