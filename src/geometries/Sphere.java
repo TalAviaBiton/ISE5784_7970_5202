@@ -6,6 +6,8 @@ import primitives.Vector;
 
 import java.util.LinkedList;
 import java.util.List;
+import static primitives.Util.*;
+
 
 /**
  * This class represents a sphere

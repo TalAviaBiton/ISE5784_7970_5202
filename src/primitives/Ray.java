@@ -1,5 +1,5 @@
 package primitives;
-
+import static primitives.Util.*;
 /**
  * This class will serve most geometries classes by representing a ray
  */
@@ -54,7 +54,8 @@ public class Ray {
      * @param t      the head of the ray
      */
     public Point getPoint(double t) {
-
+        if(isZero(t))
+            throw new IllegalArgumentException("ERROR: argument t is 0");
         return head.add(direction.scale(t));
     }
 }

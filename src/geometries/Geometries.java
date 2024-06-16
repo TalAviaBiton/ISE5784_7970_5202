@@ -20,23 +20,28 @@ public class Geometries implements Intersectable{
 
     @Override
     public List<Point> findIntersections(Ray ray) {
+
         int i=0;
-        boolean flag=false;
-        for (Intersectable geometry = geometries.get(i); geometry!=null; geometry=geometries.get(i)) {
+        int counter=0; //the number of intersections
+        boolean flag=false; //if there are no intersections
+        for (Intersectable geometry = geometries.get(0); geometry!=null; geometry=geometries.get(i)) {
             i++;
             if(geometry.findIntersections(ray)!=null) {
                 flag = true;
-                break;
+                counter++;
             }
         }
         if(flag) {
+            i=0;
             List <Point> intersectionsPoints=new LinkedList<>(List.of());
-            for (Intersectable geometry = geometries.get(i); geometry!=null; geometry=geometries.get(i)){
+            for (Intersectable geometry = geometries.get(0); geometry!=null; geometry=geometries.get(i)){
+                i++;
                 intersectionsPoints.addAll(geometry.findIntersections(ray));
             }
             return intersectionsPoints;
         }
         return null;
+
     }
 
 }

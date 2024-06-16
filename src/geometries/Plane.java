@@ -6,9 +6,11 @@ package geometries;
 import primitives.Point;
 import primitives.Ray;
 import primitives.Vector;
-
+import static primitives.Util.*;
 import java.util.LinkedList;
 import java.util.List;
+
+import static primitives.Util.isZero;
 
 
 public class Plane implements Geometry {
@@ -81,6 +83,8 @@ public class Plane implements Geometry {
    public List<Point> findIntersections(Ray ray) {
 
          double t= this.normal.dotProduct(q.subtract(ray.getHead()))/(normal.dotProduct(ray.getDirection()));
+         if(isZero(t))
+             throw new IllegalArgumentException("ERROR: common ground for plane is 0");
          return new LinkedList<>(List.of(
                          ray.getHead().add(ray.getDirection().scale(t))));
 

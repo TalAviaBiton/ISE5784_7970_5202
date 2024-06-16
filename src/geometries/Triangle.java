@@ -9,6 +9,8 @@ import primitives.Vector;
 
 import java.util.LinkedList;
 import java.util.List;
+import static primitives.Util.*;
+
 
 public class Triangle extends Polygon {
     /**
@@ -42,6 +44,7 @@ public class Triangle extends Polygon {
                          && ray.getDirection().dotProduct(n2)<0
                          && ray.getDirection().dotProduct(n3)<0))
             return intersectionPlane;
+
         return null;
    }
 }
