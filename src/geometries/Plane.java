@@ -6,9 +6,11 @@ package geometries;
 import primitives.Point;
 import primitives.Ray;
 import primitives.Vector;
-
+import static primitives.Util.*;
 import java.util.LinkedList;
 import java.util.List;
+
+import static primitives.Util.isZero;
 
 
 public class Plane implements Geometry {
@@ -24,7 +26,6 @@ public class Plane implements Geometry {
 
     /**
      * Constructor to initialize the plane
-     *
      * @param p1 the first point
      * @param p2 second point value
      * @param p3 third point value
@@ -42,7 +43,6 @@ public class Plane implements Geometry {
 
     /**
      * Constructor to initialize the plane
-     *
      * @param q      the  point
      * @param normal the normal for the plane
      */
@@ -53,7 +53,6 @@ public class Plane implements Geometry {
 
     /**
      * a method to normalize the normal
-     *
      * @return the normal of the plane
      */
     public Vector getNormal() {
@@ -62,7 +61,6 @@ public class Plane implements Geometry {
 
     /**
      * a method to return q
-     *
      * @return q
      */
     public Point getQ() {
@@ -77,13 +75,20 @@ public class Plane implements Geometry {
     public Vector getNormal(Point point) {
         return normal;
     }
+
+    /**
+     * finds all the intersections of a ray and the plane
+     * @param ray the ray that we want to check intersections with
+     * @return a list of the intersections of ray and plane
+     */
      @Override
    public List<Point> findIntersections(Ray ray) {
 
-        //if(normal.dotProduct(q.subtract(ray.getHead().add(ray.getDirection().scale(ray.getPoint())))))
+         double t= this.normal.dotProduct(q.subtract(ray.getHead()))/(normal.dotProduct(ray.getDirection()));
+         if(isZero(t))
+             throw new IllegalArgumentException("ERROR: common ground for plane is 0");
          return new LinkedList<>(List.of(
-                 new Point(
-                         this.normal.crossProduct(q.subtract(ray.getHead())).scale(
-                                 1/(normal.dotProduct(ray.getDirection()))).getXYZ())));
+                         ray.getHead().add(ray.getDirection().scale(t))));
+
    }
 }

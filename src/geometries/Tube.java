@@ -32,7 +32,7 @@ public class Tube extends RadialGeometry {
         if (p.subtract(axis.getHead()).dotProduct(axis.getDirection()) == 0)
             throw new IllegalArgumentException("ERROR: the two points are vertical to the direction vector of the tube");
         double t = axis.getDirection().dotProduct(p.subtract(axis.getHead()));
-        Point o = axis.getHead().add(axis.getDirection().scale(t));
+        Point o = axis.getPoint(t);
         return p.subtract(o).normalize();
 //        return point.subtract(
 //                axis.getHead().add(

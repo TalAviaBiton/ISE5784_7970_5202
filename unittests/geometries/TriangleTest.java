@@ -44,6 +44,9 @@ class TriangleTest {
                 "Polygon's normal is not a unit vector");
 
     }
+    /**
+     * Test method for {@link geometries.Triangle#findIntersections(Ray)}
+     */
      @Test
     void testFindIntersections() {
          Point[] points =
@@ -52,15 +55,21 @@ class TriangleTest {
                          new Point(0, 1, 0)
                  };
          Triangle triangle = new Triangle(points[0], points[1], points[2]);
+         Point[] points2 =
+                 {       new Point(0, 0, 2),
+                         new Point(-3, 0, 0),
+                         new Point(0, -4, 0)
+                 };
+         Triangle triangle2 = new Triangle(points[0], points[1], points[2]);
          // ============ Equivalence Partitions Tests ==============
          //TC01: Ray crosses the triangle inside the triangle (1 point)
          var exp01= List.of(new Point (1,0.5,0.5));
          assertEquals(
                  exp01,
-                 triangle.findIntersections(
+                 triangle2.findIntersections(
                          new Ray(
-                                 new Point (2,0.5,0),
-                                 new Vector(-1, 0, 0.5).normalize())),
+                                 new Point (-6,0,1),
+                                 new Vector(0, -2, 0).normalize())),
                  "ERROR: Ray crosses the triangle inside the triangle returns a wrong point");
          //TC02: Ray pass out of the triangle opposite to a rib (0 points)
          assertNull(

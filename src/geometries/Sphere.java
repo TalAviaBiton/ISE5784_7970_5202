@@ -6,6 +6,8 @@ import primitives.Vector;
 
 import java.util.LinkedList;
 import java.util.List;
+import static primitives.Util.*;
+
 
 /**
  * This class represents a sphere
@@ -38,6 +40,11 @@ public class Sphere extends RadialGeometry {
         return p.subtract(center).normalize();
     }
 
+    /**
+     * finds all the intersections of a ray and the sphere
+     * @param ray the ray that we want to check intersections with
+     * @return a list of the intersections of ray and sphere
+     */
     @Override
     public List<Point> findIntersections(Ray ray) {
         Vector u=this.center.subtract(ray.getHead());
@@ -51,23 +58,19 @@ public class Sphere extends RadialGeometry {
             if(tm+th>0)
             {
                 return new LinkedList<>(List.of(
-                        new Point(
-                                ray.getHead().add(ray.getDirection().scale((tm+th))).getXYZ()),
-                        new Point(
-                                ray.getHead().add(ray.getDirection().scale((tm-th))).getXYZ())));
+                                ray.getHead().add(ray.getDirection().scale((tm+th))),
+                                ray.getHead().add(ray.getDirection().scale((tm-th)))));
             }
             else
             {
                 return new LinkedList<>(List.of(
-                        new Point(
-                                ray.getHead().add(ray.getDirection().scale((tm-th))).getXYZ())));
+                                ray.getHead().add(ray.getDirection().scale((tm-th)))));
             }
         }
         else
         {
             return new LinkedList<>(List.of(
-                    new Point(
-                            ray.getHead().add(ray.getDirection().scale((tm+th))).getXYZ())));
+                            ray.getHead().add(ray.getDirection().scale((tm+th)))));
         }
 
     }
