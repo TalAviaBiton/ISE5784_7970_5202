@@ -86,9 +86,7 @@ public class Plane implements Geometry {
         if(ray.getHead().equals(q))
             return null;
          double t= normal.dotProduct(q.subtract(ray.getHead()))/(normal.dotProduct(ray.getDirection()));
-         if(t<0 ||ray.getDirection().dotProduct(this.normal)==0)
-             return null;
-         if(isZero(t))
+         if(t<=0 ||isZero(ray.getDirection().dotProduct(this.normal)))
              return null;
          return new LinkedList<>(List.of(
                          ray.getPoint(t)));

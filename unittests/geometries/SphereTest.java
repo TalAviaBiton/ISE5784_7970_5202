@@ -38,17 +38,16 @@ class SphereTest {
 
     }
 
-    private final Point p001 = new Point(0, 0, 1);
-    private final Point p100 = new Point(1, 0, 0);
-    private final Point p110 = new Point(1, 1, 0);
-    private final Vector v001 = new Vector(0, 0, 1);
-
     /**
      * Test method for {@link geometries.Sphere#findIntersections(primitives.Ray)}.
      */
 
     @Test
     void testFindIntersections() {
+        final Point p001 = new Point(0, 0, 1);
+        final Point p100 = new Point(1, 0, 0);
+        final Point p110 = new Point(1, 1, 0);
+        final Vector v001 = new Vector(0, 0, 1);
         Sphere sphere = new Sphere(p100, 1d);
         Sphere sphere2 = new Sphere(p001, 3.81);
         Sphere sphere3 = new Sphere(p100, 0.87);
@@ -66,7 +65,7 @@ class SphereTest {
         assertNull(sphere.findIntersections(new Ray(p01, v110)), "Ray's line out of sphere");
         // TC02: Ray starts before and crosses the sphere (2 points)
         final var result1 = sphere.findIntersections(new Ray(p01, v310))
-                .stream().sorted(Comparator.comparingDouble(p ->p.distance(p01))).toList();
+            .stream().sorted(Comparator.comparingDouble(p ->p.distance(p01))).toList();
         assertEquals(2, result1.size(), "Wrong number of points");
         assertEquals(exp, result1, "Ray crosses sphere");
         // TC03: Ray starts inside the sphere (1 point)

@@ -50,7 +50,7 @@ public class Sphere extends RadialGeometry {
         Vector u=this.center.subtract(ray.getHead());
         double tm=u.dotProduct(ray.getDirection());
         double d=Math.sqrt((u.dotProduct(ray.getDirection())-tm*tm));
-        if (d>this.radius)
+        if (d>this.radius || this.center.distance(ray.getHead())==this.radius )
             return null;
         double th=Math.sqrt(radius*radius-d*d);
         if(tm-th >0)
@@ -69,8 +69,8 @@ public class Sphere extends RadialGeometry {
         }
         else
         {
-            return new LinkedList<>(List.of(
-                            ray.getHead().add(ray.getDirection().scale((tm+th)))));
+             return new LinkedList<>(List.of(
+                           ray.getHead().add(ray.getDirection().scale((tm+th)))));
         }
 
     }
