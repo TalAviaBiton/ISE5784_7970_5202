@@ -84,12 +84,11 @@ public class Plane implements Geometry {
      @Override
    public List<Point> findIntersections(Ray ray) {
         if(ray.getHead().equals(q))
-            return null;
+            return null
          double t= normal.dotProduct(q.subtract(ray.getHead()))/(normal.dotProduct(ray.getDirection()));
-         if(t<=0 ||isZero(ray.getDirection().dotProduct(this.normal)))
+         if(t<=0 ||isZero(ray.getDirection().dotProduct(normal)))
              return null;
-         return new LinkedList<>(List.of(
-                         ray.getPoint(t)));
+         return List.of(ray.getPoint(t));
 
    }
 }
