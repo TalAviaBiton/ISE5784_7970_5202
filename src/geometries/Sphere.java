@@ -89,9 +89,9 @@ public class Sphere extends RadialGeometry {
         if (d >= radius ) //|| center.distance(ray.getHead())==radius)
             return null;
         double th = alignZero(Math.sqrt(radius * radius - d * d));
-        if(tm-th >0)
+        if(alignZero(tm - th) >0)
         {
-            if(tm+th>0)
+            if(alignZero(tm + th)>0)
             {
                 return List.of(
                                 ray.getPoint(alignZero(tm + th)),
@@ -105,7 +105,14 @@ public class Sphere extends RadialGeometry {
         }
         else
         {
-             return List.of( ray.getPoint(alignZero(tm + th)));
+            if(alignZero(tm + th)>0)
+            {
+                return List.of( ray.getPoint(alignZero(tm + th)));
+            }
+            else
+            {
+                return null;
+            }
         }
 
     }

@@ -6,8 +6,6 @@ package geometries;
 import primitives.Point;
 import primitives.Ray;
 import primitives.Vector;
-import static primitives.Util.*;
-import java.util.LinkedList;
 import java.util.List;
 
 import static primitives.Util.isZero;

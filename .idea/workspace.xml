@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4b50f3a7-ff92-41f1-86dd-01d3b21a2dd1" name="Changes" comment="stage 3 finished unchecked">
+    <list default="true" id="4b50f3a7-ff92-41f1-86dd-01d3b21a2dd1" name="Changes" comment="stage 3 finished">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/geometries/Plane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Plane.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Sphere.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Sphere.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -474,7 +476,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1718982583839</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL‎-00031" summary="stage 3 finished">
+      <option name="closed" value="true" />
+      <created>1718982622790</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL‎-00031" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1718982622790</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -511,7 +521,8 @@
     <MESSAGE value="finished geometries test" />
     <MESSAGE value="test geometries" />
     <MESSAGE value="stage 3 finished unchecked" />
-    <option name="LAST_COMMIT_MESSAGE" value="stage 3 finished unchecked" />
+    <MESSAGE value="stage 3 finished" />
+    <option name="LAST_COMMIT_MESSAGE" value="stage 3 finished" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
