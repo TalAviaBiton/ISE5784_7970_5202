@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4b50f3a7-ff92-41f1-86dd-01d3b21a2dd1" name="Changes" comment="stage 3 finished">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/geometries/Sphere.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Sphere.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Geometries.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Geometries.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unittests/geometries/SphereTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/geometries/SphereTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -58,6 +58,7 @@
     "JUnit.All in ISE5784_7970_5202.executor": "Run",
     "JUnit.CylinderTest.executor": "Run",
     "JUnit.CylinderTest.testGetNormal.executor": "Run",
+    "JUnit.GeomtriesTest.testFindIntersections.executor": "Run",
     "JUnit.PlaneTest.executor": "Run",
     "JUnit.PlaneTest.testFindIntersections.executor": "Run",
     "JUnit.PlaneTest.testGetNormal.executor": "Run",
@@ -118,8 +119,8 @@
       <recent name="primitives" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.SphereTest.testFindIntersections">
-    <configuration name="PlaneTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.GeomtriesTest.testFindIntersections">
+    <configuration name="GeomtriesTest.testFindIntersections" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ISE5784_7970_5202" />
       <extension name="coverage">
         <pattern>
@@ -128,8 +129,9 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="geometries" />
-      <option name="MAIN_CLASS_NAME" value="geometries.PlaneTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="geometries.GeomtriesTest" />
+      <option name="METHOD_NAME" value="testFindIntersections" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -199,11 +201,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.GeomtriesTest.testFindIntersections" />
         <item itemvalue="JUnit.SphereTest.testFindIntersections" />
         <item itemvalue="JUnit.SphereTest" />
         <item itemvalue="JUnit.TriangleTest.testFindIntersections" />
         <item itemvalue="JUnit.PlaneTest.testFindIntersections" />
-        <item itemvalue="JUnit.PlaneTest" />
       </list>
     </recent_temporary>
   </component>

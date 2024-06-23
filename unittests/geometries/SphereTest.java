@@ -86,14 +86,14 @@ class SphereTest {
         // =============== Boundary Values Tests ==================
 
         // **** Group: Ray's line crosses the sphere (but not the center)
-        // TC11: Ray starts at sphere and goes inside ( 1 point) unaccurate
-        var exp11 = List.of(new Point(0, -1.76, 1.941));
+        // TC11: Ray starts at sphere and goes inside ( 1 point)
+        var exp11 = List.of(new Point(2, 0, 1));
         assertEquals(
                 exp11,
                 sphere2.findIntersections(
                         new Ray(
                                 new Point(0, 0, 3),
-                                new Vector(0, -5, -3))),
+                                new Vector(2, 0, -2))),
                 "ERROR: Ray starts at sphere and goes inside doesn't return one point ");
         // TC12: Ray starts at sphere and goes outside (0 points)
         assertNull(
@@ -104,15 +104,15 @@ class SphereTest {
                 "ERROR: Ray starts at sphere and goes outside returns a point");
 
         // **** Group: Ray's line goes through the center
-        // TC13: Ray starts before the sphere (2 points) unaccurate
-           var exp13 = List.of( new Point(2.3, 1.15, 0), new Point(-0.3, -1.15, 0));
-                  assertEquals(
-                          exp13,
-                          sphere4.findIntersections(
-                                  new Ray(
-                                          new Point(-1.51, -2.23, 0),
-                                          new Vector(2.51, 2.23, 0))),
-                          "ERROR: Ray starts before the sphere and goes throw the middle returns a wrong number of points");
+        // TC13: Ray starts before the sphere (2 points)
+        var exp13 = List.of( new Point(-2, 0, 1), new Point(2, 0, 1));
+        assertEquals(
+                exp13,
+                sphere2.findIntersections(
+                        new Ray(
+                                new Point(3, 0, 1),
+                                new Vector(-3, 0, 0))),
+                "ERROR: Ray starts before the sphere and goes throw the middle returns a wrong number of points");
 
         // TC14: Ray starts at sphere and goes inside (1 point)
         var exp14 = List.of(new Point(-0.6, 0, -1.2));
@@ -124,23 +124,23 @@ class SphereTest {
                                 new Vector(-3, 0, -1))),
                 "ERROR: Ray starts at sphere and goes inside returns a wrong number of points");
 
-        // TC15: Ray starts inside (1 point) unaccurate
-          var exp15 = List.of(new Point(0, -1, -1));
-                  assertEquals(
-                          exp15,
-                          sphere4.findIntersections(
-                                  new Ray(
-                                          new Point(1.45, 0.45, 0.45),
-                                          new Vector(-0.45, -0.45, -0.45))),
-                          "ERROR: Ray starts inside returns a wrong number of points");
-        // TC16: Ray starts at the center (1 point) unaccurate
-        var exp16 = List.of(new Point(0.11, 0, 1.79));
+        // TC15: Ray starts inside (1 point)
+        var exp15 = List.of(new Point(0, 2, 1));
+        assertEquals(
+                exp15,
+                sphere2.findIntersections(
+                        new Ray(
+                                new Point(0, 0, 0.5),
+                                new Vector(0, 2, 0.5))),
+                "ERROR: Ray starts inside returns a wrong number of points");
+        // TC16: Ray starts at the center (1 point)
+        var exp16 = List.of(new Point(0, 2, 1));
         assertEquals(
                 exp16,
-                sphere4.findIntersections(
+                sphere2.findIntersections(
                         new Ray(
-                                new Point(1, 0, 0),
-                                new Vector(-1, 0, 2))),
+                                new Point(0, 0, 1),
+                                new Vector(0, 2, 0))),
                 "ERROR: Ray starts at the center returns a wrong number of points");
 
         // TC17: Ray starts at sphere and goes outside (0 points)
@@ -152,7 +152,7 @@ class SphereTest {
                           "ERROR: Ray starts at sphere and goes outside returns a point");
         // TC18: Ray starts after sphere (0 points)
         assertNull(
-                sphere4.findIntersections(
+                sphere2.findIntersections(
                         new Ray(
                                 new Point(1.5, 3, 0),
                                 new Vector(0.99, -2.9, 0))),
