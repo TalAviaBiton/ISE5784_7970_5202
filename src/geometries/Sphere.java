@@ -47,46 +47,14 @@ public class Sphere extends RadialGeometry {
      * @return a list of the intersections of ray and sphere
      */
 
- /**   @Override
-    public List<Point> findIntersections(Ray ray) {
-        Point head = ray.getHead();
-        Vector direction = ray.getDirection();
-
-        if (head.equals(center)) {
-            Point p = ray.getPoint(radius);
-            return List.of(p);
-        }
-        Vector u = center.subtract(head);
-        double tm = alignZero(direction.dotProduct(u));
-        double d = alignZero(Math.sqrt(u.lengthSquared() - tm * tm));
-        if (d >= radius) {
-            return null;
-        }
-        double th = alignZero(Math.sqrt(radius * radius - d * d));
-        double t1 = alignZero(tm - th);
-        double t2 = alignZero(tm + th);
-        if (t1 <= 0 && t2 <= 0) {
-            return null;
-        } else if (t2 <= 0) {
-            Point p1 = ray.getPoint(t1);
-            return List.of(p1);
-        } else if (t1 <= 0) {
-            Point p2 = ray.getPoint(t2);
-            return List.of(p2);
-        } else {
-            Point p1 = ray.getPoint(t1);
-            Point p2 = ray.getPoint(t2);
-            return List.of(p1, p2);
-        }
-    }**/
     @Override
     public List<Point> findIntersections(Ray ray) {
-        Vector u=center.subtract(ray.getHead());
         if(center.equals(ray.getHead()))
             return List.of(ray.getPoint(radius));
-        double tm=alignZero(u.dotProduct(ray.getDirection()));
+        Vector u=center.subtract(ray.getHead());
+        double tm=alignZero(ray.getDirection().dotProduct(u));
         double d=alignZero(Math.sqrt(u.lengthSquared()-tm*tm));
-        if (d >= radius ) //|| center.distance(ray.getHead())==radius)
+        if (d >= radius )
             return null;
         double th = alignZero(Math.sqrt(radius * radius - d * d));
         if(alignZero(tm - th) >0)
