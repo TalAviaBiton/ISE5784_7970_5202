@@ -6,8 +6,6 @@ package geometries;
 import primitives.Point;
 import primitives.Ray;
 import primitives.Vector;
-import static primitives.Util.*;
-import java.util.LinkedList;
 import java.util.List;
 
 import static primitives.Util.isZero;
@@ -86,12 +84,9 @@ public class Plane implements Geometry {
         if(ray.getHead().equals(q))
             return null;
          double t= normal.dotProduct(q.subtract(ray.getHead()))/(normal.dotProduct(ray.getDirection()));
-         if(t<0 ||ray.getDirection().dotProduct(this.normal)==0)
+         if(t<=0 ||isZero(ray.getDirection().dotProduct(normal)))
              return null;
-         if(isZero(t))
-             return null;
-         return new LinkedList<>(List.of(
-                         ray.getPoint(t)));
+         return List.of(ray.getPoint(t));
 
    }
 }

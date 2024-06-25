@@ -32,9 +32,9 @@ public class Triangle extends Polygon {
      @Override
    public List<Point> findIntersections(Ray ray) {
 
-         Point p1=this.vertices.get(0);
-         Point p2=this.vertices.get(1);
-         Point p3=this.vertices.get(2);
+         Point p1=vertices.get(0);
+         Point p2=vertices.get(1);
+         Point p3=vertices.get(2);
          if(ray.getHead().equals(p1) || ray.getHead().equals(p2) || ray.getHead().equals(p3))
              return null;
         Plane plane =new Plane(p1,p2,p3);

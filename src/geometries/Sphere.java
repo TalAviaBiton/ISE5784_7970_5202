@@ -42,35 +42,45 @@ public class Sphere extends RadialGeometry {
 
     /**
      * finds all the intersections of a ray and the sphere
+     *
      * @param ray the ray that we want to check intersections with
      * @return a list of the intersections of ray and sphere
      */
+
     @Override
     public List<Point> findIntersections(Ray ray) {
-        Vector u=this.center.subtract(ray.getHead());
-        double tm=u.dotProduct(ray.getDirection());
-        double d=Math.sqrt((u.dotProduct(ray.getDirection())-tm*tm));
-        if (d>this.radius)
+        if(center.equals(ray.getHead()))
+            return List.of(ray.getPoint(radius));
+        Vector u=center.subtract(ray.getHead());
+        double tm=alignZero(ray.getDirection().dotProduct(u));
+        double d=alignZero(Math.sqrt(u.lengthSquared()-tm*tm));
+        if (d >= radius )
             return null;
-        double th=Math.sqrt(radius*radius-d*d);
-        if(tm-th >0)
+        double th = alignZero(Math.sqrt(radius * radius - d * d));
+        if(alignZero(tm - th) >0)
         {
-            if(tm+th>0)
+            if(alignZero(tm + th)>0)
             {
-                return new LinkedList<>(List.of(
-                                ray.getHead().add(ray.getDirection().scale((tm+th))),
-                                ray.getHead().add(ray.getDirection().scale((tm-th)))));
+                return List.of(
+                                ray.getPoint(alignZero(tm + th)),
+                                ray.getPoint(alignZero(tm - th))
+                               );
             }
             else
             {
-                return new LinkedList<>(List.of(
-                                ray.getHead().add(ray.getDirection().scale((tm-th)))));
+                return List.of( ray.getPoint(alignZero(tm - th)));
             }
         }
         else
         {
-            return new LinkedList<>(List.of(
-                            ray.getHead().add(ray.getDirection().scale((tm+th)))));
+            if(alignZero(tm + th)>0)
+            {
+                return List.of( ray.getPoint(alignZero(tm + th)));
+            }
+            else
+            {
+                return null;
+            }
         }
 
     }
