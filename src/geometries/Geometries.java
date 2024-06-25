@@ -11,15 +11,26 @@ public class Geometries implements Intersectable {
 
     }
 
+    /**
+     * a constractor to the list
+     *
+     * @param geometries the geometries i put in the list of geometries
+     */
     public Geometries(Intersectable... geometries) {
         add(geometries);
     }
 
+    /**
+     * adds intersectable to the geometries list
+     *
+     * @param geometries the geometries i add to the list of geometries
+     */
     private void add(Intersectable... geometries) {
         Collections.addAll(this.geometries, geometries);
     }
 
-    /**
+
+     /**
      * finds all the intersections of a ray with all the geometries in the list
      *
      * @param ray the ray that we want to check intersections with
