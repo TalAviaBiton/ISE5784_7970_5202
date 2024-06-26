@@ -38,21 +38,21 @@ public class Camera implements Cloneable {
          *
          * @return a copy of the object camera
          */
-        public Camera build() throws CloneNotSupportedException {
+        public Camera build()  {
             if (camera.vUp == Vector.ZERO)
-                throw new MissingResourceException("", "Class Camera", "");
+                throw new MissingResourceException("Missing rendering data", "Class Camera", "Missing vUp");
             if (camera.vTo == Vector.ZERO)
-                throw new MissingResourceException("", "Class Camera", "");
+                throw new MissingResourceException("Missing rendering data", "Class Camera", "Missing vTo");
             if (camera.p0 == Point.ZERO)
-                throw new MissingResourceException("", "Class Camera", "");
+                throw new MissingResourceException("Missing rendering data", "Class Camera", "Missing p0");
             if (camera.distance == 0)
-                throw new MissingResourceException("", "Class Camera", "");
+                throw new MissingResourceException("Missing rendering data", "Class Camera", "Missing distance");
             if (camera.height == 0)
-                throw new MissingResourceException("", "Class Camera", "");
+                throw new MissingResourceException("Missing rendering data", "Class Camera", "Missing height");
             if (camera.width == 0)
-                throw new MissingResourceException("", "Class Camera", "");
+                throw new MissingResourceException("Missing rendering data", "Class Camera", "Missing width");
             setDirection(camera.vTo,camera.vUp);
-            return (Camera) camera.clone();
+            return (Camera) camera;//.clone()
         }
 
         /**
@@ -83,7 +83,7 @@ public class Camera implements Cloneable {
         }
 
         /**
-         * set the dot width and height of the view screen
+         * set the width and height of the view screen
          *
          * @param width the width of the view screen
          * @param height the height of the view screen
@@ -110,76 +110,68 @@ public class Camera implements Cloneable {
     /**
      * Constructor to initialize vector based object with a point
      *
-     * @param xyz the point for the initialization
      */
     private Camera() {
     }
 
     /**
-     * calculate the dot product of the two vectors
+     * a get method for vTo
      *
-     * @param v the second vector
-     * @return result the calculation of the dot product-int
+     * @return vTo
      */
     public Vector getvTo() {
         return vTo;
     }
 
     /**
-     * calculate the dot product of the two vectors
+     * a get method for vUp
      *
-     * @param v the second vector
-     * @return result the calculation of the dot product-int
+     * @return vUp
      */
     public Vector getvUp() {
         return vUp;
     }
 
     /**
-     * calculate the dot product of the two vectors
+     * a get method for p0
      *
-     * @param v the second vector
-     * @return result the calculation of the dot product-int
+     * @return p0
      */
     public Point getP0() {
         return p0;
     }
 
     /**
-     * calculate the dot product of the two vectors
+     * a get method for vRight
      *
-     * @param v the second vector
-     * @return result the calculation of the dot product-int
+     * @return vRight
      */
     public Vector getvRight() {
         return vRight;
     }
 
     /**
-     * calculate the dot product of the two vectors
+     * a get method for distance
      *
-     * @param v the second vector
-     * @return result the calculation of the dot product-int
+     * @return distance
      */
     public double getDistance() {
         return distance;
     }
 
     /**
-     * calculate the dot product of the two vectors
+     * a get method for height
      *
-     * @param v the second vector
-     * @return result the calculation of the dot product-int
+     * @return height
      */
     public double getHeight() {
         return height;
     }
 
     /**
-     * calculate the dot product of the two vectors
+     * a get method for width
      *
-     * @param v the second vector
-     * @return result the calculation of the dot product-int
+     * @return width
      */
     public double getWidth() {
         return width;
@@ -187,10 +179,9 @@ public class Camera implements Cloneable {
 
 
     /**
-     * calculate the dot product of the two vectors
+     * return a new object of the Builder class the mourner
      *
-     * @param v the second vector
-     * @return result the calculation of the dot product-int
+     * @return a new Builder
      */
     public static Camera.Builder getBuilder() {
         return new Builder();
@@ -199,7 +190,6 @@ public class Camera implements Cloneable {
     /**
      * calculate the dot product of the two vectors
      *
-     * @param v the second vector
      * @return result the calculation of the dot product-int
      */
     public Ray constructRay(int nX, int nY, int j, int i) {
