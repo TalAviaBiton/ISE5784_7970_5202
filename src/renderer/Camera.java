@@ -193,7 +193,13 @@ public class Camera implements Cloneable {
      * @return result the calculation of the dot product-int
      */
     public Ray constructRay(int nX, int nY, int j, int i) {
-        return null;
+
+        /**
+         *  במימוש המתודה יש לתת את הדעת למקרה של פיקסלים מרכזיים )כאשר במטריצה כמו ת אי זוגית של שורות ו-\או
+         * עמודות של פיקסלים(, כפי שמופיע בשקף המתאים במצגת המעבדה
+         * • נ.ב. האינדקסים של הפיקסלים מתחילים מ0- עד לכמות הפיקסלים בממד המתאים פחות אחת
+         */
+        return new Ray(p0,new Vector(new Vector(new Point(p0.add(vTo.scale(distance))).add()).subtract(p0)));
     }
 
 
