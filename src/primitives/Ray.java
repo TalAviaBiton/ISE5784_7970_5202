@@ -55,7 +55,7 @@ public class Ray {
      */
     public Point getPoint(double t) {
         if(isZero(t))
-            throw new IllegalArgumentException("ERROR: argument t is 0");
+            return head;
         return head.add(direction.scale(t));
     }
 }
