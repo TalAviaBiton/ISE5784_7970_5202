@@ -28,90 +28,18 @@ public class Camera implements Cloneable {
     private double width = 0.0;
 
     /**
-     * This class is builder class for camera
+     * Constructor to initialize vector based object with a point
      */
-    public static class Builder {
-        private final Camera camera = new Camera();
-
-        /**
-         * checking the parameters of camera
-         *
-         * @return a copy of the object camera
-         */
-        public Camera build()  {
-            if (camera.vUp == Vector.ZERO)
-                throw new MissingResourceException("Missing rendering data", "Class Camera", "Missing vUp");
-            if (camera.vTo == Vector.ZERO)
-                throw new MissingResourceException("Missing rendering data", "Class Camera", "Missing vTo");
-            if (camera.p0 == Point.ZERO)
-                throw new MissingResourceException("Missing rendering data", "Class Camera", "Missing p0");
-            if (camera.distance == 0)
-                throw new MissingResourceException("Missing rendering data", "Class Camera", "Missing distance");
-            if (camera.height == 0)
-                throw new MissingResourceException("Missing rendering data", "Class Camera", "Missing height");
-            if (camera.width == 0)
-                throw new MissingResourceException("Missing rendering data", "Class Camera", "Missing width");
-            setDirection(camera.vTo,camera.vUp);
-            return (Camera) camera;//.clone()
-        }
-
-        /**
-         * sets the location of the camera in the scene
-         *
-         * @param p0 the point that the camera is on
-         * @return the camera,this object
-         */
-        public Builder setLocation(Point p0) {
-            camera.p0 = p0;
-            return this;
-        }
-
-        /**
-         * set the direction of the camera
-         *
-         * @param vTo the vector that gives the 'to' forward direction
-         * @param vUp the vector that gives the upward direction
-         * @return the camera,this object
-         */
-        public Builder setDirection(Vector vTo, Vector vUp) {
-            if (vTo.dotProduct(vUp) != 0)
-                throw new IllegalArgumentException("vTo and vUp are not vertical");
-            camera.vTo = vTo.normalize();
-            camera.vUp = vUp.normalize();
-            camera.vRight = vTo.crossProduct(vUp).normalize();
-            return this;
-        }
-
-        /**
-         * set the width and height of the view screen
-         *
-         * @param width the width of the view screen
-         * @param height the height of the view screen
-         * @return the camera,this object
-         */
-        public Builder setVpSize(double width, double height) {
-            camera.height = height;
-            camera.width = width;
-            return this;
-        }
-
-        /**
-         * set the distance between the camera to the view screen
-         *
-         * @param distance the distance between the camera to the view screen
-         * @return the camera,this object
-         */
-        public Builder setVpDistance(double distance) {
-            camera.distance = distance;
-            return this;
-        }
+    private Camera() {
     }
 
     /**
-     * Constructor to initialize vector based object with a point
+     * return a new object of the Builder class the mourner
      *
+     * @return a new Builder
      */
-    private Camera() {
+    public static Camera.Builder getBuilder() {
+        return new Builder();
     }
 
     /**
@@ -177,30 +105,108 @@ public class Camera implements Cloneable {
         return width;
     }
 
-
-    /**
-     * return a new object of the Builder class the mourner
-     *
-     * @return a new Builder
-     */
-    public static Camera.Builder getBuilder() {
-        return new Builder();
-    }
-
     /**
      * calculate the dot product of the two vectors
      *
      * @return result the calculation of the dot product-int
      */
     public Ray constructRay(int nX, int nY, int j, int i) {
-        Point pc=vTo.scale(distance);
-        double Rx=width/nX;
-        double Ry=height/nY;
-        double xj=(j-(nX-1)/2)*Rx;
-        double yi=(i-(nY-1)/2)*Ry;
-        Vector pij= (Vector) pc.add(vRight.scale(xj).add(vUp.scale(yi)));
-        Vector uij=pij.subtract(p0);
-        return new Ray(p0,uij);
+        Point pC = p0.add(vTo.scale(distance));
+        double Rx = width / nX;
+        double Ry = height / nY;
+        double xJ = (j - (double) (nX - 1) / 2) * Rx;
+        double yI = -(i - (double) (nY - 1) / 2) * Ry;
+        Vector pIJ = new Vector(pC.getXYZ());
+        if (xJ != 0)
+            pIJ = pIJ.add(vRight.scale(xJ));
+        if (yI != 0)
+            pIJ = pIJ.add(vUp.scale(yI));
+        Vector vIJ = pIJ.subtract(p0);
+        return new Ray(p0, vIJ);
+    }
+
+    /**
+     * This class is builder class for camera
+     */
+    public static class Builder {
+        private final Camera camera = new Camera();
+
+        /**
+         * checking the parameters of camera
+         *
+         * @return a copy of the object camera
+         */
+        public Camera build() {
+            if (camera.vUp == Vector.ZERO)
+                throw new MissingResourceException("Missing rendering data", "Class Camera", "Missing vUp");
+            if (camera.vTo == Vector.ZERO)
+                throw new MissingResourceException("Missing rendering data", "Class Camera", "Missing vTo");
+            // if (camera.p0 == Point.ZERO)
+            //  throw new MissingResourceException("Missing rendering data", "Class Camera", "Missing p0");
+            if (camera.distance == 0)
+                throw new MissingResourceException("Missing rendering data", "Class Camera", "Missing distance");
+            if (camera.height == 0)
+                throw new MissingResourceException("Missing rendering data", "Class Camera", "Missing height");
+            if (camera.width == 0)
+                throw new MissingResourceException("Missing rendering data", "Class Camera", "Missing width");
+            setDirection(camera.vTo, camera.vUp);
+            try {
+                return (Camera) camera.clone();
+            } catch (CloneNotSupportedException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
+        /**
+         * sets the location of the camera in the scene
+         *
+         * @param p0 the point that the camera is on
+         * @return the camera,this object
+         */
+        public Builder setLocation(Point p0) {
+            camera.p0 = p0;
+            return this;
+        }
+
+        /**
+         * set the direction of the camera
+         *
+         * @param vTo the vector that gives the 'to' forward direction
+         * @param vUp the vector that gives the upward direction
+         * @return the camera,this object
+         */
+        public Builder setDirection(Vector vTo, Vector vUp) {
+            if (vTo.dotProduct(vUp) != 0)
+                throw new IllegalArgumentException("vTo and vUp are not vertical");
+            camera.vTo = vTo.normalize();
+            camera.vUp = vUp.normalize();
+            camera.vRight = vTo.crossProduct(vUp).normalize();
+            return this;
+        }
+
+        /**
+         * set the width and height of the view screen
+         *
+         * @param width  the width of the view screen
+         * @param height the height of the view screen
+         * @return the camera,this object
+         */
+        public Builder setVpSize(double width, double height) {
+            camera.height = height;
+            camera.width = width;
+            return this;
+        }
+
+        /**
+         * set the distance between the camera to the view screen
+         *
+         * @param distance the distance between the camera to the view screen
+         * @return the camera,this object
+         */
+        public Builder setVpDistance(double distance) {
+            camera.distance = distance;
+            return this;
+        }
     }
 
 

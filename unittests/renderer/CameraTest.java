@@ -4,16 +4,21 @@ import org.junit.jupiter.api.Test;
 import primitives.Point;
 import primitives.Ray;
 import primitives.Vector;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
 /**
  * Testing Camera Class
+ *
  * @author Dan
  */
 class CameraTest {
-    /** Camera builder for the tests */
+    /**
+     * Camera builder for the tests
+     */
     private final Camera.Builder cameraBuilder = Camera.getBuilder()
-   //         .setRayTracer(new SimpleRayTracer(new Scene("Test")))
-     //       .setImageWriter(new ImageWriter("Test", 1, 1))
+            //         .setRayTracer(new SimpleRayTracer(new Scene("Test")))
+            //       .setImageWriter(new ImageWriter("Test", 1, 1))
             .setLocation(Point.ZERO)
             .setDirection(new Vector(0, 0, -1), new Vector(0, -1, 0))
             .setVpDistance(10);
@@ -24,7 +29,7 @@ class CameraTest {
      */
     @Test
     void testConstructRay() {
-        final String badRay  = "Bad ray";
+        final String badRay = "Bad ray";
 
         // ============ Equivalence Partitions Tests ==============
         // EP01: 4X4 Inside (1,1)

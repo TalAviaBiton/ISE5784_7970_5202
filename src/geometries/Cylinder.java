@@ -1,9 +1,8 @@
-
 package geometries;
 
 import primitives.Point;
-import primitives.Vector;
 import primitives.Ray;
+import primitives.Vector;
 
 /**
  * This class represents a cylinder
@@ -39,11 +38,5 @@ public class Cylinder extends Tube {
         double t = axis.getDirection().dotProduct(p.subtract(axis.getHead()));
         Point o = axis.getHead().add(axis.getDirection().scale(t));
         return p.subtract(o).normalize();
-//        return point.subtract(
-//                        axis.getHead().add(
-//                                axis.getDirection().scale(
-//                                        axis.getDirection().dotProduct(
-//                                                point.subtract(axis.getHead()))))).
-//                normalize();
     }
 }

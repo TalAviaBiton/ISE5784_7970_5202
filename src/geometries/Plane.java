@@ -6,6 +6,7 @@ package geometries;
 import primitives.Point;
 import primitives.Ray;
 import primitives.Vector;
+
 import java.util.List;
 
 import static primitives.Util.isZero;
@@ -24,6 +25,7 @@ public class Plane implements Geometry {
 
     /**
      * Constructor to initialize the plane
+     *
      * @param p1 the first point
      * @param p2 second point value
      * @param p3 third point value
@@ -41,6 +43,7 @@ public class Plane implements Geometry {
 
     /**
      * Constructor to initialize the plane
+     *
      * @param q      the  point
      * @param normal the normal for the plane
      */
@@ -51,6 +54,7 @@ public class Plane implements Geometry {
 
     /**
      * a method to normalize the normal
+     *
      * @return the normal of the plane
      */
     public Vector getNormal() {
@@ -59,6 +63,7 @@ public class Plane implements Geometry {
 
     /**
      * a method to return q
+     *
      * @return q
      */
     public Point getQ() {
@@ -76,17 +81,18 @@ public class Plane implements Geometry {
 
     /**
      * finds all the intersections of a ray and the plane
+     *
      * @param ray the ray that we want to check intersections with
      * @return a list of the intersections of ray and plane
      */
-     @Override
-   public List<Point> findIntersections(Ray ray) {
-        if(ray.getHead().equals(q))
+    @Override
+    public List<Point> findIntersections(Ray ray) {
+        if (ray.getHead().equals(q))
             return null;
-         double t= normal.dotProduct(q.subtract(ray.getHead()))/(normal.dotProduct(ray.getDirection()));
-         if(t<=0 ||isZero(ray.getDirection().dotProduct(normal)))
-             return null;
-         return List.of(ray.getPoint(t));
+        double t = normal.dotProduct(q.subtract(ray.getHead())) / (normal.dotProduct(ray.getDirection()));
+        if (t <= 0 || isZero(ray.getDirection().dotProduct(normal)))
+            return null;
+        return List.of(ray.getPoint(t));
 
-   }
+    }
 }

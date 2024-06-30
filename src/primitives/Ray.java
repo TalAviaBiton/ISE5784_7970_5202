@@ -1,5 +1,7 @@
 package primitives;
-import static primitives.Util.*;
+
+import static primitives.Util.isZero;
+
 /**
  * This class will serve most geometries classes by representing a ray
  */
@@ -14,14 +16,6 @@ public class Ray {
      */
     protected Vector direction;
 
-    public Vector getDirection() {
-        return direction;
-    }
-
-    public Point getHead() {
-        return head;
-    }
-
     /**
      * Constructor to initialize the ray
      *
@@ -31,6 +25,14 @@ public class Ray {
     public Ray(Point head, Vector direction) {
         this.head = head;
         this.direction = direction.normalize();
+    }
+
+    public Vector getDirection() {
+        return direction;
+    }
+
+    public Point getHead() {
+        return head;
     }
 
     @Override
@@ -51,10 +53,11 @@ public class Ray {
 
     /**
      * Calculates a point on the line of the ray, at a distance t
+     *
      * @param t the distance between the calculated point and the ray's head
      */
     public Point getPoint(double t) {
-        if(isZero(t))
+        if (isZero(t))
             return head;
         return head.add(direction.scale(t));
     }

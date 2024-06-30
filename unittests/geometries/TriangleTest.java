@@ -5,11 +5,8 @@ import primitives.Point;
 import primitives.Ray;
 import primitives.Vector;
 
-import java.awt.*;
 import java.util.List;
-/**
- * testing triangle
- */
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class TriangleTest {

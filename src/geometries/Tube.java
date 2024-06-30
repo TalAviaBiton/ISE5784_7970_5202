@@ -4,8 +4,9 @@ package geometries;
  */
 
 import primitives.Point;
-import primitives.Vector;
 import primitives.Ray;
+import primitives.Vector;
+
 import java.util.List;
 
 
@@ -42,8 +43,9 @@ public class Tube extends RadialGeometry {
 //                normalize();
 
     }
-     @Override
-   public List<Point> findIntersections(Ray ray) {
-      return null;
-   }
+
+    @Override
+    public List<Point> findIntersections(Ray ray) {
+        return null;
+    }
 }

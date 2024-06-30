@@ -1,15 +1,14 @@
 package geometries;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 import org.junit.jupiter.api.Test;
-
-import geometries.Polygon;
 import primitives.Point;
 import primitives.Vector;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 /**
  * Testing Polygons
+ *
  * @author Dan
  */
 public class PolygonTest {
@@ -19,7 +18,9 @@ public class PolygonTest {
      */
     private final double DELTA = 0.000001;
 
-    /** Test method for {@link geometries.Polygon#Polygon(primitives.Point...)}. */
+    /**
+     * Test method for {@link geometries.Polygon#Polygon(primitives.Point...)}.
+     */
     @Test
     public void testConstructor() {
         // ============ Equivalence Partitions Tests ==============
@@ -89,7 +90,9 @@ public class PolygonTest {
 
     }
 
-    /** Test method for {@link geometries.Polygon#getNormal(primitives.Point)}. */
+    /**
+     * Test method for {@link geometries.Polygon#getNormal(primitives.Point)}.
+     */
     @Test
     public void testGetNormal() {
         // ============ Equivalence Partitions Tests ==============
@@ -98,7 +101,7 @@ public class PolygonTest {
                 {new Point(0, 0, 1),
                         new Point(1, 0, 0),
                         new Point(0, 1, 0),
-                        new Point(-1, 1, 1) };
+                        new Point(-1, 1, 1)};
         Polygon pol = new Polygon(pts);
         // ensure there are no exceptions
         assertDoesNotThrow(() -> pol.getNormal(new Point(0, 0, 1)), "");
@@ -111,7 +114,8 @@ public class PolygonTest {
             assertEquals(0d, result.dotProduct(pts[i].subtract(pts[i == 0 ? 3 : i - 1])), DELTA,
                     "Polygon's normal is not orthogonal to one of the edges");
     }
- @Test
+
+    @Test
     void testFindIntersections() {
 
     }
