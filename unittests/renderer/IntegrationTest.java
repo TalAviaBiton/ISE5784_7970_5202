@@ -38,18 +38,18 @@ public class IntegrationTest {
                         " small sphere with radius=1 (2 points)");
 
         // TC02: big sphere with radius=2.5 (18 points)
-        Sphere sphere2 = new Sphere(new Point(0, 0, -2.5), 2.5);
+        Sphere sphere2 = new Sphere(new Point(0, 0, -9), 9);
         assertEquals(18
                 , findIntersectionWithGeometry(camera1, sphere2),
                 "ERROR: wrong intersection points when:" +
                         "big sphere with radius=2.5 (18 points)");
 
-//        // TC03: medium sphere with radius=2 (10 points)
-//        Sphere sphere3 = new Sphere(new Point(0, 0, -2), 2);
-//        assertEquals(10
-//                , findIntersectionWithGeometry(camera1, sphere3),
-//                "ERROR: wrong intersection points when:" +
-//                        " medium sphere with radius=2 (10 points)");
+        // TC03: medium sphere with radius=2 (10 points)
+        Sphere sphere3 = new Sphere(new Point(0, 0, -5), 5);
+        assertEquals(10
+                , findIntersectionWithGeometry(camera1, sphere3),
+                "ERROR: wrong intersection points when:" +
+                        " medium sphere with radius=2 (10 points)");
 
         // TC04: big sphere with radius=5 part of the sphere is behind the camera (9 points)
         Sphere sphere4 = new Sphere(new Point(0, 0, -1), 5);
