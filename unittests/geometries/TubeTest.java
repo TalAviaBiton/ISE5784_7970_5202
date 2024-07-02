@@ -1,7 +1,6 @@
 package geometries;
 
 import org.junit.jupiter.api.Test;
-import primitives.Double3;
 import primitives.Point;
 import primitives.Ray;
 import primitives.Vector;
@@ -42,7 +41,8 @@ class TubeTest {
                 "ERROR: the two points are vertical to the direction vector of the tube");
 
     }
-     @Test
+
+    @Test
     void testFindIntersections() {
 
     }

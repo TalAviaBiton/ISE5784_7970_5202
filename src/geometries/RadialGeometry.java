@@ -1,4 +1,5 @@
 package geometries;
+
 import primitives.Point;
 import primitives.Ray;
 
@@ -21,8 +22,9 @@ public abstract class RadialGeometry implements Geometry {
     protected RadialGeometry(double radius) {
         this.radius = radius;
     }
+
     @Override
-   public List<Point> findIntersections(Ray ray) {
-      return null;
-   }
+    public List<Point> findIntersections(Ray ray) {
+        return null;
+    }
 }

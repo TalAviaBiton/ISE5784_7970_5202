@@ -2,9 +2,8 @@ package primitives;
 
 import org.junit.jupiter.api.Test;
 
-import static java.lang.System.out;
-import static org.junit.jupiter.api.Assertions.*;
-import static primitives.Util.isZero;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 /**
  * testing point
@@ -75,7 +74,7 @@ class PointTest {
         // TC07: checking if the calculation of distanceSquared (between the same points as TC06) is right
         assertEquals(
                 9,
-                p3.distanceSquared(p1) ,
+                p3.distanceSquared(p1),
                 "ERROR: squared distance between points is wrong");
 
     }
@@ -94,13 +93,13 @@ class PointTest {
         // TC09: checking if the calculation of distance is right
         assertEquals(
                 3,
-                p1.distance(p3) ,
+                p1.distance(p3),
                 "ERROR: distance between points is wrong");
 
         // TC10: checking if the calculation of distance (between the same points as TC06) is right
         assertEquals(
                 3,
-                p3.distance(p1) ,
+                p3.distance(p1),
                 "ERROR: distance between points is wrong");
 
     }

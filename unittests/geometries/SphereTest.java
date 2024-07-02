@@ -8,7 +8,6 @@ import primitives.Vector;
 import java.util.Comparator;
 import java.util.List;
 
-import static java.util.stream.Collectors.toList;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
@@ -63,7 +62,7 @@ class SphereTest {
         assertNull(sphere.findIntersections(new Ray(p01, v110)), "Ray's line out of sphere");
         // TC02: Ray starts before and crosses the sphere (2 points)
         final var result1 = sphere.findIntersections(new Ray(p01, v310))
-            .stream().sorted(Comparator.comparingDouble(p ->p.distance(p01))).toList();
+                .stream().sorted(Comparator.comparingDouble(p -> p.distance(p01))).toList();
         assertEquals(2, result1.size(), "Wrong number of points");
         assertEquals(exp, result1, "Ray crosses sphere");
         // TC03: Ray starts inside the sphere (1 point)
@@ -105,7 +104,7 @@ class SphereTest {
 
         // **** Group: Ray's line goes through the center
         // TC13: Ray starts before the sphere (2 points)
-        var exp13 = List.of( new Point(-2, 0, 1), new Point(2, 0, 1));
+        var exp13 = List.of(new Point(-2, 0, 1), new Point(2, 0, 1));
         assertEquals(
                 exp13,
                 sphere2.findIntersections(
@@ -144,12 +143,12 @@ class SphereTest {
                 "ERROR: Ray starts at the center returns a wrong number of points");
 
         // TC17: Ray starts at sphere and goes outside (0 points)
-           assertNull(
-                          sphere4.findIntersections(
-                                  new Ray(
-                                          new Point(0, 3, 0),
-                                          new Vector(-0.3, 2, 0))),
-                          "ERROR: Ray starts at sphere and goes outside returns a point");
+        assertNull(
+                sphere4.findIntersections(
+                        new Ray(
+                                new Point(0, 3, 0),
+                                new Vector(-0.3, 2, 0))),
+                "ERROR: Ray starts at sphere and goes outside returns a point");
         // TC18: Ray starts after sphere (0 points)
         assertNull(
                 sphere2.findIntersections(
