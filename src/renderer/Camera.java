@@ -207,6 +207,9 @@ public class Camera implements Cloneable {
             camera.distance = distance;
             return this;
         }
+
+        public Builder setRayTracer(SimpleRayTracer simpleRayTracer) {
+        }
     }
 
 

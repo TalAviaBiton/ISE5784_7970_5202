@@ -41,4 +41,7 @@ class RayTest {
 
     }
 
+    @Test
+    void testFindClosestPoint() {
+    }
 }
