@@ -1,5 +1,6 @@
 package renderer;
 
+import primitives.Color;
 import primitives.Point;
 import primitives.Ray;
 import primitives.Vector;
@@ -9,7 +10,7 @@ import java.util.MissingResourceException;
 /**
  * This class represents the camera in the scene
  */
-public class Camera implements Cloneable {
+public class Camera  {
     //the vector that gives the 'to' forward direction
     private Vector vTo;
     //the vector that gives the upward direction
@@ -27,6 +28,9 @@ public class Camera implements Cloneable {
     //the width of the view screen
     private double width = 0.0;
 
+
+    private ImageWriter imageWriter;
+    private RayTracerBase rayTracerBase;
     /**
      * Constructor to initialize vector based object with a point
      */
@@ -125,6 +129,7 @@ public class Camera implements Cloneable {
         return new Ray(p0, vIJ);
     }
 
+
     /**
      * This class is builder class for camera
      */
@@ -139,17 +144,27 @@ public class Camera implements Cloneable {
         public Camera build() {
             if (camera.vUp == Vector.ZERO)
                 throw new MissingResourceException("Missing rendering data", "Class Camera", "Missing vUp");
+
             if (camera.vTo == Vector.ZERO)
                 throw new MissingResourceException("Missing rendering data", "Class Camera", "Missing vTo");
-            // if (camera.p0 == Point.ZERO)
-            //  throw new MissingResourceException("Missing rendering data", "Class Camera", "Missing p0");
+
             if (camera.distance == 0)
                 throw new MissingResourceException("Missing rendering data", "Class Camera", "Missing distance");
+
             if (camera.height == 0)
                 throw new MissingResourceException("Missing rendering data", "Class Camera", "Missing height");
+
             if (camera.width == 0)
                 throw new MissingResourceException("Missing rendering data", "Class Camera", "Missing width");
+
+            if (camera.imageWriter == null)
+                throw new MissingResourceException("Missing rendering data", "Class Camera", "Missing image writer");
+
+            if (camera.rayTracerBase == null)
+                throw new MissingResourceException("Missing rendering data", "Class Camera", "Missing rayTracerBase");
+
             setDirection(camera.vTo, camera.vUp);
+
             try {
                 return (Camera) camera.clone();
             } catch (CloneNotSupportedException e) {
@@ -208,8 +223,41 @@ public class Camera implements Cloneable {
             return this;
         }
 
-        public Builder setRayTracer(SimpleRayTracer simpleRayTracer) {
+
+        public Builder setImageWriter(ImageWriter imageWriter) {
+            camera.imageWriter = imageWriter;
+            return this;
         }
+
+        public Builder setRayTracerBase(RayTracerBase rayTracerBase) {
+            camera.rayTracerBase = rayTracerBase;
+            return this;
+        }
+
+        public void renderImage()
+        {
+            throw new UnsupportedOperationException("renderImage is not operating yet");
+        }
+
+        public void  printGrid(int interval, Color color)
+        {}
+
+        public void writeToImage()
+        {
+            camera.imageWriter.writeToImage();
+        }
+
+        private void castRay(ImageWriter imageWriter, int pixel)
+        {
+
+        }
+
+        private Color calcColor(Point point)
+        {
+            return null;
+        }
+
+
     }
 
 
