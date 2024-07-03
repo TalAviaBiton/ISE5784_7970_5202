@@ -134,7 +134,6 @@ public class Camera  {
         return new Ray(p0, vIJ);
     }
 
-
     /**
      * This class is builder class for camera
      */
@@ -258,15 +257,6 @@ public class Camera  {
         }
 
         /**
-         * a method that prints the picture
-         * @param interval
-         * @param color the color of the grid
-         */m
-        public void  printGrid(int interval, Color color) {
-
-        }
-
-        /**
          * delegate to write to image of image writer
          */
         public void writeToImage()
@@ -295,6 +285,19 @@ public class Camera  {
          */
 
     }
-
+    /**
+     * a method that prints the picture
+     * @param interval
+     * @param color the color of the grid
+     */
+    public void printGrid(int interval, Color color){
+        for (int i = 0; i < imageWriter.getNy(); i++) {
+            for (int j = 0; j < imageWriter.getNx(); j++) {
+                if (i % interval == 0 || j % interval == 0) {
+                    imageWriter.writePixel(j, i, color);
+                }
+            }
+        }
 
 }
+    }
