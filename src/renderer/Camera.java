@@ -257,8 +257,14 @@ public class Camera  {
             throw new UnsupportedOperationException("renderImage is not operating yet");
         }
 
-        public void  printGrid(int interval, Color color)
-        {}
+        /**
+         * a method that prints the picture
+         * @param interval
+         * @param color the color of the grid
+         */m
+        public void  printGrid(int interval, Color color) {
+
+        }
 
         /**
          * delegate to write to image of image writer
@@ -287,11 +293,6 @@ public class Camera  {
          * @param point the point that i want to find the color of her
          * @return the color of the point
          */
-        private Color calcColor(Point point)
-        {
-            return camera.rayTracerBase.scene.ambientLight.getIntensity();
-        }
-
 
     }
 
