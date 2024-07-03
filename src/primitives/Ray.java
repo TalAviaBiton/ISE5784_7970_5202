@@ -1,5 +1,9 @@
 package primitives;
 
+import geometries.Intersectable;
+
+import java.util.List;
+
 import static primitives.Util.isZero;
 
 /**
@@ -60,5 +64,27 @@ public class Ray {
         if (isZero(t))
             return head;
         return head.add(direction.scale(t));
+    }
+
+    /**
+     * @param points the list of point that i check who is the closest to the head of the ray
+     * @return the point that is the closest to the head of the ray
+     */
+    public Point findClosestPoint(List<Point> points)
+    {
+        if(points.isEmpty())
+            return null;
+        double minDistance=head.distance(points.getFirst());
+        Point minPoint=points.getFirst();
+        for (Point point : points)
+        {
+            double pointDistance=head.distance(point);
+            if(pointDistance<minDistance)
+            {
+                minPoint=point;
+                minDistance=pointDistance;
+            }
+        }
+        return minPoint;
     }
 }

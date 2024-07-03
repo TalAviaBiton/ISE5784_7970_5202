@@ -1,5 +1,6 @@
 package renderer;
 
+import primitives.Color;
 import primitives.Point;
 import primitives.Ray;
 import primitives.Vector;
@@ -9,7 +10,7 @@ import java.util.MissingResourceException;
 /**
  * This class represents the camera in the scene
  */
-public class Camera implements Cloneable {
+public class Camera  {
     //the vector that gives the 'to' forward direction
     private Vector vTo;
     //the vector that gives the upward direction
@@ -27,6 +28,10 @@ public class Camera implements Cloneable {
     //the width of the view screen
     private double width = 0.0;
 
+    //the image writer for the scene
+    private ImageWriter imageWriter;
+    //the ray tracer for the camera
+    private RayTracerBase rayTracerBase;
     /**
      * Constructor to initialize vector based object with a point
      */
@@ -106,9 +111,13 @@ public class Camera implements Cloneable {
     }
 
     /**
-     * calculate the dot product of the two vectors
+     * construct a ray throw  pixel
      *
-     * @return result the calculation of the dot product-int
+     * @param nY for the resolution of the scene
+     * @param nX for the resolution of the scene
+     * @param j the index of the pixel
+     * @param i the index of the pixel
+     * @return the ray that goes throw the middle of the pixel
      */
     public Ray constructRay(int nX, int nY, int j, int i) {
         Point pC = p0.add(vTo.scale(distance));
@@ -125,6 +134,7 @@ public class Camera implements Cloneable {
         return new Ray(p0, vIJ);
     }
 
+
     /**
      * This class is builder class for camera
      */
@@ -139,17 +149,27 @@ public class Camera implements Cloneable {
         public Camera build() {
             if (camera.vUp == Vector.ZERO)
                 throw new MissingResourceException("Missing rendering data", "Class Camera", "Missing vUp");
+
             if (camera.vTo == Vector.ZERO)
                 throw new MissingResourceException("Missing rendering data", "Class Camera", "Missing vTo");
-            // if (camera.p0 == Point.ZERO)
-            //  throw new MissingResourceException("Missing rendering data", "Class Camera", "Missing p0");
+
             if (camera.distance == 0)
                 throw new MissingResourceException("Missing rendering data", "Class Camera", "Missing distance");
+
             if (camera.height == 0)
                 throw new MissingResourceException("Missing rendering data", "Class Camera", "Missing height");
+
             if (camera.width == 0)
                 throw new MissingResourceException("Missing rendering data", "Class Camera", "Missing width");
+
+            if (camera.imageWriter == null)
+                throw new MissingResourceException("Missing rendering data", "Class Camera", "Missing image writer");
+
+            if (camera.rayTracerBase == null)
+                throw new MissingResourceException("Missing rendering data", "Class Camera", "Missing rayTracerBase");
+
             setDirection(camera.vTo, camera.vUp);
+
             try {
                 return (Camera) camera.clone();
             } catch (CloneNotSupportedException e) {
@@ -207,6 +227,72 @@ public class Camera implements Cloneable {
             camera.distance = distance;
             return this;
         }
+
+
+        /** set the image writer for the camera
+         *
+         * @param imageWriter the image writer of the camera
+         * @return the camera, this object
+         */
+        public Builder setImageWriter(ImageWriter imageWriter) {
+            camera.imageWriter = imageWriter;
+            return this;
+        }
+
+        /**set the ray tracer for the camera
+         *
+         * @param rayTracerBase the ray tracer of the camera
+         * @return the camera, this object
+         */
+        public Builder setRayTracerBase(RayTracerBase rayTracerBase) {
+            camera.rayTracerBase = rayTracerBase;
+            return this;
+        }
+
+        /**
+         * a method that does the rendering of the image
+         */
+        public void renderImage()
+        {
+            throw new UnsupportedOperationException("renderImage is not operating yet");
+        }
+
+        public void  printGrid(int interval, Color color)
+        {}
+
+        /**
+         * delegate to write to image of image writer
+         */
+        public void writeToImage()
+        {
+            camera.imageWriter.writeToImage();
+        }
+
+        /** cast a ray throw a pixel and colors it
+         * @param nX the resolution of the scene
+         * @param nY the resolution of the scene
+         * @param column the y index of the pixel
+         * @param row the x index of the pixel
+         */
+        private void castRay(int nX, int nY, int column, int row)
+        {
+            Ray ray=camera.constructRay(nX,nY,column,row);
+            Color color=camera.rayTracerBase.traceRay(ray);
+            camera.imageWriter.writePixel(row,column,color);
+
+        }
+
+        /** calculate the color of the given point
+         *
+         * @param point the point that i want to find the color of her
+         * @return the color of the point
+         */
+        private Color calcColor(Point point)
+        {
+            return camera.rayTracerBase.scene.ambientLight.getIntensity();
+        }
+
+
     }
 
 
