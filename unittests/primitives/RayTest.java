@@ -45,16 +45,19 @@ class RayTest {
 
     }
 
+    /**
+     * Test method for {@link primitives.Ray#findClosestPoint(List)}
+     */
     @Test
     void testFindClosestPoint() {
-        Ray ray=new Ray(new Point(0,1,0),new Vector(0,1,0));
-        List<Point> list=new LinkedList<Point>();
-        Point point020=new Point(0,2,0);
-        Point point110=new Point(1,1,0);
-        Point point200=new Point(2,0,0);
-        Point point364=new Point(3,6,4);
-        Point point158=new Point(1,5,8);
-        Point point333=new Point(3,3,3);
+        Ray ray = new Ray(new Point(0, 1, 0), new Vector(0, 1, 0));
+        List<Point> list = new LinkedList<Point>();
+        Point point020 = new Point(0, 2, 0);
+        Point point110 = new Point(1, 1, 0);
+        Point point200 = new Point(2, 0, 0);
+        Point point364 = new Point(3, 6, 4);
+        Point point158 = new Point(1, 5, 8);
+        Point point333 = new Point(3, 3, 3);
 
         // ============ Equivalence Partitions Tests ==============
         //TC01: A point in the middle of the list is the one closest to the beginning of the ray

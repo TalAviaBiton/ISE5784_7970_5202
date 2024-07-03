@@ -7,6 +7,9 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * a class to represent a list of geometries
+ */
 public class Geometries implements Intersectable {
     List<Intersectable> geometries = new LinkedList<Intersectable>();
 
@@ -20,7 +23,7 @@ public class Geometries implements Intersectable {
     }
 
     /**
-     * a constractor to the list
+     * a constructor to the list
      *
      * @param geometries the geometries i put in the list of geometries
      */

@@ -28,8 +28,9 @@ public class Camera  {
     //the width of the view screen
     private double width = 0.0;
 
-
+    //the image writer for the scene
     private ImageWriter imageWriter;
+    //the ray tracer for the camera
     private RayTracerBase rayTracerBase;
     /**
      * Constructor to initialize vector based object with a point
@@ -110,9 +111,13 @@ public class Camera  {
     }
 
     /**
-     * calculate the dot product of the two vectors
+     * construct a ray throw  pixel
      *
-     * @return result the calculation of the dot product-int
+     * @param nY for the resolution of the scene
+     * @param nX for the resolution of the scene
+     * @param j the index of the pixel
+     * @param i the index of the pixel
+     * @return the ray that goes throw the middle of the pixel
      */
     public Ray constructRay(int nX, int nY, int j, int i) {
         Point pC = p0.add(vTo.scale(distance));
@@ -224,16 +229,29 @@ public class Camera  {
         }
 
 
+        /** set the image writer for the camera
+         *
+         * @param imageWriter the image writer of the camera
+         * @return the camera, this object
+         */
         public Builder setImageWriter(ImageWriter imageWriter) {
             camera.imageWriter = imageWriter;
             return this;
         }
 
+        /**set the ray tracer for the camera
+         *
+         * @param rayTracerBase the ray tracer of the camera
+         * @return the camera, this object
+         */
         public Builder setRayTracerBase(RayTracerBase rayTracerBase) {
             camera.rayTracerBase = rayTracerBase;
             return this;
         }
 
+        /**
+         * a method that does the rendering of the image
+         */
         public void renderImage()
         {
             throw new UnsupportedOperationException("renderImage is not operating yet");
@@ -242,19 +260,36 @@ public class Camera  {
         public void  printGrid(int interval, Color color)
         {}
 
+        /**
+         * delegate to write to image of image writer
+         */
         public void writeToImage()
         {
             camera.imageWriter.writeToImage();
         }
 
-        private void castRay(ImageWriter imageWriter, int pixel)
+        /** cast a ray throw a pixel and colors it
+         * @param nX the resolution of the scene
+         * @param nY the resolution of the scene
+         * @param column the y index of the pixel
+         * @param row the x index of the pixel
+         */
+        private void castRay(int nX, int nY, int column, int row)
         {
+            Ray ray=camera.constructRay(nX,nY,column,row);
+            Color color=camera.rayTracerBase.traceRay(ray);
+            camera.imageWriter.writePixel(row,column,color);
 
         }
 
+        /** calculate the color of the given point
+         *
+         * @param point the point that i want to find the color of her
+         * @return the color of the point
+         */
         private Color calcColor(Point point)
         {
-            return null;
+            return camera.rayTracerBase.scene.ambientLight.getIntensity();
         }
 
 
