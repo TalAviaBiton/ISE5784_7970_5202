@@ -249,14 +249,6 @@ public class Camera  {
         }
 
         /**
-         * a method that does the rendering of the image
-         */
-        public void renderImage()
-        {
-            throw new UnsupportedOperationException("renderImage is not operating yet");
-        }
-
-        /**
          * delegate to write to image of image writer
          */
         public void writeToImage()
@@ -285,12 +277,21 @@ public class Camera  {
          */
 
     }
+
+    /**
+     * a method that does the rendering of the image
+     */
+    public Camera renderImage()
+    {
+        throw new UnsupportedOperationException("renderImage is not operating yet");
+    }
+
     /**
      * a method that prints the picture
      * @param interval
      * @param color the color of the grid
      */
-    public void printGrid(int interval, Color color){
+    public ImageWriter printGrid(int interval, Color color){
         for (int i = 0; i < imageWriter.getNy(); i++) {
             for (int j = 0; j < imageWriter.getNx(); j++) {
                 if (i % interval == 0 || j % interval == 0) {
@@ -298,6 +299,6 @@ public class Camera  {
                 }
             }
         }
-
-}
+    return imageWriter;
+    }
     }
