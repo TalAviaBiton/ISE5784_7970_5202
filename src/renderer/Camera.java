@@ -10,7 +10,7 @@ import java.util.MissingResourceException;
 /**
  * This class represents the camera in the scene
  */
-public class Camera  {
+public class Camera implements Cloneable {
     //the vector that gives the 'to' forward direction
     private Vector vTo;
     //the vector that gives the upward direction
@@ -248,57 +248,61 @@ public class Camera  {
             return this;
         }
 
-        /**
-         * delegate to write to image of image writer
-         */
-        public void writeToImage()
-        {
-            camera.imageWriter.writeToImage();
-        }
 
-        /** cast a ray throw a pixel and colors it
-         * @param nX the resolution of the scene
-         * @param nY the resolution of the scene
-         * @param column the y index of the pixel
-         * @param row the x index of the pixel
-         */
-        private void castRay(int nX, int nY, int column, int row)
-        {
-            Ray ray=camera.constructRay(nX,nY,column,row);
-            Color color=camera.rayTracerBase.traceRay(ray);
-            camera.imageWriter.writePixel(row,column,color);
-
-        }
-
-        /** calculate the color of the given point
-         *
-         * @param point the point that i want to find the color of her
-         * @return the color of the point
-         */
 
     }
 
+    /**
+     * delegate to write to image of image writer
+     */
+    public void writeToImage()
+    {
+        this.imageWriter.writeToImage();
+    }
+
+    /** cast a ray throw a pixel and colors it
+     * @param nX the resolution of the scene
+     * @param nY the resolution of the scene
+     * @param column the y index of the pixel
+     * @param row the x index of the pixel
+     */
+    private void castRay(int nX, int nY, int column, int row)
+    {
+        Ray ray=this.constructRay(nX,nY,column,row);
+        Color color=this.rayTracerBase.traceRay(ray);
+        this.imageWriter.writePixel(column,row,color);
+
+    }
     /**
      * a method that does the rendering of the image
      */
     public Camera renderImage()
     {
-        throw new UnsupportedOperationException("renderImage is not operating yet");
+        int nY=imageWriter.getNy();
+        int nX=imageWriter.getNx();
+        for (int i = 0; i < nY; i++) {
+            for (int j = 0; j < nX; j++) {
+
+                this.castRay(nX,nY,i,j);
+            }
+        }
+        return this;
     }
 
     /**
      * a method that prints the picture
-     * @param interval
+     * @param interval the distance of the pixel
      * @param color the color of the grid
+     * @return the image writer of the camera
      */
     public ImageWriter printGrid(int interval, Color color){
-        for (int i = 0; i < imageWriter.getNy(); i++) {
-            for (int j = 0; j < imageWriter.getNx(); j++) {
+        for (int i = 0; i < imageWriter.getNx(); i++) {
+            for (int j = 0; j <  imageWriter.getNy(); j++) {
                 if (i % interval == 0 || j % interval == 0) {
-                    imageWriter.writePixel(j, i, color);
+                    imageWriter.writePixel(i,j, color);
                 }
             }
         }
-    return imageWriter;
+        return imageWriter;
     }
-    }
+}

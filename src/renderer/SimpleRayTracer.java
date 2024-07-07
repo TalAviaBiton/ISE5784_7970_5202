@@ -5,12 +5,25 @@ import primitives.Point;
 import primitives.Ray;
 import scene.Scene;
 import java.util.*;
+
+/**
+ * extends ray tracer base and represent a simple ray
+ */
 public class SimpleRayTracer extends RayTracerBase{
 
+    /**
+     * a constructor for simple ray tracer
+     * @param scene the scene of the photo
+     */
     public SimpleRayTracer(Scene scene) {
         super(scene);
     }
 
+    /** calculate the color of the given point
+     *
+     * @param point the point that i want to find the color of her
+     * @return the color of the point
+     */
     private Color calcColor(Point point)
     {
         return scene.ambientLight.getIntensity();
