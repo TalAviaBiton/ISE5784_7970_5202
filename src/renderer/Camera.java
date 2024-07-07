@@ -11,6 +11,7 @@ import java.util.MissingResourceException;
  * This class represents the camera in the scene
  */
 public class Camera implements Cloneable {
+
     //the vector that gives the 'to' forward direction
     private Vector vTo;
     //the vector that gives the upward direction
@@ -32,107 +33,7 @@ public class Camera implements Cloneable {
     private ImageWriter imageWriter;
     //the ray tracer for the camera
     private RayTracerBase rayTracerBase;
-    /**
-     * Constructor to initialize vector based object with a point
-     */
-    private Camera() {
-    }
 
-    /**
-     * return a new object of the Builder class the mourner
-     *
-     * @return a new Builder
-     */
-    public static Camera.Builder getBuilder() {
-        return new Builder();
-    }
-
-    /**
-     * a get method for vTo
-     *
-     * @return vTo
-     */
-    public Vector getvTo() {
-        return vTo;
-    }
-
-    /**
-     * a get method for vUp
-     *
-     * @return vUp
-     */
-    public Vector getvUp() {
-        return vUp;
-    }
-
-    /**
-     * a get method for p0
-     *
-     * @return p0
-     */
-    public Point getP0() {
-        return p0;
-    }
-
-    /**
-     * a get method for vRight
-     *
-     * @return vRight
-     */
-    public Vector getvRight() {
-        return vRight;
-    }
-
-    /**
-     * a get method for distance
-     *
-     * @return distance
-     */
-    public double getDistance() {
-        return distance;
-    }
-
-    /**
-     * a get method for height
-     *
-     * @return height
-     */
-    public double getHeight() {
-        return height;
-    }
-
-    /**
-     * a get method for width
-     *
-     * @return width
-     */
-    public double getWidth() {
-        return width;
-    }
-
-    /**
-     * construct a ray throw  pixel
-     *
-     * @param nY for the resolution of the scene
-     * @param nX for the resolution of the scene
-     * @param j the index of the pixel
-     * @param i the index of the pixel
-     * @return the ray that goes throw the middle of the pixel
-     */
-    public Ray constructRay(int nX, int nY, int j, int i) {
-        Point pC = p0.add(vTo.scale(distance));
-        double Rx = width / nX;
-        double Ry = height / nY;
-        double xJ = (j - (double) (nX - 1) / 2) * Rx;
-        double yI = -(i - (double) (nY - 1) / 2) * Ry;
-        Vector pIJ = new Vector(pC.getXYZ());
-        if (xJ != 0)
-            pIJ = pIJ.add(vRight.scale(xJ));
-        if (yI != 0)
-            pIJ = pIJ.add(vUp.scale(yI));
-        Vector vIJ = pIJ.subtract(p0);
-        return new Ray(p0, vIJ);
-    }
 
     /**
      * This class is builder class for camera
@@ -227,7 +128,6 @@ public class Camera implements Cloneable {
             return this;
         }
 
-
         /** set the image writer for the camera
          *
          * @param imageWriter the image writer of the camera
@@ -248,8 +148,105 @@ public class Camera implements Cloneable {
             return this;
         }
 
+    }
 
+    /**
+     * Constructor to initialize vector based object with a point
+     */
+    private Camera() {}
 
+    /**
+     * return a new object of the Builder class the mourner
+     *
+     * @return a new Builder
+     */
+    public static Camera.Builder getBuilder() {
+        return new Builder();
+    }
+
+    /**
+     * a get method for vTo
+     *
+     * @return vTo
+     */
+    public Vector getvTo() {
+        return vTo;
+    }
+
+    /**
+     * a get method for vUp
+     *
+     * @return vUp
+     */
+    public Vector getvUp() {
+        return vUp;
+    }
+
+    /**
+     * a get method for p0
+     *
+     * @return p0
+     */
+    public Point getP0() {
+        return p0;
+    }
+
+    /**
+     * a get method for vRight
+     *
+     * @return vRight
+     */
+    public Vector getvRight() {
+        return vRight;
+    }
+
+    /**
+     * a get method for distance
+     *
+     * @return distance
+     */
+    public double getDistance() {return distance;}
+
+    /**
+     * a get method for height
+     *
+     * @return height
+     */
+    public double getHeight() {
+        return height;
+    }
+
+    /**
+     * a get method for width
+     *
+     * @return width
+     */
+    public double getWidth() {
+        return width;
+    }
+
+    /**
+     * construct a ray throw  pixel
+     *
+     * @param nY for the resolution of the scene
+     * @param nX for the resolution of the scene
+     * @param j the index of the pixel
+     * @param i the index of the pixel
+     * @return the ray that goes throw the middle of the pixel
+     */
+    public Ray constructRay(int nX, int nY, int j, int i) {
+        Point pC = p0.add(vTo.scale(distance));
+        double Rx = width / nX;
+        double Ry = height / nY;
+        double xJ = (j - (double) (nX - 1) / 2) * Rx;
+        double yI = -(i - (double) (nY - 1) / 2) * Ry;
+        Vector pIJ = new Vector(pC.getXYZ());
+        if (xJ != 0)
+            pIJ = pIJ.add(vRight.scale(xJ));
+        if (yI != 0)
+            pIJ = pIJ.add(vUp.scale(yI));
+        Vector vIJ = pIJ.subtract(p0);
+        return new Ray(p0, vIJ);
     }
 
     /**
@@ -273,6 +270,7 @@ public class Camera implements Cloneable {
         this.imageWriter.writePixel(column,row,color);
 
     }
+
     /**
      * a method that does the rendering of the image
      */
