@@ -12,7 +12,7 @@ import java.util.List;
 import static primitives.Util.isZero;
 
 
-public class Plane implements Geometry {
+public class Plane extends Geometry {
     /**
      * parameter to represent a point in the plane
      */

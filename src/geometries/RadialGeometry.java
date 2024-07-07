@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * This abstract class is for all geometries that has radius
  */
-public abstract class RadialGeometry implements Geometry {
+public abstract class RadialGeometry extends Geometry {
     /**
      * the radius of the geometry
      */
