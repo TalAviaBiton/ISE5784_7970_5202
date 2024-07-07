@@ -134,7 +134,6 @@ public class Camera  {
         return new Ray(p0, vIJ);
     }
 
-
     /**
      * This class is builder class for camera
      */
@@ -250,17 +249,6 @@ public class Camera  {
         }
 
         /**
-         * a method that does the rendering of the image
-         */
-        public void renderImage()
-        {
-            throw new UnsupportedOperationException("renderImage is not operating yet");
-        }
-
-        public void  printGrid(int interval, Color color)
-        {}
-
-        /**
          * delegate to write to image of image writer
          */
         public void writeToImage()
@@ -287,13 +275,30 @@ public class Camera  {
          * @param point the point that i want to find the color of her
          * @return the color of the point
          */
-        private Color calcColor(Point point)
-        {
-            return camera.rayTracerBase.scene.ambientLight.getIntensity();
-        }
-
 
     }
 
+    /**
+     * a method that does the rendering of the image
+     */
+    public Camera renderImage()
+    {
+        throw new UnsupportedOperationException("renderImage is not operating yet");
+    }
 
-}
+    /**
+     * a method that prints the picture
+     * @param interval
+     * @param color the color of the grid
+     */
+    public ImageWriter printGrid(int interval, Color color){
+        for (int i = 0; i < imageWriter.getNy(); i++) {
+            for (int j = 0; j < imageWriter.getNx(); j++) {
+                if (i % interval == 0 || j % interval == 0) {
+                    imageWriter.writePixel(j, i, color);
+                }
+            }
+        }
+    return imageWriter;
+    }
+    }
