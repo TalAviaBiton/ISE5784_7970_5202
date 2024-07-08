@@ -3,6 +3,8 @@ package geometries;
 import primitives.Point;
 import primitives.Ray;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 
@@ -32,13 +34,12 @@ public abstract class Intersectable {
         }
 
         @Override
-        public boolean equals(Object o) {
-            if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
-            GeoPoint geoPoint = (GeoPoint) o;
+        public boolean equals(Object obj) {
+            if (this == obj) return true;
+            if (obj == null || getClass() != obj.getClass()) return false;
+            GeoPoint geoPoint = (GeoPoint) obj;
             return Objects.equals(geometry, geoPoint.geometry) && Objects.equals(point, geoPoint.point);
         }
-
 
         @Override
         public String toString() {
@@ -48,15 +49,34 @@ public abstract class Intersectable {
                     '}';
         }
     }
-    protected List<GeoPoint> findGeoIntersectionsHelper(Ray ray)
-    {
 
-    }
+    /** the method that every interactable implements and finds the
+     * intersections of the shape with the ray and returns a geoPoint
+     *
+     * @param ray the ray i want to find intersections with
+     * @return a list of the GeoPoints that have intersection with the ray
+     */
+    protected List<GeoPoint> findGeoIntersectionsHelper(Ray ray){return null;}
 
-    List<Point> findIntersections(Ray ray);
-    List<GeoPoint> findGeoIntersections(Ray ray)
-    {
+    /** a method that calls for findGeoIntersectionsHelper
+     *
+     * @param ray the ray i want to find intersections with
+     * @return a list of the GeoPoints that have intersection with the ray
+     */
+    public final List<GeoPoint> findGeoIntersections(Ray ray) {
         return findGeoIntersectionsHelper(ray);
     }
+
+    /** a method to find the intersections between the ray and the shape
+     *
+     * @param ray the ray i want to find intersections with
+     * @return a list of the points that have intersection with the ray
+     */
+    public List<Point> findIntersections(Ray ray) {
+        var geoList = findGeoIntersections(ray);
+        return geoList == null ? null : geoList.stream().map(gp -> gp.point).toList();
+    }
+
+
 
 }

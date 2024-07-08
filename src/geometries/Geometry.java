@@ -7,7 +7,7 @@ import primitives.Vector;
 /**
  * This interface will represent all geometries
  */
-public abstract class Geometry implements Intersectable {
+public abstract class Geometry extends Intersectable {
 
     //the emission of the geometry
     protected Color emission= Color.BLACK;

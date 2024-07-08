@@ -86,13 +86,14 @@ public class Plane extends Geometry {
      * @return a list of the intersections of ray and plane
      */
     @Override
-    public List<Point> findIntersections(Ray ray) {
+    protected List<GeoPoint> findGeoIntersectionsHelper(Ray ray) {
         if (ray.getHead().equals(q))
             return null;
         double t = normal.dotProduct(q.subtract(ray.getHead())) / (normal.dotProduct(ray.getDirection()));
         if (t <= 0 || isZero(ray.getDirection().dotProduct(normal)))
             return null;
-        return List.of(ray.getPoint(t));
+        return List.of(new GeoPoint (this,ray.getPoint(t)));
 
     }
+
 }

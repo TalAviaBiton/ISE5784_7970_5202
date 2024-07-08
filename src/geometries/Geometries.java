@@ -48,10 +48,10 @@ public class Geometries extends Intersectable {
      * @return a list of the intersections of ray and the geometries from the list
      */
     @Override
-    public List<Point> findIntersections(Ray ray) {
-        List<Point> intersections = null;
+    protected List<GeoPoint> findGeoIntersectionsHelper(Ray ray) {
+        List<GeoPoint> intersections = null;
         for (Intersectable geometry : geometries) {
-            List<Point> geometryIntersections = geometry.findIntersections(ray);
+            List<GeoPoint> geometryIntersections = geometry.findGeoIntersections(ray);
             if (geometryIntersections != null && intersections == null)
                 intersections = new LinkedList<>(geometryIntersections);
             else if (geometryIntersections != null)
@@ -60,9 +60,8 @@ public class Geometries extends Intersectable {
         return intersections;
     }
 
-    @Override
-    public List<GeoPoint> findGeoIntersections(Ray ray) {
-        return List.of();
-    }
+
+
+
 
 }

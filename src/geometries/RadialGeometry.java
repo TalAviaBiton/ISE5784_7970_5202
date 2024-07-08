@@ -24,7 +24,7 @@ public abstract class RadialGeometry extends Geometry {
     }
 
     @Override
-    public List<Point> findIntersections(Ray ray) {
+    protected List<GeoPoint> findGeoIntersectionsHelper(Ray ray) {
         return null;
     }
 }

@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4b50f3a7-ff92-41f1-86dd-01d3b21a2dd1" name="Changes" comment="finished stage 5">
+    <list default="true" id="4b50f3a7-ff92-41f1-86dd-01d3b21a2dd1" name="Changes" comment="started stage 6">
+      <change afterPath="$PROJECT_DIR$/unittests/renderer/LightsTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/geometries/Geometries.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Geometries.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/geometries/Geometry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Geometry.java" afterDir="false" />
@@ -12,6 +13,12 @@
       <change beforePath="$PROJECT_DIR$/src/geometries/Plane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Plane.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/geometries/Polygon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Polygon.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/geometries/RadialGeometry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/RadialGeometry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Sphere.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Sphere.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Triangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Triangle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Tube.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Tube.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/primitives/Ray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/primitives/Ray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/SimpleRayTracer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/SimpleRayTracer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unittests/renderer/RenderTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/renderer/RenderTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,73 +70,75 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;true&quot;,
-    &quot;JUnit.All in ISE5784_7970_5202.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CameraTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CameraTest.testConstructRay.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.CylinderTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CylinderTest.testGetNormal.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.GeomtriesTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.GeomtriesTest.testFindIntersections.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ImageWriterTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ImageWriterTest.writeToImage.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.IntegrationTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.IntegrationTest.testCameraSphere.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PlaneTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PlaneTest.testFindIntersections.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PlaneTest.testGetNormal.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PlaneTest.testGetNormal2.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PointTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PointTest.testSubtract.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.PolygonTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PolygonTest.testConstructor.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RayTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RayTest.getPoint.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RayTest.testFindClosestPoint.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RenderTests.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SphereTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SphereTest.testFindIntersections.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SphereTest.testGetNormal.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TriangleTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TriangleTest.testFindIntersections.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TriangleTest.testGetNormal.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TubeTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TubeTest.testGetNormal.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.VectorTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.VectorTest.testAdd.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.VectorTest.testConstructor.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.VectorTest.testCrossProduct.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.VectorTest.testDotProduct.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.VectorTest.testLength.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.VectorTest.testLengthSquared.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.VectorTest.testNormalize.executor&quot;: &quot;Run&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/TAL/Desktop/minip/ISE5784_7970_5202/src/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;fileTemplates&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Application.Main.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "true",
+    "JUnit.All in ISE5784_7970_5202.executor": "Run",
+    "JUnit.CameraTest.executor": "Run",
+    "JUnit.CameraTest.testConstructRay.executor": "Debug",
+    "JUnit.CylinderTest.executor": "Run",
+    "JUnit.CylinderTest.testGetNormal.executor": "Run",
+    "JUnit.GeomtriesTest.executor": "Run",
+    "JUnit.GeomtriesTest.testFindIntersections.executor": "Run",
+    "JUnit.ImageWriterTest.executor": "Run",
+    "JUnit.ImageWriterTest.writeToImage.executor": "Run",
+    "JUnit.IntegrationTest.executor": "Run",
+    "JUnit.IntegrationTest.testCameraSphere.executor": "Run",
+    "JUnit.PlaneTest.executor": "Run",
+    "JUnit.PlaneTest.testFindIntersections.executor": "Run",
+    "JUnit.PlaneTest.testGetNormal.executor": "Run",
+    "JUnit.PlaneTest.testGetNormal2.executor": "Run",
+    "JUnit.PointTest.executor": "Run",
+    "JUnit.PointTest.testSubtract.executor": "Debug",
+    "JUnit.PolygonTest.executor": "Run",
+    "JUnit.PolygonTest.testConstructor.executor": "Run",
+    "JUnit.RayTest.executor": "Run",
+    "JUnit.RayTest.getPoint.executor": "Run",
+    "JUnit.RayTest.testFindClosestPoint.executor": "Run",
+    "JUnit.RenderTests.basicRenderXml.executor": "Run",
+    "JUnit.RenderTests.executor": "Run",
+    "JUnit.RenderTests.renderMultiColorTest.executor": "Run",
+    "JUnit.SphereTest.executor": "Run",
+    "JUnit.SphereTest.testFindIntersections.executor": "Run",
+    "JUnit.SphereTest.testGetNormal.executor": "Run",
+    "JUnit.TriangleTest.executor": "Run",
+    "JUnit.TriangleTest.testFindIntersections.executor": "Run",
+    "JUnit.TriangleTest.testGetNormal.executor": "Run",
+    "JUnit.TubeTest.executor": "Run",
+    "JUnit.TubeTest.testGetNormal.executor": "Run",
+    "JUnit.VectorTest.executor": "Run",
+    "JUnit.VectorTest.testAdd.executor": "Run",
+    "JUnit.VectorTest.testConstructor.executor": "Run",
+    "JUnit.VectorTest.testCrossProduct.executor": "Run",
+    "JUnit.VectorTest.testDotProduct.executor": "Run",
+    "JUnit.VectorTest.testLength.executor": "Run",
+    "JUnit.VectorTest.testLengthSquared.executor": "Run",
+    "JUnit.VectorTest.testNormalize.executor": "Run",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "C:/Users/TAL/Desktop/minip/ISE5784_7970_5202/src/Main.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "fileTemplates",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="geometries" />
@@ -147,77 +156,77 @@
       <recent name="primitives" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.IntegrationTest">
-    <configuration name="CameraTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.CylinderTest">
+    <configuration name="CylinderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ISE5784_7970_5202" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="renderer.*" />
+          <option name="PATTERN" value="geometries.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="renderer" />
-      <option name="MAIN_CLASS_NAME" value="renderer.CameraTest" />
+      <option name="PACKAGE_NAME" value="geometries" />
+      <option name="MAIN_CLASS_NAME" value="geometries.CylinderTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ImageWriterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GeomtriesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ISE5784_7970_5202" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="renderer.*" />
+          <option name="PATTERN" value="geometries.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="renderer" />
-      <option name="MAIN_CLASS_NAME" value="renderer.ImageWriterTest" />
+      <option name="PACKAGE_NAME" value="geometries" />
+      <option name="MAIN_CLASS_NAME" value="geometries.GeomtriesTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="IntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PlaneTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ISE5784_7970_5202" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="renderer.*" />
+          <option name="PATTERN" value="geometries.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="renderer" />
-      <option name="MAIN_CLASS_NAME" value="renderer.IntegrationTest" />
+      <option name="PACKAGE_NAME" value="geometries" />
+      <option name="MAIN_CLASS_NAME" value="geometries.PlaneTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RayTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PolygonTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ISE5784_7970_5202" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="primitives.*" />
+          <option name="PATTERN" value="geometries.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="primitives" />
-      <option name="MAIN_CLASS_NAME" value="primitives.RayTest" />
+      <option name="PACKAGE_NAME" value="geometries" />
+      <option name="MAIN_CLASS_NAME" value="geometries.PolygonTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RenderTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SphereTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ISE5784_7970_5202" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="renderer.*" />
+          <option name="PATTERN" value="geometries.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="renderer" />
-      <option name="MAIN_CLASS_NAME" value="renderer.RenderTests" />
+      <option name="PACKAGE_NAME" value="geometries" />
+      <option name="MAIN_CLASS_NAME" value="geometries.SphereTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -225,11 +234,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.IntegrationTest" />
-        <item itemvalue="JUnit.CameraTest" />
-        <item itemvalue="JUnit.ImageWriterTest" />
-        <item itemvalue="JUnit.RayTest" />
-        <item itemvalue="JUnit.RenderTests" />
+        <item itemvalue="JUnit.CylinderTest" />
+        <item itemvalue="JUnit.GeomtriesTest" />
+        <item itemvalue="JUnit.PlaneTest" />
+        <item itemvalue="JUnit.PolygonTest" />
+        <item itemvalue="JUnit.SphereTest" />
       </list>
     </recent_temporary>
   </component>
@@ -273,15 +282,8 @@
       <workItem from="1719497453087" duration="1982000" />
       <workItem from="1719994277925" duration="2954000" />
       <workItem from="1720344669692" duration="1451000" />
-      <workItem from="1720380925936" duration="1401000" />
-    </task>
-    <task id="LOCAL‎-00003" summary="everything is working">
-      <option name="closed" value="true" />
-      <created>1715542165158</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL‎-00003" />
-      <option name="project" value="LOCAL‎" />
-      <updated>1715542165158</updated>
+      <workItem from="1720380925936" duration="1438000" />
+      <workItem from="1720455522654" duration="8014000" />
     </task>
     <task id="LOCAL‎-00004" summary="finish stage 1">
       <option name="closed" value="true" />
@@ -667,7 +669,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1720346122632</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL‎-00052" summary="started stage 6">
+      <option name="closed" value="true" />
+      <created>1720382371815</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL‎-00052" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1720382371815</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -686,7 +696,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="everything is working" />
     <MESSAGE value="finish stage 1" />
     <MESSAGE value="tag1" />
     <MESSAGE value="all the tests are generated" />
@@ -711,7 +720,8 @@
     <MESSAGE value="started stage 4 finished" />
     <MESSAGE value="camera methods" />
     <MESSAGE value="finished stage 5" />
-    <option name="LAST_COMMIT_MESSAGE" value="finished stage 5" />
+    <MESSAGE value="started stage 6" />
+    <option name="LAST_COMMIT_MESSAGE" value="started stage 6" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
