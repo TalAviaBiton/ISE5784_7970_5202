@@ -1,9 +1,10 @@
 package primitives;
 
+import geometries.Geometry;
 import geometries.Intersectable;
 
 import java.util.List;
-
+import geometries.Intersectable.GeoPoint;
 import static primitives.Util.isZero;
 
 /**
@@ -67,21 +68,31 @@ public class Ray {
     }
 
     /**
-     * @param points the list of point that i check who is the closest to the head of the ray
+     * @param points the list of points that i check who is the closest to the head of the ray
      * @return the point that is the closest to the head of the ray
      */
-    public Point findClosestPoint(List<Point> points)
+    public Point findClosestPoint(List<Point> points) {
+        return points.isEmpty() ? null
+                : findClosestGeoPoint(points.stream()
+                .map(p -> new GeoPoint(null, p)).toList()).point;
+    }
+
+    /**
+     * @param geoPoints the list of GeoPoints that i check who is the closest to the head of the ray
+     * @return the GeoPoint that is the closest to the head of the ray
+     */
+    public GeoPoint findClosestGeoPoint(List<GeoPoint> geoPoints)
     {
-        if(points.isEmpty())
+        if(geoPoints.isEmpty() )
             return null;
-        double minDistance=head.distance(points.getFirst());
-        Point minPoint=points.getFirst();
-        for (Point point : points)
+        double minDistance=head.distance(geoPoints.getFirst().point);
+        GeoPoint minPoint=geoPoints.getFirst();
+        for (GeoPoint geoPoint : geoPoints)
         {
-            double pointDistance=head.distance(point);
+            double pointDistance=head.distance(geoPoint.point);
             if(pointDistance<minDistance)
             {
-                minPoint=point;
+                minPoint=geoPoint;
                 minDistance=pointDistance;
             }
         }
