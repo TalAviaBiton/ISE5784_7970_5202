@@ -2,11 +2,12 @@ package scene;
 
 import geometries.Geometries;
 import lighting.AmbientLight;
-import primitives.*;
 import primitives.Color;
 
-import java.awt.*;
+import java.util.LinkedList;
+import java.util.List;
 
+import lighting.*;
 /**
  * a class that represent the scene
  */
@@ -24,6 +25,13 @@ public class Scene {
     //the geometries in the scene
     public Geometries geometries = new Geometries();
 
+    //
+   List<LightSource> lights= new LinkedList<>();
+
+    /**
+     *
+     * @param name
+     */
     public Scene(String name) {
         this.name = name;
     }
@@ -63,4 +71,24 @@ public class Scene {
         this.ambientLight = ambientLight;
         return this;
     }
+
+    /**
+     * 
+     */
+    public class Builder {
+        Scene scene=new Scene("building");
+            public Scene setLights(List<LightSource> lights) {
+                scene.lights = lights;
+                return scene;
+            }
+            public Scene build(){
+                try {
+                    return (Scene) scene.clone();
+                } catch (CloneNotSupportedException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+
+    }
+    public Builder getBuilder() { return new Builder(); }
 }
