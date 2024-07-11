@@ -1,8 +1,10 @@
 package geometries;
 
-import primitives.Color;
-import primitives.Point;
-import primitives.Vector;
+import lighting.LightSource;
+import primitives.*;
+import scene.Scene;
+
+import java.util.List;
 
 /**
  * This interface will represent all geometries
@@ -11,15 +13,14 @@ public abstract class Geometry extends Intersectable {
 
     //the emission of the geometry
     protected Color emission= Color.BLACK;
-
-    /** a set method for the emission
+    //the material the geometry is made of
+    private Material material=new Material();
+    /**
      *
-     * @param emission the emission i want to add
-     * @return the geometry
+     * @return the material the geometry is made of
      */
-    public Geometry setEmission(Color emission) {
-        this.emission = emission;
-        return this;
+    public Material getMaterial(){
+        return material;
     }
 
     /** a get method for emission
@@ -37,4 +38,31 @@ public abstract class Geometry extends Intersectable {
      * @return the normal-vector
      */
     public abstract Vector getNormal(Point point);
+    /** a set method for the emission
+     *
+     * @param emission the emission I want to add
+     * @return the geometry
+     */
+
+    public Geometry setEmission(Color emission) {
+        this.emission = emission;
+        return this;
+    }
+    public class Builder {
+        Geometry geometry;
+
+        public Geometry setLMaterial(Material material) {
+            geometry.material = material;
+            return geometry;
+        }
+        public Geometry build(){
+            try {
+                return (Geometry) geometry.clone();
+            } catch (CloneNotSupportedException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
+    }
+    public Builder getBuilder() { return new Builder(); }
 }

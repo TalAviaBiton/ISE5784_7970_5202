@@ -6,10 +6,8 @@ import primitives.Double3;
 /**
  * a class that represents the ambient light
  */
-public class AmbientLight {
+public class AmbientLight extends Light{
 
-    //the intensity of the ambient light
-    private final Color intensity;
     //the ambient light with default
     public final static AmbientLight NONE = new AmbientLight(Color.BLACK, 0);
 
@@ -20,7 +18,7 @@ public class AmbientLight {
      * @param kA the coefficient
      */
     public AmbientLight(Color iA, double kA) {
-        intensity = iA.scale(kA);
+        super(iA.scale(kA));
     }
 
     /**
@@ -30,15 +28,7 @@ public class AmbientLight {
      * @param kI the coefficient
      */
     public AmbientLight(Color iA, Double3 kI) {
-        intensity = iA.scale(kI);
+        super(iA.scale(kI));
     }
 
-    /**
-     * gets the intensity of the ambient light
-     *
-     * @return the intensity
-     */
-    public Color getIntensity() {
-        return intensity;
-    }
 }
