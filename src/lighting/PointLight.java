@@ -12,49 +12,68 @@ public class PointLight extends Light implements LightSource{
     protected double KQ=0;
 
 
-    protected PointLight(Color intensity,Point position) {
+    public PointLight(Color intensity,Point position) {
         super(intensity);
         this.position=position;
     }
-    protected PointLight(Color intensity) {
+    public PointLight(Color intensity) {
         super(intensity);
     }
 
     @Override
-    public Color getIntensity(Point p) {
-        double d=p.distance(position);
+    public Color getIntensity(Point point) {
+        double d= point.distance(position);
         return intensity.scale(1/(KC+KL*d+KQ*d*d));
     }
 
     @Override
-    public Vector getL(Point p) {
-      return position.subtract(p);
+    public Vector getL(Point point) {
+      return position.subtract(point);
+    }
+    public PointLight setPosition(Point position){
+        this.position=position;
+        return this;
+    }
+    public PointLight setKc( double KC){
+        this.KC=KC;
+        return this;
+    }
+    public PointLight setKl( double KL){
+        this.KL=KL;
+        return this;
+    }
+    public PointLight setKq( double KQ){
+        this.KQ=KQ;
+        return this;
     }
 
-    public static class Builder{
-        private final PointLight pointLight=new PointLight(new Color(0,0,0));
-    public Builder setPosition(Point position){
-        pointLight.position=position;
-        return this;
-    }
-    public Builder setKC( double KC){
-        pointLight.KC=KC;
-        return this;
-    }
-    public Builder setKL( double KL){
-        pointLight.KL=KL;
-        return this;
-    }
-    public Builder setKQ( double KQ){
-        pointLight.KQ=KQ;
-        return this;
-    }
-        public PointLight build(){
-            try {
-                return (PointLight)pointLight.clone();
-            } catch (CloneNotSupportedException e) {
-                throw new RuntimeException(e);
-            }
-        }
-}
+
+
+
+//    public static class Builder{
+//        private final PointLight pointLight=new PointLight(new Color(0,0,0));
+//    public Builder setPosition(Point position){
+//        pointLight.position=position;
+//        return this;
+//    }
+//    public Builder setKc( double KC){
+//        pointLight.KC=KC;
+//        return this;
+//    }
+//    public Builder setKl( double KL){
+//        pointLight.KL=KL;
+//        return this;
+//    }
+//    public Builder setKq( double KQ){
+//        pointLight.KQ=KQ;
+//        return this;
+//    }
+//        public PointLight build(){
+//            try {
+//                return (PointLight)pointLight.clone();
+//            } catch (CloneNotSupportedException e) {
+//                throw new RuntimeException(e);
+//            }
+//        }
+//    }
 }

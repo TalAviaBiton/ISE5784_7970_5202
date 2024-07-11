@@ -26,7 +26,7 @@ public class Scene {
     public Geometries geometries = new Geometries();
 
     //
-   List<LightSource> lights= new LinkedList<>();
+    public List<LightSource> lights= new LinkedList<>();
 
     /**
      *
@@ -72,23 +72,24 @@ public class Scene {
         return this;
     }
 
-    /**
-     * 
-     */
-    public class Builder {
-        Scene scene=new Scene("building");
-            public Scene setLights(List<LightSource> lights) {
-                scene.lights = lights;
-                return scene;
-            }
-            public Scene build(){
-                try {
-                    return (Scene) scene.clone();
-                } catch (CloneNotSupportedException e) {
-                    throw new RuntimeException(e);
-                }
-            }
-
+    public Scene setLights(List<LightSource> lights) {
+        this.lights = lights;
+        return this;
     }
-    public Builder getBuilder() { return new Builder(); }
+//    public class Builder {
+//        Scene scene=new Scene("building");
+//            public Scene setLights(List<LightSource> lights) {
+//                scene.lights = lights;
+//                return scene;
+//            }
+//            public Scene build(){
+//                try {
+//                    return (Scene) scene.clone();
+//                } catch (CloneNotSupportedException e) {
+//                    throw new RuntimeException(e);
+//                }
+//            }
+//
+//    }
+//    public Builder getBuilder() { return new Builder(); }
 }
