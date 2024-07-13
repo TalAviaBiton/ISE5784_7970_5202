@@ -4,7 +4,7 @@ import primitives.Color;
 import primitives.Double3;
 
 /**
- * a class that represents the ambient light
+ * a class that represents the ambient light and extends light class
  */
 public class AmbientLight extends Light{
 

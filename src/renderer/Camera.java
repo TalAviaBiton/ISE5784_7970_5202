@@ -6,6 +6,7 @@ import primitives.Ray;
 import primitives.Vector;
 
 import java.util.MissingResourceException;
+import java.util.Objects;
 
 /**
  * This class represents the camera in the scene
@@ -236,6 +237,9 @@ public class Camera implements Cloneable {
      */
     public Ray constructRay(int nX, int nY, int j, int i) {
         Point pC = p0.add(vTo.scale(distance));
+//        System.out.print(pC);
+//        if(Objects.equals(pC, new Point(0, 0, 0)))
+//            return null;
         double Rx = width / nX;
         double Ry = height / nY;
         double xJ = (j - (double) (nX - 1) / 2) * Rx;
@@ -268,7 +272,6 @@ public class Camera implements Cloneable {
         Ray ray=this.constructRay(nX,nY,column,row);
         Color color=this.rayTracerBase.traceRay(ray);
         this.imageWriter.writePixel(column,row,color);
-
     }
 
     /**

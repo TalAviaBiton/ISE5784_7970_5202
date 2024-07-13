@@ -3,58 +3,52 @@ package lighting;
 import primitives.Color;
 import primitives.Point;
 import primitives.Vector;
-import scene.Scene;
 
-public class PointLight extends Light implements LightSource{
+public class PointLight extends Light implements LightSource {
     protected Point position;
-    protected double KC=1;
-    protected double KL=0;
-    protected double KQ=0;
+    protected double kC = 1;
+    protected double kL = 0;
+    protected double kQ = 0;
 
 
-    protected PointLight(Color intensity,Point position) {
+    public PointLight(Color intensity, Point position) {
         super(intensity);
-        this.position=position;
+        this.position = position;
     }
-    protected PointLight(Color intensity) {
+
+    public PointLight(Color intensity) {
         super(intensity);
     }
 
     @Override
-    public Color getIntensity(Point p) {
-        double d=p.distance(position);
-        return intensity.scale(1/(KC+KL*d+KQ*d*d));
+    public Color getIntensity(Point point) {
+        double d = position.distance(point);
+        return intensity.scale(1 / (kC + kL * d + kQ * d * d));
     }
 
     @Override
-    public Vector getL(Point p) {
-      return position.subtract(p);
+    public Vector getL(Point point) {
+
+        return point.subtract(position).normalize();
     }
 
-    public static class Builder{
-        private final PointLight pointLight=new PointLight(new Color(0,0,0));
-    public Builder setPosition(Point position){
-        pointLight.position=position;
+    public PointLight setPosition(Point position) {
+        this.position = position;
         return this;
     }
-    public Builder setKC( double KC){
-        pointLight.KC=KC;
+
+    public PointLight setKc(double KC) {
+        this.kC = KC;
         return this;
     }
-    public Builder setKL( double KL){
-        pointLight.KL=KL;
+
+    public PointLight setKl(double KL) {
+        this.kL = KL;
         return this;
     }
-    public Builder setKQ( double KQ){
-        pointLight.KQ=KQ;
+
+    public PointLight setKq(double KQ) {
+        this.kQ = KQ;
         return this;
     }
-        public PointLight build(){
-            try {
-                return (PointLight)pointLight.clone();
-            } catch (CloneNotSupportedException e) {
-                throw new RuntimeException(e);
-            }
-        }
-}
 }

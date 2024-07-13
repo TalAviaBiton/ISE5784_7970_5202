@@ -48,13 +48,18 @@ public abstract class Geometry extends Intersectable {
         this.emission = emission;
         return this;
     }
+
+    public Geometry setMaterial(Material material) {
+        this.material = material;
+        return this;
+    }
     public class Builder {
         Geometry geometry;
 
-        public Geometry setLMaterial(Material material) {
-            geometry.material = material;
-            return geometry;
-        }
+//        public Geometry setLMaterial(Material material) {
+//            geometry.material = material;
+//            return geometry;
+//        }
         public Geometry build(){
             try {
                 return (Geometry) geometry.clone();
