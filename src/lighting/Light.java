@@ -1,12 +1,10 @@
 package lighting;
-
+import primitives.Color;
 /**
  * an abstract class to represents all the lights
  */
-import primitives.Color;
-
 abstract class Light {
-    //the intensity of the ambient light
+    //the intensity of the light
     protected  Color intensity;
 
     /**
@@ -18,8 +16,7 @@ abstract class Light {
     }
     /**
      * gets the intensity of the ambient light
-     *
-     * @return the intensity
+     * @return the intensity of the light
      */
     public Color getIntensity() {
         return intensity;
