@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="4b50f3a7-ff92-41f1-86dd-01d3b21a2dd1" name="Changes" comment="stage 6 th calcColor">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lighting/SpotLight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lighting/SpotLight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unittests/renderer/LightsTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/renderer/LightsTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,7 +148,22 @@
       <recent name="primitives" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ImageWriterTest">
+  <component name="RunManager" selected="JUnit.LightsTests">
+    <configuration name="CameraTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ISE5784_7970_5202" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="renderer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="renderer" />
+      <option name="MAIN_CLASS_NAME" value="renderer.CameraTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ImageWriterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ISE5784_7970_5202" />
       <extension name="coverage">
@@ -162,7 +179,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ImageWriterTest.testWriteToImage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="IntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ISE5784_7970_5202" />
       <extension name="coverage">
         <pattern>
@@ -171,9 +188,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="renderer" />
-      <option name="MAIN_CLASS_NAME" value="renderer.ImageWriterTest" />
-      <option name="METHOD_NAME" value="testWriteToImage" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="renderer.IntegrationTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -189,22 +205,6 @@
       <option name="PACKAGE_NAME" value="renderer" />
       <option name="MAIN_CLASS_NAME" value="renderer.LightsTests" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LightsTests.sphereDirectional" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ISE5784_7970_5202" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="renderer.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="renderer" />
-      <option name="MAIN_CLASS_NAME" value="renderer.LightsTests" />
-      <option name="METHOD_NAME" value="sphereDirectional" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -226,11 +226,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ImageWriterTest" />
-        <item itemvalue="JUnit.ImageWriterTest.testWriteToImage" />
-        <item itemvalue="JUnit.RenderTests" />
-        <item itemvalue="JUnit.LightsTests.sphereDirectional" />
         <item itemvalue="JUnit.LightsTests" />
+        <item itemvalue="JUnit.IntegrationTest" />
+        <item itemvalue="JUnit.ImageWriterTest" />
+        <item itemvalue="JUnit.RenderTests" />
+        <item itemvalue="JUnit.CameraTest" />
       </list>
     </recent_temporary>
   </component>
@@ -718,7 +718,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/unittests/renderer/LightsTests.java</url>
-          <line>103</line>
+          <line>102</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
