@@ -8,6 +8,8 @@ import primitives.Vector;
 import java.util.MissingResourceException;
 import java.util.Objects;
 
+import static primitives.Util.alignZero;
+
 /**
  * This class represents the camera in the scene
  */
@@ -237,19 +239,15 @@ public class Camera implements Cloneable {
      */
     public Ray constructRay(int nX, int nY, int j, int i) {
         Point pC = p0.add(vTo.scale(distance));
-//        System.out.print(pC);
-//        if(Objects.equals(pC, new Point(0, 0, 0)))
-//            return null;
         double Rx = width / nX;
         double Ry = height / nY;
-        double xJ = (j - (double) (nX - 1) / 2) * Rx;
-        double yI = -(i - (double) (nY - 1) / 2) * Ry;
-        Vector pIJ = new Vector(pC.getXYZ());
+        double xJ = alignZero((j - (double) (nX - 1) / 2) * Rx);
         if (xJ != 0)
-            pIJ = pIJ.add(vRight.scale(xJ));
+            pC  = pC.add(vRight.scale(xJ));
+        double yI = alignZero(-(i - (double) (nY - 1) / 2) * Ry);
         if (yI != 0)
-            pIJ = pIJ.add(vUp.scale(yI));
-        Vector vIJ = pIJ.subtract(p0);
+            pC = pC.add(vUp.scale(yI));
+        Vector vIJ = pC.subtract(p0);
         return new Ray(p0, vIJ);
     }
 
@@ -258,7 +256,9 @@ public class Camera implements Cloneable {
      */
     public void writeToImage()
     {
-        this.imageWriter.writeToImage();
+        if (imageWriter == null)
+            throw new MissingResourceException("Image Writer is Missing", "Camera", "Set Image Writer");
+        imageWriter.writeToImage();
     }
 
     /** cast a ray throw a pixel and colors it

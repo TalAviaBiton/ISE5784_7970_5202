@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4b50f3a7-ff92-41f1-86dd-01d3b21a2dd1" name="Changes" comment="stage 6">
+    <list default="true" id="4b50f3a7-ff92-41f1-86dd-01d3b21a2dd1" name="Changes" comment="stage 6 th calcColor">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -70,10 +70,12 @@
     &quot;JUnit.GeomtriesTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.GeomtriesTest.testFindIntersections.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.ImageWriterTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ImageWriterTest.testWriteToImage.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.ImageWriterTest.writeToImage.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.IntegrationTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.IntegrationTest.testCameraSphere.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.LightsTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LightsTests.sphereDirectional.executor&quot;: &quot;Debug&quot;,
     &quot;JUnit.PlaneTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.PlaneTest.testFindIntersections.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.PlaneTest.testGetNormal.executor&quot;: &quot;Run&quot;,
@@ -144,33 +146,34 @@
       <recent name="primitives" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.LightsTests">
-    <configuration name="CylinderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.ImageWriterTest">
+    <configuration name="ImageWriterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ISE5784_7970_5202" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="geometries.*" />
+          <option name="PATTERN" value="renderer.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="geometries" />
-      <option name="MAIN_CLASS_NAME" value="geometries.CylinderTest" />
+      <option name="PACKAGE_NAME" value="renderer" />
+      <option name="MAIN_CLASS_NAME" value="renderer.ImageWriterTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GeomtriesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ImageWriterTest.testWriteToImage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ISE5784_7970_5202" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="geometries.*" />
+          <option name="PATTERN" value="renderer.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="geometries" />
-      <option name="MAIN_CLASS_NAME" value="geometries.GeomtriesTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="renderer" />
+      <option name="MAIN_CLASS_NAME" value="renderer.ImageWriterTest" />
+      <option name="METHOD_NAME" value="testWriteToImage" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -190,31 +193,32 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PlaneTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LightsTests.sphereDirectional" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ISE5784_7970_5202" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="geometries.*" />
+          <option name="PATTERN" value="renderer.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="geometries" />
-      <option name="MAIN_CLASS_NAME" value="geometries.PlaneTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="renderer" />
+      <option name="MAIN_CLASS_NAME" value="renderer.LightsTests" />
+      <option name="METHOD_NAME" value="sphereDirectional" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PolygonTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RenderTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ISE5784_7970_5202" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="geometries.*" />
+          <option name="PATTERN" value="renderer.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="geometries" />
-      <option name="MAIN_CLASS_NAME" value="geometries.PolygonTest" />
+      <option name="PACKAGE_NAME" value="renderer" />
+      <option name="MAIN_CLASS_NAME" value="renderer.RenderTests" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -222,21 +226,13 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ImageWriterTest" />
+        <item itemvalue="JUnit.ImageWriterTest.testWriteToImage" />
+        <item itemvalue="JUnit.RenderTests" />
+        <item itemvalue="JUnit.LightsTests.sphereDirectional" />
         <item itemvalue="JUnit.LightsTests" />
-        <item itemvalue="JUnit.CylinderTest" />
-        <item itemvalue="JUnit.GeomtriesTest" />
-        <item itemvalue="JUnit.PlaneTest" />
-        <item itemvalue="JUnit.PolygonTest" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.15989.150" />
-        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-IU-241.15989.150" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -272,8 +268,7 @@
       <workItem from="1720344669692" duration="1451000" />
       <workItem from="1720380925936" duration="1438000" />
       <workItem from="1720455522654" duration="8014000" />
-      <workItem from="1720721426638" duration="1884000" />
-      <workItem from="1720976720925" duration="686000" />
+      <workItem from="1720721426638" duration="1821000" />
     </task>
     <task id="LOCAL‎-00006" summary="all the tests are generated">
       <option name="closed" value="true" />
@@ -659,13 +654,13 @@
       <option name="project" value="LOCAL‎" />
       <updated>1720714936283</updated>
     </task>
-    <task id="LOCAL‎-00054" summary="stage 6">
+    <task id="LOCAL‎-00054" summary="stage 6 th calcColor">
       <option name="closed" value="true" />
-      <created>1720723319811</created>
+      <created>1720943129450</created>
       <option name="number" value="00054" />
       <option name="presentableId" value="LOCAL‎-00054" />
       <option name="project" value="LOCAL‎" />
-      <updated>1720723319811</updated>
+      <updated>1720943129450</updated>
     </task>
     <option name="localTasksCounter" value="55" />
     <servers />
@@ -686,6 +681,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="tag1" />
     <MESSAGE value="all the tests are generated" />
     <MESSAGE value="finshed all test but Triangle and finished all the get normal" />
     <MESSAGE value="almost every thing workes" />
@@ -710,8 +706,7 @@
     <MESSAGE value="finished stage 5" />
     <MESSAGE value="started stage 6" />
     <MESSAGE value="stage 6 th calcColor" />
-    <MESSAGE value="stage 6" />
-    <option name="LAST_COMMIT_MESSAGE" value="stage 6" />
+    <option name="LAST_COMMIT_MESSAGE" value="stage 6 th calcColor" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -723,8 +718,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/unittests/renderer/LightsTests.java</url>
-          <line>102</line>
-          <option name="timeStamp" value="2" />
+          <line>103</line>
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
