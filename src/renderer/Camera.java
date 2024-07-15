@@ -131,7 +131,8 @@ public class Camera implements Cloneable {
             return this;
         }
 
-        /** set the image writer for the camera
+        /**
+         * set the image writer for the camera
          *
          * @param imageWriter the image writer of the camera
          * @return the camera, this object
@@ -141,7 +142,8 @@ public class Camera implements Cloneable {
             return this;
         }
 
-        /**set the ray tracer for the camera
+        /**
+         * set the ray tracer for the camera
          *
          * @param rayTracerBase the ray tracer of the camera
          * @return the camera, this object
@@ -156,7 +158,8 @@ public class Camera implements Cloneable {
     /**
      * Constructor to initialize vector based object with a point
      */
-    private Camera() {}
+    private Camera() {
+    }
 
     /**
      * return a new object of the Builder class the mourner
@@ -208,7 +211,9 @@ public class Camera implements Cloneable {
      *
      * @return distance
      */
-    public double getDistance() {return distance;}
+    public double getDistance() {
+        return distance;
+    }
 
     /**
      * a get method for height
@@ -233,58 +238,57 @@ public class Camera implements Cloneable {
      *
      * @param nY for the resolution of the scene
      * @param nX for the resolution of the scene
-     * @param j the index of the pixel
-     * @param i the index of the pixel
+     * @param j  the index of the pixel
+     * @param i  the index of the pixel
      * @return the ray that goes throw the middle of the pixel
      */
     public Ray constructRay(int nX, int nY, int j, int i) {
         Point pC = p0.add(vTo.scale(distance));
-        double Rx = width / nX;
-        double Ry = height / nY;
-        double xJ = alignZero((j - (double) (nX - 1) / 2) * Rx);
+        // double Rx = width / nX;
+        //double Ry = height / nY;
+        double xJ = alignZero((j - (double) (nX - 1) / 2) * (width / nX));
         if (xJ != 0)
-            pC  = pC.add(vRight.scale(xJ));
-        double yI = alignZero(-(i - (double) (nY - 1) / 2) * Ry);
+            pC = pC.add(vRight.scale(xJ));
+        double yI = alignZero(-(i - (double) (nY - 1) / 2) * (height / nY));
         if (yI != 0)
             pC = pC.add(vUp.scale(yI));
-        Vector vIJ = pC.subtract(p0);
-        return new Ray(p0, vIJ);
+        //Vector vIJ = pC.subtract(p0);
+        return new Ray(p0, pC.subtract(p0));
     }
 
     /**
      * delegate to write to image of image writer
      */
-    public void writeToImage()
-    {
+    public void writeToImage() {
         if (imageWriter == null)
             throw new MissingResourceException("Image Writer is Missing", "Camera", "Set Image Writer");
         imageWriter.writeToImage();
     }
 
-    /** cast a ray throw a pixel and colors it
-     * @param nX the resolution of the scene
-     * @param nY the resolution of the scene
+    /**
+     * cast a ray throw a pixel and colors it
+     *
+     * @param nX     the resolution of the scene
+     * @param nY     the resolution of the scene
      * @param column the y index of the pixel
-     * @param row the x index of the pixel
+     * @param row    the x index of the pixel
      */
-    private void castRay(int nX, int nY, int column, int row)
-    {
-        Ray ray=this.constructRay(nX,nY,column,row);
-        Color color=this.rayTracerBase.traceRay(ray);
-        this.imageWriter.writePixel(column,row,color);
+    private void castRay(int nX, int nY, int column, int row) {
+        Ray ray = this.constructRay(nX, nY, column, row);
+        Color color = this.rayTracerBase.traceRay(ray);
+        this.imageWriter.writePixel(column, row, color);
     }
 
     /**
      * a method that does the rendering of the image
      */
-    public Camera renderImage()
-    {
-        int nY=imageWriter.getNy();
-        int nX=imageWriter.getNx();
+    public Camera renderImage() {
+        int nY = imageWriter.getNy();
+        int nX = imageWriter.getNx();
         for (int i = 0; i < nY; i++) {
             for (int j = 0; j < nX; j++) {
 
-                this.castRay(nX,nY,i,j);
+                this.castRay(nX, nY, i, j);
             }
         }
         return this;
@@ -292,15 +296,16 @@ public class Camera implements Cloneable {
 
     /**
      * a method that prints the picture
+     *
      * @param interval the distance of the pixel
-     * @param color the color of the grid
+     * @param color    the color of the grid
      * @return the image writer of the camera
      */
-    public ImageWriter printGrid(int interval, Color color){
+    public ImageWriter printGrid(int interval, Color color) {
         for (int i = 0; i < imageWriter.getNx(); i++) {
-            for (int j = 0; j <  imageWriter.getNy(); j++) {
+            for (int j = 0; j < imageWriter.getNy(); j++) {
                 if (i % interval == 0 || j % interval == 0) {
-                    imageWriter.writePixel(i,j, color);
+                    imageWriter.writePixel(i, j, color);
                 }
             }
         }

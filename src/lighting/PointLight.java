@@ -5,7 +5,7 @@ import primitives.Point;
 import primitives.Vector;
 
 /**
- *  a class to represents PointLight
+ * a class to represents PointLight
  */
 public class PointLight extends Light implements LightSource {
     protected Point position;
@@ -14,9 +14,10 @@ public class PointLight extends Light implements LightSource {
     protected double kQ = 0;
 
     /**
-     *a constructor that gets all the parameters
+     * a constructor that gets all the parameters
+     *
      * @param intensity the intensity of the light
-     * @param position the point the light come from
+     * @param position  the point the light come from
      */
     public PointLight(Color intensity, Point position) {
         super(intensity);
@@ -24,7 +25,8 @@ public class PointLight extends Light implements LightSource {
     }
 
     /**
-     *a constructor that gets only intensity
+     * a constructor that gets only intensity
+     *
      * @param intensity the intensity of the light
      */
     public PointLight(Color intensity) {
@@ -32,18 +34,20 @@ public class PointLight extends Light implements LightSource {
     }
 
     /**
-     * a method to get the intensity of the light in a spesific point
+     * a method to get the intensity of the light in a specific point
+     *
      * @param point the point I want to get the intensity of the light at
      * @return the intensity of the light in point
      */
     @Override
     public Color getIntensity(Point point) {
         double d = position.distance(point);
-        return intensity.scale(1 / (kC + kL * d + kQ * d * d));
+        return intensity.scale(1d / (kC + kL * d + kQ * d * d));
     }
 
     /**
-     * a method to get the direction of the light in a spesific point
+     * a method to get the direction of the light in a specific point
+     *
      * @param point the point I want to get the direction of the light at
      * @return the direction of the light in point
      */
@@ -54,9 +58,10 @@ public class PointLight extends Light implements LightSource {
     }
 
     /**
+     * setter for position
      *
-     * @param position
-     * @return
+     * @param position the position to set
+     * @return this object
      */
     public PointLight setPosition(Point position) {
         this.position = position;
@@ -64,32 +69,35 @@ public class PointLight extends Light implements LightSource {
     }
 
     /**
+     * setter for kC
      *
-     * @param KC
-     * @return
+     * @param kC the kc to set
+     * @return this object
      */
-    public PointLight setKc(double KC) {
-        this.kC = KC;
+    public PointLight setKc(double kC) {
+        this.kC = kC;
         return this;
     }
 
     /**
+     * setter for kL
      *
-     * @param KL
-     * @return
+     * @param kL the kL to set
+     * @return this object
      */
-    public PointLight setKl(double KL) {
-        this.kL = KL;
+    public PointLight setKl(double kL) {
+        this.kL = kL;
         return this;
     }
 
     /**
+     * setter for kQ
      *
-     * @param KQ
-     * @return
+     * @param kQ the kQ to set
+     * @return this object
      */
-    public PointLight setKq(double KQ) {
-        this.kQ = KQ;
+    public PointLight setKq(double kQ) {
+        this.kQ = kQ;
         return this;
     }
 }

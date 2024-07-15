@@ -1,4 +1,5 @@
 package lighting;
+
 import primitives.*;
 
 /**
@@ -7,6 +8,7 @@ import primitives.*;
 public interface LightSource {
     /**
      * a method to get the intensity of a color in the point
+     *
      * @param point the point I want to get the color of
      * @return the color of the point
      */
@@ -14,6 +16,7 @@ public interface LightSource {
 
     /**
      * a method to get the direction of the light in the point
+     *
      * @param point the point I want to get the color of
      * @return the direction of the light in point
      */
