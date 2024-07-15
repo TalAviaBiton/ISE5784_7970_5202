@@ -7,14 +7,15 @@ import primitives.*;
 public interface LightSource {
     /**
      * a method to get the intensity of a color in the point
-     * @param point  th point i want to get th color of
-     * @return th color of the point
+     * @param point the point I want to get the color of
+     * @return the color of the point
      */
     public Color getIntensity(Point point);
 
     /**
-     * @param point
-     * @return
+     * a method to get the direction of the light in the point
+     * @param point the point I want to get the color of
+     * @return the direction of the light in point
      */
     public Vector getL(Point point);
 
