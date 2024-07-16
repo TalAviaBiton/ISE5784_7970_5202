@@ -6,7 +6,7 @@ import primitives.Double3;
 /**
  * a class that represents the ambient light and extends light class
  */
-public class AmbientLight extends Light{
+public class AmbientLight extends Light {
 
     //the ambient light with default
     public final static AmbientLight NONE = new AmbientLight(Color.BLACK, 0);
@@ -18,6 +18,7 @@ public class AmbientLight extends Light{
      * @param kA the coefficient
      */
     public AmbientLight(Color iA, double kA) {
+
         super(iA.scale(kA));
     }
 
@@ -25,10 +26,11 @@ public class AmbientLight extends Light{
      * a constructor for bantamweight
      *
      * @param iA the color
-     * @param kI the coefficient
+     * @param kA the coefficient
      */
-    public AmbientLight(Color iA, Double3 kI) {
-        super(iA.scale(kI));
+    public AmbientLight(Color iA, Double3 kA) {
+
+        super(iA.scale(kA));
     }
 
 }

@@ -25,14 +25,15 @@ public class Scene {
     //the geometries in the scene
     public Geometries geometries = new Geometries();
 
-    //
+    //the list of lights that are in the scene
     public List<LightSource> lights= new LinkedList<>();
 
     /**
-     *
-     * @param name
+     * a construct to the scene
+     * @param name the name of the scene
      */
     public Scene(String name) {
+
         this.name = name;
     }
 
@@ -76,20 +77,4 @@ public class Scene {
         this.lights = lights;
         return this;
     }
-//    public class Builder {
-//        Scene scene=new Scene("building");
-//            public Scene setLights(List<LightSource> lights) {
-//                scene.lights = lights;
-//                return scene;
-//            }
-//            public Scene build(){
-//                try {
-//                    return (Scene) scene.clone();
-//                } catch (CloneNotSupportedException e) {
-//                    throw new RuntimeException(e);
-//                }
-//            }
-//
-//    }
-//    public Builder getBuilder() { return new Builder(); }
 }

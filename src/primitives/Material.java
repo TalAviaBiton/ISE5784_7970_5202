@@ -23,6 +23,11 @@ public class Material {
             return this;
         }
 
+    public Material setKd(double kD) {
+        this.kD = new Double3(kD);
+        return this;
+    }
+
     /**
      * a method to set the coefficient for specular part
      * @param kS the coefficient for specular part
@@ -31,7 +36,12 @@ public class Material {
     public Material setKs(Double3 kS){
             this.kS =kS;
             return this;
-        }
+    }
+
+    public Material setKs(double kS) {
+        this.kS = new Double3(kS);
+        return this;
+    }
 
     /**
      * a method to set the shininess power in Phong model
