@@ -86,33 +86,6 @@ public class SimpleRayTracer extends RayTracerBase {
         return material.kS.scale(Math.pow(coefficient, material.nShininess));
     }
 
-//    private double calcSpecular(mat,Vector n, Vector l, nl, v)
-//    {
-//
-//    }
-//
-//    private double calcDiffusive(mat, nl)
-//
-//    private Color calcLocalEffects(GeoPoint gp, Ray ray) {
-//        Vector n=gp.geometry.getNormal(gp.point);
-//        Vector v = ray.getDirection();
-//        double nv = alignZero(n.dotProduct(v));
-//        Color color = gp.geometry.getEmission();
-//        if (nv == 0) return color;
-//        Material material = gp.geometry.getMaterial();
-//        for (LightSource lightSource : scene.lights) {
-//            Vector l = lightSource.getL(gp.point);
-//            double nl = alignZero(n.dotProduct(l));
-//
-//            if (nl * nv > 0) { // sign(nl) == sing(nv)
-//                Color iL = lightSource.getIntensity(gp.point);
-//                color = color.add(
-//                        iL.scale(calcDiffusive(mat, nl)
-//                                .add(calcSpecular(mat, n, l, nl, v))));
-//            }
-//        }
-//        return color;
-//    }
 
     /**
      * calculate the color of the given point

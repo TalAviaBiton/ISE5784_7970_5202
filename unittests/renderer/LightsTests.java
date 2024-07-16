@@ -132,10 +132,15 @@ public class LightsTests {
     /** Produce a picture of a sphere lighted by all possible lights */
     @Test
     public void sphereAll() {
+        Point           sphereLightPositionAllPoint    = new Point(100, 20, 0);
+        Point           sphereLightPositionAllSpot    = new Point(-50d, 20, 0);
+        Color          sphereLightColor2     = new Color(1000, 300, 100);
+        Color          sphereLightColor3     = new Color(1000, 0, 100);
+        Vector sphereLightDirectionAllSpot= new Vector(-1, 1, 0.5);
         scene1.geometries.add(sphere);
-        scene1.lights.add(new SpotLight(sphereLightColor, sphereLightPosition, sphereLightDirection)
+        scene1.lights.add(new SpotLight(sphereLightColor3, sphereLightPositionAllSpot, sphereLightDirectionAllSpot)
                 .setKl(0.001).setKq(0.0001));//sphereLightColor
-        scene1.lights.add(new PointLight(sphereLightColor, sphereLightPosition)
+        scene1.lights.add(new PointLight(sphereLightColor2, sphereLightPositionAllPoint)
                 .setKl(0.001).setKq(0.0002));
         scene1.lights.add(new DirectionalLight(sphereLightColor, sphereLightDirection));
         camera1.setImageWriter(new ImageWriter("lightSphereAll", 500, 500))
@@ -186,10 +191,12 @@ public class LightsTests {
     /** Produce a picture of two triangles lighted by all the possible lights */
     @Test
     public void trianglesAll() {
+        Point           trianglLightPositionAllPoint    = new Point(-50, 0, 25);
+         Color          trianglLightColor     = new Color(1000, 300, 100);
         scene2.geometries.add(triangle1, triangle2);
-        scene2.lights.add(new SpotLight(trianglesLightColor, trianglesLightPosition, trianglesLightDirection)
+        scene2.lights.add(new SpotLight(trianglLightColor, trianglesLightPosition, trianglesLightDirection)
                 .setKl(0.001).setKq(0.0001));
-        scene2.lights.add(new PointLight(trianglesLightColor, trianglesLightPosition)
+        scene2.lights.add(new PointLight(trianglLightColor, trianglLightPositionAllPoint)
                 .setKl(0.001).setKq(0.0002));
         scene2.lights.add(new DirectionalLight(trianglesLightColor, trianglesLightDirection));
         camera2.setImageWriter(new ImageWriter("lightTrianglesAll", 500, 500))
