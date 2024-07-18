@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4b50f3a7-ff92-41f1-86dd-01d3b21a2dd1" name="Changes" comment="stage 6">
+    <list default="true" id="4b50f3a7-ff92-41f1-86dd-01d3b21a2dd1" name="Changes" comment="stage 6 almost finished">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/SimpleRayTracer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/SimpleRayTracer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/Camera.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unittests/renderer/LightsTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/renderer/LightsTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -154,7 +154,22 @@
       <recent name="primitives" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.LightsTests.trianglesAll">
+  <component name="RunManager" selected="JUnit.ImageWriterTest">
+    <configuration name="ImageWriterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ISE5784_7970_5202" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="renderer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="renderer" />
+      <option name="MAIN_CLASS_NAME" value="renderer.ImageWriterTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="LightsTests.sphereAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ISE5784_7970_5202" />
       <extension name="coverage">
@@ -219,28 +234,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RayTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ISE5784_7970_5202" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="primitives.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="primitives" />
-      <option name="MAIN_CLASS_NAME" value="primitives.RayTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ImageWriterTest" />
+        <item itemvalue="JUnit.LightsTests.sphereDirectional" />
         <item itemvalue="JUnit.LightsTests.trianglesAll" />
         <item itemvalue="JUnit.LightsTests.sphereAll" />
         <item itemvalue="JUnit.LightsTests.spherePoint" />
-        <item itemvalue="JUnit.LightsTests.sphereDirectional" />
-        <item itemvalue="JUnit.RayTest" />
       </list>
     </recent_temporary>
   </component>
@@ -288,15 +288,7 @@
       <workItem from="1720455522654" duration="8014000" />
       <workItem from="1720721426638" duration="1821000" />
       <workItem from="1721156224829" duration="4407000" />
-      <workItem from="1721281050418" duration="3704000" />
-    </task>
-    <task id="LOCAL‎-00009" summary="finshed all test but Triangle and finished all the get normal">
-      <option name="closed" value="true" />
-      <created>1716309760538</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL‎-00009" />
-      <option name="project" value="LOCAL‎" />
-      <updated>1716309760538</updated>
+      <workItem from="1721281050418" duration="7470000" />
     </task>
     <task id="LOCAL‎-00010" summary="almost every thing workes">
       <option name="closed" value="true" />
@@ -682,7 +674,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1721160743659</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL‎-00058" summary="stage 6 almost finished">
+      <option name="closed" value="true" />
+      <created>1721284815693</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL‎-00058" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1721284815693</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -701,7 +701,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="all the tests are generated" />
     <MESSAGE value="finshed all test but Triangle and finished all the get normal" />
     <MESSAGE value="almost every thing workes" />
     <MESSAGE value="et normal of cylinder" />
@@ -726,7 +725,8 @@
     <MESSAGE value="started stage 6" />
     <MESSAGE value="stage 6 th calcColor" />
     <MESSAGE value="stage 6" />
-    <option name="LAST_COMMIT_MESSAGE" value="stage 6" />
+    <MESSAGE value="stage 6 almost finished" />
+    <option name="LAST_COMMIT_MESSAGE" value="stage 6 almost finished" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

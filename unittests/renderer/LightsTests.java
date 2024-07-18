@@ -31,7 +31,7 @@ public class LightsTests {
             .setAmbientLight(new AmbientLight(new Color(WHITE), new Double3(0.15)));
 
     /**
-     * First camera builder for some of tests
+     * First camera builder for some of the tests
      */
     private final Camera.Builder camera1 = Camera.getBuilder()
             .setRayTracerBase(new SimpleRayTracer(scene1))
@@ -39,7 +39,7 @@ public class LightsTests {
             .setDirection(new Vector(0, 0, -1), new Vector(0, 1, 0))
             .setVpSize(150, 150).setVpDistance(1000);
     /**
-     * Second camera builder for some of tests
+     * Second camera builder for some of the tests
      */
     private final Camera.Builder camera2 = Camera.getBuilder()
             .setRayTracerBase(new SimpleRayTracer(scene2))
@@ -191,6 +191,7 @@ public class LightsTests {
      */
     @Test
     public void sphereAll() {
+
         Point sphereLightPositionAllPoint = new Point(100, 20, 25);
         Point sphereLightPositionAllSpot = new Point(50, 50, -25);
         Color sphereLightColor2 = new Color(1000, 300, 100);
@@ -203,9 +204,10 @@ public class LightsTests {
                 , new PointLight(sphereLightColor2, sphereLightPositionAllPoint)
                         .setKl(0.001).setKq(0.0002)
                 , new DirectionalLight(sphereLightColor, sphereLightDirection));
-        scene1.setLights(lights);
 
+        scene1.setLights(lights);
         scene1.geometries.add(sphere);
+
         camera1.setImageWriter(new ImageWriter("lightSphereAll", 500, 500))
                 .build()
                 .renderImage()
@@ -218,6 +220,7 @@ public class LightsTests {
      */
     @Test
     public void trianglesDirectional() {
+
         scene2.geometries.add(triangle1, triangle2);
         scene2.lights.add(new DirectionalLight(trianglesLightColor, trianglesLightDirection));
 
