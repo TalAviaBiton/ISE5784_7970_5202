@@ -78,8 +78,8 @@
     "JUnit.IntegrationTest.testCameraSphere.executor": "Run",
     "JUnit.LightsTests.executor": "Run",
     "JUnit.LightsTests.sphereAll.executor": "Run",
-    "JUnit.LightsTests.sphereDirectional.executor": "Debug",
-    "JUnit.LightsTests.spherePoint.executor": "Debug",
+    "JUnit.LightsTests.sphereDirectional.executor": "Run",
+    "JUnit.LightsTests.spherePoint.executor": "Run",
     "JUnit.LightsTests.sphereSpot.executor": "Run",
     "JUnit.LightsTests.trianglesAll.executor": "Run",
     "JUnit.LightsTests.trianglesDirectional.executor": "Run",
@@ -154,37 +154,7 @@
       <recent name="primitives" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.LightsTests.sphereAll">
-    <configuration name="CameraTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ISE5784_7970_5202" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="renderer.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="renderer" />
-      <option name="MAIN_CLASS_NAME" value="renderer.CameraTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LightsTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ISE5784_7970_5202" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="renderer.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="renderer" />
-      <option name="MAIN_CLASS_NAME" value="renderer.LightsTests" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.LightsTests.trianglesAll">
     <configuration name="LightsTests.sphereAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ISE5784_7970_5202" />
       <extension name="coverage">
@@ -196,6 +166,22 @@
       <option name="PACKAGE_NAME" value="renderer" />
       <option name="MAIN_CLASS_NAME" value="renderer.LightsTests" />
       <option name="METHOD_NAME" value="sphereAll" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LightsTests.sphereDirectional" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ISE5784_7970_5202" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="renderer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="renderer" />
+      <option name="MAIN_CLASS_NAME" value="renderer.LightsTests" />
+      <option name="METHOD_NAME" value="sphereDirectional" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -233,13 +219,28 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="RayTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ISE5784_7970_5202" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="primitives.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="primitives" />
+      <option name="MAIN_CLASS_NAME" value="primitives.RayTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.LightsTests.sphereAll" />
-        <item itemvalue="JUnit.CameraTest" />
         <item itemvalue="JUnit.LightsTests.trianglesAll" />
+        <item itemvalue="JUnit.LightsTests.sphereAll" />
         <item itemvalue="JUnit.LightsTests.spherePoint" />
-        <item itemvalue="JUnit.LightsTests" />
+        <item itemvalue="JUnit.LightsTests.sphereDirectional" />
+        <item itemvalue="JUnit.RayTest" />
       </list>
     </recent_temporary>
   </component>
@@ -286,15 +287,8 @@
       <workItem from="1720380925936" duration="1438000" />
       <workItem from="1720455522654" duration="8014000" />
       <workItem from="1720721426638" duration="1821000" />
-      <workItem from="1721156224829" duration="4385000" />
-    </task>
-    <task id="LOCAL‎-00008" summary="in the middle of vector test">
-      <option name="closed" value="true" />
-      <created>1716055538916</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL‎-00008" />
-      <option name="project" value="LOCAL‎" />
-      <updated>1716055538916</updated>
+      <workItem from="1721156224829" duration="4407000" />
+      <workItem from="1721281050418" duration="3704000" />
     </task>
     <task id="LOCAL‎-00009" summary="finshed all test but Triangle and finished all the get normal">
       <option name="closed" value="true" />
@@ -680,7 +674,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1721156295033</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL‎-00057" summary="stage 6">
+      <option name="closed" value="true" />
+      <created>1721160743659</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL‎-00057" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1721160743659</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -733,11 +735,6 @@
           <url>file://$PROJECT_DIR$/unittests/renderer/CameraTest.java</url>
           <line>37</line>
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/unittests/renderer/LightsTests.java</url>
-          <line>108</line>
-          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
