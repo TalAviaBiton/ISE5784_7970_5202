@@ -33,24 +33,27 @@ public class SimpleRayTracer extends RayTracerBase {
      * calculate the effects of the geometry itself without the effect of other
      * geometries on this object
      *
-     * @param gp  the point to calculate the effects on
+     * @param geoPoint  the point to calculate the effects on
      * @param ray the ray we intersected with
      * @return the result color of the local effects
      */
-    private Color calcLocalEffects(GeoPoint gp, Ray ray) {
-        Color color = gp.geometry.getEmission();
+    private Color calcLocalEffects(GeoPoint geoPoint, Ray ray) {
+        Color color = geoPoint.geometry.getEmission();
         Vector v = ray.getDirection();
-        Vector n = gp.geometry.getNormal(gp.point);
+        Vector n = geoPoint.geometry.getNormal(geoPoint.point);
         double nv = Util.alignZero(n.dotProduct(v));
         if (nv == 0)
             return color;
-        Material material = gp.geometry.getMaterial();
+        Material material = geoPoint.geometry.getMaterial();
         for (LightSource lightSource : scene.lights) {
-            Vector l = lightSource.getL(gp.point);
+            Vector l = lightSource.getL(geoPoint.point);
             double nl = Util.alignZero(n.dotProduct(l));
             if (nl * nv > 0) { // sign(nl) == sing(nv)
-                Color iL = lightSource.getIntensity(gp.point);
-                color = color.add(iL.scale(calcDiffusive(material, nl)), iL.scale(calcSpecular(material, n, l, nl, v)));
+                Color iL = lightSource.getIntensity(geoPoint.point);
+                color = color.add(
+                        iL.scale(calcDiffusive(material, nl)
+                                .add(calcSpecular(material, n, l, nl, v))));
+//                color = color.add(iL.scale(calcDiffusive(material, nl)), iL.scale(calcSpecular(material, n, l, nl, v)));
             }
         }
         return color;
@@ -77,7 +80,7 @@ public class SimpleRayTracer extends RayTracerBase {
      * @param cosAngle the cosine of the angle between the light and the normal to
      *                 the object
      * @param rayDir   the direction the camera is pointed to
-     * @return
+     * @return the specular light color
      */
     private Double3 calcSpecular(Material material, Vector normal, Vector lightDir, double cosAngle, Vector rayDir) {
         Vector r = lightDir.subtract(normal.scale(2 * cosAngle));
@@ -86,33 +89,6 @@ public class SimpleRayTracer extends RayTracerBase {
         return material.kS.scale(Math.pow(coefficient, material.nShininess));
     }
 
-//    private double calcSpecular(mat,Vector n, Vector l, nl, v)
-//    {
-//
-//    }
-//
-//    private double calcDiffusive(mat, nl)
-//
-//    private Color calcLocalEffects(GeoPoint gp, Ray ray) {
-//        Vector n=gp.geometry.getNormal(gp.point);
-//        Vector v = ray.getDirection();
-//        double nv = alignZero(n.dotProduct(v));
-//        Color color = gp.geometry.getEmission();
-//        if (nv == 0) return color;
-//        Material material = gp.geometry.getMaterial();
-//        for (LightSource lightSource : scene.lights) {
-//            Vector l = lightSource.getL(gp.point);
-//            double nl = alignZero(n.dotProduct(l));
-//
-//            if (nl * nv > 0) { // sign(nl) == sing(nv)
-//                Color iL = lightSource.getIntensity(gp.point);
-//                color = color.add(
-//                        iL.scale(calcDiffusive(mat, nl)
-//                                .add(calcSpecular(mat, n, l, nl, v))));
-//            }
-//        }
-//        return color;
-//    }
 
     /**
      * calculate the color of the given point
