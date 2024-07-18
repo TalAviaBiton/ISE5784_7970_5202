@@ -1,24 +1,17 @@
 package renderer;
 
-import geometries.Geometry;
-import geometries.Intersectable;
 import primitives.*;
 import primitives.Material;
-import primitives.Point;
 import primitives.Ray;
 import primitives.Vector;
 import scene.Scene;
-import java.util.*;
-import geometries.*;
 import lighting.*;
 import geometries.Intersectable.GeoPoint;
-
-import static primitives.Util.alignZero;
 
 /**
  * extends ray tracer base and represent a simple ray
  */
-public class SimpleRayTracer extends RayTracerBase {
+public class SimpleRayTracer extends RayTracer {
 
     /**
      * a constructor for simple ray tracer

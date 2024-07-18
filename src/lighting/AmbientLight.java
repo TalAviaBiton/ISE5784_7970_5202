@@ -14,7 +14,7 @@ public class AmbientLight extends Light {
     /**
      * a constructor for bantamweight
      *
-     * @param iA the color
+     * @param iA the intensity
      * @param kA the coefficient
      */
     public AmbientLight(Color iA, double kA) {
