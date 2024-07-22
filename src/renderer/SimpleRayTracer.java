@@ -7,12 +7,14 @@ import primitives.Vector;
 import scene.Scene;
 import lighting.*;
 import geometries.Intersectable.*;
+
+import static java.lang.Math.*;
 import static primitives.Util.*;
 
 /**
  * extends ray tracer base and represent a simple ray
  */
-public class SimpleRayTracer extends RayTracer {
+public class SimpleRayTracer extends RayTracerBase {
 
     /**
      * a constructor for simple ray tracer
@@ -32,26 +34,25 @@ public class SimpleRayTracer extends RayTracer {
      * @return the result color of the local effects
      */
     private Color calcLocalEffects(GeoPoint geoPoint, Ray ray) {
-        Color color = geoPoint.geometry.getEmission();//IE
-        Vector v = ray.getDirection();
-        Vector n = geoPoint.geometry.getNormal(geoPoint.point);
-        double nv = alignZero(n.dotProduct(v));
-        if (isZero(nv))
-            return color;
+        Vector normal = geoPoint.geometry.getNormal(geoPoint.point);
+        Vector rayDirection = ray.getDirection();
+        double nv = alignZero(normal.dotProduct(rayDirection));
+        if (nv == 0) return geoPoint.geometry.getEmission();
         Material material = geoPoint.geometry.getMaterial();
+        Color color = geoPoint.geometry.getEmission();
         for (LightSource lightSource : scene.lights) {
-            Vector l = lightSource.getL(geoPoint.point);
-            double nl = alignZero(n.dotProduct(l));
-            if (nl * nv > 0) { // sign(nl) == sing(nv)
+            Vector lightDirection = lightSource.getL(geoPoint.point);
+            double cosAngle = alignZero(normal.dotProduct(lightDirection));
+            if (cosAngle * nv > 0) { // sign(nl) == sing(nv)
                 Color iL = lightSource.getIntensity(geoPoint.point);
                 color = color.add(
-                        iL.scale(calcDiffusive(material, nl)
-                                .add(calcSpecular(material, n, l, nl, v))));
-//                color = color.add(iL.scale(calcDiffusive(material, nl)), iL.scale(calcSpecular(material, n, l, nl, v)));
+                        iL.scale(calcDiffusive(material, cosAngle)
+                                .add(calcSpecular(material, normal, lightDirection, cosAngle, rayDirection))));
             }
         }
         return color;
     }
+
 
     /**
      * calculates the diffusive light part of the object
@@ -70,15 +71,15 @@ public class SimpleRayTracer extends RayTracer {
      *
      * @param material the material of the object
      * @param normal   the normal to the object
-     * @param lightDir the direction of the light
+     * @param lightDirection the direction of the light
      * @param cosAngle the cosine of the angle between the light and the normal to
      *                 the object
-     * @param rayDir   the direction the camera is pointed to
+     * @param rayDirection   the direction the camera is pointed to
      * @return the specular light color
      */
-    private Double3 calcSpecular(Material material, Vector normal, Vector lightDir, double cosAngle, Vector rayDir) {
-        Vector r = lightDir.subtract(normal.scale(2 * cosAngle));
-        double coefficient = -rayDir.dotProduct(r);
+    private Double3 calcSpecular(Material material, Vector normal, Vector lightDirection, double cosAngle, Vector rayDirection) {
+        Vector r = lightDirection.subtract(normal.scale(2 * cosAngle));
+        double coefficient = -rayDirection.dotProduct(r);
         coefficient = coefficient > 0 ? coefficient : 0;
         return material.kS.scale(Math.pow(coefficient, material.nShininess));
     }
@@ -91,7 +92,8 @@ public class SimpleRayTracer extends RayTracer {
      * @return the color of the point
      */
     private Color calcColor(GeoPoint geoPoint,Ray ray) {
-        return scene.ambientLight.getIntensity().add(calcLocalEffects(geoPoint, ray));
+        Color localEffects = calcLocalEffects(geoPoint, ray);
+        return scene.ambientLight.getIntensity().add(localEffects);
     }
 
     /**
@@ -107,5 +109,7 @@ public class SimpleRayTracer extends RayTracer {
                 : calcColor(ray.findClosestGeoPoint(intersections),ray);
     }
 
+
 }
+
 

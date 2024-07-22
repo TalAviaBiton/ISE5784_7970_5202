@@ -224,7 +224,8 @@ public class LightsTests {
                     // the left-top
                     new Point(2, 2, 0)
             };
-
+    private final Geometry triangle4 = new Triangle(vertices[0], vertices[1], vertices[2])
+            .setEmission(sphereColor);
     private final Geometry t2 = new Triangle(vertices2[0], vertices2[1], vertices2[2])
             .setEmission(sphereColor).setMaterial(new Material().setKd(KD3).setKs(KS3).setShininess(SHININESS));
     private final Geometry s2 = new Sphere(new Point(0,0,0),2)
@@ -233,15 +234,16 @@ public class LightsTests {
     @Test
     public void small() {
 
-        scene1.geometries.add(s2);
+        scene1.geometries.add(sphere);
         scene1.lights.add(new SpotLight(sphereLightColor, sphereLightPosition, sphereLightDirection)
                 .setKl(0.001).setKq(0.0001));//sphereLightColor
 
-        camera1.setImageWriter(new ImageWriter("lightSphereSmall", 500, 500))
+        camera1.setImageWriter(new ImageWriter("lightSphereSmall", 10, 10))
                 .build()
                 .renderImage()
                 .writeToImage();
     }
+
 
 
 

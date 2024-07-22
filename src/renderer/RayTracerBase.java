@@ -7,7 +7,7 @@ import scene.Scene;
 /**
  * an  abstract class for the basic ray in the scene
  */
-public abstract class RayTracer {
+public abstract class RayTracerBase {
     protected Scene scene;
 
     /**
@@ -15,7 +15,7 @@ public abstract class RayTracer {
      *
      * @param scene the scene of the photo
      */
-    public RayTracer(Scene scene) {
+    public RayTracerBase(Scene scene) {
         this.scene = scene;
     }
 
