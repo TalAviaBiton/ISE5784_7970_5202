@@ -1,24 +1,18 @@
 package renderer;
 
-import geometries.Geometry;
-import geometries.Intersectable;
 import primitives.*;
 import primitives.Material;
-import primitives.Point;
 import primitives.Ray;
 import primitives.Vector;
 import scene.Scene;
-import java.util.*;
-import geometries.*;
 import lighting.*;
-import geometries.Intersectable.GeoPoint;
-
-import static primitives.Util.alignZero;
+import geometries.Intersectable.*;
+import static primitives.Util.*;
 
 /**
  * extends ray tracer base and represent a simple ray
  */
-public class SimpleRayTracer extends RayTracerBase {
+public class SimpleRayTracer extends RayTracer {
 
     /**
      * a constructor for simple ray tracer
@@ -38,16 +32,16 @@ public class SimpleRayTracer extends RayTracerBase {
      * @return the result color of the local effects
      */
     private Color calcLocalEffects(GeoPoint geoPoint, Ray ray) {
-        Color color = geoPoint.geometry.getEmission();
+        Color color = geoPoint.geometry.getEmission();//IE
         Vector v = ray.getDirection();
         Vector n = geoPoint.geometry.getNormal(geoPoint.point);
-        double nv = Util.alignZero(n.dotProduct(v));
-        if (nv == 0)
+        double nv = alignZero(n.dotProduct(v));
+        if (isZero(nv))
             return color;
         Material material = geoPoint.geometry.getMaterial();
         for (LightSource lightSource : scene.lights) {
             Vector l = lightSource.getL(geoPoint.point);
-            double nl = Util.alignZero(n.dotProduct(l));
+            double nl = alignZero(n.dotProduct(l));
             if (nl * nv > 0) { // sign(nl) == sing(nv)
                 Color iL = lightSource.getIntensity(geoPoint.point);
                 color = color.add(

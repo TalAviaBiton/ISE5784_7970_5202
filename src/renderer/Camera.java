@@ -6,9 +6,9 @@ import primitives.Ray;
 import primitives.Vector;
 
 import java.util.MissingResourceException;
-import java.util.Objects;
 
 import static primitives.Util.alignZero;
+import static primitives.Util.isZero;
 
 /**
  * This class represents the camera in the scene
@@ -35,7 +35,7 @@ public class Camera implements Cloneable {
     //the image writer for the scene
     private ImageWriter imageWriter;
     //the ray tracer for the camera
-    private RayTracerBase rayTracerBase;
+    private RayTracer rayTracer;
 
 
     /**
@@ -68,7 +68,7 @@ public class Camera implements Cloneable {
             if (camera.imageWriter == null)
                 throw new MissingResourceException("Missing rendering data", "Class Camera", "Missing image writer");
 
-            if (camera.rayTracerBase == null)
+            if (camera.rayTracer == null)
                 throw new MissingResourceException("Missing rendering data", "Class Camera", "Missing rayTracerBase");
 
             setDirection(camera.vTo, camera.vUp);
@@ -145,11 +145,11 @@ public class Camera implements Cloneable {
         /**
          * set the ray tracer for the camera
          *
-         * @param rayTracerBase the ray tracer of the camera
+         * @param rayTracer the ray tracer of the camera
          * @return the camera, this object
          */
-        public Builder setRayTracerBase(RayTracerBase rayTracerBase) {
-            camera.rayTracerBase = rayTracerBase;
+        public Builder setRayTracerBase(RayTracer rayTracer) {
+            camera.rayTracer = rayTracer;
             return this;
         }
 
@@ -245,10 +245,10 @@ public class Camera implements Cloneable {
     public Ray constructRay(int nX, int nY, int j, int i) {
         Point pC = p0.add(vTo.scale(distance));
         double xJ = alignZero((j - (double) (nX - 1) / 2) * (width / nX));
-        if (xJ != 0)
+        if (!isZero(xJ))
             pC = pC.add(vRight.scale(xJ));
         double yI = alignZero(-(i - (double) (nY - 1) / 2) * (height / nY));
-        if (yI != 0)
+        if (!isZero(yI))
             pC = pC.add(vUp.scale(yI));
         return new Ray(p0, pC.subtract(p0));
     }
@@ -267,13 +267,13 @@ public class Camera implements Cloneable {
      *
      * @param nX     the resolution of the scene
      * @param nY     the resolution of the scene
-     * @param column the y index of the pixel
-     * @param row    the x index of the pixel
+     * @param i the y index of the pixel
+     * @param j    the x index of the pixel
      */
-    private void castRay(int nX, int nY, int column, int row) {
-        Ray ray = this.constructRay(nX, nY, column, row);
-        Color color = this.rayTracerBase.traceRay(ray);
-        this.imageWriter.writePixel(column, row, color);
+    private void castRay(int nX, int nY, int i, int j) {
+        Ray ray = this.constructRay(nX, nY, i, j);
+        Color color = this.rayTracer.traceRay(ray);
+        this.imageWriter.writePixel(i, j, color);
     }
 
     /**
