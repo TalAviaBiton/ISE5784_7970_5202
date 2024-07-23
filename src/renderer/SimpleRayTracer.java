@@ -40,16 +40,24 @@ public class SimpleRayTracer extends RayTracerBase {
         if (nv == 0) return geoPoint.geometry.getEmission();
         Material material = geoPoint.geometry.getMaterial();
         Color color = geoPoint.geometry.getEmission();
+
+        //Color color=Color.BLACK;
+        //System.out.println(color);
         for (LightSource lightSource : scene.lights) {
             Vector lightDirection = lightSource.getL(geoPoint.point);
             double cosAngle = alignZero(normal.dotProduct(lightDirection));
             if (cosAngle * nv > 0) { // sign(nl) == sing(nv)
                 Color iL = lightSource.getIntensity(geoPoint.point);
-                color = color.add(
-                        iL.scale(calcDiffusive(material, cosAngle)
-                                .add(calcSpecular(material, normal, lightDirection, cosAngle, rayDirection))));
+                //System.out.println(iL);
+//                color = color.add(
+//                        iL.scale(calcDiffusive(material, cosAngle)
+//                                .add(calcSpecular(material, normal, lightDirection, cosAngle, rayDirection))));
+                color = iL.scale(calcDiffusive(material, cosAngle)
+                                .add(calcSpecular(material, normal, lightDirection, cosAngle, rayDirection))).add( geoPoint.geometry.getEmission());
+                //System.out.println(color);
             }
         }
+        //System.out.println(color);
         return color;
     }
 
@@ -91,9 +99,13 @@ public class SimpleRayTracer extends RayTracerBase {
      * @param geoPoint the point that i want to find the color of her
      * @return the color of the point
      */
-    private Color calcColor(GeoPoint geoPoint,Ray ray) {
-        Color localEffects = calcLocalEffects(geoPoint, ray);
-        return scene.ambientLight.getIntensity().add(localEffects);
+//    private Color calcColor(GeoPoint geoPoint,Ray ray) {
+//        Color localEffects = calcLocalEffects(geoPoint, ray);
+//        return scene.ambientLight.getIntensity().add(localEffects);
+//    }
+    private Color calcColor(GeoPoint geoPoint, Ray ray) {
+        return scene.ambientLight.getIntensity()
+                .add(calcLocalEffects(geoPoint, ray));
     }
 
     /**
