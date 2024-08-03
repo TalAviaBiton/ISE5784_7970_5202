@@ -33,10 +33,12 @@ public class Ray {
     }
 
     public Vector getDirection() {
+
         return direction;
     }
 
     public Point getHead() {
+
         return head;
     }
 
@@ -72,7 +74,7 @@ public class Ray {
      * @return the point that is the closest to the head of the ray
      */
     public Point findClosestPoint(List<Point> points) {
-        return points.isEmpty() ? null
+        return points==null || points.isEmpty() ? null
                 : findClosestGeoPoint(points.stream()
                 .map(p -> new GeoPoint(null, p)).toList()).point;
     }
@@ -83,7 +85,7 @@ public class Ray {
      */
     public GeoPoint findClosestGeoPoint(List<GeoPoint> geoPoints)
     {
-        if(geoPoints.isEmpty() )
+        if(geoPoints==null ||geoPoints.isEmpty() )
             return null;
         double minDistance=head.distance(geoPoints.getFirst().point);
         GeoPoint minPoint=geoPoints.getFirst();

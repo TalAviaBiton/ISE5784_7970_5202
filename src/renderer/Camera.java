@@ -35,7 +35,7 @@ public class Camera implements Cloneable {
     //the image writer for the scene
     private ImageWriter imageWriter;
     //the ray tracer for the camera
-    private RayTracer rayTracer;
+    private RayTracerBase rayTracer;
 
 
     /**
@@ -148,7 +148,7 @@ public class Camera implements Cloneable {
          * @param rayTracer the ray tracer of the camera
          * @return the camera, this object
          */
-        public Builder setRayTracerBase(RayTracer rayTracer) {
+        public Builder setRayTracerBase(RayTracerBase rayTracer) {
             camera.rayTracer = rayTracer;
             return this;
         }
@@ -283,9 +283,10 @@ public class Camera implements Cloneable {
     public Camera renderImage() {
         int nY = imageWriter.getNy();
         int nX = imageWriter.getNx();
-        for (int i = 0; i < nY; i++) {
-            for (int j = 0; j < nX; j++) {
-
+        for (int i = 0; i < nX; i++) {
+            for (int j = 0; j < nY; j++) {
+                //System.out.println(i);
+                //System.out.println(j);
                 this.castRay(nX, nY, i, j);
             }
         }

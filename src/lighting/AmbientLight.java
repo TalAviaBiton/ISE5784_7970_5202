@@ -9,7 +9,7 @@ import primitives.Double3;
 public class AmbientLight extends Light {
 
     //the ambient light with default
-    public final static AmbientLight NONE = new AmbientLight(Color.BLACK, 0);
+    public final static AmbientLight NONE = new AmbientLight(Color.BLACK, Double3.ZERO);//0
 
     /**
      * a constructor for bantamweight
