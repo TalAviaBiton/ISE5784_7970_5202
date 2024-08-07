@@ -80,7 +80,7 @@ public class LightsTests {
     /**
      * Light color for tests with sphere
      */
-    private final Color sphereLightColor = new Color(800, 500, 0);
+    private final Color sphereLightColor = new Color(1000, 200, 0);//800 500 0
     /**
      * Color of the sphere
      */

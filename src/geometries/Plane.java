@@ -1,99 +1,78 @@
 package geometries;
-/**
- * This class represents a plane
- */
-
-import primitives.Point;
-import primitives.Ray;
-import primitives.Vector;
 
 import java.util.List;
 
-import static primitives.Util.isZero;
+import primitives.*;
 
-
+/**
+ * 2D plane in a 3D world
+ *
+ * @author Shulman and Yonatan
+ *
+ */
 public class Plane extends Geometry {
-    /**
-     * parameter to represent a point in the plane
-     */
-    private Point q;
+
+    private final Point p0;
+    private final Vector normal;
 
     /**
-     * parameter to represent the normal for the plane
-     */
-    private Vector normal;
-
-    /**
-     * Constructor to initialize the plane
+     * create a plane using 3 points on the plane
      *
-     * @param p1 the first point
-     * @param p2 second point value
-     * @param p3 third point value
+     * @param p1 1st point on the plane
+     * @param p2 2nd point on the plane
+     * @param p3 3rd point on the plane
      */
-    public Plane(final Point p1, final Point p2, final Point p3) {
-        q = p1;
-        Vector v1 = p1.subtract(p2);
-        Vector v2 = p3.subtract(p2);
-        Vector v3 = p2.subtract(p1);
-        if (p1.equals(p2) || (Math.abs(v1.dotProduct(v2)) == 1 && Math.abs(v1.dotProduct(v3)) == 1 && Math.abs(v3.dotProduct(v2)) == 1))
-            throw new IllegalArgumentException("Error: the points of the plane are on the same line");
-        normal = (v1.crossProduct(v2)).normalize();
-
+    public Plane(Point p1, Point p2, Point p3) {
+        this.p0 = p1;
+        this.normal = (p2.subtract(p1).crossProduct(p3.subtract(p1))).normalize();
     }
 
     /**
-     * Constructor to initialize the plane
+     * create plane using point in the plane and normal to the plane
      *
-     * @param q      the  point
-     * @param normal the normal for the plane
+     * @param p0     a point on the plane
+     * @param normal to the plane
      */
-    public Plane(Vector normal, Point q) {
-        this.normal = normal;
-        this.q = q;
+    public Plane(Point p0, Vector normal) {
+        this.p0 = p0;
+        this.normal = normal.normalize();
     }
 
     /**
-     * a method to normalize the normal
+     * getter for the normal to the Plane
      *
-     * @return the normal of the plane
+     * @return the normal
      */
     public Vector getNormal() {
         return normal;
     }
 
     /**
-     * a method to return q
+     * getter for the point in the Plane
      *
-     * @return q
+     * @return the point
      */
-    public Point getQ() {
-        return q;
+    public Point getP0() {
+        return p0;
     }
 
-    /**
-     * @param point the point that the normal is going throw
-     * @return the normal of the plane
-     */
     @Override
     public Vector getNormal(Point point) {
         return normal;
     }
 
-    /**
-     * finds all the intersections of a ray and the plane
-     *
-     * @param ray the ray that we want to check intersections with
-     * @return a list of the intersections of ray and plane
-     */
     @Override
-    protected List<GeoPoint> findGeoIntersectionsHelper(Ray ray) {
-        if (ray.getHead().equals(q))
+    public List<GeoPoint> findGeoIntersectionsHelper(Ray ray) {
+        Point rayP0 = ray.getHead();
+        if (rayP0.equals(p0))
             return null;
-        double t = normal.dotProduct(q.subtract(ray.getHead())) / (normal.dotProduct(ray.getDirection()));
-        if (t <= 0 || isZero(ray.getDirection().dotProduct(normal)))
+        double denom = normal.dotProduct(ray.getDirection());
+        if (Util.isZero(denom))
             return null;
-        return List.of(new GeoPoint (this,ray.getPoint(t)));
-
+        double t = Util.alignZero(normal.dotProduct(p0.subtract(rayP0)) / denom);
+        return t <= 0 ? null : List.of(new GeoPoint(this, ray.getPoint(t)));
     }
-
+    public List<GeoPoint> findGeoIntersections(Ray ray) {
+        return findGeoIntersectionsHelper(ray);
+    }
 }

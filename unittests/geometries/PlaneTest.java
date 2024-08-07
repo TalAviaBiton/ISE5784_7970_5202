@@ -85,7 +85,7 @@ class PlaneTest {
      */
     @Test
     void testFindIntersections() {
-        Plane plane = new Plane(new Vector(3, 3, 3), new Point(1, 1, 1));
+        Plane plane = new Plane(new Vector(3, 3, 3), new Vector(1, 1, 1));
         // ============ Equivalence Partitions Tests ==============
         //TC01: Ray crosses the plane (1 point)
         var exp01 = List.of(new Point(1.6, 0.4, 1));

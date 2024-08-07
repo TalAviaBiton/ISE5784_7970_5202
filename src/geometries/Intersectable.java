@@ -63,7 +63,7 @@ public abstract class Intersectable {
      * @param ray the ray i want to find intersections with
      * @return a list of the GeoPoints that have intersection with the ray
      */
-    public final List<GeoPoint> findGeoIntersections(Ray ray) {
+    public List<GeoPoint> findGeoIntersections(Ray ray) {
         return findGeoIntersectionsHelper(ray);
     }
 
