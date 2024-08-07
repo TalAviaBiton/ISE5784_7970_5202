@@ -8,10 +8,18 @@ import primitives.Vector;
  * a class to represents PointLight
  */
 public class PointLight extends Light implements LightSource {
-    protected Point position;
-    protected double kC = 1;
-    protected double kL = 0;
-    protected double kQ = 0;
+
+    //The position point of the light source in the space
+    private Point position;
+
+    /**
+     * kC is The specular attenuation factor, required to ensure that the denominator in getIntensity > 1
+     * kL is The light source attenuation factor
+     * kQ is The attenuation factor of the energy coming to the point
+     * <p>
+     * the formula is: Il = I0/(Kc + Ki*d + Kq*d^2);
+     */
+    private double kC = 1, kL = 0, kQ = 0; // Light factor -> constant, linear and Quadratic
 
     /**
      * a constructor that gets all the parameters
@@ -25,15 +33,6 @@ public class PointLight extends Light implements LightSource {
     }
 
     /**
-     * a constructor that gets only intensity
-     *
-     * @param intensity the intensity of the light
-     */
-    public PointLight(Color intensity) {
-        super(intensity);
-    }
-
-    /**
      * a method to get the intensity of the light in a specific point
      *
      * @param point the point I want to get the intensity of the light at
@@ -41,8 +40,17 @@ public class PointLight extends Light implements LightSource {
      */
     @Override
     public Color getIntensity(Point point) {
-        double d = position.distance(point);
-        return intensity.scale(1d / (kC + kL * d + kQ * d * d));
+        // The intensity of the color of the light
+        // (the distribution of the light in the surface area)
+        // is proportional to squared distance
+
+        //Calculate the denominator of the proportion
+        double distance = this.position.distance(point);
+        double distanceSquared = distance * distance;
+        double factor = this.kC + this.kL * distance + this.kQ * distanceSquared;
+
+        //Return the final intensity
+        return getIntensity().scale(1 / factor);
     }
 
     /**
@@ -53,19 +61,7 @@ public class PointLight extends Light implements LightSource {
      */
     @Override
     public Vector getL(Point point) {
-
-        return point.subtract(position).normalize();
-    }
-
-    /**
-     * setter for position
-     *
-     * @param position the position to set
-     * @return this object
-     */
-    public PointLight setPosition(Point position) {
-        this.position = position;
-        return this;
+        return point.subtract(this.position).normalize();
     }
 
     /**
@@ -74,7 +70,7 @@ public class PointLight extends Light implements LightSource {
      * @param kC the kc to set
      * @return this object
      */
-    public PointLight setKc(double kC) {
+    public PointLight setkC(double kC) {
         this.kC = kC;
         return this;
     }
@@ -85,7 +81,7 @@ public class PointLight extends Light implements LightSource {
      * @param kL the kL to set
      * @return this object
      */
-    public PointLight setKl(double kL) {
+    public PointLight setkL(double kL) {
         this.kL = kL;
         return this;
     }
@@ -96,7 +92,7 @@ public class PointLight extends Light implements LightSource {
      * @param kQ the kQ to set
      * @return this object
      */
-    public PointLight setKq(double kQ) {
+    public PointLight setkQ(double kQ) {
         this.kQ = kQ;
         return this;
     }

@@ -148,7 +148,7 @@ public class Camera implements Cloneable {
          * @param rayTracer the ray tracer of the camera
          * @return the camera, this object
          */
-        public Builder setRayTracerBase(RayTracerBase rayTracer) {
+        public Builder setRayTracer(RayTracerBase rayTracer) {
             camera.rayTracer = rayTracer;
             return this;
         }

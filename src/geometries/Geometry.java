@@ -53,21 +53,5 @@ public abstract class Geometry extends Intersectable {
         this.material = material;
         return this;
     }
-    public class Builder {
-        Geometry geometry;
 
-//        public Geometry setLMaterial(Material material) {
-//            geometry.material = material;
-//            return geometry;
-//        }
-        public Geometry build(){
-            try {
-                return (Geometry) geometry.clone();
-            } catch (CloneNotSupportedException e) {
-                throw new RuntimeException(e);
-            }
-        }
-
-    }
-    public Builder getBuilder() { return new Builder(); }
 }
