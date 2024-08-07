@@ -18,7 +18,7 @@ public class IntegrationTest {
      * Camera builder for the tests
      */
     private final Camera.Builder cameraBuilder = Camera.getBuilder()
-            .setRayTracerBase(new SimpleRayTracer(new Scene("Test")))
+            .setRayTracer(new SimpleRayTracer(new Scene("Test")))
             .setImageWriter(new ImageWriter("Test", 1, 1))
             .setLocation(new Point(0, 0, 0.5))
             .setDirection(new Vector(0, 0, -1), new Vector(0, 1, 0))

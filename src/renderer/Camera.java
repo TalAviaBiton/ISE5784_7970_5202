@@ -1,208 +1,313 @@
-package unittests.renderer;
+package renderer;
 
-import static java.awt.Color.*;
+import primitives.Color;
+import primitives.Point;
+import primitives.Ray;
+import primitives.Vector;
 
-import org.junit.jupiter.api.Test;
+import java.util.MissingResourceException;
 
-import geometries.*;
-import lighting.*;
-import primitives.*;
-import renderer.*;
-import scene.Scene;
+import static primitives.Util.alignZero;
+import static primitives.Util.isZero;
 
 /**
- * Test rendering a basic image
- *
- * @author Dan
+ * This class represents the camera in the scene
  */
-public class LightsTests {
-    private final Scene scene1 = new Scene("Test scene");
-    private final Scene scene2 = new Scene("Test scene")
-            .setAmbientLight(new AmbientLight(new Color(WHITE), new Double3(0.15)));
+public class Camera implements Cloneable {
 
-    private final Camera camera1 = new Camera(new Point(0, 0, 1000), new Vector(0, 0, -1), new Vector(0, 1, 0))
-            .setVPSize(150, 150).setVPDistance(1000);
-    private final Camera camera2 = new Camera(new Point(0, 0, 1000), new Vector(0, 0, -1), new Vector(0, 1, 0))
-            .setVPSize(200, 200).setVPDistance(1000);
+    //the vector that gives the 'to' forward direction
+    private Vector vTo;
+    //the vector that gives the upward direction
+    private Vector vUp;
+    //the vector that gives the right direction
+    private Vector vRight;
 
-    private static final int SHININESS = 301;
-    private static final double KD = 0.5;
-    private static final Double3 KD3 = new Double3(0.2, 0.6, 0.4);
+    //the point that the camera is on
+    private Point p0;
 
-    private static final double KS = 0.5;
-    private static final Double3 KS3 = new Double3(0.2, 0.4, 0.3);
+    //the distance of the view screen
+    private double distance = 0.0;
+    //the height of the view screen
+    private double height = 0.0;
+    //the width of the view screen
+    private double width = 0.0;
 
-    private final Material material = new Material().setKd(KD3).setKs(KS3).setShininess(SHININESS);
-    private final Color trianglesLightColor = new Color(800, 500, 250);
-    private final Color sphereLightColor = new Color(800, 500, 0);
-    private final Color sphereColor = new Color(BLUE).reduce(2);
+    //the image writer for the scene
+    private ImageWriter imageWriter;
+    //the ray tracer for the camera
+    private RayTracerBase rayTracer;
 
-    private final Point sphereCenter = new Point(0, 0, -50);
-    private static final double SPHERE_RADIUS = 50d;
-
-    // The triangles' vertices:
-    private final Point[] vertices = {
-            // the shared left-bottom:
-            new Point(-110, -110, -150),
-            // the shared right-top:
-            new Point(95, 100, -150),
-            // the right-bottom
-            new Point(110, -110, -150),
-            // the left-top
-            new Point(-75, 78, 100) };
-    private final Point sphereLightPosition = new Point(-50, -50, 25);
-    private final Point trianglesLightPosition = new Point(30, 10, -100);
-    private final Vector trianglesLightDirection = new Vector(-2, -2, -2);
-
-    private final Geometry sphere = new Sphere(sphereCenter, SPHERE_RADIUS).setEmission(sphereColor)
-            .setMaterial(new Material().setKd(KD).setKs(KS).setShininess(SHININESS));
-    private final Geometry triangle1 = new Triangle(vertices[0], vertices[1], vertices[2]).setMaterial(material);
-    private final Geometry triangle2 = new Triangle(vertices[0], vertices[1], vertices[3]).setMaterial(material);
-
-    /** Produce a picture of a sphere lighted by a directional light */
-    @Test
-    public void sphereDirectional() {
-        scene1.geometries.add(sphere);
-        scene1.lights.add(new DirectionalLight(sphereLightColor, new Vector(1, 1, -0.5)));
-
-        ImageWriter imageWriter = new ImageWriter("lightSphereDirectional", 500, 500);
-        camera1.setImageWriter(imageWriter) //
-                .setRayTracer(new RayTracerBasic(scene1)) //
-                .renderImage() //
-                .writeToImage(); //
-    }
-
-    /** Produce a picture of a sphere lighted by a point light */
-    @Test
-    public void spherePoint() {
-        scene1.geometries.add(sphere);
-        scene1.lights.add(new PointLight(sphereLightColor, sphereLightPosition).setKl(0.001).setKq(0.0002));
-
-        ImageWriter imageWriter = new ImageWriter("lightSpherePoint", 500, 500);
-        camera1.setImageWriter(imageWriter) //
-                .setRayTracer(new RayTracerBasic(scene1)) //
-                .renderImage() //
-                .writeToImage(); //
-    }
-
-    /** Produce a picture of a sphere lighted by a spotlight */
-    @Test
-    public void sphereSpot() {
-        scene1.geometries.add(sphere);
-        scene1.lights.add(new SpotLight(sphereLightColor, sphereLightPosition, new Vector(1, 1, -0.5)).setKl(0.001)
-                .setKq(0.0001));
-
-        ImageWriter imageWriter = new ImageWriter("lightSphereSpot", 500, 500);
-        camera1.setImageWriter(imageWriter) //
-                .setRayTracer(new RayTracerBasic(scene1)) //
-                .renderImage() //
-                .writeToImage(); //
-    }
-
-    /** Produce a picture of two triangles lighted by a directional light */
-    @Test
-    public void trianglesDirectional() {
-        scene2.geometries.add(triangle1, triangle2);
-        scene2.lights.add(new DirectionalLight(trianglesLightColor, trianglesLightDirection));
-
-        ImageWriter imageWriter = new ImageWriter("lightTrianglesDirectional", 500, 500);
-        camera2.setImageWriter(imageWriter) //
-                .setRayTracer(new RayTracerBasic(scene2)) //
-                .renderImage() //
-                .writeToImage(); //
-    }
-
-    /** Produce a picture of two triangles lighted by a point light */
-    @Test
-    public void trianglesPoint() {
-        scene2.geometries.add(triangle1, triangle2);
-        scene2.lights.add(new PointLight(trianglesLightColor, trianglesLightPosition).setKl(0.001).setKq(0.0002));
-
-        ImageWriter imageWriter = new ImageWriter("lightTrianglesPoint", 500, 500);
-        camera2.setImageWriter(imageWriter) //
-                .setRayTracer(new RayTracerBasic(scene2)) //
-                .renderImage() //
-                .writeToImage(); //
-    }
-
-    /** Produce a picture of two triangles lighted by a spotlight */
-    @Test
-    public void trianglesSpot() {
-        scene2.geometries.add(triangle1, triangle2);
-        scene2.lights.add(new SpotLight(trianglesLightColor, trianglesLightPosition, trianglesLightDirection)
-                .setKl(0.001).setKq(0.0001));
-
-        ImageWriter imageWriter = new ImageWriter("lightTrianglesSpot", 500, 500);
-        camera2.setImageWriter(imageWriter) //
-                .setRayTracer(new RayTracerBasic(scene2)) //
-                .renderImage() //
-                .writeToImage(); //
-    }
-
-    /** Produce a picture of a sphere lighted by a narrow spotlight */
-    @Test
-    public void sphereSpotSharp() {
-        scene1.geometries.add(sphere);
-        scene1.lights.add(new SpotLight(sphereLightColor, sphereLightPosition, new Vector(1, 1, -0.5)).setNarrowBeam(10)
-                .setKl(0.001).setKq(0.00004));
-
-        ImageWriter imageWriter = new ImageWriter("lightSphereSpotSharp", 500, 500);
-        camera1.setImageWriter(imageWriter) //
-                .setRayTracer(new RayTracerBasic(scene1)) //
-                .renderImage() //
-                .writeToImage(); //
-    }
 
     /**
-     * Produce a picture of two triangles lighted by a narrow spotlight
+     * This class is builder class for camera
      */
-    @Test
-    public void trianglesSpotSharp() {
-        scene2.geometries.add(triangle1, triangle2);
-        scene2.lights.add(new SpotLight(trianglesLightColor, trianglesLightPosition, trianglesLightDirection)
-                .setNarrowBeam(10).setKl(0.001).setKq(0.00004));
+    public static class Builder {
+        private final Camera camera = new Camera();
 
-        ImageWriter imageWriter = new ImageWriter("lightTrianglesSpotSharp", 500, 500);
-        camera2.setImageWriter(imageWriter) //
-                .setRayTracer(new RayTracerBasic(scene2)) //
-                .renderImage() //
-                .writeToImage(); //
-    }
+        /**
+         * checking the parameters of camera
+         *
+         * @return a copy of the object camera
+         */
+        public Camera build() {
+            if (camera.vUp == Vector.ZERO)
+                throw new MissingResourceException("Missing rendering data", "Class Camera", "Missing vUp");
 
-    /**
-     * Produce a picture of a sphere with multiple light sources
-     */
-    @Test
-    public void sphereMultiLightSource() {
-        scene1.geometries.add(sphere);
-        scene1.lights.add(new SpotLight(new Color(242, 0, 0), new Point(0, 1000, 1000), new Vector(0, -1, -1))
-                .setKl(0.000001).setKq(0.0000004));
-        scene1.lights
-                .add(new PointLight(new Color(0, 203, 0), new Point(-25, 0, 25)).setKl(0.00000001).setKq(0.000000002));
-        scene1.lights.add(new DirectionalLight(new Color(241, 199, 0), new Vector(0, 0, -1)));
-        ImageWriter imageWriter = new ImageWriter("sphereMultiLightSource", 500, 500);
-        camera1.setImageWriter(imageWriter) //
-                .setRayTracer(new RayTracerBasic(scene1)) //
-                .renderImage() //
-                .writeToImage(); //
+            if (camera.vTo == Vector.ZERO)
+                throw new MissingResourceException("Missing rendering data", "Class Camera", "Missing vTo");
+
+            if (camera.distance == 0)
+                throw new MissingResourceException("Missing rendering data", "Class Camera", "Missing distance");
+
+            if (camera.height == 0)
+                throw new MissingResourceException("Missing rendering data", "Class Camera", "Missing height");
+
+            if (camera.width == 0)
+                throw new MissingResourceException("Missing rendering data", "Class Camera", "Missing width");
+
+            if (camera.imageWriter == null)
+                throw new MissingResourceException("Missing rendering data", "Class Camera", "Missing image writer");
+
+            if (camera.rayTracer == null)
+                throw new MissingResourceException("Missing rendering data", "Class Camera", "Missing rayTracerBase");
+
+            setDirection(camera.vTo, camera.vUp);
+
+            try {
+                return (Camera) camera.clone();
+            } catch (CloneNotSupportedException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
+        /**
+         * sets the location of the camera in the scene
+         *
+         * @param p0 the point that the camera is on
+         * @return the camera,this object
+         */
+        public Builder setLocation(Point p0) {
+            camera.p0 = p0;
+            return this;
+        }
+
+        /**
+         * set the direction of the camera
+         *
+         * @param vTo the vector that gives the 'to' forward direction
+         * @param vUp the vector that gives the upward direction
+         * @return the camera,this object
+         */
+        public Builder setDirection(Vector vTo, Vector vUp) {
+            if (vTo.dotProduct(vUp) != 0)
+                throw new IllegalArgumentException("vTo and vUp are not vertical");
+            camera.vTo = vTo.normalize();
+            camera.vUp = vUp.normalize();
+            camera.vRight = vTo.crossProduct(vUp).normalize();
+            return this;
+        }
+
+        /**
+         * set the width and height of the view screen
+         *
+         * @param width  the width of the view screen
+         * @param height the height of the view screen
+         * @return the camera,this object
+         */
+        public Builder setVpSize(double width, double height) {
+            camera.height = height;
+            camera.width = width;
+            return this;
+        }
+
+        /**
+         * set the distance between the camera to the view screen
+         *
+         * @param distance the distance between the camera to the view screen
+         * @return the camera,this object
+         */
+        public Builder setVpDistance(double distance) {
+            camera.distance = distance;
+            return this;
+        }
+
+        /**
+         * set the image writer for the camera
+         *
+         * @param imageWriter the image writer of the camera
+         * @return the camera, this object
+         */
+        public Builder setImageWriter(ImageWriter imageWriter) {
+            camera.imageWriter = imageWriter;
+            return this;
+        }
+
+        /**
+         * set the ray tracer for the camera
+         *
+         * @param rayTracer the ray tracer of the camera
+         * @return the camera, this object
+         */
+        public Builder setRayTracer(RayTracerBase rayTracer) {
+            camera.rayTracer = rayTracer;
+            return this;
+        }
 
     }
 
     /**
-     * Produce a picture of two triangles with multiple light sources
+     * Constructor to initialize vector based object with a point
      */
-    @Test
-    public void triangleMultiLightSource() {
-        scene2.geometries.add(triangle1, triangle2);
-        scene2.lights.add(new SpotLight(new Color(0, 0, 255), new Point(1, 1000, 1000), new Vector(0, -1, -1))
-                .setKl(0.00000001).setKq(0.0000004));
-        scene2.lights
-                .add(new PointLight(new Color(1, 255, 0), new Point(0, 200, 200)).setKl(0.00000001).setKq(0.000000002));
-        scene2.lights.add(new DirectionalLight(new Color(255, 1, 0), new Vector(0, 1, -100000)));
-        ImageWriter imageWriter = new ImageWriter("triangleMultiLightSource", 500, 500);
-        camera2.setImageWriter(imageWriter) //
-                .setRayTracer(new RayTracerBasic(scene2)) //
-                .renderImage() //
-                .writeToImage(); //
+    private Camera() {
+    }
+
+    /**
+     * return a new object of the Builder class the mourner
+     *
+     * @return a new Builder
+     */
+    public static Camera.Builder getBuilder() {
+        return new Builder();
+    }
+
+    /**
+     * a get method for vTo
+     *
+     * @return vTo
+     */
+    public Vector getvTo() {
+        return vTo;
+    }
+
+    /**
+     * a get method for vUp
+     *
+     * @return vUp
+     */
+    public Vector getvUp() {
+        return vUp;
+    }
+
+    /**
+     * a get method for p0
+     *
+     * @return p0
+     */
+    public Point getP0() {
+        return p0;
+    }
+
+    /**
+     * a get method for vRight
+     *
+     * @return vRight
+     */
+    public Vector getvRight() {
+        return vRight;
+    }
+
+    /**
+     * a get method for distance
+     *
+     * @return distance
+     */
+    public double getDistance() {
+        return distance;
+    }
+
+    /**
+     * a get method for height
+     *
+     * @return height
+     */
+    public double getHeight() {
+        return height;
+    }
+
+    /**
+     * a get method for width
+     *
+     * @return width
+     */
+    public double getWidth() {
+        return width;
+    }
+
+    /**
+     * construct a ray throw  pixel
+     *
+     * @param nY for the resolution of the scene
+     * @param nX for the resolution of the scene
+     * @param j  the index of the pixel
+     * @param i  the index of the pixel
+     * @return the ray that goes throw the middle of the pixel
+     */
+    public Ray constructRay(int nX, int nY, int j, int i) {
+        Point pC = p0.add(vTo.scale(distance));
+        double xJ = alignZero((j - (double) (nX - 1) / 2) * (width / nX));
+        if (!isZero(xJ))
+            pC = pC.add(vRight.scale(xJ));
+        double yI = alignZero(-(i - (double) (nY - 1) / 2) * (height / nY));
+        if (!isZero(yI))
+            pC = pC.add(vUp.scale(yI));
+        return new Ray(p0, pC.subtract(p0));
+    }
+
+    /**
+     * delegate to write to image of image writer
+     */
+    public void writeToImage() {
+        if (imageWriter == null)
+            throw new MissingResourceException("Image Writer is Missing", "Camera", "Set Image Writer");
+        imageWriter.writeToImage();
+    }
+
+    /**
+     * cast a ray throw a pixel and colors it
+     *
+     * @param nX     the resolution of the scene
+     * @param nY     the resolution of the scene
+     * @param i the y index of the pixel
+     * @param j    the x index of the pixel
+     */
+    private void castRay(int nX, int nY, int i, int j) {
+        Ray ray = this.constructRay(nX, nY, i, j);
+        Color color = this.rayTracer.traceRay(ray);
+        this.imageWriter.writePixel(i, j, color);
+    }
+
+    /**
+     * a method that does the rendering of the image
+     * @return the camera
+     */
+    public Camera renderImage() {
+        int nY = imageWriter.getNy();
+        int nX = imageWriter.getNx();
+        for (int i = 0; i < nX; i++) {
+            for (int j = 0; j < nY; j++) {
+                //System.out.println(i);
+                //System.out.println(j);
+                this.castRay(nX, nY, i, j);
+            }
+        }
+        return this;
+    }
+
+    /**
+     * a method that prints the picture
+     *
+     * @param interval the distance of the pixel
+     * @param color    the color of the grid
+     * @return the image writer of the camera
+     */
+    public ImageWriter printGrid(int interval, Color color) {
+        for (int i = 0; i < imageWriter.getNx(); i++) {
+            for (int j = 0; j < imageWriter.getNy(); j++) {
+                if (i % interval == 0 || j % interval == 0) {
+                    imageWriter.writePixel(i, j, color);
+                }
+            }
+        }
+        return imageWriter;
     }
 }
