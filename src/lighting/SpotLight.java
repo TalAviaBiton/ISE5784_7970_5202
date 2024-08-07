@@ -59,5 +59,4 @@ public class SpotLight extends PointLight {
         return super.getL(point);
     }
 
-
 }
