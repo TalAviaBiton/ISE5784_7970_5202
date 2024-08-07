@@ -1,12 +1,10 @@
 package renderer;
 
 import primitives.Color;
-
 import primitives.*;
 import scene.*;
 import geometries.Intersectable.GeoPoint;
 import lighting.*;
-
 import java.util.List;
 
 /**
@@ -16,6 +14,10 @@ import java.util.List;
  *
  */
 public class SimpleRayTracer extends RayTracerBase {
+
+    //fixed for ray head offset size for shading rays
+    private static final double DELTA = 0.1;
+
     /**
      * construct rayTracer with specific scene
      *
@@ -45,23 +47,23 @@ public class SimpleRayTracer extends RayTracerBase {
      * calculate the effects of the geometry itself without the effect of other
      * geometries on this object
      *
-     * @param gp  the point to calculate the effects on
+     * @param geoPoint  the point to calculate the effects on
      * @param ray the ray we intersected with
      * @return the result color of the local effects
      */
-    private Color calcLocalEffects(GeoPoint gp, Ray ray) {
-        Color color = gp.geometry.getEmission();
+    private Color calcLocalEffects(GeoPoint geoPoint, Ray ray) {
+        Color color = geoPoint.geometry.getEmission();
         Vector v = ray.getDirection();
-        Vector n = gp.geometry.getNormal(gp.point);
+        Vector n = geoPoint.geometry.getNormal(geoPoint.point);
         double nv = Util.alignZero(n.dotProduct(v));
         if (nv == 0)
             return color;
-        Material material = gp.geometry.getMaterial();
+        Material material = geoPoint.geometry.getMaterial();
         for (LightSource lightSource : scene.lights) {
-            Vector l = lightSource.getL(gp.point);
+            Vector l = lightSource.getL(geoPoint.point);
             double nl = Util.alignZero(n.dotProduct(l));
-            if (nl * nv > 0) { // sign(nl) == sing(nv)
-                Color iL = lightSource.getIntensity(gp.point);
+            if ((nl * nv > 0) && unshaded(geoPoint, lightSource, l, n, nl)) {
+                Color iL = lightSource.getIntensity(geoPoint.point);
                 color = color.add(iL.scale(calcDiffusive(material, nl)), iL.scale(calcSpecular(material, n, l, nl, v)));
             }
         }
@@ -96,5 +98,29 @@ public class SimpleRayTracer extends RayTracerBase {
         double coefficient = -rayDir.dotProduct(r);
         coefficient = coefficient > 0 ? coefficient : 0;
         return material.kS.scale(Math.pow(coefficient, material.nShininess));
+    }
+
+    /**
+     * checks if a point on a geometry is shaded by a light source
+     *
+     * @param geoPoint       the point on the geometry
+     * @param l        the direction vector of the light source
+     * @param n        the normal to the geometry
+     * @param cosAngle the cosine of the angle between l and n
+     * @return True if the object is not shaded, False otherwise
+     */
+    private boolean unshaded(GeoPoint geoPoint, LightSource lightSource, Vector l, Vector n, double cosAngle) {
+        Vector lightDirection = l.scale(-1); // from point to light source
+        Vector epsVector = n.scale(cosAngle < 0 ? DELTA : -DELTA);
+        Point point = geoPoint.point.add(epsVector);
+        Ray lightRay = new Ray(point, lightDirection);
+        List<GeoPoint> intersections = scene.geometries.findGeoIntersections(lightRay);
+        if(intersections==null || intersections.isEmpty())
+            return false;
+        for (GeoPoint intersection : intersections) {
+            if (lightSource.getDistance(intersection.point) > point.distance(intersection.point))
+                return false;
+        }
+        return true;
     }
 }
