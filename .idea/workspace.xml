@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4b50f3a7-ff92-41f1-86dd-01d3b21a2dd1" name="Changes" comment="stage 6 almost finished">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lighting/DirectionalLight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lighting/DirectionalLight.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lighting/LightSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lighting/LightSource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lighting/PointLight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lighting/PointLight.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lighting/SpotLight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lighting/SpotLight.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/SimpleRayTracer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/SimpleRayTracer.java" afterDir="false" />
-    </list>
+    <list default="true" id="4b50f3a7-ff92-41f1-86dd-01d3b21a2dd1" name="Changes" comment="stage 6 th calcColor" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -295,14 +288,6 @@
       <workItem from="1721156224829" duration="4407000" />
       <workItem from="1721281050418" duration="7470000" />
       <workItem from="1721724363392" duration="4911000" />
-    </task>
-    <task id="LOCAL‎-00012" summary="almost every thing workes">
-      <option name="closed" value="true" />
-      <created>1716409324091</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL‎-00012" />
-      <option name="project" value="LOCAL‎" />
-      <updated>1716409324091</updated>
     </task>
     <task id="LOCAL‎-00013" summary="et normal of cylinder">
       <option name="closed" value="true" />
@@ -688,7 +673,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1721682516829</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL‎-00061" summary="stage 6 th calcColor">
+      <option name="closed" value="true" />
+      <created>1722758210366</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL‎-00061" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1722758210370</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -730,9 +723,9 @@
     <MESSAGE value="finished stage 5" />
     <MESSAGE value="started stage 6" />
     <MESSAGE value="stage 6" />
-    <MESSAGE value="stage 6 th calcColor" />
     <MESSAGE value="stage 6 almost finished" />
-    <option name="LAST_COMMIT_MESSAGE" value="stage 6 almost finished" />
+    <MESSAGE value="stage 6 th calcColor" />
+    <option name="LAST_COMMIT_MESSAGE" value="stage 6 th calcColor" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

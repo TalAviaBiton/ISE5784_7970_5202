@@ -50,7 +50,7 @@ public class SimpleRayTracer extends RayTracerBase {
         for (LightSource lightSource : scene.lights) {
             Vector lightDirection = lightSource.getL(geoPoint.point);
             double cosAngle = alignZero(normal.dotProduct(lightDirection));
-            if (cosAngle * nv > 0  && unshaded(geoPoint, lightDirection, normal))) { // sign(nl) == sing(nv)
+            if (cosAngle * nv > 0  && unshaded(geoPoint,, normal))) { // sign(nl) == sing(nv)
                 Color iL = lightSource.getIntensity(geoPoint.point);
                 //System.out.println(iL);
 //                color = color.add(
