@@ -5,19 +5,20 @@ import primitives.Point;
 import primitives.Vector;
 
 import static primitives.Util.alignZero;
+
 /**
  * a class to represents Spot-Light
  */
-public class SpotLight extends PointLight{
+public class SpotLight extends PointLight {
 
     //the direction of the light
     private Vector direction;
-    private double NarrowBeam=1;
+    private double NarrowBeam = 1;
 
     /**
      * a constructor that gets all the parameters
      *
-     * @param color the intensity of the light
+     * @param color     the intensity of the light
      * @param position  the point the light come from
      * @param direction the direction of the light
      */
@@ -39,6 +40,7 @@ public class SpotLight extends PointLight{
 
     /**
      * sets the kL
+     *
      * @param kL
      * @return the spotlight
      */
@@ -49,6 +51,7 @@ public class SpotLight extends PointLight{
 
     /**
      * sets the kQ
+     *
      * @param kQ
      * @return the spotlight
      */
@@ -59,11 +62,12 @@ public class SpotLight extends PointLight{
 
     /**
      * sets the NarrowBeam
+     *
      * @param narrowBeam the narrowness of the light
      * @return the spotlight
      */
     public SpotLight setNarrowBeam(double narrowBeam) {
-        this.NarrowBeam=narrowBeam;
+        this.NarrowBeam = narrowBeam;
         return this;
     }
 
