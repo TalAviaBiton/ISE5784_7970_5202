@@ -59,7 +59,7 @@ public class SpotLight extends PointLight{
 
     /**
      * sets the NarrowBeam
-     * @param narrowBeam the narowness of the light
+     * @param narrowBeam the narrowness of the light
      * @return the spotlight
      */
     public SpotLight setNarrowBeam(double narrowBeam) {

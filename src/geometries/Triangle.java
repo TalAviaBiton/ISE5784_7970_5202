@@ -32,7 +32,8 @@ public class Triangle extends Polygon {
     protected List<GeoPoint> findGeoIntersectionsHelper(Ray ray) {
 
         var intersectionPlane = plane.findGeoIntersections(ray);
-
+        if(intersectionPlane==null)
+            return null;
         Point p1 = vertices.get(0);
         Point p2 = vertices.get(1);
         Point p3 = vertices.get(2);

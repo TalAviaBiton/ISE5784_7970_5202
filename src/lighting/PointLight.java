@@ -10,7 +10,7 @@ import primitives.Vector;
 public class PointLight extends Light implements LightSource {
 
     //The position point of the light source in the space
-    private Point position;
+    private final Point position;
 
     /**
      * kC is The specular attenuation factor, required to ensure that the denominator in getIntensity > 1
@@ -98,12 +98,13 @@ public class PointLight extends Light implements LightSource {
     }
 
     /**
-     *
-     * @param point
-     * @return
+     * the distance between the point and the light
+     * @param point the point i want to find the distance from
+     * @return the distance
      */
     @Override
     public double getDistance(Point point) {
+
         return position.distance(point);
     }
 }

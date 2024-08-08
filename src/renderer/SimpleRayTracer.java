@@ -1,5 +1,6 @@
 package renderer;
 
+import geometries.Triangle;
 import primitives.Color;
 import primitives.*;
 import scene.*;
@@ -91,7 +92,7 @@ public class SimpleRayTracer extends RayTracerBase {
      * @param cosAngle the cosine of the angle between the light and the normal to
      *                 the object
      * @param rayDir   the direction the camera is pointed to
-     * @return
+     * @return the specular part
      */
     private Double3 calcSpecular(Material material, Vector normal, Vector lightDir, double cosAngle, Vector rayDir) {
         Vector r = lightDir.subtract(normal.scale(2 * cosAngle));
@@ -106,17 +107,19 @@ public class SimpleRayTracer extends RayTracerBase {
      * @param geoPoint       the point on the geometry
      * @param l        the direction vector of the light source
      * @param n        the normal to the geometry
-     * @param cosAngle the cosine of the angle between l and n
+     * @param nl the cosine of the angle between l and n
      * @return True if the object is not shaded, False otherwise
      */
-    private boolean unshaded(GeoPoint geoPoint, LightSource lightSource, Vector l, Vector n, double cosAngle) {
+    private boolean unshaded(GeoPoint geoPoint, LightSource lightSource, Vector l, Vector n, double nl) {
+
         Vector lightDirection = l.scale(-1); // from point to light source
-        Vector epsVector = n.scale(cosAngle < 0 ? DELTA : -DELTA);
+        Vector epsVector = n.scale(nl < 0 ? DELTA : -DELTA);
         Point point = geoPoint.point.add(epsVector);
         Ray lightRay = new Ray(point, lightDirection);
         List<GeoPoint> intersections = scene.geometries.findGeoIntersections(lightRay);
+
         if(intersections==null || intersections.isEmpty())
-            return false;
+            return true;
         for (GeoPoint intersection : intersections) {
             if (lightSource.getDistance(intersection.point) > point.distance(intersection.point))
                 return false;
