@@ -48,7 +48,7 @@ public class LightsTests {
     private static final Double3 KS3                     = new Double3(0.2, 0.4, 0.3);
 
     /** Material for some of the geometries in the tests */
-    private final Material       material                = new Material().setkD(KD3).setkS(KS3).setnShininess(SHININESS);
+    private final Material       material                = new Material().setkD(KD3).setkS(KS3).setShininess(SHININESS);
     /** Light color for tests with triangles */
     private final Color          trianglesLightColor     = new Color(800, 500, 250);
     /** Light color for tests with sphere */
@@ -84,7 +84,7 @@ public class LightsTests {
 
     /** The sphere in appropriate tests */
     private final Geometry       sphere                  = new Sphere(sphereCenter, SPHERE_RADIUS)
-            .setEmission(sphereColor).setMaterial(new Material().setkD(KD).setkS(KS).setnShininess(SHININESS));
+            .setEmission(sphereColor).setMaterial(new Material().setkD(KD).setkS(KS).setShininess(SHININESS));
     /** The first triangle in appropriate tests */
     private final Geometry       triangle1               = new Triangle(vertices[0], vertices[1], vertices[2])
             .setMaterial(material);
@@ -255,12 +255,12 @@ public class LightsTests {
     public void multipleGeometriesAndLightnings() {
 
         scene2.geometries.add(
-                triangle1.setMaterial(new Material().setkD(0.5).setkS(0.5).setnShininess(200)),
-                triangle2.setMaterial(new Material().setkD(0.5).setkS(0.5).setnShininess(200)),
+                triangle1.setMaterial(new Material().setkD(0.5).setkS(0.5).setShininess(200)),
+                triangle2.setMaterial(new Material().setkD(0.5).setkS(0.5).setShininess(200)),
 
 
                 new Sphere(new Point(70,50,22),20).setEmission(new Color(GREEN).reduce(2))
-                        .setMaterial(new Material().setkD(0.97).setkS(1.0).setnShininess(300))
+                        .setMaterial(new Material().setkD(0.97).setkS(1.0).setShininess(300))
         );
 
 
