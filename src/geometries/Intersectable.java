@@ -49,6 +49,16 @@ public abstract class Intersectable {
                     '}';
         }
     }
+    /**
+     * finds the closest intersection point to a given ray
+     *
+     * @param ray the given ray
+     * @return the point and its geometry, null if there is no such point
+     */
+    public GeoPoint findClosestIntersection(Ray ray) {
+        List<GeoPoint> intersections = findGeoIntersections(ray);
+        return intersections == null ? null : ray.findClosestGeoPoint(intersections);
+    }
 
     /** the method that every interactable implements and finds the
      * intersections of the shape with the ray and returns a geoPoint
