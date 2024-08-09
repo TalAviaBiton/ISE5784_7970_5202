@@ -257,18 +257,10 @@ public class LightsTests {
         scene2.geometries.add(
                 triangle1.setMaterial(new Material().setkD(0.5).setkS(0.5).setShininess(200)),
                 triangle2.setMaterial(new Material().setkD(0.5).setkS(0.5).setShininess(200)),
-
-
                 new Sphere(new Point(70,50,22),20).setEmission(new Color(GREEN).reduce(2))
                         .setMaterial(new Material().setkD(0.97).setkS(1.0).setShininess(300))
         );
-
-
-
-
-
-
-        //== because we are in List that get only single value each time we separated to some section==//
+         //== because we are in List that get only single value each time we separated to some section==//
         scene2.lights
                 .add(new SpotLight(new Color(350, 350, 0), new Point(10, -10, -130), new Vector(-2, -2, -1))
                         .setkL(0.0001)
