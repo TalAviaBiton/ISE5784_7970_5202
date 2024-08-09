@@ -21,6 +21,10 @@ public class Ray {
      */
     protected Vector direction;
 
+
+    //fixed for ray head offset size for shading rays
+    private static final double DELTA = 0.1;
+
     /**
      * Constructor to initialize the ray
      *
@@ -30,6 +34,16 @@ public class Ray {
     public Ray(Point head, Vector direction) {
         this.head = head;
         this.direction = direction.normalize();
+    }
+
+    public Ray(Vector normal, Point point, Vector direction) {
+        this.direction = direction.normalize();
+        double dotProduct = this.direction.dotProduct(normal);
+        if (Util.isZero(dotProduct))
+            this.head = point;
+        else
+            this.head = point.add(normal.scale(Util.alignZero(dotProduct) < 0 ? -DELTA : DELTA));
+
     }
 
     public Vector getDirection() {
