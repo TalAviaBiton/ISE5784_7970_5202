@@ -13,6 +13,8 @@ import java.util.Objects;
  */
 public abstract class Intersectable {
 
+    // for bvh use
+    public static boolean BVH=true;
     /**
      * a class to represent a geometry point
      */

@@ -22,6 +22,12 @@ public class PointLight extends Light implements LightSource {
     private double kC = 1, kL = 0, kQ = 0; // Light factor -> constant, linear and Quadratic
 
     /**
+     * size for soft shadow, how soft it will be
+     */
+    private double size=0;
+
+
+    /**
      * a constructor that gets all the parameters
      *
      * @param intensity the intensity of the light
@@ -32,6 +38,25 @@ public class PointLight extends Light implements LightSource {
         this.position = position;
     }
 
+    /**
+     * gets the constant representing soft shadow for the point light
+     *
+     * @return size of soft shadow of this point light
+     */
+    public double getSize() {
+        return size;
+    }
+
+    /**
+     * Sets the size of soft shadow of the point light
+     *
+     * @param size representing the size of soft shadow for this point lght
+     * @return The updated PointLight object
+     */
+    public PointLight setSize(double size) {
+        this.size = size;
+        return this;
+    }
     /**
      * a method to get the intensity of the light in a specific point
      *
@@ -61,6 +86,7 @@ public class PointLight extends Light implements LightSource {
      */
     @Override
     public Vector getL(Point point) {
+
         return point.subtract(this.position).normalize();
     }
 
@@ -107,5 +133,9 @@ public class PointLight extends Light implements LightSource {
     public double getDistance(Point point) {
 
         return position.distance(point);
+    }
+
+    public Point getPosition() {
+        return position;
     }
 }

@@ -54,4 +54,8 @@ public abstract class Geometry extends Intersectable {
         return this;
     }
 
+    public Geometry setBVH(boolean bvh) {
+        BVH = bvh;
+        return this;
+    }
 }

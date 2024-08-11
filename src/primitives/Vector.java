@@ -113,4 +113,12 @@ public class Vector extends Point {
                 "xyz=" + xyz +
                 "} " + super.toString();
     }
+
+    public double getZ() {
+        return this.xyz.d3;
+    }
+
+    public double getY() {
+        return this.xyz.d2;
+    }
 }
