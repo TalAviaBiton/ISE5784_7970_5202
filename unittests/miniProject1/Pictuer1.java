@@ -516,7 +516,7 @@ public class Pictuer1 {
         //the sunlight
         scene4.lights.add(new DirectionalLight(new Color(200, 300, 100).scale(0.8), new Vector(-1, -2, -8)));
 
-/*
+
 // with soft shadow featre
         //light for balloon coloring
         scene4.lights.add(new SpotLight(new Color(600, 700, 400), new Point(-2, 28, -50), new Vector(0, 1, 0)).setSize(30));
@@ -525,7 +525,7 @@ public class Pictuer1 {
         scene4.lights.add(new PointLight(new Color(200, 100, 100), new Point(0, -40, -50)).setSize(40));
 
         //the second shadow for baloon
-        scene4.lights.add(new PointLight(new Color(105, 100, 100).scale(0.5), new Point(10, 10, 10)).setKq(0).setKl(0).setSize(45));
+        scene4.lights.add(new PointLight(new Color(105, 100, 100).scale(0.5), new Point(10, 10, 10)).setkQ(0).setkL(0).setSize(45));
 
         //street light for pinwheel
         scene4.lights.add(new PointLight(new Color(10,10,10), new Point(-40,-20,0)).setSize(30));
@@ -533,13 +533,13 @@ public class Pictuer1 {
         scene4.lights.add(new PointLight(new Color(40,40,40), new Point(-20,0,1001)).setSize(0));
 
 
- */
 
 
 
 
 
 
+/**
         //without soft shadows
         //light for balloon coloring
         scene4.lights.add(new SpotLight(new Color(600, 700, 400),
@@ -564,11 +564,12 @@ public class Pictuer1 {
         scene4.lights.add(new PointLight(new Color(40, 40, 40),
                 new Point(-20, 0, 1001))
                 .setSize(0));
+ */
 
 
 
 
-        ImageWriter imageWriter = new ImageWriter("final,noSoftShadows,9000,9000", 9000, 9000);
+        ImageWriter imageWriter = new ImageWriter("final,SoftShadows,9000,9000", 9000, 9000);
         cameraBuilder
                 .setImageWriter(imageWriter).build().renderImage().writeToImage();
     }
