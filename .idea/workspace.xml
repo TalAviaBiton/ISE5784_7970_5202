@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4b50f3a7-ff92-41f1-86dd-01d3b21a2dd1" name="Changes" comment="finished 7.1" />
+    <list default="true" id="4b50f3a7-ff92-41f1-86dd-01d3b21a2dd1" name="Changes" comment="finished 7.3">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unittests/renderer/LightsTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/renderer/LightsTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unittests/renderer/ReflectionRefractionTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/renderer/ReflectionRefractionTests.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -238,8 +242,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.ReflectionRefractionTests" />
-        <item itemvalue="JUnit.ShadowTests" />
         <item itemvalue="JUnit.LightsTests" />
+        <item itemvalue="JUnit.ShadowTests" />
         <item itemvalue="JUnit.ShadowTests.sphereTriangleSpot1" />
         <item itemvalue="JUnit.ShadowTests.sphereTriangleSpot2" />
       </list>
@@ -285,22 +289,6 @@
       <workItem from="1721724363392" duration="4911000" />
       <workItem from="1723039350732" duration="4142000" />
       <workItem from="1723131971223" duration="1533000" />
-    </task>
-    <task id="LOCAL‎-00019" summary="finished 2">
-      <option name="closed" value="true" />
-      <created>1717675882653</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL‎-00019" />
-      <option name="project" value="LOCAL‎" />
-      <updated>1717675882653</updated>
-    </task>
-    <task id="LOCAL‎-00020" summary="finished sphera test almost">
-      <option name="closed" value="true" />
-      <created>1717688050223</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL‎-00020" />
-      <option name="project" value="LOCAL‎" />
-      <updated>1717688050223</updated>
     </task>
     <task id="LOCAL‎-00021" summary="test find-intersection triangle and plane finished unchecked">
       <option name="closed" value="true" />
@@ -672,13 +660,29 @@
     </task>
     <task id="LOCAL‎-00067" summary="finished 7.1">
       <option name="closed" value="true" />
-      <created>1723197235077</created>
+      <created>1723148691349</created>
       <option name="number" value="00067" />
       <option name="presentableId" value="LOCAL‎-00067" />
       <option name="project" value="LOCAL‎" />
-      <updated>1723197235077</updated>
+      <updated>1723148691349</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL‎-00068" summary="finished 7.1">
+      <option name="closed" value="true" />
+      <created>1723202462926</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL‎-00068" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1723202462926</updated>
+    </task>
+    <task id="LOCAL‎-00069" summary="finished 7.3">
+      <option name="closed" value="true" />
+      <created>1723205477319</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL‎-00069" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1723205477319</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -697,7 +701,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="almost every thing workes" />
     <MESSAGE value="et normal of cylinder" />
     <MESSAGE value="in the middle of vector test" />
     <MESSAGE value="every thing is working" />
@@ -722,7 +725,8 @@
     <MESSAGE value="stage 6 th calcColor" />
     <MESSAGE value="stage 6 almost finished" />
     <MESSAGE value="finished 7.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="finished 7.1" />
+    <MESSAGE value="finished 7.3" />
+    <option name="LAST_COMMIT_MESSAGE" value="finished 7.3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

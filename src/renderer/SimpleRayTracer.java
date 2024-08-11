@@ -363,7 +363,7 @@ public class SimpleRayTracer extends RayTracerBase {
     private Color calcLocalEffects(GeoPoint geoPoint, Ray ray, Double3 k) {
         Vector n = geoPoint.geometry.getNormal(geoPoint.point);
         Vector v = ray.getDirection();
-        double nv = alignZero(n.dotProduct(v));
+        double nv = n.dotProduct(v);
         Color color = geoPoint.geometry.getEmission();
         if (nv == 0) {
             return color;
@@ -372,7 +372,7 @@ public class SimpleRayTracer extends RayTracerBase {
         Material material = geoPoint.geometry.getMaterial();
         for (LightSource lightSource : scene.lights) {
             Vector l = lightSource.getL(geoPoint.point);
-            double nl = alignZero(n.dotProduct(l));
+            double nl = n.dotProduct(l);
             if (nl * nv > 0) { // sign(nl) == sing(nv)
                 Double3 ktr = transparency(geoPoint,nv, l, n,lightSource);
                 if (!ktr.product(k).lowerThan(MIN_CALC_COLOR_K)) {
@@ -420,18 +420,7 @@ public class SimpleRayTracer extends RayTracerBase {
      * @param n  the normal of the geometry the point is on at the point
      * @return a Double3 that representing how much from the light should affect to the point.
      */
-//    private Double3 transparency(GeoPoint gp, LightSource ls, Vector l, Vector n) {
-//        Vector lightDirection = l.scale(-1); // vector from point to light source
-//        Ray ray = new Ray(n,gp.point, lightDirection);
-//        List<GeoPoint> intersections = scene.geometries.findGeoIntersections(ray, ls.getDistance(gp.point));
-//        Double3 ktr = Double3.ONE;
-//        if (intersections == null)
-//            return ktr;
-//        for (GeoPoint geoPoint : intersections) {
-//            ktr = ktr.product(geoPoint.geometry.getMaterial().kT);
-//        }
-//        return ktr;
-//    }
+//
         private Double3 transparency(GeoPoint gp, double nv, Vector l, Vector n, LightSource lightSource) {
         Vector epsVector = n.scale(nv < 0 ? EPS : -EPS);
         Point point = gp.point.add(epsVector);
@@ -441,7 +430,7 @@ public class SimpleRayTracer extends RayTracerBase {
         if (intersections == null)
             return ktr;
         for (GeoPoint intersection : intersections){
-            if (!(lightSource.getDistance(gp.point) > gp.point.distance(intersection.point)))
+            if (lightSource.getDistance(gp.point) > intersection.point.distance(gp.point))
                 ktr = ktr.product(intersection.geometry.getMaterial().kT);
         }
         return ktr;

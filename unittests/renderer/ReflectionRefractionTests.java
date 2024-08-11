@@ -5,6 +5,8 @@ package renderer;
 
 import static java.awt.Color.*;
 
+import lighting.DirectionalLight;
+import lighting.PointLight;
 import org.junit.jupiter.api.Test;
 
 import geometries.Sphere;
@@ -29,23 +31,56 @@ public class ReflectionRefractionTests {
 
    /** Produce a picture of a sphere lighted by a spot light */
    @Test
-   public void twoSpheres() {
+   public void  mgal() {
       scene.geometries.add(
-                           new Sphere(new Point(0, 0, -50), 50d).setEmission(new Color(BLUE))
-                              .setMaterial(new Material().setkD(0.4).setkS(0.3).setShininess(100).setkT(0.3)),
-                           new Sphere(new Point(0, 0, -50), 25d).setEmission(new Color(RED))
-                              .setMaterial(new Material().setkD(0.5).setkS(0.5).setShininess(100)));
-      scene.lights.add(
-                       new SpotLight(new Color(1000, 600, 0), new Point(-100, -100, 500), new Vector(-1, -1, -2))
-                          .setkL(0.0004).setkQ(0.0000006));
+                           new Triangle(new Point(50, -50, -50), new Point(-50, 50, -50),
+                               new Point(60, 60, 60))
+                                .setEmission(new Color(88, 90, 46))
+                                   .setMaterial(new Material().setkR(1)),
+                           new Sphere(new Point(0, 0, -50), 50d).setEmission(new Color(GREEN))
+                              .setMaterial(new Material().setkD(0.2).setkS(0.2).setShininess(100).setkT(0.2)),
+                           new Sphere(new Point(1, 4, 20), 10d).setEmission(new Color(RED))
+                              .setMaterial(new Material().setkD(0.2).setkS(0.2).setShininess(100)));
+      //== because we are in List that get only single value each time we separated to some section==//
+      scene.setAmbientLight(new AmbientLight(new Color(WHITE), 0.15));
+      scene.lights
+              .add(new SpotLight(new Color(350, 350, 0), new Point(10, -10, -130), new Vector(-2, -2, -1))
+                      .setkL(0.0001)
+                      .setkQ(0.000005));
+      scene.lights
+              .add(new PointLight(new Color(0, 300, 350), new Point(10, -10, -130))
+                      .setkL(0.0005).setkQ(0.0002));
+      scene.lights
+              .add(new DirectionalLight(new Color(120, 5, 5), new Vector(0, 0, -1)));
 
       cameraBuilder.setLocation(new Point(0, 0, 1000)).setVpDistance(1000)
          .setVpSize(150, 150)
-         .setImageWriter(new ImageWriter("refractionTwoSpheres", 500, 500))
+         .setImageWriter(new ImageWriter("MGAL", 500, 500))
          .build()
          .renderImage()
          .writeToImage();
    }
+
+   /** Produce a picture of a sphere lighted by a spot light */
+   @Test
+   public void twoSpheres() {
+      scene.geometries.add(
+              new Sphere(new Point(0, 0, -50), 50d).setEmission(new Color(BLUE))
+                      .setMaterial(new Material().setkD(0.4).setkS(0.3).setShininess(100).setkT(0.3)),
+              new Sphere(new Point(0, 0, -50), 25d).setEmission(new Color(RED))
+                      .setMaterial(new Material().setkD(0.5).setkS(0.5).setShininess(100)));
+      scene.lights.add(
+              new SpotLight(new Color(1000, 600, 0), new Point(-100, -100, 500), new Vector(-1, -1, -2))
+                      .setkL(0.0004).setkQ(0.0000006));
+
+      cameraBuilder.setLocation(new Point(0, 0, 1000)).setVpDistance(1000)
+              .setVpSize(150, 150)
+              .setImageWriter(new ImageWriter("refractionTwoSpheres", 500, 500))
+              .build()
+              .renderImage()
+              .writeToImage();
+   }
+
 
    /** Produce a picture of a sphere lighted by a spot light */
    @Test
