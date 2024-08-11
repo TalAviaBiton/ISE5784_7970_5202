@@ -27,4 +27,6 @@ abstract class Light {
 
         return intensity;
     }
+
+
 }

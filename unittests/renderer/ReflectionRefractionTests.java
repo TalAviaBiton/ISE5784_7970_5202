@@ -5,17 +5,15 @@ package renderer;
 
 import static java.awt.Color.*;
 
-import lighting.DirectionalLight;
-import lighting.PointLight;
+import lighting.*;
 import org.junit.jupiter.api.Test;
 
 import geometries.Sphere;
 import geometries.Triangle;
-import lighting.AmbientLight;
-import lighting.SpotLight;
 import primitives.*;
-import renderer.*;
 import scene.Scene;
+
+import java.util.List;
 
 /** Tests for reflection and transparency functionality, test for partial
  * shadows
@@ -29,36 +27,33 @@ public class ReflectionRefractionTests {
       .setDirection(new Vector(0,0,-1) ,new Vector(0,1,0))
       .setRayTracer(new SimpleRayTracer(scene));
 
-   /** Produce a picture of a sphere lighted by a spot light */
-   @Test
-   public void  mgal() {
-      scene.geometries.add(
-                           new Triangle(new Point(50, -50, -50), new Point(-50, 50, -50),
-                               new Point(60, 60, 60))
-                                .setEmission(new Color(88, 90, 46))
-                                   .setMaterial(new Material().setkR(1)),
-                           new Sphere(new Point(0, 0, -50), 50d).setEmission(new Color(GREEN))
-                              .setMaterial(new Material().setkD(0.2).setkS(0.2).setShininess(100).setkT(0.2)),
-                           new Sphere(new Point(1, 4, 20), 10d).setEmission(new Color(RED))
-                              .setMaterial(new Material().setkD(0.2).setkS(0.2).setShininess(100)));
-      //== because we are in List that get only single value each time we separated to some section==//
-      scene.setAmbientLight(new AmbientLight(new Color(WHITE), 0.15));
-      scene.lights
-              .add(new SpotLight(new Color(350, 350, 0), new Point(10, -10, -130), new Vector(-2, -2, -1))
-                      .setkL(0.0001)
-                      .setkQ(0.000005));
-      scene.lights
-              .add(new PointLight(new Color(0, 300, 350), new Point(10, -10, -130))
-                      .setkL(0.0005).setkQ(0.0002));
-      scene.lights
-              .add(new DirectionalLight(new Color(120, 5, 5), new Vector(0, 0, -1)));
 
-      cameraBuilder.setLocation(new Point(0, 0, 1000)).setVpDistance(1000)
-         .setVpSize(150, 150)
-         .setImageWriter(new ImageWriter("MGAL", 500, 500))
-         .build()
-         .renderImage()
-         .writeToImage();
+   /** Produce a picture of multi objects*/
+   @Test
+   public void multiObjects() {
+
+
+      scene.setAmbientLight(new AmbientLight(new Color(BLUE), new Double3(0.20)));
+      scene.geometries.add( //
+              new Triangle(new Point(-150, -150, -115), new Point(150, -150, -135), new Point(75, 75, -150)) //
+                      .setMaterial(new Material().setkD(0.5).setkS(0.5).setShininess(60)), //
+              new Triangle(new Point(-150, -150, -115), new Point(-70, 70, -140), new Point(75, 75, -150)) //
+                      .setMaterial(new Material().setkD(0.5).setkS(0.5).setShininess(60).setkR(new Double3(0.8))), //
+              new Sphere(new Point(0, 0, -50), 50d).setEmission(new Color(blue).reduce(2))
+                      .setMaterial(new Material().setkD(0.2).setkS(0.2).setShininess(100).setkT(0.6)),
+              new Sphere(new Point(0, 0, -50), 20d).setEmission(new Color(GREEN))
+                      .setMaterial(new Material().setkD(0.2).setkS(0.2).setShininess(100)));
+      scene.setAmbientLight(new AmbientLight(new Color(WHITE), 0.15));
+
+      scene.lights.add(new PointLight(new Color(100, 200, 200), new Point(60, 50, 100)) //
+              .setkL(4E-5).setkQ(2E-7));
+      scene.lights.add(new PointLight(new Color(YELLOW).reduce(2), new Point(-10, 50, -10)).setkL(0.00003)
+              .setkC(1.00001).setkQ(0.000001));
+      scene.lights.add(new DirectionalLight(new Color(255, 0, 0), new Vector(-5, -5, -5)));
+
+      cameraBuilder.setLocation(new Point(0, 0, 1000)).setVpDistance(1000).setVpSize(200, 200)
+              .setImageWriter(new ImageWriter("multiObjects", 600, 600)).build().renderImage().writeToImage();
+
    }
 
    /** Produce a picture of a sphere lighted by a spot light */
