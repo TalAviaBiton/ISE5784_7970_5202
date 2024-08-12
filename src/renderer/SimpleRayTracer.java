@@ -150,7 +150,7 @@ public class SimpleRayTracer extends RayTracerBase {
             Vector l = lightSource.getL(geoPoint.point);
             double nl = n.dotProduct(l);
             if (nl * nv > 0) { // sign(nl) == sing(nv)
-                Double3 ktr = transparency(geoPoint,nv, l, n,lightSource);
+                Double3 ktr ;//= transparency(geoPoint,nv, l, n,lightSource);
                 // Determine the type of light source and calculate transparency accordingly
                 if (lightSource instanceof DirectionalLight || (lightSource instanceof PointLight && ((PointLight) lightSource).getSize() == 0)) {
                     ktr = transparency(geoPoint,nv, l, n,lightSource);
