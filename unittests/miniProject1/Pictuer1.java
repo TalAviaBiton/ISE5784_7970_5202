@@ -530,7 +530,7 @@ public class Pictuer1 {
         //street light for pinwheel
         scene4.lights.add(new PointLight(new Color(10,10,10), new Point(-40,-20,0)).setSize(30));
         //th light for the baloon decoration
-        scene4.lights.add(new PointLight(new Color(40,40,40), new Point(-20,0,1001)).setSize(0));
+        scene4.lights.add(new PointLight(new Color(40,40,40), new Point(-20,0,1001)).setSize(30));
 
 
 
@@ -571,7 +571,9 @@ public class Pictuer1 {
 
         ImageWriter imageWriter = new ImageWriter("final,SoftShadows,9000,9000", 9000, 9000);
         cameraBuilder
-                .setImageWriter(imageWriter).build().renderImage().writeToImage();
+                .setImageWriter(imageWriter).build()
+                .renderImage()
+                .writeToImage();
     }
 
 
