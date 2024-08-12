@@ -56,7 +56,7 @@ public class ReflectionRefractionTests {
 
    }
 
-   /** Produce a picture of a sphere lighted by a spot light */
+   /** Produce a picture of a sphere lighted by a spotlight */
    @Test
    public void twoSpheres() {
       scene.geometries.add(
@@ -66,7 +66,8 @@ public class ReflectionRefractionTests {
                       .setMaterial(new Material().setkD(0.5).setkS(0.5).setShininess(100)));
       scene.lights.add(
               new SpotLight(new Color(1000, 600, 0), new Point(-100, -100, 500), new Vector(-1, -1, -2))
-                      .setkL(0.0004).setkQ(0.0000006));
+                    //  .setSize(0.00000024));
+      .setkL(0.0004).setkQ(0.0000006));
 
       cameraBuilder.setLocation(new Point(0, 0, 1000)).setVpDistance(1000)
               .setVpSize(150, 150)

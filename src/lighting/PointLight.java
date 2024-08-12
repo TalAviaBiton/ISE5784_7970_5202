@@ -50,7 +50,7 @@ public class PointLight extends Light implements LightSource {
     /**
      * Sets the size of soft shadow of the point light
      *
-     * @param size representing the size of soft shadow for this point lght
+     * @param size representing the size of soft shadow for this point light
      * @return The updated PointLight object
      */
     public PointLight setSize(double size) {

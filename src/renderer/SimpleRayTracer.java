@@ -250,7 +250,7 @@ public class SimpleRayTracer extends RayTracerBase {
 //
         private Double3 transparency(GeoPoint gp, double nv, Vector l, Vector n, LightSource lightSource) {
         Vector epsVector = n.scale(nv < 0 ? EPS : -EPS);
-        Point point = gp.point.add(epsVector);
+        Point point = gp.point;//.add(epsVector);
         Ray lightRay = new Ray(n, point, l.scale(-1));
         List<GeoPoint> intersections = scene.geometries.findGeoIntersections(lightRay);
         Double3 ktr = Double3.ONE;

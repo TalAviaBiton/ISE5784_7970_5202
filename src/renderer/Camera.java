@@ -250,7 +250,7 @@ public class Camera implements Cloneable {
         double yI = alignZero(-(i - (double) (nY - 1) / 2) * (height / nY));
         if (!isZero(yI))
             pC = pC.add(vUp.scale(yI));
-        return new Ray(p0, vTo.scale(distance));//pC-p0
+        return new Ray(p0, pC.subtract(p0));
     }
 
     /**
