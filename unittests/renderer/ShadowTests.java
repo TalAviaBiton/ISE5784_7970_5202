@@ -14,13 +14,14 @@ import scene.Scene;
  * @author Dan */
 public class ShadowTests {
    /** Scene of the tests */
-   private final Scene          scene      = new Scene("Test scene");
+   //private final Scene          scene      = new Scene("Test scene");
+   private Scene scene = new Scene.SceneBuilder("Test scene").build();
    /** Camera builder of the tests */
    private final Camera.Builder camera     = Camera.getBuilder()
       .setDirection(new Vector(0,0,-1), new Vector(0,1,0))
       .setLocation(new Point(0, 0, 1000)).setVpDistance(1000)
       .setVpSize(200, 200)
-      .setRayTracer(new SimpleRayTracer(scene));
+      .setRayTracer(new SimpleRayTracer(scene).setNumOfRays(3000));
 
    /** The sphere in the tests */
    private final Intersectable  sphere     = new Sphere(new Point(0, 0, -200), 60d)
@@ -37,7 +38,7 @@ public class ShadowTests {
       scene.geometries.add(sphere, triangle.setEmission(new Color(BLUE)).setMaterial(trMaterial));
       scene.lights.add( //
                        new SpotLight(new Color(400, 240, 0), spotLocation, new Vector(1, 1, -3)) //
-                          .setkL(1E-5).setkQ(1.5E-7));
+                          .setkL(1E-5).setkQ(1.5E-7).setSize(30));
       camera.setImageWriter(new ImageWriter(pictName, 400, 400))
          .build()
          .renderImage() //

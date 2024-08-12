@@ -28,9 +28,16 @@ public class tenItems {
     boolean bvh = false;
 
     /** Camera builder for the tests with triangles */
-    private final Camera.Builder cameraBuilder = Camera.getBuilder()
-            .setDirection(new Vector(0,0,-1) ,new Vector(0,1,0))
-            .setRayTracer(new SimpleRayTracer(scene4));
+//    private final Camera.Builder cameraBuilder = Camera.getBuilder()
+//            .setDirection(new Vector(0,0,-1) ,new Vector(0,1,0))
+//            .setRayTracer(new SimpleRayTracer(scene4).setNumOfRays(1000));
+
+    /** Camera builder of the tests */
+    private final Camera.Builder camera     = Camera.getBuilder()
+            .setDirection(new Vector(0,0,-1), new Vector(0,1,0))
+            .setLocation(new Point(0, 0, 1000)).setVpDistance(1000)
+            .setVpSize(200, 200)
+            .setRayTracer(new SimpleRayTracer(scene4).setNumOfRays(3000));
 
     /**
      * gets a center and a radius of bubble and create
@@ -82,10 +89,10 @@ public class tenItems {
 
 @Test
 public void pic(){
-    cameraBuilder.setLocation(new Point(0, 0, 1000)).setVpDistance(1000).setVpSize(150, 150)
-            .setRayTracer(new SimpleRayTracer(scene4).setNumOfRays(1000));
+//    cameraBuilder.setLocation(new Point(0, 0, 1000)).setVpDistance(1000).setVpSize(150, 150)
+//            .setRayTracer(new SimpleRayTracer(scene4).setNumOfRays(1000));
     //------------------------------------bubbles----------------------------------------------------------------
-    buildBubble(new Point(-30, 40, 120), 20d);
+//    buildBubble(new Point(-30, 40, 120), 20d);
 //    buildBubble(new Point(-25, 38, 120), 2d);
 //    buildBubble(new Point(-40, -40, 120), 2d);
 //    buildBubble(new Point(50, -35, 120), 1.5d);
@@ -93,10 +100,13 @@ public void pic(){
     //-----------------------------------------clouds-------------------------------------------------------------
     buildCloud(new Point(-55, 20, -80), new Point(-62, 18, -80),
             new Point(-48, 18, -80), 8d, 6d);
-//    buildCloud(new Point(60, -10, 0), new Point(65, -11, 0),
-//            new Point(55, -11, 0), 5d, 3.5d);
+    buildCloud(new Point(60, -10, 0), new Point(65, -11, 0),
+            new Point(55, -11, 0), 5d, 3.5d);
     //----------------------------------------------general--------------------------------------------------------
     scene4.geometries.add(
+            new Sphere(new Point(-2, 28, -50), 35d)
+                    .setEmission(new Color(150, 0, 0)) //
+                    .setMaterial(new Material().setkD(0.3).setkS(0.05).setShininess(100).setkT(0.3)).setBVH(bvh),
          //-------------------------------------------ground-----------------------------------------------------------
              new Plane(new Point(0, -55, -750), new Vector(0, 0.5, 0))
                   .setEmission(new Color(34, 70, 34))
@@ -116,7 +126,7 @@ public void pic(){
     scene4.lights.add(new SpotLight(new Color(600, 700, 400), new Point(-2, 28, -50), new Vector(0, 1, 0)).setSize(30));
 
     //inside basket light
-    scene4.lights.add(new PointLight(new Color(200, 100, 100), new Point(0, -40, -50)).setSize(40));
+//    scene4.lights.add(new PointLight(new Color(200, 100, 100), new Point(0, -40, -50)).setSize(40));
 
     //the second shadow for baloon
     scene4.lights.add(new PointLight(new Color(105, 100, 100).scale(0.5), new Point(10, 10, 10)).setkQ(0).setkL(0).setSize(45));
@@ -126,8 +136,35 @@ public void pic(){
     //th light for the baloon decoration
     scene4.lights.add(new PointLight(new Color(40,40,40), new Point(-20,0,1001)).setSize(45));
 
+
+
+//     //without soft shadows
+//     //light for balloon coloring
+//     scene4.lights.add(new SpotLight(new Color(600, 700, 400),
+//     new Point(-2, 28, -50),
+//     new Vector(0, 1, 0))
+//     .setSize(0));
+//
+//     //inside basket light
+//     scene4.lights.add(new PointLight(new Color(200, 100, 100),
+//     new Point(0, -40, -50))
+//     .setSize(0));
+//
+//     //the second shadow for baloon
+//     scene4.lights.add(new PointLight(new Color(105, 100, 100).scale(0.5),
+//     new Point(10, 10, 10)).setkQ(0).setkL(0).setSize(0));
+//
+//     //street light for pinwheel
+//     scene4.lights.add(new PointLight(new Color(10, 10, 10),
+//     new Point(-40, -20, 0))
+//     .setSize(0));
+//     //th light for the baloon decoration
+//     scene4.lights.add(new PointLight(new Color(40, 40, 40),
+//     new Point(-20, 0, 1001))
+//     .setSize(0));
+
     ImageWriter imageWriter = new ImageWriter("final,SoftShadows,9000,9000", 9000, 9000);
-    cameraBuilder
+    camera
             .setImageWriter(imageWriter).build()
             .renderImage()
             .writeToImage();
