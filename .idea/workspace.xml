@@ -5,9 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4b50f3a7-ff92-41f1-86dd-01d3b21a2dd1" name="Changes" comment="finished 7">
+      <change afterPath="$PROJECT_DIR$/unittests/miniProject1/tenItems.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lighting/PointLight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lighting/PointLight.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/renderer/Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/Camera.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unittests/miniProject1/Pictuer1.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/miniProject1/Pictuer1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/SimpleRayTracer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/SimpleRayTracer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unittests/renderer/ReflectionRefractionTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/renderer/ReflectionRefractionTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,6 +106,7 @@
     "JUnit.ReflectionRefractionTests.mgal.executor": "Run",
     "JUnit.ReflectionRefractionTests.multiObjects.executor": "Run",
     "JUnit.ReflectionRefractionTests.multipleObjects.executor": "Run",
+    "JUnit.ReflectionRefractionTests.twoSpheres.executor": "Run",
     "JUnit.RenderTests.basicRenderXml.executor": "Run",
     "JUnit.RenderTests.executor": "Run",
     "JUnit.RenderTests.renderMultiColorTest.executor": "Run",
@@ -126,6 +130,7 @@
     "JUnit.VectorTest.testLength.executor": "Run",
     "JUnit.VectorTest.testLengthSquared.executor": "Run",
     "JUnit.VectorTest.testNormalize.executor": "Run",
+    "JUnit.tenItems.pic.executor": "Run",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
     "Repository.Attach.Sources": "false",
@@ -166,7 +171,7 @@
       <recent name="primitives" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.Pictuer1">
+  <component name="RunManager" selected="JUnit.ReflectionRefractionTests.twoSpheres">
     <configuration name="Pictuer1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ISE5784_7970_5202" />
       <extension name="coverage">
@@ -212,7 +217,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ReflectionRefractionTests.multiObjects" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ReflectionRefractionTests.twoSpheres" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ISE5784_7970_5202" />
       <extension name="coverage">
         <pattern>
@@ -222,23 +227,23 @@
       </extension>
       <option name="PACKAGE_NAME" value="renderer" />
       <option name="MAIN_CLASS_NAME" value="renderer.ReflectionRefractionTests" />
-      <option name="METHOD_NAME" value="multiObjects" />
+      <option name="METHOD_NAME" value="twoSpheres" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ReflectionRefractionTests.multipleObjects" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="tenItems.pic" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ISE5784_7970_5202" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="renderer.*" />
+          <option name="PATTERN" value="miniProject1.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="renderer" />
-      <option name="MAIN_CLASS_NAME" value="renderer.ReflectionRefractionTests" />
-      <option name="METHOD_NAME" value="multipleObjects" />
+      <option name="PACKAGE_NAME" value="miniProject1" />
+      <option name="MAIN_CLASS_NAME" value="miniProject1.tenItems" />
+      <option name="METHOD_NAME" value="pic" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -246,21 +251,13 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ReflectionRefractionTests.twoSpheres" />
+        <item itemvalue="JUnit.tenItems.pic" />
         <item itemvalue="JUnit.Pictuer1" />
         <item itemvalue="JUnit.Pictur2" />
         <item itemvalue="JUnit.ReflectionRefractionTests" />
-        <item itemvalue="JUnit.ReflectionRefractionTests.multiObjects" />
-        <item itemvalue="JUnit.ReflectionRefractionTests.multipleObjects" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.15989.150" />
-        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-IU-241.15989.150" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -303,14 +300,6 @@
       <workItem from="1723039350732" duration="4142000" />
       <workItem from="1723131971223" duration="1533000" />
       <workItem from="1723404665892" duration="384000" />
-    </task>
-    <task id="LOCAL‎-00023" summary="finished geometries test">
-      <option name="closed" value="true" />
-      <created>1718094682273</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL‎-00023" />
-      <option name="project" value="LOCAL‎" />
-      <updated>1718094682273</updated>
     </task>
     <task id="LOCAL‎-00024" summary="finished geometries test">
       <option name="closed" value="true" />
@@ -696,7 +685,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1723398235506</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL‎-00072" summary="finished 7">
+      <option name="closed" value="true" />
+      <created>1723441456476</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL‎-00072" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1723441456476</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -715,7 +712,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="in the middle of vector test" />
     <MESSAGE value="every thing is working" />
     <MESSAGE value="finished doing notes" />
     <MESSAGE value="finished 2" />
@@ -740,7 +736,8 @@
     <MESSAGE value="finished 7.1" />
     <MESSAGE value="finished 7.3" />
     <MESSAGE value="the first pictuer without soft shadows" />
-    <option name="LAST_COMMIT_MESSAGE" value="the first pictuer without soft shadows" />
+    <MESSAGE value="finished 7" />
+    <option name="LAST_COMMIT_MESSAGE" value="finished 7" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
