@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4b50f3a7-ff92-41f1-86dd-01d3b21a2dd1" name="Changes" comment="the first pictuer without soft shadows" />
+    <list default="true" id="4b50f3a7-ff92-41f1-86dd-01d3b21a2dd1" name="Changes" comment="finished 7">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unittests/miniProject1/tenItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/miniProject1/tenItems.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -126,6 +129,7 @@
     "JUnit.VectorTest.testNormalize.executor": "Run",
     "JUnit.tenItems.executor": "Run",
     "JUnit.tenItems.pic.executor": "Run",
+    "JUnit.tenItems.pic1.executor": "Run",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
     "Repository.Attach.Sources": "false",
@@ -166,7 +170,23 @@
       <recent name="primitives" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.tenItems">
+  <component name="RunManager" selected="JUnit.tenItems.pic1">
+    <configuration name="ReflectionRefractionTests.multiObjects" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ISE5784_7970_5202" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="renderer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="renderer" />
+      <option name="MAIN_CLASS_NAME" value="renderer.ReflectionRefractionTests" />
+      <option name="METHOD_NAME" value="multiObjects" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ReflectionRefractionTests.twoSpheres" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ISE5784_7970_5202" />
       <extension name="coverage">
@@ -178,38 +198,6 @@
       <option name="PACKAGE_NAME" value="renderer" />
       <option name="MAIN_CLASS_NAME" value="renderer.ReflectionRefractionTests" />
       <option name="METHOD_NAME" value="twoSpheres" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ShadowTests.sphereTriangleInitial" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ISE5784_7970_5202" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="renderer.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="renderer" />
-      <option name="MAIN_CLASS_NAME" value="renderer.ShadowTests" />
-      <option name="METHOD_NAME" value="sphereTriangleInitial" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ShadowTests.sphereTriangleMove1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ISE5784_7970_5202" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="renderer.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="renderer" />
-      <option name="MAIN_CLASS_NAME" value="renderer.ShadowTests" />
-      <option name="METHOD_NAME" value="sphereTriangleMove1" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -246,13 +234,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="tenItems.pic1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ISE5784_7970_5202" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="miniProject1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="miniProject1" />
+      <option name="MAIN_CLASS_NAME" value="miniProject1.tenItems" />
+      <option name="METHOD_NAME" value="pic1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.tenItems" />
-        <item itemvalue="JUnit.ShadowTests.sphereTriangleMove1" />
-        <item itemvalue="JUnit.ShadowTests.sphereTriangleInitial" />
-        <item itemvalue="JUnit.ReflectionRefractionTests.twoSpheres" />
+        <item itemvalue="JUnit.tenItems.pic1" />
+        <item itemvalue="JUnit.ReflectionRefractionTests.multiObjects" />
         <item itemvalue="JUnit.tenItems.pic" />
+        <item itemvalue="JUnit.ReflectionRefractionTests.twoSpheres" />
+        <item itemvalue="JUnit.tenItems" />
       </list>
     </recent_temporary>
   </component>
@@ -297,6 +301,14 @@
       <workItem from="1723039350732" duration="4142000" />
       <workItem from="1723131971223" duration="1533000" />
       <workItem from="1723404665892" duration="384000" />
+    </task>
+    <task id="LOCAL‎-00024" summary="finished geometries test">
+      <option name="closed" value="true" />
+      <created>1718097907539</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL‎-00024" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1718097907539</updated>
     </task>
     <task id="LOCAL‎-00025" summary="finished geometries test">
       <option name="closed" value="true" />
@@ -682,15 +694,7 @@
       <option name="project" value="LOCAL‎" />
       <updated>1723441456476</updated>
     </task>
-    <task id="LOCAL‎-00073" summary="the first pictuer without soft shadows">
-      <option name="closed" value="true" />
-      <created>1723484362260</created>
-      <option name="number" value="00073" />
-      <option name="presentableId" value="LOCAL‎-00073" />
-      <option name="project" value="LOCAL‎" />
-      <updated>1723484362260</updated>
-    </task>
-    <option name="localTasksCounter" value="74" />
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -732,9 +736,9 @@
     <MESSAGE value="stage 6 almost finished" />
     <MESSAGE value="finished 7.1" />
     <MESSAGE value="finished 7.3" />
-    <MESSAGE value="finished 7" />
     <MESSAGE value="the first pictuer without soft shadows" />
-    <option name="LAST_COMMIT_MESSAGE" value="the first pictuer without soft shadows" />
+    <MESSAGE value="finished 7" />
+    <option name="LAST_COMMIT_MESSAGE" value="finished 7" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
