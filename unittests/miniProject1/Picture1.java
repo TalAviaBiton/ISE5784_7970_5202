@@ -19,7 +19,7 @@ import scene.Scene;
 
 import static java.awt.Color.*;
 
-public class Pictuer1 {
+public class Picture1 {
 
     Scene scene4 = new Scene("Test scene")
             .setAmbientLight(new AmbientLight(new Color(WHITE), 0.15))
