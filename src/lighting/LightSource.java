@@ -6,6 +6,7 @@ import primitives.*;
  * interface to represent a light source
  */
 public interface LightSource {
+
     /**
      * a method to get the intensity of a color in the point
      *
@@ -14,6 +15,7 @@ public interface LightSource {
      */
     public Color getIntensity(Point point);
 
+
     /**
      * a method to get the direction of the light in the point
      *
@@ -21,6 +23,7 @@ public interface LightSource {
      * @return the direction of the light in point
      */
     public Vector getL(Point point);
+
 
     /**
      * the distance between the point and the light

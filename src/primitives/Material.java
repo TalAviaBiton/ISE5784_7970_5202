@@ -1,6 +1,10 @@
 package primitives;
 
+/**
+ * a class that represents the material of the objects
+ */
 public class Material {
+
     // the Diffuse light factor of the object material type
     public Double3 kD = Double3.ZERO;
 
@@ -16,13 +20,15 @@ public class Material {
     // attenuation coefficient of reflection
     public Double3 kR = Double3.ZERO;
 
+    //*********************** setters **********************
+
     /**
      * set KT function - Attenuation coefficient of transparency
      *
      * @param kT transparency factor (Double3)
      * @return the material
      */
-    public Material setkT(Double3 kT) {
+    public Material setKt(Double3 kT) {
         this.kT = kT;
         return this;
     }
@@ -33,7 +39,7 @@ public class Material {
      * @param kT transparency factor (double)
      * @return the material
      */
-    public Material setkT(double kT) {
+    public Material setKt(double kT) {
         this.kT = new Double3(kT);
         return this;
     }
@@ -44,7 +50,7 @@ public class Material {
      * @param kR reflection factor (Double3)
      * @return the material
      */
-    public Material setkR(Double3 kR) {
+    public Material setKr(Double3 kR) {
         this.kR = kR;
         return this;
     }
@@ -55,7 +61,7 @@ public class Material {
      * @param kR reflection factor (double)
      * @return the material
      */
-    public Material setkR(double kR) {
+    public Material setKr(double kR) {
         this.kR = new Double3(kR);
         return this;
     }
@@ -66,7 +72,7 @@ public class Material {
      * @param kD light factor (Double3)
      * @return the material
      */
-    public Material setkD(Double3 kD) {
+    public Material setKd(Double3 kD) {
         this.kD = kD;
         return this;
     }
@@ -77,7 +83,7 @@ public class Material {
      * @param kD light factor (double)
      * @return the material
      */
-    public Material setkD(double kD) {
+    public Material setKd(double kD) {
         this.kD = new Double3(kD);
         return this;
     }
@@ -88,7 +94,7 @@ public class Material {
      * @param kS light factor (Double3)
      * @return the material
      */
-    public Material setkS(Double3 kS) {
+    public Material setKs(Double3 kS) {
         this.kS = kS;
         return this;
     }
@@ -100,7 +106,7 @@ public class Material {
      * @param kS light factor (double)
      * @return the material
      */
-    public Material setkS(Double kS) {
+    public Material setKs(Double kS) {
         this.kS = new Double3(kS);
         return this;
     }

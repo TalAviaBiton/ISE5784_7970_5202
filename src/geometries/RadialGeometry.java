@@ -9,9 +9,8 @@ import java.util.List;
  * This abstract class is for all geometries that has radius
  */
 public abstract class RadialGeometry extends Geometry {
-    /**
-     * the radius of the geometry
-     */
+
+    // the radius of the geometry
     protected final double radius;
 
     /**
@@ -20,6 +19,7 @@ public abstract class RadialGeometry extends Geometry {
      * @param radius the wanted radius
      */
     protected RadialGeometry(double radius) {
+
         this.radius = radius;
     }
 

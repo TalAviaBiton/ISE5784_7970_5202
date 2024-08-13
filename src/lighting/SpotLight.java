@@ -13,6 +13,8 @@ public class SpotLight extends PointLight {
 
     //the direction of the light
     private Vector direction;
+
+    // the narrowness of the beam
     private double NarrowBeam = 1;
 
     /**
@@ -27,36 +29,38 @@ public class SpotLight extends PointLight {
         this.direction = direction.normalize();
     }
 
+    //*************** setters ***************
+
     /**
      * sets the kC
      *
-     * @param kC
+     * @param kC The specular attenuation factor
      * @return the spotlight
      */
-    public SpotLight setkC(double kC) {
-        super.setkC(kC);
+    public SpotLight setKc(double kC) {
+        super.setKc(kC);
         return this;
     }
 
     /**
      * sets the kL
      *
-     * @param kL
+     * @param kL The light source attenuation factor
      * @return the spotlight
      */
-    public SpotLight setkL(double kL) {
-        super.setkL(kL);
+    public SpotLight setKl(double kL) {
+        super.setKl(kL);
         return this;
     }
 
     /**
      * sets the kQ
      *
-     * @param kQ
+     * @param kQ The attenuation factor of the energy coming to the point
      * @return the spotlight
      */
-    public SpotLight setkQ(double kQ) {
-        super.setkQ(kQ);
+    public SpotLight setKq(double kQ) {
+        super.setKq(kQ);
         return this;
     }
 

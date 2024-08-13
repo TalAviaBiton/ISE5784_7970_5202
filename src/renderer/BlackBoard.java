@@ -12,24 +12,23 @@ import static primitives.Util.isZero;
 public class BlackBoard {
 
 
-     // Resolution (square root of the number of beams)
+    // Resolution (square root of the number of beams)
     int res;
 
-     // Size of each side (size of the light source)
+    // Size of each side (size of the light source)
     double size;
 
-     // Direction to move up on the board
+    // Direction to move up on the board
     Vector vUp;
 
-     //Direction to move right on the board
+    //Direction to move right on the board
     Vector vRight;
 
-     //The direction we move the board from p0
+    //The direction we move the board from p0
     Vector vTo;
 
-     // Center of the board
+    // Center of the board
     Point p0;
-
 
 
     /**
@@ -41,7 +40,7 @@ public class BlackBoard {
      * @param vUp  the direction to move up on the board
      * @param p0   the center of the board
      */
-    public  BlackBoard(int res, double size, Vector vTo, Vector vUp, Point p0) {
+    public BlackBoard(int res, double size, Vector vTo, Vector vUp, Point p0) {
         this.res = res;
         this.size = size;
         this.vUp = vUp;

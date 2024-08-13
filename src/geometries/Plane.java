@@ -8,7 +8,6 @@ import primitives.*;
  * 2D plane in a 3D world
  *
  * @author Shulman and Yonatan
- *
  */
 public class Plane extends Geometry {
 
@@ -37,6 +36,8 @@ public class Plane extends Geometry {
         this.p0 = p0;
         this.normal = normal.normalize();
     }
+
+    //********************** getters ********************
 
     /**
      * getter for the normal to the Plane
@@ -72,7 +73,13 @@ public class Plane extends Geometry {
         double t = Util.alignZero(normal.dotProduct(p0.subtract(rayP0)) / denom);
         return t <= 0 ? null : List.of(new GeoPoint(this, ray.getPoint(t)));
     }
+
     public List<GeoPoint> findGeoIntersections(Ray ray) {
         return findGeoIntersectionsHelper(ray);
+    }
+
+    @Override
+    public void createBoundingBox() {
+        //not implemented because plane is never ending so can't be bound in box
     }
 }

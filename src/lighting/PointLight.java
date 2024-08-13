@@ -12,6 +12,9 @@ public class PointLight extends Light implements LightSource {
     //The position point of the light source in the space
     private final Point position;
 
+    // size for soft shadow, how soft it will be
+    private double size = 0;
+
     /**
      * kC is The specular attenuation factor, required to ensure that the denominator in getIntensity > 1
      * kL is The light source attenuation factor
@@ -20,11 +23,6 @@ public class PointLight extends Light implements LightSource {
      * the formula is: Il = I0/(Kc + Ki*d + Kq*d^2);
      */
     private double kC = 1, kL = 0, kQ = 0; // Light factor -> constant, linear and Quadratic
-
-    /**
-     * size for soft shadow, how soft it will be
-     */
-    private double size=0;
 
 
     /**
@@ -38,6 +36,8 @@ public class PointLight extends Light implements LightSource {
         this.position = position;
     }
 
+    //***************** getters **************************
+
     /**
      * gets the constant representing soft shadow for the point light
      *
@@ -47,16 +47,7 @@ public class PointLight extends Light implements LightSource {
         return size;
     }
 
-    /**
-     * Sets the size of soft shadow of the point light
-     *
-     * @param size representing the size of soft shadow for this point light
-     * @return The updated PointLight object
-     */
-    public PointLight setSize(double size) {
-        this.size = size;
-        return this;
-    }
+
     /**
      * a method to get the intensity of the light in a specific point
      *
@@ -79,6 +70,19 @@ public class PointLight extends Light implements LightSource {
     }
 
     /**
+     * a getter for the position of the point light
+     *
+     * @return the position
+     */
+    public Point getPosition() {
+
+        return position;
+    }
+
+
+    //**************** override functions ***************
+
+    /**
      * a method to get the direction of the light in a specific point
      *
      * @param point the point I want to get the direction of the light at
@@ -88,39 +92,6 @@ public class PointLight extends Light implements LightSource {
     public Vector getL(Point point) {
 
         return point.subtract(this.position).normalize();
-    }
-
-    /**
-     * setter for kC
-     *
-     * @param kC the kc to set
-     * @return this object
-     */
-    public PointLight setkC(double kC) {
-        this.kC = kC;
-        return this;
-    }
-
-    /**
-     * setter for kL
-     *
-     * @param kL the kL to set
-     * @return this object
-     */
-    public PointLight setkL(double kL) {
-        this.kL = kL;
-        return this;
-    }
-
-    /**
-     * setter for kQ
-     *
-     * @param kQ the kQ to set
-     * @return this object
-     */
-    public PointLight setkQ(double kQ) {
-        this.kQ = kQ;
-        return this;
     }
 
     /**
@@ -135,7 +106,52 @@ public class PointLight extends Light implements LightSource {
         return position.distance(point);
     }
 
-    public Point getPosition() {
-        return position;
+
+    //**************** setters *********************
+
+    /**
+     * Sets the size of soft shadow of the point light
+     *
+     * @param size representing the size of soft shadow for this point light
+     * @return The updated PointLight object
+     */
+    public PointLight setSize(double size) {
+        this.size = size;
+        return this;
     }
+
+    /**
+     * setter for kC
+     *
+     * @param kC The specular attenuation factor to set
+     * @return this object
+     */
+    public PointLight setKc(double kC) {
+        this.kC = kC;
+        return this;
+    }
+
+    /**
+     * setter for kL
+     *
+     * @param kL The light source attenuation factor to set
+     * @return this object
+     */
+    public PointLight setKl(double kL) {
+        this.kL = kL;
+        return this;
+    }
+
+    /**
+     * setter for kQ
+     *
+     * @param kQ The attenuation factor of the energy coming to the point to set
+     * @return this object
+     */
+    public PointLight setKq(double kQ) {
+        this.kQ = kQ;
+        return this;
+    }
+
+
 }

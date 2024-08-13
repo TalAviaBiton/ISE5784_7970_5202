@@ -5,14 +5,11 @@ package primitives;
  */
 public class Point {
 
-    /**
-     * a static zero point for calculations
-     */
+    // a static zero point for calculations
     public static final Point ZERO = new Point(Double3.ZERO);
 
-    /**
-     * parameter to represent the point
-     */
+
+    //parameter to represent the point
     final Double3 xyz;
 
     /**
@@ -32,12 +29,10 @@ public class Point {
      * @param xyz for the three values of the point
      */
     public Point(Double3 xyz) {
+
         this.xyz = xyz;
     }
 
-    public Double3 getXYZ() {
-        return xyz;
-    }
 
     /**
      * Subtract two points
@@ -46,6 +41,7 @@ public class Point {
      * @return result of subtraction
      */
     public Vector subtract(Point p) {
+
         return new Vector(xyz.subtract(p.xyz));
     }
 
@@ -56,6 +52,7 @@ public class Point {
      * @return result of add a point
      */
     public Point add(Vector v) {
+
         return new Point(xyz.add(v.xyz));
     }
 
@@ -79,6 +76,7 @@ public class Point {
      * @return result the calculation of the distance
      */
     public double distance(Point p) {
+
         return Math.sqrt(distanceSquared(p));
     }
 
@@ -97,12 +95,29 @@ public class Point {
                 '}';
     }
 
+    /**
+     * a getter for x
+     *
+     * @return index x of the point
+     */
     public double getX() {
         return this.xyz.d1;
     }
+
+    /**
+     * a getter for y
+     *
+     * @return index y of the point
+     */
     public double getY() {
         return this.xyz.d2;
     }
+
+    /**
+     * a getter for z
+     *
+     * @return index z of the point
+     */
     public double getZ() {
         return this.xyz.d3;
     }

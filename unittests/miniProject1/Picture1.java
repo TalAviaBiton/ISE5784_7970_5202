@@ -19,19 +19,19 @@ import scene.Scene;
 
 import static java.awt.Color.*;
 
-public class Pictuer1 {
+public class Picture1 {
 
-    Scene scene4 = new Scene.SceneBuilder("Test scene")
+    Scene scene4 = new Scene("Test scene")
             .setAmbientLight(new AmbientLight(new Color(WHITE), 0.15))
-            .setBackground(new Color(135, 206, 250)).build();
+            .setBackground(new Color(135, 206, 250));
 
 
-    boolean bvh = false;
+    boolean bvh = true;
 
     /** Camera builder for the tests with triangles */
     private final Camera.Builder cameraBuilder = Camera.getBuilder()
             .setDirection(new Vector(0,0,-1) ,new Vector(0,1,0))
-            .setRayTracer(new SimpleRayTracer(scene4));
+            .setRayTracer(new SimpleRayTracer(scene4)).setThreads(3);;
 
     /**
      * gets a center and a radius of bubble and create
@@ -44,10 +44,10 @@ public class Pictuer1 {
                 new Sphere(point, radius)
                         .setEmission(new Color(255, 255, 255).scale(0.05))
                         .setMaterial(new Material()
-                                .setkD(0.1)
-                                .setkS(0.9)
+                                .setKd(0.1)
+                                .setKs(0.9)
                                 .setShininess(300)
-                                .setkT(0.8)
+                                .setKt(0.8)
                         ).setBVH(bvh)
         );
     }
@@ -82,15 +82,15 @@ public class Pictuer1 {
         scene4.geometries.add(
                 new Sphere(p1, rBig)
                         .setEmission(new Color(gray)) //
-                        .setMaterial(new Material().setkD(0.54).setkS(0.003).setShininess(100).setkT(0.15))
+                        .setMaterial(new Material().setKd(0.54).setKs(0.003).setShininess(100).setKt(0.15))
                         .setBVH(bvh),
                 new Sphere(p2, rSmall)
                         .setEmission(new Color(gray)) //
-                        .setMaterial(new Material().setkD(0.54).setkS(0.003).setShininess(100).setkT(0.15))
+                        .setMaterial(new Material().setKd(0.54).setKs(0.003).setShininess(100).setKt(0.15))
                         .setBVH(bvh),
                 new Sphere(p3, rSmall)
                         .setEmission(new Color(gray)) //
-                        .setMaterial(new Material().setkD(0.54).setkS(0.003).setShininess(100).setkT(0.15))
+                        .setMaterial(new Material().setKd(0.54).setKs(0.003).setShininess(100).setKt(0.15))
                         .setBVH(bvh)
         );
 
@@ -105,7 +105,7 @@ public class Pictuer1 {
         scene4.geometries.add(
                 new Sphere(point, 2)
                         .setEmission(new Color(139, 69, 19))
-                        .setMaterial(new Material().setkD(0.5).setkS(0.5).setShininess(100)).setBVH(bvh)
+                        .setMaterial(new Material().setKd(0.5).setKs(0.5).setShininess(100)).setBVH(bvh)
         );
 
     }
@@ -217,7 +217,7 @@ public class Pictuer1 {
 
 //--------------------------------------------matrial for lines of hot air balloon-------------------------------------
 
-        Material linesMaterial = new Material().setkD(0.5).setkS(0.5).setShininess(100);
+        Material linesMaterial = new Material().setKd(0.5).setKs(0.5).setShininess(100);
 
 
 //--------------------------------------------build bushes------------------------------------------------------------
@@ -297,67 +297,67 @@ public class Pictuer1 {
                 new Plane(new Point(0, -55, -750), new Vector(0, 0.5, 0))
                         .setEmission(new Color(34, 70, 34))
                         .setMaterial(new Material()
-                                .setkD(0.5)
-                                .setkS(0.5)
+                                .setKd(0.5)
+                                .setKs(0.5)
                                 .setShininess(100)).setBVH(bvh),
 
                 // -----------------------------------basket-----------------------------------------------------------------------
                 //  BASKET
                 //bottom
                 Bottom1.setMaterial(new Material()
-                                .setkD(0.5)
-                                .setkS(0.3)
+                                .setKd(0.5)
+                                .setKs(0.3)
                                 .setShininess(100))
                         .setEmission(new Color(500, 40, 40)).setBVH(bvh),
                 Bottom2.setMaterial(new Material()
-                                .setkD(0.5)
-                                .setkS(1.4)
+                                .setKd(0.5)
+                                .setKs(1.4)
                                 .setShininess(100))
                         .setEmission(new Color(520, 40, 40)).setBVH(bvh),
                 //front
                 T1.setMaterial(new Material()
-                                .setkD(0.5)
-                                .setkS(0.3)
+                                .setKd(0.5)
+                                .setKs(0.3)
                                 .setShininess(100))
                         .setEmission(new Color(500, 50, 40)).setBVH(bvh),
                 T2.setMaterial(new Material()
-                                .setkD(0.5)
-                                .setkS(0.6)
+                                .setKd(0.5)
+                                .setKs(0.6)
                                 .setShininess(100))
                         .setEmission(new Color(530, 50, 40)).setBVH(bvh),
                 //back
                 T1Back.setMaterial(new Material()
-                                .setkD(0.5)
-                                .setkS(0.3)
+                                .setKd(0.5)
+                                .setKs(0.3)
                                 .setShininess(100))
                         .setEmission(new Color(500, 40, 40)).setBVH(bvh),
                 T2Back.setMaterial(new Material()
-                                .setkD(0.5)
-                                .setkS(1.4)
+                                .setKd(0.5)
+                                .setKs(1.4)
                                 .setShininess(100))
                         .setEmission(new Color(520, 40, 40)).setBVH(bvh),
 
                 //Left side
                 LeftSideBase1.setMaterial(new Material()
-                                .setkD(0.5)
-                                .setkS(0.3)
+                                .setKd(0.5)
+                                .setKs(0.3)
                                 .setShininess(100))
                         .setEmission(new Color(500, 140, 40)).setBVH(bvh),
                 LeftSideBase2.setMaterial(new Material()
-                                .setkD(0.5)
-                                .setkS(1.4)
+                                .setKd(0.5)
+                                .setKs(1.4)
                                 .setShininess(100))
                         .setEmission(new Color(520, 140, 40)).setBVH(bvh),
 
                 //Right side
                 RightSideBase1.setMaterial(new Material()
-                                .setkD(0.5)
-                                .setkS(0.3)
+                                .setKd(0.5)
+                                .setKs(0.3)
                                 .setShininess(100))
                         .setEmission(new Color(500, 140, 40)).setBVH(bvh),
                 RightSideBase2.setMaterial(new Material()
-                                .setkD(0.5)
-                                .setkS(1.4)
+                                .setKd(0.5)
+                                .setKs(1.4)
                                 .setShininess(100))
                         .setEmission(new Color(520, 140, 40)).setBVH(bvh),
 
@@ -378,13 +378,13 @@ public class Pictuer1 {
                 //the balloon
                 new Sphere(new Point(-2, 28, -50), 35d)
                         .setEmission(new Color(150, 0, 0)) //
-                        .setMaterial(new Material().setkD(0.3).setkS(0.05).setShininess(100).setkT(0.3)).setBVH(bvh),
+                        .setMaterial(new Material().setKd(0.3).setKs(0.05).setShininess(100).setKt(0.3)).setBVH(bvh),
 
 
                 // ---------------------------------------------sky-----------------------------------------------------
                 new Plane(new Point(5, -80, -300), new Vector(5, -240, -20))
                         .setEmission(new Color(185, 266, 500).scale(0.35))//
-                        .setMaterial(new Material().setkD(0.5).setkS(0.5).setShininess(100)).setBVH(bvh),
+                        .setMaterial(new Material().setKd(0.5).setKs(0.5).setShininess(100)).setBVH(bvh),
 
                 // ----------------------------strings for little balls on the basket-----------------------------------
                 //little ball-the strings for them
@@ -424,10 +424,10 @@ public class Pictuer1 {
                         new Point(-35, -15, 100))
                         .setEmission(new Color(128, 0, 128)).setBVH(bvh)
                         .setMaterial(new Material()
-                                .setkT(0.0) // No transmission (fully opaque)
-                                .setkD(0.2) // Moderate diffuse reflection
-                                .setkR(0.2) // Low specular reflection
-                                .setkS(0.5) // Moderate specular component
+                                .setKt(0.0) // No transmission (fully opaque)
+                                .setKd(0.2) // Moderate diffuse reflection
+                                .setKr(0.2) // Low specular reflection
+                                .setKs(0.5) // Moderate specular component
                                 .setShininess(100)),
                 // right
                 new Triangle(new Point(-40, -20, 100),
@@ -435,10 +435,10 @@ public class Pictuer1 {
                         new Point(-35, -25, 100))
                         .setEmission(new Color(200, 0, 200)).setBVH(bvh)
                         .setMaterial(new Material()
-                                .setkT(0.0) // No transmission (fully opaque)
-                                .setkD(0.1) // Moderate diffuse reflection
-                                .setkR(0.2) // Low specular reflection
-                                .setkS(0.5) // Moderate specular component
+                                .setKt(0.0) // No transmission (fully opaque)
+                                .setKd(0.1) // Moderate diffuse reflection
+                                .setKr(0.2) // Low specular reflection
+                                .setKs(0.5) // Moderate specular component
                                 .setShininess(10)),
                 // down
                 new Triangle(new Point(-40, -20, 100),
@@ -446,10 +446,10 @@ public class Pictuer1 {
                         new Point(-45, -25, 100))
                         .setEmission(new Color(128, 0, 128)).setBVH(bvh)
                         .setMaterial(new Material()
-                                .setkT(0.0) // No transmission (fully opaque)
-                                .setkD(0.2) // Moderate diffuse reflection
-                                .setkR(0.2) // Low specular reflection
-                                .setkS(0.5) // Moderate specular component
+                                .setKt(0.0) // No transmission (fully opaque)
+                                .setKd(0.2) // Moderate diffuse reflection
+                                .setKr(0.2) // Low specular reflection
+                                .setKs(0.5) // Moderate specular component
                                 .setShininess(100)),
                 // left
                 new Triangle(new Point(-40, -20, 100),
@@ -457,10 +457,10 @@ public class Pictuer1 {
                         new Point(-45, -15, 100))
                         .setEmission(new Color(200, 0, 200)).setBVH(bvh)
                         .setMaterial(new Material()
-                                .setkT(0.0) // No transmission (fully opaque)
-                                .setkD(0.1) // Moderate diffuse reflection
-                                .setkR(0.2) // Low specular reflection
-                                .setkS(0.5) // Moderate specular component
+                                .setKt(0.0) // No transmission (fully opaque)
+                                .setKd(0.1) // Moderate diffuse reflection
+                                .setKr(0.2) // Low specular reflection
+                                .setKs(0.5) // Moderate specular component
                                 .setShininess(10)),
                 // triangle to stand
                 new Triangle(new Point(-40, -1000, 99),
@@ -468,10 +468,10 @@ public class Pictuer1 {
                         new Point(-41, -20, 99))
                         .setEmission(new Color(64, 64, 64)).setBVH(bvh)
                         .setMaterial(new Material()
-                                .setkT(0.0) // No transmission (fully opaque)
-                                .setkD(0.0) // Moderate diffuse reflection
-                                .setkR(0.2) // Low specular reflection
-                                .setkS(0.0) // Low specular component (metallic appearance)
+                                .setKt(0.0) // No transmission (fully opaque)
+                                .setKd(0.0) // Moderate diffuse reflection
+                                .setKr(0.2) // Low specular reflection
+                                .setKs(0.0) // Low specular component (metallic appearance)
                                 .setShininess(20)),
                 // triangle to stand
                 new Triangle(new Point(-41, -20, 99),
@@ -479,10 +479,10 @@ public class Pictuer1 {
                         new Point(-41, -1000, 99))
                         .setEmission(new Color(64, 64, 64)).setBVH(bvh)
                         .setMaterial(new Material()
-                                .setkT(0.0) // No transmission (fully opaque)
-                                .setkD(0.0) // Moderate diffuse reflection
-                                .setkR(0.2) // Low specular reflection
-                                .setkS(0.0) // Low specular component (metallic appearance)
+                                .setKt(0.0) // No transmission (fully opaque)
+                                .setKd(0.0) // Moderate diffuse reflection
+                                .setKr(0.2) // Low specular reflection
+                                .setKs(0.0) // Low specular component (metallic appearance)
                                 .setShininess(20)),
 
 
@@ -525,7 +525,7 @@ public class Pictuer1 {
         scene4.lights.add(new PointLight(new Color(200, 100, 100), new Point(0, -40, -50)).setSize(40));
 
         //the second shadow for baloon
-        scene4.lights.add(new PointLight(new Color(105, 100, 100).scale(0.5), new Point(10, 10, 10)).setkQ(0).setkL(0).setSize(45));
+        scene4.lights.add(new PointLight(new Color(105, 100, 100).scale(0.5), new Point(10, 10, 10)).setKq(0).setKl(0).setSize(45));
 
         //street light for pinwheel
         scene4.lights.add(new PointLight(new Color(10,10,10), new Point(-40,-20,0)).setSize(30));

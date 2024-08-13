@@ -37,11 +37,14 @@ public class Camera implements Cloneable {
     //the ray tracer for the camera
     private RayTracerBase rayTracer;
 
+    // Amount of threads for multi threading, if not set is 0, so no multi threading is done
+    private static int threads = 0;
 
     /**
      * This class is builder class for camera
      */
     public static class Builder {
+
         private final Camera camera = new Camera();
 
         /**
@@ -79,6 +82,8 @@ public class Camera implements Cloneable {
                 throw new RuntimeException(e);
             }
         }
+
+        //************************* setters *****************************
 
         /**
          * sets the location of the camera in the scene
@@ -153,12 +158,23 @@ public class Camera implements Cloneable {
             return this;
         }
 
+        /**
+         * set function for thread - builder design pattern
+         *
+         * @param threads sent threads to set
+         * @return this camera that function was called from
+         */
+        public Builder setThreads(int threads) {
+            Camera.threads = threads;
+            return this;
+        }
+
     }
 
     /**
      * Constructor to initialize vector based object with a point
      */
-    private Camera() {
+    public Camera() {
     }
 
     /**
@@ -170,41 +186,6 @@ public class Camera implements Cloneable {
         return new Builder();
     }
 
-    /**
-     * a get method for vTo
-     *
-     * @return vTo
-     */
-    public Vector getvTo() {
-        return vTo;
-    }
-
-    /**
-     * a get method for vUp
-     *
-     * @return vUp
-     */
-    public Vector getvUp() {
-        return vUp;
-    }
-
-    /**
-     * a get method for p0
-     *
-     * @return p0
-     */
-    public Point getP0() {
-        return p0;
-    }
-
-    /**
-     * a get method for vRight
-     *
-     * @return vRight
-     */
-    public Vector getvRight() {
-        return vRight;
-    }
 
     /**
      * a get method for distance
@@ -212,26 +193,10 @@ public class Camera implements Cloneable {
      * @return distance
      */
     public double getDistance() {
+
         return distance;
     }
 
-    /**
-     * a get method for height
-     *
-     * @return height
-     */
-    public double getHeight() {
-        return height;
-    }
-
-    /**
-     * a get method for width
-     *
-     * @return width
-     */
-    public double getWidth() {
-        return width;
-    }
 
     /**
      * construct a ray throw  pixel
@@ -265,28 +230,52 @@ public class Camera implements Cloneable {
     /**
      * cast a ray throw a pixel and colors it
      *
-     * @param nX     the resolution of the scene
-     * @param nY     the resolution of the scene
-     * @param i the y index of the pixel
-     * @param j    the x index of the pixel
+     * @param nX the resolution of the scene
+     * @param nY the resolution of the scene
+     * @param i  the x index of the pixel
+     * @param j  the y index of the pixel
      */
-    private void castRay(int nX, int nY, int i, int j) {
+    private Color castRay(int nX, int nY, int i, int j) {
         Ray ray = this.constructRay(nX, nY, i, j);
         Color color = this.rayTracer.traceRay(ray);
         this.imageWriter.writePixel(i, j, color);
+        return color;
     }
 
     /**
      * a method that does the rendering of the image
+     *
      * @return the camera
      */
     public Camera renderImage() {
         int nY = imageWriter.getNy();
         int nX = imageWriter.getNx();
+        //if not using multi threads
+        if (threads < 1) {
+            //goes through every pixel in view plane  and casts ray, meaning creates a ray for every pixel and sets the color
+            for (int i = 0; i < nX; i++) {
+                for (int j = 0; j < nY; j++) {
+                    this.castRay(nX, nY, i, j);
+                }
+            }
+            return this;
+
+        }
+        //if using multi threads
+        Pixel.initialize(nY, nX, 1);
+        while (threads-- > 0) {
+            new Thread(() ->
+            {
+                for (Pixel pixel = new Pixel();
+                     pixel.nextPixel();
+                     Pixel.pixelDone()) {
+                    imageWriter.writePixel(pixel.col, pixel.row, castRay(nX, nY, pixel.row, pixel.col));
+                }
+            }).start();
+        }
+        Pixel.waitToFinish();
         for (int i = 0; i < nX; i++) {
             for (int j = 0; j < nY; j++) {
-                //System.out.println(i);
-                //System.out.println(j);
                 this.castRay(nX, nY, i, j);
             }
         }
@@ -301,13 +290,28 @@ public class Camera implements Cloneable {
      * @return the image writer of the camera
      */
     public ImageWriter printGrid(int interval, Color color) {
-        for (int i = 0; i < imageWriter.getNx(); i++) {
-            for (int j = 0; j < imageWriter.getNy(); j++) {
-                if (i % interval == 0 || j % interval == 0) {
-                    imageWriter.writePixel(i, j, color);
-                }
+        /*nested loop that goes through every pixel in grid and colors it*/
+        for (int row = 0; row < imageWriter.getNy(); row++) {
+            for (int column = 0; column < imageWriter.getNx(); column++) {
+                /*for lines on net that are horizontal, for lines that are all net*/
+                if ((row % (imageWriter.getNy() / 10) == 0) || ((row + 1) % (imageWriter.getNy() / 10) == 0))
+                    imageWriter.writePixel(row, column, color);
+                else
+                    /*for vertical lines, since we are going through the pixels horizontally we will only reach 2 net
+                     dots, every 50 pixels, as opposed to the whole line being net
+                     */
+                    if ((column % (imageWriter.getNx() / 10) == 0) || ((column + 1) % (imageWriter.getNx() / 10) == 0))
+                        imageWriter.writePixel(row, column, color);
             }
         }
         return imageWriter;
+
+//                for (int i = 0; i < imageWriter.getNx(); i++) {
+//            for (int j = 0; j < imageWriter.getNy(); j++) {
+//                if (i % interval == 0 || j % interval == 0) {
+//                    imageWriter.writePixel(i, j, color);
+//                }
+//            }
+//        }
     }
 }

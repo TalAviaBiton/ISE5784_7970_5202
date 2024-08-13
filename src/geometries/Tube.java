@@ -1,7 +1,4 @@
 package geometries;
-/**
- * This class represents a tube
- */
 
 import primitives.Point;
 import primitives.Ray;
@@ -9,11 +6,12 @@ import primitives.Vector;
 
 import java.util.List;
 
-
+/**
+ * This class represents a tube
+ */
 public class Tube extends RadialGeometry {
-    /**
-     * the ray of the main axis
-     */
+
+    // the ray of the main axis
     protected final Ray axis;
 
     /**
@@ -37,4 +35,8 @@ public class Tube extends RadialGeometry {
         return p.subtract(o).normalize();
     }
 
+    @Override
+    public void createBoundingBox() {
+        //we never fully implemented tube, so this is never used
+    }
 }

@@ -1,7 +1,4 @@
 package geometries;
-/**
- * This class represents a triangle
- */
 
 import primitives.Point;
 import primitives.Ray;
@@ -9,10 +6,12 @@ import primitives.Vector;
 
 import java.util.List;
 
-
+/**
+ * This class represents a triangle
+ */
 public class Triangle extends Polygon {
     /**
-     * a constractor to create a new triangle
+     * a constructor to create a new triangle
      *
      * @param p1 first vertex of the triangle
      * @param p2 second vertex of the triangle
@@ -32,7 +31,7 @@ public class Triangle extends Polygon {
     protected List<GeoPoint> findGeoIntersectionsHelper(Ray ray) {
 
         var intersectionPlane = plane.findGeoIntersections(ray);
-        if(intersectionPlane==null)
+        if (intersectionPlane == null)
             return null;
         Point p1 = vertices.get(0);
         Point p2 = vertices.get(1);
@@ -54,9 +53,37 @@ public class Triangle extends Polygon {
                 (ray.getDirection().dotProduct(n1) < 0
                         && ray.getDirection().dotProduct(n2) < 0
                         && ray.getDirection().dotProduct(n3) < 0))
-            return List.of(new GeoPoint (this,intersectionPlane.getFirst().point));
+            return List.of(new GeoPoint(this, intersectionPlane.getFirst().point));
 
         return null;
     }
 
+
+    @Override
+    public void createBoundingBox() {
+        if (vertices == null)
+            return;
+
+        // Initialize the minimum and maximum coordinates with extreme values
+        double minX = Double.POSITIVE_INFINITY;
+        double minY = Double.POSITIVE_INFINITY;
+        double minZ = Double.POSITIVE_INFINITY;
+        double maxX = Double.NEGATIVE_INFINITY;
+        double maxY = Double.NEGATIVE_INFINITY;
+        double maxZ = Double.NEGATIVE_INFINITY;
+
+        // Iterate over each vertex in the list of vertices
+        for (Point vertex : vertices) {
+            // Update the minimum and maximum coordinates based on the vertex's components
+            minX = Math.min(minX, vertex.getX());
+            minY = Math.min(minY, vertex.getY());
+            minZ = Math.min(minZ, vertex.getZ());
+            maxX = Math.max(maxX, vertex.getX());
+            maxY = Math.max(maxY, vertex.getY());
+            maxZ = Math.max(maxZ, vertex.getZ());
+        }
+
+        // Create a new BoundingBox object using the calculated minimum and maximum coordinates
+        box = new BoundingBox(new Point(minX, minY, minZ), new Point(maxX, maxY, maxZ));
+    }
 }

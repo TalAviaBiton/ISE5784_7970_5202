@@ -4,6 +4,9 @@ package primitives;
  * This class will serve most primitive classes by representing a vector
  */
 public class Vector extends Point {
+
+    //************************* constructors **************************
+
     /**
      * Constructor to initialize vector based object with its three number values
      *
@@ -28,6 +31,8 @@ public class Vector extends Point {
         if (this.xyz.equals(Double3.ZERO))
             throw new IllegalArgumentException("Vector can't be zero");
     }
+
+    //************************** functions for vectors ***************************
 
     /**
      * calculate the length Squared of ש vector
@@ -100,6 +105,7 @@ public class Vector extends Point {
         return new Vector(xyz.add(v.xyz));
     }
 
+    //************************ override functions **********************
     @Override
     public boolean equals(Object obj) {
         if ((this == obj)) return true;
@@ -114,11 +120,5 @@ public class Vector extends Point {
                 "} " + super.toString();
     }
 
-    public double getZ() {
-        return this.xyz.d3;
-    }
 
-    public double getY() {
-        return this.xyz.d2;
-    }
 }

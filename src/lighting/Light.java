@@ -6,6 +6,7 @@ import primitives.Color;
  * an abstract class to represents all the lights
  */
 abstract class Light {
+
     //the intensity of the light
     protected Color intensity;
 

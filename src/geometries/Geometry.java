@@ -12,18 +12,23 @@ import java.util.List;
 public abstract class Geometry extends Intersectable {
 
     //the emission of the geometry
-    protected Color emission= Color.BLACK;
+    protected Color emission = Color.BLACK;
     //the material the geometry is made of
-    private Material material=new Material();
+    private Material material = new Material();
+
+    //**************** getters ***************
+
     /**
+     * a get method for material
      *
      * @return the material the geometry is made of
      */
-    public Material getMaterial(){
+    public Material getMaterial() {
         return material;
     }
 
-    /** a get method for emission
+    /**
+     * a get method for emission
      *
      * @return the emission
      */
@@ -38,12 +43,16 @@ public abstract class Geometry extends Intersectable {
      * @return the normal-vector
      */
     public abstract Vector getNormal(Point point);
-    /** a set method for the emission
+
+
+    //*********** setters **********************
+
+    /**
+     * a set method for the emission
      *
      * @param emission the emission I want to add
      * @return the geometry
      */
-
     public Geometry setEmission(Color emission) {
         this.emission = emission;
         return this;
