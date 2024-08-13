@@ -44,7 +44,7 @@ public class tenItems {
             .setDirection(new Vector(0, 1, 0).normalize(), new Vector(0, 0, -1))  // Pointing towards the scene with correct up vector
             .setVpDistance(220)  // Adjusted to capture a larger view
             .setVpSize(200, 200)
-            .setRayTracer(new SimpleRayTracer(scene).setNumOfRays(289));
+            .setRayTracer(new SimpleRayTracer(scene));//.setNumOfRays(289));
     // Increased size for a broader view
 
     /**
@@ -123,28 +123,30 @@ public void pic1(){
             scene.lights.add(new DirectionalLight(new Color(50,50,50),new Vector(0.5,0.5,-0.5))); // from the top
 
 
-        scene.lights.add(new SpotLight(new Color(400, 240, 0),new Point(100,1000,500),new Vector(-30,-30,0)).setSize(20)
+        scene.lights.add(new SpotLight(new Color(400, 240, 0),new Point(100,1000,500),new Vector(-30,-30,0))//.setSize(20)
                 .setkL(1E-5).setkQ(1.5E-7));
 
-        scene.lights.add(new SpotLight(new Color(400, 240, 0),new Point(40,50,200),new Vector(0,-1,0)).setSize(20)
+        scene.lights.add(new SpotLight(new Color(400, 240, 0),new Point(40,50,200),new Vector(0,-1,0))//.setSize(20)
                 .setkL(1E-5).setkQ(1.5E-7));
 
-        scene.lights.add(new SpotLight(new Color(200, 200, 200),new Point(-150,200,200),new Vector(-40,-40,-20)).setSize(13)
+        scene.lights.add(new SpotLight(new Color(200, 200, 200),new Point(-150,200,200),new Vector(-40,-40,-20))//.setSize(13)
                 .setkL(1E-5).setkQ(1.5E-7));
 
-            scene.lights.add(new SpotLight(new Color(255, 255, 255),new Point(-300,300,400),new Vector(40,-40,-20)).setSize(13)
+            scene.lights.add(new SpotLight(new Color(255, 255, 255),new Point(-300,300,400),new Vector(40,-40,-20))//.setSize(13)
                     .setkL(1E-5).setkQ(1.5E-7));
 
-            scene.lights.add(new SpotLight(new Color(255, 255, 255),new Point(-20,0,250),new Vector(0,0,-1)).setSize(13)
+            scene.lights.add(new SpotLight(new Color(255, 255, 255),new Point(-20,0,250),new Vector(0,0,-1))//.setSize(13)
                     .setkL(1E-5).setkQ(1.5E-7));
 
-            scene.lights.add(new PointLight(new Color(180,180,180),new Point(-300,-300,250)).setSize(20));
+            scene.lights.add(new PointLight(new Color(180,180,180),new Point(-300,-300,250)));
+                    //.setSize(20));
 
 
-    ImageWriter imagewriter=new ImageWriter("initial,SoftShadows,500,500",500,500);
+    ImageWriter imagewriter =new ImageWriter("initial,SoftShadows,500,500",500,500);
     camera.setImageWriter(imagewriter).build()
             .renderImage()
             .writeToImage();
+
 
     }
 
