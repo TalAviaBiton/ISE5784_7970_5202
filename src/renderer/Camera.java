@@ -238,7 +238,9 @@ public class Camera implements Cloneable {
     private Color castRay(int nX, int nY, int i, int j) {
         Ray ray = this.constructRay(nX, nY, i, j);
         Color color = this.rayTracer.traceRay(ray);
-        this.imageWriter.writePixel(i, j, color);
+//        this.imageWriter.writePixel(i, j, color);
+        imageWriter.writePixel(i,j,rayTracer.traceRay(constructRay(nX,nY,i,j)));
+        Pixel.pixelDone();
         return color;
     }
 
@@ -250,8 +252,10 @@ public class Camera implements Cloneable {
     public Camera renderImage() {
         int nY = imageWriter.getNy();
         int nX = imageWriter.getNx();
+        Pixel.initialize(nY,nX,1);//add
         //if not using multi threads
-        if (threads < 1) {
+
+        if (threads <1 ) {
             //goes through every pixel in view plane  and casts ray, meaning creates a ray for every pixel and sets the color
             for (int i = 0; i < nX; i++) {
                 for (int j = 0; j < nY; j++) {
