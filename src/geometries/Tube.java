@@ -37,4 +37,8 @@ public class Tube extends RadialGeometry {
         return p.subtract(o).normalize();
     }
 
+    @Override
+    public void createBoundingBox() {
+        //we never fully implemented tube, so this is never used
+    }
 }

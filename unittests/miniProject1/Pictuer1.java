@@ -26,12 +26,12 @@ public class Pictuer1 {
             .setBackground(new Color(135, 206, 250)).build();
 
 
-    boolean bvh = false;
+    boolean bvh = true;
 
     /** Camera builder for the tests with triangles */
     private final Camera.Builder cameraBuilder = Camera.getBuilder()
             .setDirection(new Vector(0,0,-1) ,new Vector(0,1,0))
-            .setRayTracer(new SimpleRayTracer(scene4));
+            .setRayTracer(new SimpleRayTracer(scene4)).setThreads(3);;
 
     /**
      * gets a center and a radius of bubble and create

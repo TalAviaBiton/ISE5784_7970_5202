@@ -5,8 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4b50f3a7-ff92-41f1-86dd-01d3b21a2dd1" name="Changes" comment="finished 7">
+      <change afterPath="$PROJECT_DIR$/src/renderer/Pixel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unittests/miniProject1/Minip1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unittests/miniProject2/TeapotTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unittests/miniProject1/tenItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/miniProject1/tenItems.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Geometries.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Geometries.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Intersectable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Intersectable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Plane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Plane.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Polygon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Polygon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Sphere.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Sphere.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Triangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Triangle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Tube.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Tube.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/Camera.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unittests/miniProject1/Pictuer1.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/miniProject1/Pictuer1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unittests/miniProject1/Pictur2.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,6 +97,8 @@
     "JUnit.LightsTests.trianglesDirectional.executor": "Run",
     "JUnit.LightsTests.trianglesPoint.executor": "Run",
     "JUnit.LightsTests.trianglesSpot.executor": "Run",
+    "JUnit.Minip1.executor": "Run",
+    "JUnit.Minip1.ourPicture.executor": "Run",
     "JUnit.Pictuer1.executor": "Run",
     "JUnit.Pictur2.executor": "Run",
     "JUnit.PlaneTest.executor": "Run",
@@ -114,6 +128,7 @@
     "JUnit.SphereTest.executor": "Run",
     "JUnit.SphereTest.testFindIntersections.executor": "Run",
     "JUnit.SphereTest.testGetNormal.executor": "Run",
+    "JUnit.TeapotTest.executor": "Run",
     "JUnit.TriangleTest.executor": "Run",
     "JUnit.TriangleTest.testFindIntersections.executor": "Run",
     "JUnit.TriangleTest.testGetNormal.executor": "Run",
@@ -170,40 +185,8 @@
       <recent name="primitives" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.tenItems.pic1">
-    <configuration name="ReflectionRefractionTests.multiObjects" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ISE5784_7970_5202" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="renderer.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="renderer" />
-      <option name="MAIN_CLASS_NAME" value="renderer.ReflectionRefractionTests" />
-      <option name="METHOD_NAME" value="multiObjects" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ReflectionRefractionTests.twoSpheres" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ISE5784_7970_5202" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="renderer.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="renderer" />
-      <option name="MAIN_CLASS_NAME" value="renderer.ReflectionRefractionTests" />
-      <option name="METHOD_NAME" value="twoSpheres" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="tenItems" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.TeapotTest">
+    <configuration name="Minip1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ISE5784_7970_5202" />
       <extension name="coverage">
         <pattern>
@@ -212,13 +195,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="miniProject1" />
-      <option name="MAIN_CLASS_NAME" value="miniProject1.tenItems" />
+      <option name="MAIN_CLASS_NAME" value="miniProject1.Minip1" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="tenItems.pic" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Minip1.ourPicture" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ISE5784_7970_5202" />
       <extension name="coverage">
         <pattern>
@@ -227,9 +210,39 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="miniProject1" />
-      <option name="MAIN_CLASS_NAME" value="miniProject1.tenItems" />
-      <option name="METHOD_NAME" value="pic" />
+      <option name="MAIN_CLASS_NAME" value="miniProject1.Minip1" />
+      <option name="METHOD_NAME" value="ourPicture" />
       <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Pictuer1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ISE5784_7970_5202" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="miniProject1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="miniProject1" />
+      <option name="MAIN_CLASS_NAME" value="miniProject1.Pictuer1" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TeapotTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ISE5784_7970_5202" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="miniProject2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="miniProject2" />
+      <option name="MAIN_CLASS_NAME" value="miniProject2.TeapotTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -252,13 +265,21 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TeapotTest" />
+        <item itemvalue="JUnit.Pictuer1" />
+        <item itemvalue="JUnit.Minip1.ourPicture" />
+        <item itemvalue="JUnit.Minip1" />
         <item itemvalue="JUnit.tenItems.pic1" />
-        <item itemvalue="JUnit.ReflectionRefractionTests.multiObjects" />
-        <item itemvalue="JUnit.tenItems.pic" />
-        <item itemvalue="JUnit.ReflectionRefractionTests.twoSpheres" />
-        <item itemvalue="JUnit.tenItems" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.15989.150" />
+        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-IU-241.15989.150" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

@@ -72,7 +72,13 @@ public class Plane extends Geometry {
         double t = Util.alignZero(normal.dotProduct(p0.subtract(rayP0)) / denom);
         return t <= 0 ? null : List.of(new GeoPoint(this, ray.getPoint(t)));
     }
+
     public List<GeoPoint> findGeoIntersections(Ray ray) {
         return findGeoIntersectionsHelper(ray);
+    }
+
+    @Override
+    public void createBoundingBox() {
+        //not implemented because plane is never ending so can't be bound in box
     }
 }

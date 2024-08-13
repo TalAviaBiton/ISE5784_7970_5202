@@ -76,4 +76,19 @@ public class Sphere extends RadialGeometry {
         }
 
     }
+
+    @Override
+    public void createBoundingBox() {
+        if (center != null) {
+            double minX = center.getX() - radius;
+            double minY = center.getY() - radius;
+            double minZ = center.getZ() - radius;
+            double maxX = center.getX() + radius;
+            double maxY = center.getY() + radius;
+            double maxZ = center.getZ() + radius;
+
+            // Create a new BoundingBox object using the calculated minimum and maximum coordinates
+            box = new BoundingBox(new Point(minX, minY, minZ), new Point(maxX, maxY, maxZ));
+        }
+    }
 }
