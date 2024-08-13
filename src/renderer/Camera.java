@@ -37,13 +37,14 @@ public class Camera implements Cloneable {
     //the ray tracer for the camera
     private RayTracerBase rayTracer;
 
-     // Amount of threads for multi threading, if not set is 0, so no multi threading is done
+    // Amount of threads for multi threading, if not set is 0, so no multi threading is done
     private static int threads = 0;
 
     /**
      * This class is builder class for camera
      */
     public static class Builder {
+
         private final Camera camera = new Camera();
 
         /**
@@ -81,6 +82,8 @@ public class Camera implements Cloneable {
                 throw new RuntimeException(e);
             }
         }
+
+        //************************* setters *****************************
 
         /**
          * sets the location of the camera in the scene
@@ -183,41 +186,6 @@ public class Camera implements Cloneable {
         return new Builder();
     }
 
-    /**
-     * a get method for vTo
-     *
-     * @return vTo
-     */
-    public Vector getvTo() {
-        return vTo;
-    }
-
-    /**
-     * a get method for vUp
-     *
-     * @return vUp
-     */
-    public Vector getvUp() {
-        return vUp;
-    }
-
-    /**
-     * a get method for p0
-     *
-     * @return p0
-     */
-    public Point getP0() {
-        return p0;
-    }
-
-    /**
-     * a get method for vRight
-     *
-     * @return vRight
-     */
-    public Vector getvRight() {
-        return vRight;
-    }
 
     /**
      * a get method for distance
@@ -225,26 +193,10 @@ public class Camera implements Cloneable {
      * @return distance
      */
     public double getDistance() {
+
         return distance;
     }
 
-    /**
-     * a get method for height
-     *
-     * @return height
-     */
-    public double getHeight() {
-        return height;
-    }
-
-    /**
-     * a get method for width
-     *
-     * @return width
-     */
-    public double getWidth() {
-        return width;
-    }
 
     /**
      * construct a ray throw  pixel
@@ -278,10 +230,10 @@ public class Camera implements Cloneable {
     /**
      * cast a ray throw a pixel and colors it
      *
-     * @param nX     the resolution of the scene
-     * @param nY     the resolution of the scene
-     * @param i the x index of the pixel
-     * @param j    the y index of the pixel
+     * @param nX the resolution of the scene
+     * @param nY the resolution of the scene
+     * @param i  the x index of the pixel
+     * @param j  the y index of the pixel
      */
     private Color castRay(int nX, int nY, int i, int j) {
         Ray ray = this.constructRay(nX, nY, i, j);
@@ -292,6 +244,7 @@ public class Camera implements Cloneable {
 
     /**
      * a method that does the rendering of the image
+     *
      * @return the camera
      */
     public Camera renderImage() {
@@ -337,15 +290,6 @@ public class Camera implements Cloneable {
      * @return the image writer of the camera
      */
     public ImageWriter printGrid(int interval, Color color) {
-//        for (int i = 0; i < imageWriter.getNx(); i++) {
-//            for (int j = 0; j < imageWriter.getNy(); j++) {
-//                if (i % interval == 0 || j % interval == 0) {
-//                    imageWriter.writePixel(i, j, color);
-//                }
-//            }
-//        }
-
-
         /*nested loop that goes through every pixel in grid and colors it*/
         for (int row = 0; row < imageWriter.getNy(); row++) {
             for (int column = 0; column < imageWriter.getNx(); column++) {
@@ -361,5 +305,13 @@ public class Camera implements Cloneable {
             }
         }
         return imageWriter;
+
+//                for (int i = 0; i < imageWriter.getNx(); i++) {
+//            for (int j = 0; j < imageWriter.getNy(); j++) {
+//                if (i % interval == 0 || j % interval == 0) {
+//                    imageWriter.writePixel(i, j, color);
+//                }
+//            }
+//        }
     }
 }

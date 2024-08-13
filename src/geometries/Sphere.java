@@ -13,9 +13,8 @@ import static primitives.Util.alignZero;
  * This class represents a sphere
  */
 public class Sphere extends RadialGeometry {
-    /**
-     * a point for the center of the sphere
-     */
+
+    // a point for the center of the sphere
     private final Point center;
 
     /**
@@ -65,17 +64,18 @@ public class Sphere extends RadialGeometry {
                         new GeoPoint(this, ray.getPoint(alignZero(tm - th)))
                 );
             } else {
-                return List.of(new GeoPoint(this,ray.getPoint(alignZero(tm - th))));
+                return List.of(new GeoPoint(this, ray.getPoint(alignZero(tm - th))));
             }
         } else {
             if (alignZero(tm + th) > 0) {
-                return List.of(new GeoPoint(this,ray.getPoint(alignZero(tm + th))));
+                return List.of(new GeoPoint(this, ray.getPoint(alignZero(tm + th))));
             } else {
                 return null;
             }
         }
 
     }
+
 
     @Override
     public void createBoundingBox() {

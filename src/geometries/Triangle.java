@@ -1,7 +1,4 @@
 package geometries;
-/**
- * This class represents a triangle
- */
 
 import primitives.Point;
 import primitives.Ray;
@@ -9,10 +6,12 @@ import primitives.Vector;
 
 import java.util.List;
 
-
+/**
+ * This class represents a triangle
+ */
 public class Triangle extends Polygon {
     /**
-     * a constractor to create a new triangle
+     * a constructor to create a new triangle
      *
      * @param p1 first vertex of the triangle
      * @param p2 second vertex of the triangle
@@ -32,7 +31,7 @@ public class Triangle extends Polygon {
     protected List<GeoPoint> findGeoIntersectionsHelper(Ray ray) {
 
         var intersectionPlane = plane.findGeoIntersections(ray);
-        if(intersectionPlane==null)
+        if (intersectionPlane == null)
             return null;
         Point p1 = vertices.get(0);
         Point p2 = vertices.get(1);
@@ -54,10 +53,11 @@ public class Triangle extends Polygon {
                 (ray.getDirection().dotProduct(n1) < 0
                         && ray.getDirection().dotProduct(n2) < 0
                         && ray.getDirection().dotProduct(n3) < 0))
-            return List.of(new GeoPoint (this,intersectionPlane.getFirst().point));
+            return List.of(new GeoPoint(this, intersectionPlane.getFirst().point));
 
         return null;
     }
+
 
     @Override
     public void createBoundingBox() {

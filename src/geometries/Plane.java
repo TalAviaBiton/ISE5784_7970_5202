@@ -8,7 +8,6 @@ import primitives.*;
  * 2D plane in a 3D world
  *
  * @author Shulman and Yonatan
- *
  */
 public class Plane extends Geometry {
 
@@ -37,6 +36,8 @@ public class Plane extends Geometry {
         this.p0 = p0;
         this.normal = normal.normalize();
     }
+
+    //********************** getters ********************
 
     /**
      * getter for the normal to the Plane

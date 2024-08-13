@@ -15,12 +15,11 @@ import renderer.SimpleRayTracer;
 import scene.Scene;
 
 import static java.awt.Color.*;
-import static java.awt.Color.GREEN;
 
 public class tenItems {
-    Scene scene = new Scene.SceneBuilder("Test scene")
+    Scene scene = new Scene("Test scene")
             .setAmbientLight(new AmbientLight(new Color(WHITE), 0.15))
-            .setBackground(new Color(100, 200, 300)).build();
+            .setBackground(new Color(100, 200, 300));
 
 
     boolean bvh = false;
@@ -61,15 +60,15 @@ public class tenItems {
         scene.geometries.add(
                 new Sphere(p1, rBig)
                         .setEmission(new Color(gray)) //
-                        .setMaterial(new Material().setkD(0.54).setkS(0.003).setShininess(100).setkT(0.15))
+                        .setMaterial(new Material().setKd(0.54).setKs(0.003).setShininess(100).setKt(0.15))
                         .setBVH(bvh),
                 new Sphere(p2, rSmall)
                         .setEmission(new Color(gray)) //
-                        .setMaterial(new Material().setkD(0.54).setkS(0.003).setShininess(100).setkT(0.15))
+                        .setMaterial(new Material().setKd(0.54).setKs(0.003).setShininess(100).setKt(0.15))
                         .setBVH(bvh),
                 new Sphere(p3, rSmall)
                         .setEmission(new Color(gray)) //
-                        .setMaterial(new Material().setkD(0.54).setkS(0.003).setShininess(100).setkT(0.15))
+                        .setMaterial(new Material().setKd(0.54).setKs(0.003).setShininess(100).setKt(0.15))
                         .setBVH(bvh)
         );
 
@@ -82,41 +81,41 @@ public void pic1(){
 
             scene.geometries.add(
                     new Plane(new Point(0, -600, 0), new Point(1, -600, 0), new Point(0, -600, 1)) //white
-                            .setEmission(new Color(230, 230, 230)).setMaterial(new Material().setkD(0.3).setkS(0.8).setShininess(30)),
+                            .setEmission(new Color(230, 230, 230)).setMaterial(new Material().setKd(0.3).setKs(0.8).setShininess(30)),
                     new Plane(new Point(-300, -600, -100), new Point(-290, -600, -600), new Point(-300, -500, -100)) //pink
-                            .setEmission(new Color(PINK)).setMaterial(new Material().setkD(0.3).setkS(0.8).setShininess(30)),
+                            .setEmission(new Color(PINK)).setMaterial(new Material().setKd(0.3).setKs(0.8).setShininess(30)),
 
                     new Triangle (new Point (-150,-160,0),new Point (230,-160,0),new Point(40,-160,300))
-                            .setEmission(new Color(123, 63,0)).setMaterial(new Material().setkR(1).setkD(1).setkD(0.2).setShininess(10)),
+                            .setEmission(new Color(123, 63,0)).setMaterial(new Material().setKr(1).setKd(1).setKd(0.2).setShininess(10)),
                     new Triangle (new Point (-150,-160,0),new Point (230,-160,0),new Point(40,-400,110))
-                            .setEmission(new Color(123, 63,0)).setMaterial(new Material().setkD(0.3).setkS(0.8).setShininess(30)),
+                            .setEmission(new Color(123, 63,0)).setMaterial(new Material().setKd(0.3).setKs(0.8).setShininess(30)),
                     new Triangle (new Point (-150,-160,0),new Point (40,-400,110),new Point(40,-160,300))
-                            .setEmission(new Color(123, 63,0)).setMaterial(new Material().setkD(0.3).setkS(0.8).setShininess(30)),
+                            .setEmission(new Color(123, 63,0)).setMaterial(new Material().setKd(0.3).setKs(0.8).setShininess(30)),
                     new Triangle (new Point (40,-400,110),new Point (230,-160,0),new Point(40,-160,300))
-                            .setEmission(new Color(123, 63,0)).setMaterial(new Material().setkD(0.3).setkS(0.8).setShininess(30)),
+                            .setEmission(new Color(123, 63,0)).setMaterial(new Material().setKd(0.3).setKs(0.8).setShininess(30)),
 
                     //first floor-
-                    new Sphere(new Point(-80,-100,0),60).setEmission(new Color(0,30,200))  .setMaterial(new Material().setkD(0.4).setkS(0.8).setShininess(60)),//blue
-                    new Sphere(new Point(160,-100,0),60).setEmission(new Color(300,0,200)) .setMaterial(new Material().setkD(0.4).setkS(0.8).setShininess(60)),//pink
-                    new Sphere(new Point(40,-100,0),60).setEmission(new Color(200,0,30)) .setMaterial(new Material().setkD(0.4).setkS(0.8).setShininess(60)),//red
+                    new Sphere(new Point(-80,-100,0),60).setEmission(new Color(0,30,200))  .setMaterial(new Material().setKd(0.4).setKs(0.8).setShininess(60)),//blue
+                    new Sphere(new Point(160,-100,0),60).setEmission(new Color(300,0,200)) .setMaterial(new Material().setKd(0.4).setKs(0.8).setShininess(60)),//pink
+                    new Sphere(new Point(40,-100,0),60).setEmission(new Color(200,0,30)) .setMaterial(new Material().setKd(0.4).setKs(0.8).setShininess(60)),//red
 
-                    new Sphere(new Point(-20,-100,110),60).setEmission(new Color(200,200,200)).setMaterial(new Material().setkD(0.4).setkS(0.8).setShininess(60)), //gray
-                    new Sphere(new Point(100,-100,110),60).setEmission(new Color(100,12,200)).setMaterial(new Material().setkD(0.4).setkS(0.8).setShininess(60)),//purple
+                    new Sphere(new Point(-20,-100,110),60).setEmission(new Color(200,200,200)).setMaterial(new Material().setKd(0.4).setKs(0.8).setShininess(60)), //gray
+                    new Sphere(new Point(100,-100,110),60).setEmission(new Color(100,12,200)).setMaterial(new Material().setKd(0.4).setKs(0.8).setShininess(60)),//purple
 
-                    new Sphere(new Point(40,-100,220),60).setEmission(new Color(0,160,0)).setMaterial(new Material().setkD(0.4).setkS(0.8).setShininess(60)),//green
+                    new Sphere(new Point(40,-100,220),60).setEmission(new Color(0,160,0)).setMaterial(new Material().setKd(0.4).setKs(0.8).setShininess(60)),//green
 
                     //second floar-
-                    new Sphere(new Point(-20,0,55),60).setEmission(new Color(255,165,0)).setMaterial(new Material().setkD(0.4).setkS(0.8).setShininess(60)),//yellow
-                    new Sphere(new Point(100,0,55),60).setEmission(new Color(255,170,180)).setMaterial(new Material().setkD(0.4).setkS(0.8).setShininess(60)),//pink
-                    new Sphere(new Point(40,0,165),60).setEmission(new Color(255,100,0)).setMaterial(new Material().setkD(0.4).setkS(0.8).setShininess(60)),//orange
+                    new Sphere(new Point(-20,0,55),60).setEmission(new Color(255,165,0)).setMaterial(new Material().setKd(0.4).setKs(0.8).setShininess(60)),//yellow
+                    new Sphere(new Point(100,0,55),60).setEmission(new Color(255,170,180)).setMaterial(new Material().setKd(0.4).setKs(0.8).setShininess(60)),//pink
+                    new Sphere(new Point(40,0,165),60).setEmission(new Color(255,100,0)).setMaterial(new Material().setKd(0.4).setKs(0.8).setShininess(60)),//orange
 
                     //third floar-
-                    new Sphere(new Point(40,100,110),60).setEmission(new Color(255,30,0)).setMaterial(new Material().setkD(0.4).setkS(0.8).setShininess(40))//red
+                    new Sphere(new Point(40,100,110),60).setEmission(new Color(255,30,0)).setMaterial(new Material().setKd(0.4).setKs(0.8).setShininess(40))//red
             );
 
             scene.geometries.add(new Sphere( new Point(30,-190,50),10).
                     setEmission(new Color(0,30,200))
-                    .setMaterial(new Material().setkD(0.5).setkS(0.5).setShininess(30)));
+                    .setMaterial(new Material().setKd(0.5).setKs(0.5).setShininess(30)));
 
             //**************************************
 
@@ -124,19 +123,19 @@ public void pic1(){
 
 
         scene.lights.add(new SpotLight(new Color(400, 240, 0),new Point(100,1000,500),new Vector(-30,-30,0)).setSize(20)
-                .setkL(1E-5).setkQ(1.5E-7));
+                .setKl(1E-5).setKq(1.5E-7));
 
         scene.lights.add(new SpotLight(new Color(400, 240, 0),new Point(40,50,200),new Vector(0,-1,0)).setSize(20)
-                .setkL(1E-5).setkQ(1.5E-7));
+                .setKl(1E-5).setKq(1.5E-7));
 
         scene.lights.add(new SpotLight(new Color(200, 200, 200),new Point(-150,200,200),new Vector(-40,-40,-20)).setSize(13)
-                .setkL(1E-5).setkQ(1.5E-7));
+                .setKl(1E-5).setKq(1.5E-7));
 
             scene.lights.add(new SpotLight(new Color(255, 255, 255),new Point(-300,300,400),new Vector(40,-40,-20)).setSize(13)
-                    .setkL(1E-5).setkQ(1.5E-7));
+                    .setKl(1E-5).setKq(1.5E-7));
 
             scene.lights.add(new SpotLight(new Color(255, 255, 255),new Point(-20,0,250),new Vector(0,0,-1)).setSize(13)
-                    .setkL(1E-5).setkQ(1.5E-7));
+                    .setKl(1E-5).setKq(1.5E-7));
 
             scene.lights.add(new PointLight(new Color(180,180,180),new Point(-300,-300,250)).setSize(20));
 
@@ -211,15 +210,15 @@ public void pic1(){
         scene.geometries.add(
                 new Sphere(new Point(-2, 28, -50), 35d)
                         .setEmission(new Color(150, 0, 0)) //
-                        .setMaterial(new Material().setkD(0.3).setkS(0.05).setShininess(100).setkT(0.3)).setBVH(bvh),
+                        .setMaterial(new Material().setKd(0.3).setKs(0.05).setShininess(100).setKt(0.3)).setBVH(bvh),
                 //-------------------------------------------ground-----------------------------------------------------------
                 new Plane(new Point(0, -55, -750), new Vector(0, 0.5, 0))
                         .setEmission(new Color(34, 70, 34))
-                        .setMaterial(new Material().setkD(0.5).setkS(0.5).setShininess(100)).setBVH(bvh),
+                        .setMaterial(new Material().setKd(0.5).setKs(0.5).setShininess(100)).setBVH(bvh),
                 // ---------------------------------------------sky-----------------------------------------------------
                 new Plane(new Point(5, -80, -300), new Vector(5, -240, -20))
                         .setEmission(new Color(185, 266, 500).scale(0.35))//
-                        .setMaterial(new Material().setkD(0.5).setkS(0.5).setShininess(100)).setBVH(bvh));
+                        .setMaterial(new Material().setKd(0.5).setKs(0.5).setShininess(100)).setBVH(bvh));
         // ---------------------------------------lights--------------------------------------------------------------
 
         //the sunlight
@@ -234,7 +233,7 @@ public void pic1(){
 //    scene4.lights.add(new PointLight(new Color(200, 100, 100), new Point(0, -40, -50)).setSize(40));
 
         //the second shadow for baloon
-        scene.lights.add(new PointLight(new Color(105, 100, 100).scale(0.5), new Point(10, 10, 10)).setkQ(0).setkL(0).setSize(45));
+        scene.lights.add(new PointLight(new Color(105, 100, 100).scale(0.5), new Point(10, 10, 10)).setKq(0).setKl(0).setSize(45));
 
         //street light for pinwheel
         scene.lights.add(new PointLight(new Color(10,10,10), new Point(-40,-20,0)).setSize(30));

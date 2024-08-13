@@ -11,16 +11,16 @@ import java.util.List;
  * a class to represent a list of geometries
  */
 public class Geometries extends Intersectable {
+
     List<Intersectable> geometries;
 
     /**
      * an empty default constructor
-     * <p>
      * constructs an empty list of geometries
      */
     public Geometries() {
         //if bvh improvement is used
-        if (BVH){
+        if (BVH) {
             //create bounding box around geometries
             createBoundingBox();
         }
@@ -34,7 +34,7 @@ public class Geometries extends Intersectable {
      */
     public Geometries(Intersectable... geometries) {
         //if bvh improvement is used
-        if (BVH){
+        if (BVH) {
             //create bounding box around geometries
             createBoundingBox();
         }
@@ -101,7 +101,6 @@ public class Geometries extends Intersectable {
         // Create a new bounding box using the minimum and maximum coordinates
         box = new BoundingBox(new Point(minX, minY, minZ), new Point(maxX, maxY, maxZ));
     }
-
 
 
 }

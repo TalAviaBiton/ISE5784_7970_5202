@@ -4,21 +4,37 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4b50f3a7-ff92-41f1-86dd-01d3b21a2dd1" name="Changes" comment="finished 7">
-      <change afterPath="$PROJECT_DIR$/src/renderer/Pixel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unittests/miniProject1/Minip1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unittests/miniProject2/TeapotTest.java" afterDir="false" />
+    <list default="true" id="4b50f3a7-ff92-41f1-86dd-01d3b21a2dd1" name="Changes" comment="the first pictuer without soft shadows">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/geometries/Geometries.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Geometries.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Geometry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Geometry.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/geometries/Intersectable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Intersectable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/geometries/Plane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Plane.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/geometries/Polygon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Polygon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/RadialGeometry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/RadialGeometry.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/geometries/Sphere.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Sphere.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/geometries/Triangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Triangle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/geometries/Tube.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Tube.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lighting/Light.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lighting/Light.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lighting/LightSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lighting/LightSource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lighting/PointLight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lighting/PointLight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lighting/SpotLight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lighting/SpotLight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/primitives/Material.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/primitives/Material.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/primitives/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/primitives/Point.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/primitives/Ray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/primitives/Ray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/primitives/Vector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/primitives/Vector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/BlackBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/BlackBoard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/renderer/Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/Camera.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/RayTracerBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/RayTracerBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/SimpleRayTracer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/SimpleRayTracer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scene/Scene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/scene/Scene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unittests/miniProject1/Minip1.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/miniProject1/Minip1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unittests/miniProject1/Pictuer1.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/miniProject1/Pictuer1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unittests/miniProject1/Pictur2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unittests/miniProject1/tenItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/miniProject1/tenItems.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unittests/miniProject2/TeapotTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/miniProject2/TeapotTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unittests/renderer/LightsTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/renderer/LightsTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unittests/renderer/ReflectionRefractionTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/renderer/ReflectionRefractionTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unittests/renderer/ShadowTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/renderer/ShadowTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,104 +86,104 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Application.Main.executor": "Run",
-    "Downloaded.Files.Path.Enabled": "true",
-    "JUnit.All in ISE5784_7970_5202.executor": "Run",
-    "JUnit.CameraTest.executor": "Run",
-    "JUnit.CameraTest.testConstructRay.executor": "Debug",
-    "JUnit.CylinderTest.executor": "Run",
-    "JUnit.CylinderTest.testGetNormal.executor": "Run",
-    "JUnit.GeomtriesTest.executor": "Run",
-    "JUnit.GeomtriesTest.testFindIntersections.executor": "Run",
-    "JUnit.ImageWriterTest.executor": "Run",
-    "JUnit.ImageWriterTest.testWriteToImage.executor": "Run",
-    "JUnit.ImageWriterTest.writeToImage.executor": "Run",
-    "JUnit.IntegrationTest.executor": "Run",
-    "JUnit.IntegrationTest.testCameraSphere.executor": "Run",
-    "JUnit.LightsTests.executor": "Run",
-    "JUnit.LightsTests.small.executor": "Run",
-    "JUnit.LightsTests.sphereAll.executor": "Run",
-    "JUnit.LightsTests.sphereDirectional.executor": "Run",
-    "JUnit.LightsTests.spherePoint.executor": "Run",
-    "JUnit.LightsTests.sphereSpot.executor": "Run",
-    "JUnit.LightsTests.trianglesAll.executor": "Run",
-    "JUnit.LightsTests.trianglesDirectional.executor": "Run",
-    "JUnit.LightsTests.trianglesPoint.executor": "Run",
-    "JUnit.LightsTests.trianglesSpot.executor": "Run",
-    "JUnit.Minip1.executor": "Run",
-    "JUnit.Minip1.ourPicture.executor": "Run",
-    "JUnit.Pictuer1.executor": "Run",
-    "JUnit.Pictur2.executor": "Run",
-    "JUnit.PlaneTest.executor": "Run",
-    "JUnit.PlaneTest.testFindIntersections.executor": "Run",
-    "JUnit.PlaneTest.testGetNormal.executor": "Run",
-    "JUnit.PlaneTest.testGetNormal2.executor": "Run",
-    "JUnit.PointTest.executor": "Run",
-    "JUnit.PointTest.testSubtract.executor": "Debug",
-    "JUnit.PolygonTest.executor": "Run",
-    "JUnit.PolygonTest.testConstructor.executor": "Run",
-    "JUnit.RayTest.executor": "Run",
-    "JUnit.RayTest.getPoint.executor": "Run",
-    "JUnit.RayTest.testFindClosestPoint.executor": "Run",
-    "JUnit.ReflectionRefractionTests.executor": "Run",
-    "JUnit.ReflectionRefractionTests.mgal.executor": "Run",
-    "JUnit.ReflectionRefractionTests.multiObjects.executor": "Run",
-    "JUnit.ReflectionRefractionTests.multipleObjects.executor": "Run",
-    "JUnit.ReflectionRefractionTests.twoSpheres.executor": "Run",
-    "JUnit.RenderTests.basicRenderXml.executor": "Run",
-    "JUnit.RenderTests.executor": "Run",
-    "JUnit.RenderTests.renderMultiColorTest.executor": "Run",
-    "JUnit.ShadowTests.executor": "Run",
-    "JUnit.ShadowTests.sphereTriangleInitial.executor": "Run",
-    "JUnit.ShadowTests.sphereTriangleMove1.executor": "Run",
-    "JUnit.ShadowTests.sphereTriangleSpot1.executor": "Run",
-    "JUnit.ShadowTests.sphereTriangleSpot2.executor": "Run",
-    "JUnit.SphereTest.executor": "Run",
-    "JUnit.SphereTest.testFindIntersections.executor": "Run",
-    "JUnit.SphereTest.testGetNormal.executor": "Run",
-    "JUnit.TeapotTest.executor": "Run",
-    "JUnit.TriangleTest.executor": "Run",
-    "JUnit.TriangleTest.testFindIntersections.executor": "Run",
-    "JUnit.TriangleTest.testGetNormal.executor": "Run",
-    "JUnit.TubeTest.executor": "Run",
-    "JUnit.TubeTest.testGetNormal.executor": "Run",
-    "JUnit.VectorTest.executor": "Run",
-    "JUnit.VectorTest.testAdd.executor": "Run",
-    "JUnit.VectorTest.testConstructor.executor": "Run",
-    "JUnit.VectorTest.testCrossProduct.executor": "Run",
-    "JUnit.VectorTest.testDotProduct.executor": "Run",
-    "JUnit.VectorTest.testLength.executor": "Run",
-    "JUnit.VectorTest.testLengthSquared.executor": "Run",
-    "JUnit.VectorTest.testNormalize.executor": "Run",
-    "JUnit.tenItems.executor": "Run",
-    "JUnit.tenItems.pic.executor": "Run",
-    "JUnit.tenItems.pic1.executor": "Run",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "C:/Users/TAL/Desktop/minip/ISE5784_7970_5202/src/Main.java",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "fileTemplates",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;true&quot;,
+    &quot;JUnit.All in ISE5784_7970_5202.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CameraTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CameraTest.testConstructRay.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.CylinderTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CylinderTest.testGetNormal.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GeomtriesTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GeomtriesTest.testFindIntersections.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ImageWriterTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ImageWriterTest.testWriteToImage.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ImageWriterTest.writeToImage.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.IntegrationTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.IntegrationTest.testCameraSphere.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LightsTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LightsTests.small.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LightsTests.sphereAll.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LightsTests.sphereDirectional.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LightsTests.spherePoint.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LightsTests.sphereSpot.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LightsTests.trianglesAll.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LightsTests.trianglesDirectional.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LightsTests.trianglesPoint.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LightsTests.trianglesSpot.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Minip1.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Minip1.ourPicture.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Pictuer1.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Pictur2.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PlaneTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PlaneTest.testFindIntersections.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PlaneTest.testGetNormal.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PlaneTest.testGetNormal2.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PointTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PointTest.testSubtract.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.PolygonTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PolygonTest.testConstructor.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.RayTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.RayTest.getPoint.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.RayTest.testFindClosestPoint.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ReflectionRefractionTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ReflectionRefractionTests.mgal.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ReflectionRefractionTests.multiObjects.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ReflectionRefractionTests.multipleObjects.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ReflectionRefractionTests.twoSpheres.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.RenderTests.basicRenderXml.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.RenderTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.RenderTests.renderMultiColorTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ShadowTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ShadowTests.sphereTriangleInitial.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ShadowTests.sphereTriangleMove1.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ShadowTests.sphereTriangleSpot1.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ShadowTests.sphereTriangleSpot2.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SphereTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SphereTest.testFindIntersections.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SphereTest.testGetNormal.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TeapotTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TriangleTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TriangleTest.testFindIntersections.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TriangleTest.testGetNormal.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TubeTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TubeTest.testGetNormal.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.VectorTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.VectorTest.testAdd.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.VectorTest.testConstructor.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.VectorTest.testCrossProduct.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.VectorTest.testDotProduct.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.VectorTest.testLength.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.VectorTest.testLengthSquared.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.VectorTest.testNormalize.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.tenItems.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.tenItems.pic.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.tenItems.pic1.executor&quot;: &quot;Run&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/TAL/Desktop/minip/ISE5784_7970_5202/src/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;fileTemplates&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="geometries" />
@@ -185,7 +201,7 @@
       <recent name="primitives" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TeapotTest">
+  <component name="RunManager" selected="JUnit.Minip1">
     <configuration name="Minip1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ISE5784_7970_5202" />
       <extension name="coverage">
@@ -197,22 +213,6 @@
       <option name="PACKAGE_NAME" value="miniProject1" />
       <option name="MAIN_CLASS_NAME" value="miniProject1.Minip1" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Minip1.ourPicture" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ISE5784_7970_5202" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="miniProject1.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="miniProject1" />
-      <option name="MAIN_CLASS_NAME" value="miniProject1.Minip1" />
-      <option name="METHOD_NAME" value="ourPicture" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -232,6 +232,37 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ShadowTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ISE5784_7970_5202" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="renderer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="renderer" />
+      <option name="MAIN_CLASS_NAME" value="renderer.ShadowTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ShadowTests.sphereTriangleInitial" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ISE5784_7970_5202" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="renderer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="renderer" />
+      <option name="MAIN_CLASS_NAME" value="renderer.ShadowTests" />
+      <option name="METHOD_NAME" value="sphereTriangleInitial" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TeapotTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ISE5784_7970_5202" />
       <extension name="coverage">
@@ -247,29 +278,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="tenItems.pic1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ISE5784_7970_5202" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="miniProject1.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="miniProject1" />
-      <option name="MAIN_CLASS_NAME" value="miniProject1.tenItems" />
-      <option name="METHOD_NAME" value="pic1" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.Minip1" />
+        <item itemvalue="JUnit.ShadowTests" />
+        <item itemvalue="JUnit.ShadowTests.sphereTriangleInitial" />
         <item itemvalue="JUnit.TeapotTest" />
         <item itemvalue="JUnit.Pictuer1" />
-        <item itemvalue="JUnit.Minip1.ourPicture" />
-        <item itemvalue="JUnit.Minip1" />
-        <item itemvalue="JUnit.tenItems.pic1" />
       </list>
     </recent_temporary>
   </component>
@@ -322,14 +337,7 @@
       <workItem from="1723039350732" duration="4142000" />
       <workItem from="1723131971223" duration="1533000" />
       <workItem from="1723404665892" duration="384000" />
-    </task>
-    <task id="LOCAL‎-00024" summary="finished geometries test">
-      <option name="closed" value="true" />
-      <created>1718097907539</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL‎-00024" />
-      <option name="project" value="LOCAL‎" />
-      <updated>1718097907539</updated>
+      <workItem from="1723555193455" duration="3026000" />
     </task>
     <task id="LOCAL‎-00025" summary="finished geometries test">
       <option name="closed" value="true" />
@@ -715,7 +723,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1723441456476</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL‎-00073" summary="the first pictuer without soft shadows">
+      <option name="closed" value="true" />
+      <created>1723535091861</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL‎-00073" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1723535091861</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -757,9 +773,9 @@
     <MESSAGE value="stage 6 almost finished" />
     <MESSAGE value="finished 7.1" />
     <MESSAGE value="finished 7.3" />
-    <MESSAGE value="the first pictuer without soft shadows" />
     <MESSAGE value="finished 7" />
-    <option name="LAST_COMMIT_MESSAGE" value="finished 7" />
+    <MESSAGE value="the first pictuer without soft shadows" />
+    <option name="LAST_COMMIT_MESSAGE" value="the first pictuer without soft shadows" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

@@ -14,11 +14,12 @@ import java.util.Objects;
 public abstract class Intersectable {
 
     // for bvh use
-    public static boolean BVH=true;//
-
+    public static boolean BVH = true;//
+    //bounding box for intersectable
+    public BoundingBox box;
 
     /**
-     * class representing boundary box
+     * class representing boundary box for BVH
      */
     public class BoundingBox {
         public Point _minimums;
@@ -36,8 +37,6 @@ public abstract class Intersectable {
         }
     }
 
-    //bounding box for intersectable
-    public BoundingBox box;
 
     /**
      * return true if ray intersects object
@@ -118,6 +117,8 @@ public abstract class Intersectable {
      * create the boundary box for the objects
      */
     public abstract void createBoundingBox();
+
+
     /**
      * a class to represent a geometry point
      */
@@ -129,11 +130,11 @@ public abstract class Intersectable {
 
         /**
          * a constructor for geoPoint
+         *
          * @param geometry the geometry
-         * @param point the point
+         * @param point    the point
          */
-        public GeoPoint(Geometry geometry, Point point)
-        {
+        public GeoPoint(Geometry geometry, Point point) {
             this.geometry = geometry;
             this.point = point;
         }
@@ -159,6 +160,10 @@ public abstract class Intersectable {
             return this.geometry;
         }
     }
+
+
+    //*********** find intersections functions *******************
+
     /**
      * finds the closest intersection point to a given ray
      *
@@ -170,28 +175,32 @@ public abstract class Intersectable {
         return intersections == null ? null : ray.findClosestGeoPoint(intersections);
     }
 
-    /** the method that every interactable implements and finds the
+    /**
+     * the method that every interactable implements and finds the
      * intersections of the shape with the ray and returns a geoPoint
      *
      * @param ray the ray i want to find intersections with
      * @return a list of the GeoPoints that have intersection with the ray
      */
-    protected List<GeoPoint> findGeoIntersectionsHelper(Ray ray){return null;}
+    protected List<GeoPoint> findGeoIntersectionsHelper(Ray ray) {
+        return null;
+    }
 
-    /** a method that calls for findGeoIntersectionsHelper
+    /**
+     * a method that calls for findGeoIntersectionsHelper
      *
      * @param ray the ray i want to find intersections with
      * @return a list of the GeoPoints that have intersection with the ray
      */
     public List<GeoPoint> findGeoIntersections(Ray ray) {
-        if (BVH && !intersectingBoundingBox(ray))
-        {
+        if (BVH && !intersectingBoundingBox(ray)) {
             return null;
         }
         return findGeoIntersectionsHelper(ray);
     }
 
-    /** a method to find the intersections between the ray and the shape
+    /**
+     * a method to find the intersections between the ray and the shape
      *
      * @param ray the ray i want to find intersections with
      * @return a list of the points that have intersection with the ray
