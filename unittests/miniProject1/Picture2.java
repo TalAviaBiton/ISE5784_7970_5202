@@ -23,7 +23,6 @@ public class Picture2 {
             .setVpDistance(1000).setVpSize(200, 200)
             .setRayTracer(new SimpleRayTracer(scene).setNumOfRays(289));
 
-
     boolean bvh = false;
     @Test
     public void ourPicture() {
@@ -195,23 +194,23 @@ public class Picture2 {
         /**
          * with soft shadows
          */
-        scene.lights.add(new PointLight(new Color(100, 200, 200), new Point(60, 50, 100)) //
-                .setKl(4E-5).setKq(2E-7).setSize(20));
-        scene.lights.add(new PointLight(new Color(YELLOW).reduce(2), new Point(-10, 50, -10)).setKl(0.00003)
-                .setKc(1.00001).setKq(0.000001).setSize(20));
-
-        cameraBuilder
-                .setImageWriter(new ImageWriter("Minip1DonutSoftShadow", 600, 600)).build().renderImage().writeToImage();
+//        scene.lights.add(new PointLight(new Color(100, 200, 200), new Point(60, 50, 100)) //
+//                .setKl(4E-5).setKq(2E-7).setSize(20));
+//        scene.lights.add(new PointLight(new Color(YELLOW).reduce(2), new Point(-10, 50, -10)).setKl(0.00003)
+//                .setKc(1.00001).setKq(0.000001).setSize(20));
+//
+//        cameraBuilder
+//                .setImageWriter(new ImageWriter("Minip1DonutSoftShadow", 600, 600)).build().renderImage().writeToImage();
 
         /**
          * without soft shadows
          */
-//        scene.lights.add(new PointLight(new Color(100, 200, 200), new Point(60, 50, 100)) //
-//                .setKl(4E-5).setKq(2E-7).setSize(0));
-//        scene.lights.add(new PointLight(new Color(YELLOW).reduce(2), new Point(-10, 50, -10)).setKl(0.00003)
-//                .setKc(1.00001).setKq(0.000001).setSize(0));
-//        cameraBuilder
-//                .setImageWriter(new ImageWriter("Minip1DonutNoSoftShadow", 600, 600)).build().renderImage().writeToImage();
+        scene.lights.add(new PointLight(new Color(100, 200, 200), new Point(60, 50, 100)) //
+                .setKl(4E-5).setKq(2E-7).setSize(0));
+        scene.lights.add(new PointLight(new Color(YELLOW).reduce(2), new Point(-10, 50, -10)).setKl(0.00003)
+                .setKc(1.00001).setKq(0.000001).setSize(0));
+        cameraBuilder
+                .setImageWriter(new ImageWriter("Minip1DonutNoSoftShadow", 600, 600)).build().renderImage().writeToImage();
 
     }
 
