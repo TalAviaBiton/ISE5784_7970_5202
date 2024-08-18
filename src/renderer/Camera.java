@@ -37,10 +37,8 @@ public class Camera implements Cloneable {
     //the ray tracer for the camera
     private RayTracerBase rayTracer;
 
-    // Amount of threads for multi threading, if not set is 0, so no multi threading is done
-    private static int threads = 0;
     // check if there are threads
-    private boolean splitToThreads = false;
+    private boolean splitToThreads = true;
     /**
      * This class is builder class for camera
      */
@@ -160,16 +158,12 @@ public class Camera implements Cloneable {
         }
 
         /**
-         * set function for thread - builder design pattern
-         *
-         * @param threads sent threads to set
-         * @return this camera that function was called from
+         * sets splitToThreads to know if we're using multi-threading
          */
-        public Builder setThreads(int threads) {
-            Camera.threads = threads;
+        public Builder setMultithreading ( boolean splitToThreads){
+            camera.splitToThreads = splitToThreads;
             return this;
         }
-
     }
 
     /**
@@ -246,63 +240,30 @@ public class Camera implements Cloneable {
     }
 
     /**
-     * sets splitToThreads to know if we're using multi-threading
-     */
-    public Camera setMultithreading ( boolean bool){
-        this.splitToThreads = bool;
-        return this;
-    }
-    /**
      * a method that does the rendering of the image
      *
      * @return the camera
      */
     public Camera renderImage() {
-                //if using multi threads
         int nY = imageWriter.getNy();
         int nX = imageWriter.getNx();
         Pixel.initialize(nY, nX, 1);
-        while (threads-- > 0) {
-            new Thread(() ->
-            {
-                for (Pixel pixel = new Pixel();
-                     pixel.nextPixel();
-                     Pixel.pixelDone()) {
-                    imageWriter.writePixel(pixel.col, pixel.row, castRay(nX, nY, pixel.row, pixel.col));
-                }
-            }).start();
+        if (splitToThreads) {
+            IntStream.range(0, nY).parallel().forEach(row ->
+                    IntStream.range(0, nX).parallel().forEach(col -> castRay(nX, nY, col, row)));
         }
-        Pixel.waitToFinish();
-        for (int i = 0; i < nX; i++) {
-            for (int j = 0; j < nY; j++) {
-                this.castRay(nX, nY, i, j);
+        else {
+            //rendering image without using threads
+            for (Pixel pixel = new Pixel(); Pixel.nextPixelP() != null; Pixel.pixelDone())
+                imageWriter.writePixel(pixel.col, pixel.row, castRay(nX, nY, pixel.row, pixel.col));
+            for (int i = 0; i < nX; i++) {
+                for (int j = 0; j < nY; j++) {
+                    this.castRay(nX, nY, i, j);
+                }
             }
         }
         return this;
-
-//        Pixel.initialize(nY, nX, 1);//add
-//        //if not using multi threads
-//        Pixel pixel;
-//        if (!splitToThreads) {
-//            for (; (pixel = Pixel.nextPixelP()) != null; Pixel.pixelDone())
-//                castRay(nX, nY, pixel.col, pixel.row);
-//        } else {
-//            //rendering image with using of threads
-//            IntStream.range(0, nY).parallel().forEach(row ->
-//                    IntStream.range(0, nX).parallel().forEach(col -> castRay(nX, nY, col, row)));
-//        }
-//        if (threads <1 ) {
-//            //goes through every pixel in view plane  and casts ray, meaning creates a ray for every pixel and sets the color
-//            for (int i = 0; i < nX; i++) {
-//                for (int j = 0; j < nY; j++) {
-//                    this.castRay(nX, nY, i, j);
-//                }
-//            }
-        // return this;
-
     }
-
-
 
     /**
      * a method that prints the picture
@@ -328,13 +289,5 @@ public class Camera implements Cloneable {
         }
         return imageWriter;
 
-//                for (int i = 0; i < imageWriter.getNx(); i++) {
-//            for (int j = 0; j < imageWriter.getNy(); j++) {
-//                if (i % interval == 0 || j % interval == 0) {
-//                    imageWriter.writePixel(i, j, color);
-//                }
-//            }
-//        }
-//   }
     }
 }

@@ -21,7 +21,7 @@ import scene.Scene;
  */
 public class TeapotTest {
     private final ImageWriter imageWriter = new ImageWriter("teapotWithThreads", 800, 800);
-
+    boolean multyTreading=true;
 
     /** Camera builder of the tests */
     Camera.Builder camera     = Camera.getBuilder()
@@ -29,7 +29,7 @@ public class TeapotTest {
             .setLocation(new Point(0, 0, -1000)).setVpDistance(1000)
             .setVpSize(200, 200)
             .setImageWriter(imageWriter) //
-            .setThreads(3);//.setDebugPrint(0.1);
+            .setMultithreading(multyTreading);//.setDebugPrint(0.1);
 
     private final Scene scene = new Scene("Test scene");
 
