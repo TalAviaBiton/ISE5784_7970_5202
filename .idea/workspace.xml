@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4b50f3a7-ff92-41f1-86dd-01d3b21a2dd1" name="Changes" comment="finished minip 2">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/Camera.java" afterDir="false" />
-    </list>
+    <list default="true" id="4b50f3a7-ff92-41f1-86dd-01d3b21a2dd1" name="Changes" comment="minip1" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -312,14 +309,6 @@
       <workItem from="1723131971223" duration="1533000" />
       <workItem from="1723404665892" duration="384000" />
       <workItem from="1723555193455" duration="7234000" />
-    </task>
-    <task id="LOCAL‎-00026" summary="test geometries">
-      <option name="closed" value="true" />
-      <created>1718488693917</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL‎-00026" />
-      <option name="project" value="LOCAL‎" />
-      <updated>1718488693917</updated>
     </task>
     <task id="LOCAL‎-00027" summary="test geometries">
       <option name="closed" value="true" />
@@ -705,7 +694,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1723558316370</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL‎-00075" summary="minip1">
+      <option name="closed" value="true" />
+      <created>1723583012436</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL‎-00075" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1723583012436</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -724,7 +721,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="finished doing notes" />
     <MESSAGE value="finished 2" />
     <MESSAGE value="finished sphera test almost" />
     <MESSAGE value="test find-intersection triangle and plane finished unchecked" />
@@ -749,7 +745,8 @@
     <MESSAGE value="finished 7" />
     <MESSAGE value="the first pictuer without soft shadows" />
     <MESSAGE value="finished minip 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="finished minip 2" />
+    <MESSAGE value="minip1" />
+    <option name="LAST_COMMIT_MESSAGE" value="minip1" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
