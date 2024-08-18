@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4b50f3a7-ff92-41f1-86dd-01d3b21a2dd1" name="Changes" comment="finished minip 2">
-      <change afterPath="$PROJECT_DIR$/unittests/miniProject1/Picture2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unittests/miniProject1/Pictuer1.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/miniProject1/Picture1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unittests/miniProject1/tenItems.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unittests/renderer/ReflectionRefractionTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/renderer/ReflectionRefractionTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unittests/miniProject1/Picture2.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/miniProject1/Picture2.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,6 +89,8 @@
     &quot;JUnit.Minip1.ourPicture.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.Pictuer1.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.Pictur2.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Picture1.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Picture2.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.PlaneTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.PlaneTest.testFindIntersections.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.PlaneTest.testGetNormal.executor&quot;: &quot;Run&quot;,
@@ -176,7 +175,7 @@
       <recent name="primitives" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ReflectionRefractionTests.multiObjects">
+  <component name="RunManager" selected="JUnit.Picture1">
     <configuration name="Minip1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ISE5784_7970_5202" />
       <extension name="coverage">
@@ -187,6 +186,21 @@
       </extension>
       <option name="PACKAGE_NAME" value="miniProject1" />
       <option name="MAIN_CLASS_NAME" value="miniProject1.Minip1" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Picture1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ISE5784_7970_5202" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="miniProject1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="miniProject1" />
+      <option name="MAIN_CLASS_NAME" value="miniProject1.Picture1" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -238,29 +252,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ShadowTests.sphereTriangleInitial" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ISE5784_7970_5202" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="renderer.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="renderer" />
-      <option name="MAIN_CLASS_NAME" value="renderer.ShadowTests" />
-      <option name="METHOD_NAME" value="sphereTriangleInitial" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ReflectionRefractionTests.multiObjects" />
+        <item itemvalue="JUnit.Picture1" />
         <item itemvalue="JUnit.Picture2" />
+        <item itemvalue="JUnit.ReflectionRefractionTests.multiObjects" />
         <item itemvalue="JUnit.Minip1" />
         <item itemvalue="JUnit.ShadowTests" />
-        <item itemvalue="JUnit.ShadowTests.sphereTriangleInitial" />
       </list>
     </recent_temporary>
   </component>
@@ -313,15 +311,10 @@
       <workItem from="1723039350732" duration="4142000" />
       <workItem from="1723131971223" duration="1533000" />
       <workItem from="1723404665892" duration="384000" />
-      <workItem from="1723555193455" duration="7234000" />
-    </task>
-    <task id="LOCAL‎-00026" summary="test geometries">
-      <option name="closed" value="true" />
-      <created>1718488693917</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL‎-00026" />
-      <option name="project" value="LOCAL‎" />
-      <updated>1718488693917</updated>
+      <workItem from="1723555193455" duration="7845000" />
+      <workItem from="1723571075886" duration="1549000" />
+      <workItem from="1723572656493" duration="100000" />
+      <workItem from="1723731467539" duration="64000" />
     </task>
     <task id="LOCAL‎-00027" summary="test geometries">
       <option name="closed" value="true" />
@@ -707,7 +700,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1723558316370</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL‎-00075" summary="finished minip 2">
+      <option name="closed" value="true" />
+      <created>1723562499564</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL‎-00075" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1723562499564</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

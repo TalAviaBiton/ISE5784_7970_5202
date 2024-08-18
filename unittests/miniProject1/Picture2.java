@@ -23,7 +23,6 @@ public class Picture2 {
             .setVpDistance(1000).setVpSize(200, 200)
             .setRayTracer(new SimpleRayTracer(scene).setNumOfRays(289));
 
-
     boolean bvh = false;
     @Test
     public void ourPicture() {
