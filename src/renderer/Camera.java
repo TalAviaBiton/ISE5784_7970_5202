@@ -39,7 +39,8 @@ public class Camera implements Cloneable {
 
     // Amount of threads for multi threading, if not set is 0, so no multi threading is done
     private static int threads = 0;
-
+    // check if there are threads
+    private boolean splitToThreads = false;
     /**
      * This class is builder class for camera
      */
@@ -247,7 +248,6 @@ public class Camera implements Cloneable {
     /**
      * sets splitToThreads to know if we're using multi-threading
      */
-    private boolean splitToThreads = false;
     public Camera setMultithreading ( boolean bool){
         this.splitToThreads = bool;
         return this;
@@ -258,19 +258,39 @@ public class Camera implements Cloneable {
      * @return the camera
      */
     public Camera renderImage() {
+                //if using multi threads
         int nY = imageWriter.getNy();
         int nX = imageWriter.getNx();
-        Pixel.initialize(nY, nX, 1);//add
-        //if not using multi threads
-        Pixel pixel;
-        if (!splitToThreads) {
-            for (; (pixel = Pixel.nextPixelP()) != null; Pixel.pixelDone())
-                castRay(nX, nY, pixel.col, pixel.row);
-        } else {
-            //rendering image with using of threads
-            IntStream.range(0, nY).parallel().forEach(row ->
-                    IntStream.range(0, nX).parallel().forEach(col -> castRay(nX, nY, col, row)));
+        Pixel.initialize(nY, nX, 1);
+        while (threads-- > 0) {
+            new Thread(() ->
+            {
+                for (Pixel pixel = new Pixel();
+                     pixel.nextPixel();
+                     Pixel.pixelDone()) {
+                    imageWriter.writePixel(pixel.col, pixel.row, castRay(nX, nY, pixel.row, pixel.col));
+                }
+            }).start();
         }
+        Pixel.waitToFinish();
+        for (int i = 0; i < nX; i++) {
+            for (int j = 0; j < nY; j++) {
+                this.castRay(nX, nY, i, j);
+            }
+        }
+        return this;
+
+//        Pixel.initialize(nY, nX, 1);//add
+//        //if not using multi threads
+//        Pixel pixel;
+//        if (!splitToThreads) {
+//            for (; (pixel = Pixel.nextPixelP()) != null; Pixel.pixelDone())
+//                castRay(nX, nY, pixel.col, pixel.row);
+//        } else {
+//            //rendering image with using of threads
+//            IntStream.range(0, nY).parallel().forEach(row ->
+//                    IntStream.range(0, nX).parallel().forEach(col -> castRay(nX, nY, col, row)));
+//        }
 //        if (threads <1 ) {
 //            //goes through every pixel in view plane  and casts ray, meaning creates a ray for every pixel and sets the color
 //            for (int i = 0; i < nX; i++) {
@@ -278,28 +298,10 @@ public class Camera implements Cloneable {
 //                    this.castRay(nX, nY, i, j);
 //                }
 //            }
-        return this;
+        // return this;
 
     }
-//        //if using multi threads
-//        Pixel.initialize(nY, nX, 1);
-//        while (threads-- > 0) {
-//            new Thread(() ->
-//            {
-//                for (Pixel pixel = new Pixel();
-//                     pixel.nextPixel();
-//                     Pixel.pixelDone()) {
-//                    imageWriter.writePixel(pixel.col, pixel.row, castRay(nX, nY, pixel.row, pixel.col));
-//                }
-//            }).start();
-//        }
-//        Pixel.waitToFinish();
-//        for (int i = 0; i < nX; i++) {
-//            for (int j = 0; j < nY; j++) {
-//                this.castRay(nX, nY, i, j);
-//            }
-//        }
-//        return this;
+
 
 
     /**
