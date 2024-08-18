@@ -7,7 +7,7 @@
     <list default="true" id="4b50f3a7-ff92-41f1-86dd-01d3b21a2dd1" name="Changes" comment="minip1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/renderer/Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/Camera.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unittests/miniProject1/Picture2.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/miniProject1/Picture2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unittests/miniProject2/TeapotTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/miniProject2/TeapotTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,7 +176,7 @@
       <recent name="primitives" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.Picture2">
+  <component name="RunManager">
     <configuration name="Minip1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ISE5784_7970_5202" />
       <extension name="coverage">
