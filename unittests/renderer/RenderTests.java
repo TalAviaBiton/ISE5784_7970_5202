@@ -9,8 +9,11 @@ import lighting.AmbientLight;
 import primitives.*;
 import scene.Scene;
 
-/** Test rendering a basic image
- * @author Dan */
+/**
+ * Test rendering a basic image
+ *
+ * @author Dan
+ */
 public class RenderTests {
     /**
      * Scene of the tests
@@ -51,6 +54,7 @@ public class RenderTests {
     }
 
     // For stage 6 - please disregard in stage 5
+
     /**
      * Produce a scene with basic 3D model - including individual lights of the
      * bodies and render it into a png image with a grid

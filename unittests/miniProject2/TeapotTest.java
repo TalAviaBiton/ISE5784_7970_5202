@@ -1,4 +1,5 @@
 package miniProject2;
+
 import static java.awt.Color.YELLOW;
 
 import org.junit.jupiter.api.Test;
@@ -21,11 +22,12 @@ import scene.Scene;
  */
 public class TeapotTest {
     private final ImageWriter imageWriter = new ImageWriter("teapotWithThreads", 800, 800);
-    boolean multyTreading=true;
-
-    /** Camera builder of the tests */
-    Camera.Builder camera     = Camera.getBuilder()
-            .setDirection(new Vector(0,0,1), new Vector(0,1,0))
+    boolean multyTreading = false;
+    /**
+     * Camera builder of the tests
+     */
+    Camera.Builder camera = Camera.getBuilder()
+            .setDirection(new Vector(0, 0, 1), new Vector(0, 1, 0))
             .setLocation(new Point(0, 0, -1000)).setVpDistance(1000)
             .setVpSize(200, 200)
             .setImageWriter(imageWriter) //
@@ -36,7 +38,7 @@ public class TeapotTest {
     private static final Color color = new Color(200, 0, 0);
     private static final Material mat = new Material().setKd(0.5).setKs(0.5).setShininess(60);
 
-    private static Point[] pnts = new Point[] { null, //
+    private static Point[] pnts = new Point[]{null, //
             new Point(40.6266, 28.3457, -1.10804), //
             new Point(40.0714, 30.4443, -1.10804), //
             new Point(40.7155, 31.1438, -1.10804), //

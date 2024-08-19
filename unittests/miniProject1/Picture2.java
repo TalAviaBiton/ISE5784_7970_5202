@@ -14,16 +14,21 @@ import scene.Scene;
 import static java.awt.Color.*;
 
 public class Picture2 {
-    /** Scene for the tests */
-      Scene          scene         = new Scene("Test scene").setAmbientLight(new AmbientLight(new Color(BLUE), new Double3(0.20)));
-    /** Camera builder for the tests with triangles */
-      Camera.Builder cameraBuilder = Camera.getBuilder()
-            .setDirection(new Vector(0,0,-1) ,new Vector(0,1,0))
+    /**
+     * Scene for the tests
+     */
+    Scene scene = new Scene("Test scene").setAmbientLight(new AmbientLight(new Color(BLUE), new Double3(0.20)));
+    /**
+     * Camera builder for the tests with triangles
+     */
+    Camera.Builder cameraBuilder = Camera.getBuilder()
+            .setDirection(new Vector(0, 0, -1), new Vector(0, 1, 0))
             .setLocation(new Point(0, 0, 1000))
             .setVpDistance(1000).setVpSize(200, 200)
-            .setRayTracer(new SimpleRayTracer(scene).setNumOfRays(289));
+            .setRayTracer(new SimpleRayTracer(scene).setNumOfRays(289)).setMultithreading(true);
 
     boolean bvh = false;
+
     @Test
     public void ourPicture() {
         scene.geometries.add( //
@@ -66,126 +71,125 @@ public class Picture2 {
                 new Triangle(D, L, E) //
                         .setMaterial(new Material().setKd(0.5).setKs(0.5).setShininess(100)).setEmission(new Color(50, 20, 20)).setBVH(bvh),
 
-                new Triangle(L,M,E) //
+                new Triangle(L, M, E) //
                         .setMaterial(new Material().setKd(0.5).setKs(0.5).setShininess(100)).setEmission(new Color(50, 20, 20)).setBVH(bvh),
 
-                new Triangle(E,M,F) //
-                        .setMaterial(new Material().setKd(0.5).setKs(0.5).setShininess(100)).setEmission(new Color(50, 20, 20)).setBVH(bvh),
-
-
-                new Triangle(M,N,F) //
+                new Triangle(E, M, F) //
                         .setMaterial(new Material().setKd(0.5).setKs(0.5).setShininess(100)).setEmission(new Color(50, 20, 20)).setBVH(bvh),
 
 
-                new Triangle(N,G,F) //
+                new Triangle(M, N, F) //
                         .setMaterial(new Material().setKd(0.5).setKs(0.5).setShininess(100)).setEmission(new Color(50, 20, 20)).setBVH(bvh),
 
 
-                new Triangle(N,O,G) //
+                new Triangle(N, G, F) //
                         .setMaterial(new Material().setKd(0.5).setKs(0.5).setShininess(100)).setEmission(new Color(50, 20, 20)).setBVH(bvh),
 
 
-                new Triangle(O,H,G) //
-                        .setMaterial(new Material().setKd(0.5).setKs(0.5).setShininess(100)).setEmission(new Color(50, 20, 20)).setBVH(bvh),
-
-                new Triangle(O,P,H) //
+                new Triangle(N, O, G) //
                         .setMaterial(new Material().setKd(0.5).setKs(0.5).setShininess(100)).setEmission(new Color(50, 20, 20)).setBVH(bvh),
 
 
-                new Triangle(P,I,H) //
+                new Triangle(O, H, G) //
+                        .setMaterial(new Material().setKd(0.5).setKs(0.5).setShininess(100)).setEmission(new Color(50, 20, 20)).setBVH(bvh),
+
+                new Triangle(O, P, H) //
                         .setMaterial(new Material().setKd(0.5).setKs(0.5).setShininess(100)).setEmission(new Color(50, 20, 20)).setBVH(bvh),
 
 
-                new Triangle(J,I,P) //
+                new Triangle(P, I, H) //
+                        .setMaterial(new Material().setKd(0.5).setKs(0.5).setShininess(100)).setEmission(new Color(50, 20, 20)).setBVH(bvh),
+
+
+                new Triangle(J, I, P) //
                         .setMaterial(new Material().setKs(0.5).setKs(0.5).setShininess(100)).setEmission(new Color(50, 20, 20)).setBVH(bvh),
 
 
-                new Triangle(Q,I,J) //
+                new Triangle(Q, I, J) //
                         .setMaterial(new Material().setKd(0.5).setKs(0.5).setShininess(100)).setEmission(new Color(50, 20, 20)).setBVH(bvh),
 
 
-                new Triangle(A,Q,J) //
+                new Triangle(A, Q, J) //
                         .setMaterial(new Material().setKd(0.5).setKs(0.5).setShininess(100)).setEmission(new Color(50, 20, 20)).setBVH(bvh),
 
 
-                new Triangle(B,A,J) //
+                new Triangle(B, A, J) //
                         .setMaterial(new Material().setKd(0.5).setKs(0.5).setShininess(100)).setEmission(new Color(50, 20, 20)).setBVH(bvh),
 
 
-                new Triangle(B,K,J) //
+                new Triangle(B, K, J) //
                         .setMaterial(new Material().setKd(0.5).setKs(0.5).setShininess(100)).setEmission(new Color(50, 20, 20)).setBVH(bvh),
 
 
-
-                new Triangle(B,C,K) //
+                new Triangle(B, C, K) //
                         .setMaterial(new Material().setKd(0.5).setKs(0.5).setShininess(100)).setEmission(new Color(50, 20, 20)).setBVH(bvh),
 
 
-                new Triangle(C,D,L) //
+                new Triangle(C, D, L) //
                         .setMaterial(new Material().setKd(0.5).setKs(0.5).setShininess(100)).setEmission(new Color(50, 20, 20)).setBVH(bvh),
 
 
-                new Triangle(K,L,C) //
+                new Triangle(K, L, C) //
                         .setMaterial(new Material().setKd(0.5).setKs(0.5).setShininess(100)).setEmission(new Color(50, 20, 20)).setBVH(bvh),
 
 
-                new Triangle(O,U,P) //
+                new Triangle(O, U, P) //
                         .setMaterial(new Material().setKd(0.5).setKs(0.5).setShininess(100)).setEmission(new Color(50, 20, 20)).setBVH(bvh),
 
 
-                new Triangle(U,V,P) //
+                new Triangle(U, V, P) //
                         .setMaterial(new Material().setKd(0.5).setKs(0.5).setShininess(100)).setEmission(new Color(50, 20, 20)).setBVH(bvh),
 
 
-                new Triangle(V,P,J) //
+                new Triangle(V, P, J) //
                         .setMaterial(new Material().setKd(0.5).setKs(0.5).setShininess(100)).setEmission(new Color(50, 20, 20)).setBVH(bvh),
 
 
-                new Triangle(V,K,J) //
+                new Triangle(V, K, J) //
                         .setMaterial(new Material().setKd(0.5).setKs(0.5).setShininess(100)).setEmission(new Color(50, 20, 20)).setBVH(bvh),
 
 
-                new Triangle(W,V,K) //
+                new Triangle(W, V, K) //
                         .setMaterial(new Material().setKd(0.5).setKs(0.5).setShininess(100)).setEmission(new Color(50, 20, 20)).setBVH(bvh),
 
 
-                new Triangle(A1,W,K) //
+                new Triangle(A1, W, K) //
                         .setMaterial(new Material().setKd(0.5).setKs(0.5).setShininess(100)).setEmission(new Color(50, 20, 20)).setBVH(bvh),
 
 
-                new Triangle(Z,L,A1) //
+                new Triangle(Z, L, A1) //
                         .setMaterial(new Material().setKd(0.5).setKs(0.5).setShininess(100)).setEmission(new Color(50, 20, 20)).setBVH(bvh),
 
 
-                new Triangle(A1,L,K) //
+                new Triangle(A1, L, K) //
                         .setMaterial(new Material().setKd(0.5).setKs(0.5).setShininess(100)).setEmission(new Color(50, 20, 20)).setBVH(bvh),
 
 
-                new Triangle(Z,S,L) //
+                new Triangle(Z, S, L) //
                         .setMaterial(new Material().setKd(0.5).setKs(0.5).setShininess(100)).setEmission(new Color(50, 20, 20)).setBVH(bvh),
 
 
-                new Triangle(S,M,R) //
+                new Triangle(S, M, R) //
                         .setMaterial(new Material().setKd(0.5).setKs(0.5).setShininess(100)).setEmission(new Color(50, 20, 20)).setBVH(bvh),
 
 
-                new Triangle(Z,S,R) //
+                new Triangle(Z, S, R) //
                         .setMaterial(new Material().setKd(0.5).setKs(0.5).setShininess(100)).setEmission(new Color(50, 20, 20)).setBVH(bvh),
 
 
-                new Triangle(M,R,N) //
+                new Triangle(M, R, N) //
                         .setMaterial(new Material().setKd(0.5).setKs(0.5).setShininess(100)).setEmission(new Color(50, 20, 20)).setBVH(bvh),
 
 
-                new Triangle(R,T,N) //
+                new Triangle(R, T, N) //
                         .setMaterial(new Material().setKd(0.5).setKs(0.5).setShininess(100)).setEmission(new Color(50, 20, 20)).setBVH(bvh),
 
 
-                new Triangle(T,N,O) //
+                new Triangle(T, N, O) //
                         .setMaterial(new Material().setKd(0.5).setKs(0.5).setShininess(100)).setEmission(new Color(50, 20, 20)).setBVH(bvh),
 
 
-                new Triangle(T,U,O) //
+                new Triangle(T, U, O) //
                         .setMaterial(new Material().setKd(0.5).setKs(0.5).setShininess(100)).setEmission(new Color(50, 20, 20)).setBVH(bvh));
         scene.setAmbientLight(new AmbientLight(new Color(WHITE), 0.15));
 
@@ -194,23 +198,23 @@ public class Picture2 {
         /**
          * with soft shadows
          */
-//        scene.lights.add(new PointLight(new Color(100, 200, 200), new Point(60, 50, 100)) //
-//                .setKl(4E-5).setKq(2E-7).setSize(20));
-//        scene.lights.add(new PointLight(new Color(YELLOW).reduce(2), new Point(-10, 50, -10)).setKl(0.00003)
-//                .setKc(1.00001).setKq(0.000001).setSize(20));
-//
-//        cameraBuilder
-//                .setImageWriter(new ImageWriter("Minip1DonutSoftShadow", 600, 600)).build().renderImage().writeToImage();
+        scene.lights.add(new PointLight(new Color(100, 200, 200), new Point(60, 50, 100)) //
+                .setKl(4E-5).setKq(2E-7).setSize(20));
+        scene.lights.add(new PointLight(new Color(YELLOW).reduce(2), new Point(-10, 50, -10)).setKl(0.00003)
+                .setKc(1.00001).setKq(0.000001).setSize(20));
+
+        cameraBuilder
+                .setImageWriter(new ImageWriter("Minip1DonutSoftShadow", 600, 600)).build().renderImage().writeToImage();
 
         /**
          * without soft shadows
          */
-        scene.lights.add(new PointLight(new Color(100, 200, 200), new Point(60, 50, 100)) //
-                .setKl(4E-5).setKq(2E-7).setSize(0));
-        scene.lights.add(new PointLight(new Color(YELLOW).reduce(2), new Point(-10, 50, -10)).setKl(0.00003)
-                .setKc(1.00001).setKq(0.000001).setSize(0));
-        cameraBuilder
-                .setImageWriter(new ImageWriter("Minip1DonutNoSoftShadow", 600, 600)).build().renderImage().writeToImage();
+//        scene.lights.add(new PointLight(new Color(100, 200, 200), new Point(60, 50, 100)) //
+//                .setKl(4E-5).setKq(2E-7).setSize(0));
+//        scene.lights.add(new PointLight(new Color(YELLOW).reduce(2), new Point(-10, 50, -10)).setKl(0.00003)
+//                .setKc(1.00001).setKq(0.000001).setSize(0));
+//        cameraBuilder
+//                .setImageWriter(new ImageWriter("Minip1DonutNoSoftShadow", 600, 600)).build().renderImage().writeToImage();
 
     }
 

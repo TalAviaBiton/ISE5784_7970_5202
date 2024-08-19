@@ -31,7 +31,7 @@ public class Picture1 {
     /** Camera builder for the tests with triangles */
     private final Camera.Builder cameraBuilder = Camera.getBuilder()
             .setDirection(new Vector(0,0,-1) ,new Vector(0,1,0))
-            .setRayTracer(new SimpleRayTracer(scene4)).setThreads(3);;
+            .setRayTracer(new SimpleRayTracer(scene4));;
 
     /**
      * gets a center and a radius of bubble and create

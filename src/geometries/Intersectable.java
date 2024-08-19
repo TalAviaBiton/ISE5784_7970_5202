@@ -14,7 +14,8 @@ import java.util.Objects;
 public abstract class Intersectable {
 
     // for bvh use
-    public static boolean BVH = true;//
+    public static boolean BVH = false;//
+
     //bounding box for intersectable
     public BoundingBox box;
 
