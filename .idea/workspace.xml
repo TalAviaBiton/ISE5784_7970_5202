@@ -7,14 +7,7 @@
     <list default="true" id="4b50f3a7-ff92-41f1-86dd-01d3b21a2dd1" name="Changes" comment="finished minip 2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/geometries/Intersectable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Intersectable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unittests/miniProject1/Picture1.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/miniProject1/Picture1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unittests/miniProject1/Picture2.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/miniProject1/Picture2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unittests/miniProject2/TeapotTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/miniProject2/TeapotTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unittests/renderer/CameraTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/renderer/CameraTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unittests/renderer/ImageWriterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/renderer/ImageWriterTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unittests/renderer/LightsTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/renderer/LightsTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unittests/renderer/RenderTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/renderer/RenderTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unittests/renderer/ShadowTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/renderer/ShadowTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -320,15 +313,8 @@
       <workItem from="1723131971223" duration="1533000" />
       <workItem from="1723404665892" duration="384000" />
       <workItem from="1723555193455" duration="7234000" />
-      <workItem from="1724054039615" duration="936000" />
-    </task>
-    <task id="LOCAL‎-00028" summary="stage 3 finished unchecked">
-      <option name="closed" value="true" />
-      <created>1718524997529</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL‎-00028" />
-      <option name="project" value="LOCAL‎" />
-      <updated>1718524997529</updated>
+      <workItem from="1724054039615" duration="1034000" />
+      <workItem from="1724055603603" duration="34000" />
     </task>
     <task id="LOCAL‎-00029" summary="stage 3 finished unchecked">
       <option name="closed" value="true" />
@@ -714,7 +700,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1723956489911</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL‎-00077" summary="finished minip 2">
+      <option name="closed" value="true" />
+      <created>1724055014972</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL‎-00077" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1724055014976</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -756,9 +750,9 @@
     <MESSAGE value="finished 7.3" />
     <MESSAGE value="finished 7" />
     <MESSAGE value="the first pictuer without soft shadows" />
-    <MESSAGE value="finished minip 2" />
     <MESSAGE value="minip1" />
-    <option name="LAST_COMMIT_MESSAGE" value="minip1" />
+    <MESSAGE value="finished minip 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="finished minip 2" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

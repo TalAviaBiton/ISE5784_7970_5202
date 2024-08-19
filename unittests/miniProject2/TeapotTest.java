@@ -22,7 +22,7 @@ import scene.Scene;
  */
 public class TeapotTest {
     private final ImageWriter imageWriter = new ImageWriter("teapotWithThreads", 800, 800);
-    boolean multyTreading = false;
+    boolean multyTreading = true;
     /**
      * Camera builder of the tests
      */
